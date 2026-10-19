@@ -1,0 +1,3103 @@
+{
+  "references": [
+    {
+      "id": "3706",
+      "attribution": "متفق عليه",
+      "grams": 13,
+      "picked": {
+        "bukhari": "1240 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1240 (1.00)",
+          "2445 (0.08)",
+          "5849 (0.08)"
+        ],
+        "muslim": [
+          "2162 (0.38)",
+          "2162 (0.15)",
+          "2564 (0.08)"
+        ]
+      }
+    },
+    {
+      "id": "5365",
+      "attribution": "متفق عليه",
+      "grams": 16,
+      "picked": {
+        "bukhari": "6077 matched",
+        "muslim": "2560 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6077 (1.00)",
+          "6237 (0.38)",
+          "6073 (0.25)"
+        ],
+        "muslim": [
+          "2560 (0.81)",
+          "2558 (0.19)",
+          "2560 (0.13)"
+        ]
+      }
+    },
+    {
+      "id": "3552",
+      "attribution": "رواه أبو داود",
+      "grams": 17,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "4243",
+      "attribution": "متفق عليه",
+      "grams": 15,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6231 (0.53)",
+          "6232 (0.53)",
+          "6233 (0.53)"
+        ],
+        "muslim": [
+          "2160 (0.53)"
+        ]
+      }
+    },
+    {
+      "id": "5347",
+      "attribution": "رواه مسلم",
+      "grams": 12,
+      "picked": {
+        "muslim": "2167 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2167 (0.83)"
+        ]
+      }
+    },
+    {
+      "id": "5384",
+      "attribution": "رواه البخاري",
+      "grams": 17,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6263 (0.59)",
+          "863 (0.35)",
+          "1598 (0.35)"
+        ]
+      }
+    },
+    {
+      "id": "5808",
+      "attribution": "متفق عليه",
+      "grams": 8,
+      "picked": {
+        "bukhari": "12 matched",
+        "muslim": "39 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "12 (1.00)",
+          "28 (1.00)",
+          "6236 (0.63)"
+        ],
+        "muslim": [
+          "39 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "6108",
+      "attribution": "رواه الترمذي وأحمد",
+      "grams": 1,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3017",
+      "attribution": "رواه أبو داود والترمذي والنسائي في الكبرى وأحمد",
+      "grams": 5,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5326",
+      "attribution": "رواه مسلم",
+      "grams": 18,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2589 (0.78)",
+          "739 (0.06)",
+          "1501 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "3415",
+      "attribution": "رواه مسلم",
+      "grams": 54,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2621 (0.26)",
+          "1179 (0.19)",
+          "113 (0.17)"
+        ]
+      }
+    },
+    {
+      "id": "3479",
+      "attribution": "متفق عليه",
+      "grams": 14,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6477 (0.71)",
+          "6478 (0.14)",
+          "744 (0.07)"
+        ],
+        "muslim": [
+          "2988 (0.36)",
+          "2988 (0.21)",
+          "589 (0.07)"
+        ]
+      }
+    },
+    {
+      "id": "3602",
+      "attribution": "رواه الترمذي وأحمد",
+      "grams": 6,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5371",
+      "attribution": "رواه أبو داود والترمذي",
+      "grams": 14,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5373",
+      "attribution": "متفق عليه",
+      "grams": 13,
+      "picked": {
+        "bukhari": null,
+        "muslim": "90 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5973 (0.31)"
+        ],
+        "muslim": [
+          "90 (0.85)"
+        ]
+      }
+    },
+    {
+      "id": "5519",
+      "attribution": "رواه أبو داود والترمذي وأحمد والنسائي في الكبرى",
+      "grams": 10,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5798",
+      "attribution": "رواه مسلم",
+      "grams": 13,
+      "picked": {
+        "muslim": "2734 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2734 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "58120",
+      "attribution": "متفق عليه",
+      "grams": 7,
+      "picked": {
+        "bukhari": "5376 matched",
+        "muslim": "2022 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5376 (1.00)",
+          "5378 (0.29)"
+        ],
+        "muslim": [
+          "2022 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "58122",
+      "attribution": "رواه مسلم",
+      "grams": 13,
+      "picked": {
+        "muslim": "2020 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2020 (1.00)",
+          "2020 (0.23)",
+          "2019 (0.08)"
+        ]
+      }
+    },
+    {
+      "id": "3372",
+      "attribution": "رواه مسلم",
+      "grams": 2,
+      "picked": {
+        "muslim": "2021 checked"
+      },
+      "candidates": {
+        "muslim": []
+      }
+    },
+    {
+      "id": "4966",
+      "attribution": "متفق عليه",
+      "grams": 21,
+      "picked": {
+        "bukhari": "3563 checked",
+        "muslim": "2064 checked"
+      },
+      "candidates": {
+        "bukhari": [
+          "3563 (0.67)",
+          "5409 (0.57)",
+          "1231 (0.43)"
+        ],
+        "muslim": [
+          "2064 (0.57)",
+          "1081 (0.43)",
+          "1081 (0.43)"
+        ]
+      }
+    },
+    {
+      "id": "58119",
+      "attribution": "رواه البخاري",
+      "grams": 2,
+      "picked": {
+        "bukhari": "5399 checked"
+      },
+      "candidates": {
+        "bukhari": [
+          "5399 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "58123",
+      "attribution": "رواه أبو داود والترمذي وابن ماجه وأحمد والدارمي",
+      "grams": 12,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "2935",
+      "attribution": "متفق عليه",
+      "grams": 9,
+      "picked": {
+        "bukhari": "5456 checked",
+        "muslim": "2031 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5456 (0.67)"
+        ],
+        "muslim": [
+          "2031 (1.00)",
+          "2031 (0.67)",
+          "2033 (0.22)"
+        ]
+      }
+    },
+    {
+      "id": "3507",
+      "attribution": "رواه مسلم",
+      "grams": 32,
+      "picked": {
+        "muslim": "2017 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2017 (1.00)",
+          "2750 (0.06)",
+          "14 (0.03)"
+        ]
+      }
+    },
+    {
+      "id": "4209",
+      "attribution": "رواه الترمذي وابن ماجه وأحمد",
+      "grams": 3,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "8930",
+      "attribution": "متفق عليه",
+      "grams": 5,
+      "picked": {
+        "bukhari": "6293 matched",
+        "muslim": "2015 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6293 (1.00)"
+        ],
+        "muslim": [
+          "2015 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "65060",
+      "attribution": "رواه البخاري",
+      "grams": 55,
+      "picked": {
+        "bukhari": "5017 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5017 (0.91)",
+          "1161 (0.20)",
+          "5735 (0.20)"
+        ]
+      }
+    },
+    {
+      "id": "3006",
+      "attribution": "رواه أبو داود والترمذي والنسائي وأحمد",
+      "grams": 41,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "4235",
+      "attribution": "متفق عليه",
+      "grams": 7,
+      "picked": {
+        "bukhari": "6294 checked",
+        "muslim": "2016 checked"
+      },
+      "candidates": {
+        "bukhari": [
+          "6294 (0.71)"
+        ],
+        "muslim": [
+          "2016 (0.71)"
+        ]
+      }
+    },
+    {
+      "id": "6167",
+      "attribution": "رواه الترمذي",
+      "grams": 6,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3317",
+      "attribution": "رواه أبو داود والترمذي وأحمد",
+      "grams": 25,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3433",
+      "attribution": "رواه البخاري",
+      "grams": 21,
+      "picked": {
+        "bukhari": "6224 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6224 (1.00)",
+          "6226 (0.05)"
+        ]
+      }
+    },
+    {
+      "id": "5280",
+      "attribution": "رواه مسلم",
+      "grams": 8,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2995 (0.75)",
+          "2995 (0.25)",
+          "2995 (0.13)"
+        ]
+      }
+    },
+    {
+      "id": "5343",
+      "attribution": "رواه مسلم",
+      "grams": 25,
+      "picked": {
+        "muslim": "2162 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2162 (0.92)",
+          "2162 (0.08)",
+          "2564 (0.04)"
+        ]
+      }
+    },
+    {
+      "id": "5733",
+      "attribution": "رواه البخاري",
+      "grams": 15,
+      "picked": {
+        "bukhari": "904 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "904 (0.80)",
+          "1547 (0.73)",
+          "2893 (0.73)"
+        ]
+      }
+    },
+    {
+      "id": "5374",
+      "attribution": "رواه البخاري.\nملحوظة:\nلفظ البخاري: \"من استمع إلى حديث قوم\"، و\"من تَسَمَّعَ\" رواه الخرائطي في مساويء الأخلاق (ح720)",
+      "grams": 11,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "7042 (0.36)"
+        ]
+      }
+    },
+    {
+      "id": "5732",
+      "attribution": "رواه مسلم",
+      "grams": 9,
+      "picked": {
+        "muslim": "2253 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2253 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "10970",
+      "attribution": "رواه الترمذي",
+      "grams": 20,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3042",
+      "attribution": "الرواية الأولى متفق عليها، والرواية الثانية رواها مسلم",
+      "grams": 35,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6019 (0.43)",
+          "6135 (0.29)",
+          "6018 (0.17)"
+        ],
+        "muslim": [
+          "48 (0.49)",
+          "48 (0.26)",
+          "47 (0.17)"
+        ]
+      }
+    },
+    {
+      "id": "3253",
+      "attribution": "رواه أبو داود والترمذي وأحمد",
+      "grams": 18,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3474",
+      "attribution": "رواه أبو داود والترمذي وأحمد",
+      "grams": 7,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5338",
+      "attribution": "متفق عليه",
+      "grams": 30,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "4549 (0.47)",
+          "4550 (0.47)",
+          "6290 (0.43)"
+        ],
+        "muslim": [
+          "2184 (0.70)",
+          "2184 (0.47)",
+          "1081 (0.33)"
+        ]
+      }
+    },
+    {
+      "id": "6009",
+      "attribution": "رواه البخاري",
+      "grams": 4,
+      "picked": {
+        "bukhari": "3616 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "3616 (1.00)",
+          "5656 (1.00)",
+          "5662 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3442",
+      "attribution": "رواه الترمذي وابن ماجه وأحمد",
+      "grams": 17,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5647",
+      "attribution": "رواه مسلم",
+      "grams": 32,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2568 (0.56)",
+          "2568 (0.31)",
+          "1002 (0.25)"
+        ]
+      }
+    },
+    {
+      "id": "6256",
+      "attribution": "رواه أبو داود والترمذي وابن ماجه وأحمد",
+      "grams": 23,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5469",
+      "attribution": "متفق عليه واللفظ بنحوه لمسلم",
+      "grams": 3,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5659 (0.33)"
+        ],
+        "muslim": [
+          "1628 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "10971",
+      "attribution": "رواه البخاري",
+      "grams": 10,
+      "picked": {
+        "bukhari": "5664 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5664 (1.00)",
+          "2742 (0.40)",
+          "5354 (0.40)"
+        ]
+      }
+    },
+    {
+      "id": "5541",
+      "attribution": "رواه البخاري",
+      "grams": 14,
+      "picked": {
+        "bukhari": "5742 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5742 (1.00)",
+          "5743 (0.21)",
+          "5750 (0.21)"
+        ]
+      }
+    },
+    {
+      "id": "5542",
+      "attribution": "متفق عليه",
+      "grams": 13,
+      "picked": {
+        "bukhari": "5750 matched",
+        "muslim": "2191 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5750 (1.00)",
+          "5675 (0.69)",
+          "5743 (0.54)"
+        ],
+        "muslim": [
+          "2191 (1.00)",
+          "2191 (1.00)",
+          "2191 (0.77)"
+        ]
+      }
+    },
+    {
+      "id": "2985",
+      "attribution": "متفق عليه",
+      "grams": 20,
+      "picked": {
+        "bukhari": "5426 matched",
+        "muslim": "2067 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5426 (1.00)",
+          "5633 (0.30)",
+          "5632 (0.15)"
+        ],
+        "muslim": [
+          "2067 (0.85)",
+          "2067 (0.10)",
+          "2069 (0.05)"
+        ]
+      }
+    },
+    {
+      "id": "2986",
+      "attribution": "متفق عليه",
+      "grams": 7,
+      "picked": {
+        "bukhari": "5833 matched",
+        "muslim": "2073 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5833 (1.00)",
+          "5834 (1.00)",
+          "5832 (0.57)"
+        ],
+        "muslim": [
+          "2073 (1.00)",
+          "2074 (1.00)",
+          "2069 (0.57)"
+        ]
+      }
+    },
+    {
+      "id": "3356",
+      "attribution": "رواه أبو داود واللفظ له، والترمذي وابن ماجه وأحمد",
+      "grams": 4,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5357",
+      "attribution": "متفق عليه",
+      "grams": 13,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5855 (0.77)"
+        ],
+        "muslim": [
+          "2097 (0.15)"
+        ]
+      }
+    },
+    {
+      "id": "5369",
+      "attribution": "متفق عليه",
+      "grams": 9,
+      "picked": {
+        "bukhari": null,
+        "muslim": "2097 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "5856 (0.22)"
+        ],
+        "muslim": [
+          "2097 (1.00)",
+          "2097 (0.22)",
+          "2099 (0.11)"
+        ]
+      }
+    },
+    {
+      "id": "8904",
+      "attribution": "رواه مسلم",
+      "grams": 25,
+      "picked": {
+        "muslim": "338 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "338 (1.00)",
+          "336 (0.04)",
+          "336 (0.04)"
+        ]
+      }
+    },
+    {
+      "id": "2951",
+      "attribution": "متفق عليه",
+      "grams": 51,
+      "picked": {
+        "bukhari": null,
+        "muslim": "2091 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6651 (0.71)",
+          "5867 (0.18)",
+          "5876 (0.18)"
+        ],
+        "muslim": [
+          "2091 (0.86)",
+          "2090 (0.12)",
+          "2382 (0.12)"
+        ]
+      }
+    },
+    {
+      "id": "3002",
+      "attribution": "متفق عليه",
+      "grams": 28,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "367 (0.21)",
+          "588 (0.21)",
+          "1962 (0.21)"
+        ],
+        "muslim": [
+          "2069 (0.46)",
+          "2069 (0.39)",
+          "17 (0.21)"
+        ]
+      }
+    },
+    {
+      "id": "66520",
+      "attribution": "متفق عليه",
+      "grams": 7,
+      "picked": {
+        "bukhari": "13 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "13 (1.00)",
+          "14 (0.29)",
+          "15 (0.29)"
+        ],
+        "muslim": [
+          "45 (0.71)",
+          "44 (0.29)",
+          "45 (0.29)"
+        ]
+      }
+    },
+    {
+      "id": "66523",
+      "attribution": "رواه البخاري",
+      "grams": 12,
+      "picked": {
+        "bukhari": "6120 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6120 (1.00)",
+          "3484 (0.75)",
+          "3483 (0.50)"
+        ]
+      }
+    },
+    {
+      "id": "66540",
+      "attribution": "الحديث الأول: رواه مسلم، والحديث الثاني: رواه أحمد والدارمي.",
+      "grams": 36,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2553 (0.33)",
+          "2553 (0.28)"
+        ]
+      }
+    },
+    {
+      "id": "3716",
+      "attribution": "رواه البخاري",
+      "grams": 8,
+      "picked": {
+        "bukhari": "2076 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "2076 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3753",
+      "attribution": "متفق عليه",
+      "grams": 18,
+      "picked": {
+        "bukhari": null,
+        "muslim": "1562 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "3480 (0.67)",
+          "2078 (0.06)"
+        ],
+        "muslim": [
+          "1562 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "4302",
+      "attribution": "رواه الترمذي",
+      "grams": 10,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "4935",
+      "attribution": "رواه مسلم",
+      "grams": 21,
+      "picked": {
+        "muslim": "1827 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "1827 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "4939",
+      "attribution": "رواه مسلم",
+      "grams": 3,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2592 (1.00)",
+          "2592 (1.00)",
+          "2592 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "5348",
+      "attribution": "رواه مسلم",
+      "grams": 9,
+      "picked": {
+        "muslim": "2626 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2626 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "5351",
+      "attribution": "متفق عليه",
+      "grams": 8,
+      "picked": {
+        "bukhari": "6114 matched",
+        "muslim": "2609 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6114 (1.00)"
+        ],
+        "muslim": [
+          "2609 (1.00)",
+          "2609 (0.50)",
+          "2608 (0.38)"
+        ]
+      }
+    },
+    {
+      "id": "5354",
+      "attribution": "رواه مسلم",
+      "grams": 8,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "1893 (0.75)"
+        ]
+      }
+    },
+    {
+      "id": "5437",
+      "attribution": "متفق عليه",
+      "grams": 16,
+      "picked": {
+        "bukhari": "6019 matched",
+        "muslim": "47 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6019 (0.88)",
+          "6475 (0.88)",
+          "6018 (0.75)"
+        ],
+        "muslim": [
+          "47 (1.00)",
+          "47 (0.69)",
+          "48 (0.69)"
+        ]
+      }
+    },
+    {
+      "id": "2941",
+      "attribution": "متفق عليه",
+      "grams": 9,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2654 (0.56)",
+          "5976 (0.56)",
+          "6675 (0.33)"
+        ],
+        "muslim": [
+          "87 (0.44)",
+          "88 (0.22)",
+          "88 (0.11)"
+        ]
+      }
+    },
+    {
+      "id": "5332",
+      "attribution": "متفق عليه",
+      "grams": 18,
+      "picked": {
+        "bukhari": "6064 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6064 (1.00)",
+          "6066 (0.67)",
+          "6724 (0.61)"
+        ],
+        "muslim": [
+          "2563 (0.67)",
+          "2558 (0.22)",
+          "2563 (0.22)"
+        ]
+      }
+    },
+    {
+      "id": "5368",
+      "attribution": "متفق عليه",
+      "grams": 2,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6056 (1.00)",
+          "3062 (0.50)",
+          "4203 (0.50)"
+        ],
+        "muslim": [
+          "105 (1.00)",
+          "105 (1.00)",
+          "46 (0.50)"
+        ]
+      }
+    },
+    {
+      "id": "5474",
+      "attribution": "متفق عليه",
+      "grams": 5,
+      "picked": {
+        "bukhari": "2457 matched",
+        "muslim": "2668 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "2457 (1.00)",
+          "4523 (0.80)",
+          "7188 (0.80)"
+        ],
+        "muslim": [
+          "2668 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "5811",
+      "attribution": "متفق عليه",
+      "grams": 20,
+      "picked": {
+        "bukhari": "4686 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "4686 (0.85)"
+        ],
+        "muslim": [
+          "2583 (0.55)"
+        ]
+      }
+    },
+    {
+      "id": "8914",
+      "attribution": "متفق عليه",
+      "grams": 14,
+      "picked": {
+        "bukhari": "5112 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5112 (0.93)",
+          "4215 (0.86)",
+          "893 (0.79)"
+        ],
+        "muslim": [
+          "1080 (0.79)",
+          "1102 (0.79)",
+          "1182 (0.79)"
+        ]
+      }
+    },
+    {
+      "id": "8945",
+      "attribution": "رواه البخاري",
+      "grams": 1,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "7293 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3010",
+      "attribution": "متفق عليه",
+      "grams": 22,
+      "picked": {
+        "bukhari": "218 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "218 (0.91)",
+          "1361 (0.86)",
+          "6052 (0.55)"
+        ],
+        "muslim": [
+          "292 (0.64)"
+        ]
+      }
+    },
+    {
+      "id": "3578",
+      "attribution": "متفق عليه",
+      "grams": 18,
+      "picked": {
+        "bukhari": "3282 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "3282 (0.89)",
+          "6115 (0.56)",
+          "6048 (0.28)"
+        ],
+        "muslim": [
+          "2610 (0.28)",
+          "2610 (0.17)",
+          "2965 (0.11)"
+        ]
+      }
+    },
+    {
+      "id": "5328",
+      "attribution": "حديث ابن عمر -رضي الله عنهما-: متفق عليه.\nحديث جابر -رضي الله عنه-: رواه مسلم",
+      "grams": 14,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2447 (0.14)",
+          "2410 (0.07)",
+          "3158 (0.07)"
+        ],
+        "muslim": [
+          "2578 (0.64)",
+          "2579 (0.14)",
+          "532 (0.07)"
+        ]
+      }
+    },
+    {
+      "id": "3718",
+      "attribution": "رواه مسلم",
+      "grams": 14,
+      "picked": {
+        "muslim": "2551 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2551 (0.86)",
+          "2551 (0.21)"
+        ]
+      }
+    },
+    {
+      "id": "4182",
+      "attribution": "الرواية الأولى: متفق عليها.\nالرواية الثانية: رواها مسلم",
+      "grams": 10,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [],
+        "muslim": [
+          "2548 (0.30)"
+        ]
+      }
+    },
+    {
+      "id": "64599",
+      "attribution": "رواه أبو داود وأحمد",
+      "grams": 14,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5361",
+      "attribution": "رواه الترمذي",
+      "grams": 8,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3436",
+      "attribution": "رواه مسلم",
+      "grams": 87,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2542 (0.41)",
+          "2542 (0.30)",
+          "2542 (0.15)"
+        ]
+      }
+    },
+    {
+      "id": "3493",
+      "attribution": "رواه مسلم",
+      "grams": 17,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2552 (0.59)",
+          "2552 (0.18)",
+          "2552 (0.18)"
+        ]
+      }
+    },
+    {
+      "id": "3775",
+      "attribution": "رواه مسلم",
+      "grams": 8,
+      "picked": {
+        "muslim": "1510 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "1510 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "10417",
+      "attribution": "متفق عليه",
+      "grams": 187,
+      "picked": {
+        "bukhari": "2215 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2215 (0.98)",
+          "2333 (0.15)",
+          "3465 (0.14)"
+        ],
+        "muslim": [
+          "2743 (0.14)",
+          "2743 (0.02)",
+          "945 (0.01)"
+        ]
+      }
+    },
+    {
+      "id": "5367",
+      "attribution": "متفق عليه",
+      "grams": 3,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5984 (0.67)",
+          "3062 (0.33)",
+          "4203 (0.33)"
+        ],
+        "muslim": [
+          "2556 (1.00)",
+          "2556 (0.67)",
+          "46 (0.33)"
+        ]
+      }
+    },
+    {
+      "id": "3863",
+      "attribution": "رواه مسلم",
+      "grams": 16,
+      "picked": {
+        "muslim": "2558 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2558 (1.00)",
+          "800 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "8893",
+      "attribution": "رواه مسلم",
+      "grams": 2,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2117 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "5935",
+      "attribution": "رواه أبو داود وأحمد",
+      "grams": 8,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "8361",
+      "attribution": "رواه أبو داود والترمذي والنسائي وأحمد والدارمي",
+      "grams": 6,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "8890",
+      "attribution": "متفق عليه",
+      "grams": 14,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2140 (0.71)",
+          "5108 (0.71)",
+          "1303 (0.64)"
+        ],
+        "muslim": [
+          "1103 (0.64)",
+          "1095 (0.57)",
+          "1104 (0.57)"
+        ]
+      }
+    },
+    {
+      "id": "8892",
+      "attribution": "رواه أبو داود",
+      "grams": 17,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10100",
+      "attribution": "الرواية الأولى:\nمتفق عليها.\nالرواية الثانية:\nرواها البخاري.\nالرواية الثالثة:\nمتفق عليها",
+      "grams": 83,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6009 (0.47)",
+          "2466 (0.46)",
+          "2363 (0.19)"
+        ],
+        "muslim": [
+          "2244 (0.60)",
+          "2245 (0.24)",
+          "1914 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "8842",
+      "attribution": "رواه مسلم مختصرا، وأبو داود وأحمد بتمامه",
+      "grams": 21,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": []
+      }
+    },
+    {
+      "id": "8891",
+      "attribution": "رواه مسلم",
+      "grams": 6,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2118 (0.50)"
+        ]
+      }
+    },
+    {
+      "id": "3381",
+      "attribution": "رواه أحمد",
+      "grams": 29,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3110",
+      "attribution": "متفق عليه",
+      "grams": 29,
+      "picked": {
+        "bukhari": "3338 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "3338 (1.00)",
+          "160 (0.03)",
+          "5719 (0.03)"
+        ],
+        "muslim": [
+          "2936 (0.52)",
+          "2671 (0.03)"
+        ]
+      }
+    },
+    {
+      "id": "3537",
+      "attribution": "متفق عليه",
+      "grams": 32,
+      "picked": {
+        "bukhari": "7239 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "7239 (0.84)",
+          "887 (0.28)",
+          "570 (0.19)"
+        ],
+        "muslim": [
+          "638 (0.22)",
+          "252 (0.16)",
+          "1876 (0.16)"
+        ]
+      }
+    },
+    {
+      "id": "4970",
+      "attribution": "حديث جابر رضي الله عنه: رواه مسلم.\nحديث أبي هريرة رضي الله عنه: متفق عليه",
+      "grams": 21,
+      "picked": {
+        "bukhari": null,
+        "muslim": "2285 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6483 (0.14)"
+        ],
+        "muslim": [
+          "2285 (1.00)",
+          "207 (0.10)",
+          "2284 (0.10)"
+        ]
+      }
+    },
+    {
+      "id": "3226",
+      "attribution": "متفق عليه",
+      "grams": 21,
+      "picked": {
+        "bukhari": "516 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "516 (0.90)",
+          "383 (0.33)",
+          "521 (0.33)"
+        ],
+        "muslim": [
+          "543 (0.71)",
+          "524 (0.33)",
+          "527 (0.33)"
+        ]
+      }
+    },
+    {
+      "id": "3290",
+      "attribution": "متفق عليه",
+      "grams": 32,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "7377 (0.56)",
+          "1284 (0.53)",
+          "6655 (0.34)"
+        ],
+        "muslim": [
+          "923 (0.56)",
+          "24 (0.03)",
+          "182 (0.03)"
+        ]
+      }
+    },
+    {
+      "id": "4228",
+      "attribution": "متفق عليه",
+      "grams": 27,
+      "picked": {
+        "bukhari": "1128 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1128 (0.89)",
+          "1928 (0.41)",
+          "1164 (0.30)"
+        ],
+        "muslim": [
+          "718 (0.67)",
+          "1106 (0.30)",
+          "1106 (0.30)"
+        ]
+      }
+    },
+    {
+      "id": "4249",
+      "attribution": "حديث أبي قتادة -رضي الله عنه-: رواه البخاري.\nحديث أنس -رضي الله عنه-: متفق عليه",
+      "grams": 17,
+      "picked": {
+        "bukhari": "868 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "868 (0.82)",
+          "707 (0.71)",
+          "709 (0.24)"
+        ],
+        "muslim": [
+          "252 (0.06)",
+          "470 (0.06)",
+          "638 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "6179",
+      "attribution": "متفق عليه",
+      "grams": 39,
+      "picked": {
+        "bukhari": "3220 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "3220 (0.92)",
+          "6 (0.87)",
+          "3554 (0.77)"
+        ],
+        "muslim": [
+          "2308 (0.44)",
+          "1185 (0.26)",
+          "1206 (0.26)"
+        ]
+      }
+    },
+    {
+      "id": "3885",
+      "attribution": "حديث جابر متفق عليه ، وحديث أنس رواه مسلم",
+      "grams": 74,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "7209 (0.16)",
+          "1166 (0.15)",
+          "1217 (0.15)"
+        ],
+        "muslim": [
+          "2312 (0.35)",
+          "2312 (0.22)",
+          "2311 (0.18)"
+        ]
+      }
+    },
+    {
+      "id": "4967",
+      "attribution": "متفق عليه",
+      "grams": 26,
+      "picked": {
+        "bukhari": "1469 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1469 (0.92)",
+          "6470 (0.50)",
+          "1427 (0.23)"
+        ],
+        "muslim": [
+          "1053 (0.73)"
+        ]
+      }
+    },
+    {
+      "id": "5790",
+      "attribution": "رواه البخاري",
+      "grams": 17,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2821 (0.65)",
+          "3148 (0.65)"
+        ]
+      }
+    },
+    {
+      "id": "5648",
+      "attribution": "رواه البخاري بنحوه، للفائدة: قد يكون النووي أخذه من كتاب الحميدي، انظر: الجمع بين الصحيح (1/556 رقم925)",
+      "grams": 79,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1277 (0.49)",
+          "2093 (0.48)",
+          "5810 (0.35)"
+        ]
+      }
+    },
+    {
+      "id": "5807",
+      "attribution": "رواه مسلم",
+      "grams": 7,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "1056 (0.71)"
+        ]
+      }
+    },
+    {
+      "id": "6216",
+      "attribution": "رواه البخاري",
+      "grams": 12,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2568 (0.58)",
+          "5178 (0.42)"
+        ]
+      }
+    },
+    {
+      "id": "10969",
+      "attribution": "رواه ابن ماجه",
+      "grams": 5,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "4946",
+      "attribution": "رواه أبو داود وابن ماجه",
+      "grams": 14,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10972",
+      "attribution": "رواه أحمد",
+      "grams": 9,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3628",
+      "attribution": "متفق عليه",
+      "grams": 12,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2306 (0.50)",
+          "2390 (0.42)",
+          "2606 (0.33)"
+        ],
+        "muslim": [
+          "1601 (0.17)",
+          "1601 (0.08)"
+        ]
+      }
+    },
+    {
+      "id": "4940",
+      "attribution": "متفق عليه",
+      "grams": 57,
+      "picked": {
+        "bukhari": "6088 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6088 (0.82)",
+          "5809 (0.65)",
+          "3149 (0.56)"
+        ],
+        "muslim": [
+          "1057 (0.70)",
+          "1104 (0.16)",
+          "1119 (0.16)"
+        ]
+      }
+    },
+    {
+      "id": "6221",
+      "attribution": "متفق عليه.\nتنبيه:\nأخرجه البخاري ومسلم في حديثسن متفرقين في موضعين",
+      "grams": 51,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1973 (0.24)",
+          "3561 (0.24)",
+          "6038 (0.20)"
+        ],
+        "muslim": [
+          "2330 (0.24)",
+          "1095 (0.16)",
+          "1104 (0.16)"
+        ]
+      }
+    },
+    {
+      "id": "6391",
+      "attribution": "رواه مسلم",
+      "grams": 38,
+      "picked": {
+        "muslim": "2328 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2328 (0.89)",
+          "1890 (0.16)",
+          "2311 (0.16)"
+        ]
+      }
+    },
+    {
+      "id": "10968",
+      "attribution": "رواه مسلم",
+      "grams": 9,
+      "picked": {
+        "muslim": "2326 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2326 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3366",
+      "attribution": "متفق عليه",
+      "grams": 42,
+      "picked": {
+        "bukhari": null,
+        "muslim": "651 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "2420 (0.19)",
+          "657 (0.17)",
+          "644 (0.07)"
+        ],
+        "muslim": [
+          "651 (1.00)",
+          "437 (0.05)",
+          "651 (0.05)"
+        ]
+      }
+    },
+    {
+      "id": "5435",
+      "attribution": "رواه مسلم",
+      "grams": 25,
+      "picked": {
+        "muslim": "657 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "657 (1.00)",
+          "657 (0.40)",
+          "109 (0.04)"
+        ]
+      }
+    },
+    {
+      "id": "65003",
+      "attribution": "رواه مسلم",
+      "grams": 0,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": []
+      }
+    },
+    {
+      "id": "65004",
+      "attribution": "رواه مسلم",
+      "grams": 35,
+      "picked": {
+        "muslim": "223 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "223 (0.91)",
+          "595 (0.06)",
+          "2137 (0.03)"
+        ]
+      }
+    },
+    {
+      "id": "3365",
+      "attribution": "متفق عليه",
+      "grams": 8,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "527 (0.50)",
+          "5970 (0.50)",
+          "2782 (0.38)"
+        ],
+        "muslim": [
+          "85 (0.50)",
+          "83 (0.25)",
+          "85 (0.25)"
+        ]
+      }
+    },
+    {
+      "id": "3512",
+      "attribution": "متفق عليه",
+      "grams": 34,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "2157 (0.79)",
+          "2715 (0.50)",
+          "8 (0.47)"
+        ],
+        "muslim": [
+          "17 (0.47)",
+          "17 (0.47)",
+          "16 (0.38)"
+        ]
+      }
+    },
+    {
+      "id": "3569",
+      "attribution": "رواه مسلم",
+      "grams": 0,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": []
+      }
+    },
+    {
+      "id": "3732",
+      "attribution": "رواه مسلم",
+      "grams": 16,
+      "picked": {
+        "muslim": "488 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "488 (1.00)",
+          "649 (0.06)",
+          "2572 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "66526",
+      "attribution": "رواه مسلم",
+      "grams": 35,
+      "picked": {
+        "muslim": "223 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "223 (0.91)",
+          "595 (0.06)",
+          "2753 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "6263",
+      "attribution": "رواه مسلم",
+      "grams": 11,
+      "picked": {
+        "muslim": "245 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "245 (1.00)",
+          "857 (0.18)",
+          "232 (0.09)"
+        ]
+      }
+    },
+    {
+      "id": "3731",
+      "attribution": "متفق عليه",
+      "grams": 38,
+      "picked": {
+        "bukhari": "1142 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1142 (1.00)",
+          "3269 (0.89)"
+        ],
+        "muslim": [
+          "776 (0.37)"
+        ]
+      }
+    },
+    {
+      "id": "65080",
+      "attribution": "رواه البخاري",
+      "grams": 28,
+      "picked": {
+        "bukhari": "214 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "214 (0.86)",
+          "217 (0.32)",
+          "1031 (0.32)"
+        ]
+      }
+    },
+    {
+      "id": "3368",
+      "attribution": "الرواية الأولى: متفق عليه.\nالرواية الثانية: رواها مسلم.\nالرواية الثالثة: رواها مسلم",
+      "grams": 72,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "136 (0.28)",
+          "3327 (0.18)",
+          "3404 (0.18)"
+        ],
+        "muslim": [
+          "246 (0.50)",
+          "250 (0.17)",
+          "1081 (0.17)"
+        ]
+      }
+    },
+    {
+      "id": "6264",
+      "attribution": "رواه مسلم",
+      "grams": 13,
+      "picked": {
+        "muslim": "229 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "229 (1.00)",
+          "193 (0.31)",
+          "226 (0.31)"
+        ]
+      }
+    },
+    {
+      "id": "10044",
+      "attribution": "رواه الدارقطني",
+      "grams": 6,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3078",
+      "attribution": "متفق عليه",
+      "grams": 10,
+      "picked": {
+        "bukhari": "394 matched",
+        "muslim": "264 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "394 (1.00)",
+          "144 (0.10)"
+        ],
+        "muslim": [
+          "264 (0.80)"
+        ]
+      }
+    },
+    {
+      "id": "3150",
+      "attribution": "متفق عليه",
+      "grams": 5,
+      "picked": {
+        "bukhari": "142 matched",
+        "muslim": "375 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "142 (1.00)",
+          "6322 (1.00)",
+          "832 (0.60)"
+        ],
+        "muslim": [
+          "375 (1.00)",
+          "588 (0.60)",
+          "588 (0.60)"
+        ]
+      }
+    },
+    {
+      "id": "10051",
+      "attribution": "رواه مسلم",
+      "grams": 8,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "269 (0.75)",
+          "1007 (0.13)"
+        ]
+      }
+    },
+    {
+      "id": "3023",
+      "attribution": "متفق عليه",
+      "grams": 29,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "3102 (0.52)",
+          "1091 (0.34)",
+          "1092 (0.34)"
+        ],
+        "muslim": [
+          "1126 (0.34)",
+          "1080 (0.31)",
+          "1080 (0.31)"
+        ]
+      }
+    },
+    {
+      "id": "10045",
+      "attribution": "رواه الدارقطني",
+      "grams": 1,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10046",
+      "attribution": "رواه أبو داود والترمذي وابن ماجه وأحمد",
+      "grams": 0,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10048",
+      "attribution": "رواه مسلم",
+      "grams": 4,
+      "picked": {
+        "muslim": "262 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "262 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3144",
+      "attribution": "متفق عليه",
+      "grams": 8,
+      "picked": {
+        "bukhari": "5891 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5891 (1.00)",
+          "6297 (0.50)"
+        ],
+        "muslim": [
+          "257 (0.50)",
+          "258 (0.25)",
+          "257 (0.13)"
+        ]
+      }
+    },
+    {
+      "id": "3279",
+      "attribution": "متفق عليه",
+      "grams": 2,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5893 (0.50)"
+        ],
+        "muslim": [
+          "259 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3588",
+      "attribution": "رواه النسائي وأحمد",
+      "grams": 3,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3063",
+      "attribution": "متفق عليه",
+      "grams": 17,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "245 (0.71)",
+          "889 (0.65)",
+          "6314 (0.65)"
+        ],
+        "muslim": [
+          "255 (0.41)",
+          "255 (0.35)",
+          "448 (0.35)"
+        ]
+      }
+    },
+    {
+      "id": "3456",
+      "attribution": "متفق عليه.\nملحوظة: لفظه أخذ من الجمع بين الصحيحين للحميدي",
+      "grams": 30,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "244 (0.37)",
+          "1795 (0.30)",
+          "2547 (0.30)"
+        ],
+        "muslim": [
+          "1221 (0.23)",
+          "1649 (0.23)",
+          "94 (0.20)"
+        ]
+      }
+    },
+    {
+      "id": "3652",
+      "attribution": "رواه مسلم",
+      "grams": 20,
+      "picked": {
+        "muslim": "253 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "253 (0.80)",
+          "276 (0.40)",
+          "276 (0.25)"
+        ]
+      }
+    },
+    {
+      "id": "3572",
+      "attribution": "رواه البخاري",
+      "grams": 2,
+      "picked": {
+        "bukhari": null
+      },
+      "candidates": {
+        "bukhari": [
+          "888 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "4196",
+      "attribution": "متفق عليه",
+      "grams": 9,
+      "picked": {
+        "bukhari": "38 matched",
+        "muslim": "760 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "38 (1.00)",
+          "2014 (1.00)",
+          "1901 (0.89)"
+        ],
+        "muslim": [
+          "760 (1.00)",
+          "759 (0.78)",
+          "759 (0.78)"
+        ]
+      }
+    },
+    {
+      "id": "3738",
+      "attribution": "متفق عليه",
+      "grams": 27,
+      "picked": {
+        "bukhari": "1896 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1896 (1.00)",
+          "1834 (0.04)",
+          "2790 (0.04)"
+        ],
+        "muslim": [
+          "1152 (0.67)",
+          "1353 (0.04)",
+          "1851 (0.04)"
+        ]
+      }
+    },
+    {
+      "id": "6399",
+      "attribution": "رواه الترمذي",
+      "grams": 14,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10107",
+      "attribution": "متفق عليه",
+      "grams": 9,
+      "picked": {
+        "bukhari": null,
+        "muslim": "1079 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "1898 (0.44)",
+          "3277 (0.44)",
+          "1899 (0.11)"
+        ],
+        "muslim": [
+          "1079 (1.00)",
+          "1079 (0.11)"
+        ]
+      }
+    },
+    {
+      "id": "5512",
+      "attribution": "رواه مسلم",
+      "grams": 17,
+      "picked": {
+        "muslim": "2588 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2588 (1.00)",
+          "2572 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "5805",
+      "attribution": "متفق عليه",
+      "grams": 6,
+      "picked": {
+        "bukhari": "5352 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5352 (1.00)",
+          "806 (0.17)",
+          "2348 (0.17)"
+        ],
+        "muslim": [
+          "993 (0.33)",
+          "182 (0.17)",
+          "187 (0.17)"
+        ]
+      }
+    },
+    {
+      "id": "3379",
+      "attribution": "متفق عليه",
+      "grams": 19,
+      "picked": {
+        "bukhari": "1442 matched",
+        "muslim": "1010 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "1442 (1.00)"
+        ],
+        "muslim": [
+          "1010 (1.00)",
+          "1348 (0.05)"
+        ]
+      }
+    },
+    {
+      "id": "5862",
+      "attribution": "متفق عليه",
+      "grams": 25,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "1410 (0.68)",
+          "7430 (0.64)"
+        ],
+        "muslim": [
+          "1014 (0.24)",
+          "1014 (0.20)"
+        ]
+      }
+    },
+    {
+      "id": "6615",
+      "attribution": "متفق عليه",
+      "grams": 33,
+      "picked": {
+        "bukhari": null,
+        "muslim": "1016 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "7512 (0.79)",
+          "1413 (0.18)",
+          "7443 (0.18)"
+        ],
+        "muslim": [
+          "1016 (1.00)",
+          "2814 (0.09)",
+          "183 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "65014",
+      "attribution": "رواه أحمد",
+      "grams": 81,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65613",
+      "attribution": "رواه أبو داود والنسائي وابن ماجه",
+      "grams": 0,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3358",
+      "attribution": "متفق عليه",
+      "grams": 11,
+      "picked": {
+        "bukhari": "5995 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5995 (1.00)",
+          "1418 (0.36)"
+        ],
+        "muslim": [
+          "2629 (0.45)"
+        ]
+      }
+    },
+    {
+      "id": "6275",
+      "attribution": "رواه الترمذي",
+      "grams": 23,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65099",
+      "attribution": "رواه مسلم",
+      "grams": 71,
+      "picked": {
+        "muslim": "395 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "395 (1.00)",
+          "395 (0.10)",
+          "404 (0.04)"
+        ]
+      }
+    },
+    {
+      "id": "6276",
+      "attribution": "رواه أبو داود",
+      "grams": 4,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10113",
+      "attribution": "متفق عليه",
+      "grams": 14,
+      "picked": {
+        "bukhari": null,
+        "muslim": "798 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "4937 (0.14)"
+        ],
+        "muslim": [
+          "798 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "65049",
+      "attribution": "رواه الترمذي وأحمد",
+      "grams": 71,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65053",
+      "attribution": "رواه مسلم",
+      "grams": 23,
+      "picked": {
+        "muslim": "802 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "802 (0.91)",
+          "803 (0.09)",
+          "1227 (0.09)"
+        ]
+      }
+    },
+    {
+      "id": "65054",
+      "attribution": "رواه أبو داود والترمذي والنسائي في الكبرى وأحمد",
+      "grams": 15,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65055",
+      "attribution": "رواه أبو داود والترمذي والنسائي",
+      "grams": 6,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10853",
+      "attribution": "رواه ابن ماجه وأحمد",
+      "grams": 32,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65058",
+      "attribution": "رواه أحمد",
+      "grams": 44,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3571",
+      "attribution": "متفق عليه",
+      "grams": 3,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [],
+        "muslim": []
+      }
+    },
+    {
+      "id": "5658",
+      "attribution": "متفق عليه",
+      "grams": 13,
+      "picked": {
+        "bukhari": "5031 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5031 (1.00)"
+        ],
+        "muslim": [
+          "789 (0.77)"
+        ]
+      }
+    },
+    {
+      "id": "65218",
+      "attribution": "رواه ابن ماجه",
+      "grams": 29,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65258",
+      "attribution": "رواه أبو داود والترمذي والنسائي وابن ماجه وأحمد",
+      "grams": 20,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10852",
+      "attribution": "متفق عليه",
+      "grams": 7,
+      "picked": {
+        "bukhari": "5060 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "5060 (0.86)",
+          "7364 (0.86)",
+          "5061 (0.57)"
+        ],
+        "muslim": [
+          "2667 (0.43)",
+          "2667 (0.29)"
+        ]
+      }
+    },
+    {
+      "id": "4191",
+      "attribution": "رواه الترمذي",
+      "grams": 9,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5518",
+      "attribution": "متفق عليه",
+      "grams": 27,
+      "picked": {
+        "bukhari": "71 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "71 (1.00)",
+          "3116 (0.41)",
+          "7312 (0.41)"
+        ],
+        "muslim": [
+          "1037 (0.33)",
+          "1037 (0.22)",
+          "1037 (0.22)"
+        ]
+      }
+    },
+    {
+      "id": "3007",
+      "attribution": "رواه مسلم",
+      "grams": 22,
+      "picked": {
+        "muslim": "2701 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2701 (0.82)",
+          "127 (0.09)",
+          "179 (0.09)"
+        ]
+      }
+    },
+    {
+      "id": "65045",
+      "attribution": "رواه ابن ماجه",
+      "grams": 25,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65047",
+      "attribution": "رواه ابن ماجه",
+      "grams": 17,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65059",
+      "attribution": "رواه مسلم",
+      "grams": 16,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "810 (0.75)",
+          "138 (0.06)",
+          "177 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "65566",
+      "attribution": "رواه مسلم",
+      "grams": 20,
+      "picked": {
+        "muslim": "1631 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "1631 (1.00)"
+        ]
+      }
+    },
+    {
+      "id": "3126",
+      "attribution": "رواه الترمذي",
+      "grams": 1,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "66541",
+      "attribution": "رواه أحمد والترمذي وابن ماجه وابن حبان",
+      "grams": 13,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "4817",
+      "attribution": "متفق عليه",
+      "grams": 38,
+      "picked": {
+        "bukhari": null,
+        "muslim": "2758 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "7507 (0.11)",
+          "6398 (0.05)",
+          "794 (0.03)"
+        ],
+        "muslim": [
+          "2758 (0.95)",
+          "483 (0.05)",
+          "188 (0.03)"
+        ]
+      }
+    },
+    {
+      "id": "5516",
+      "attribution": "متفق عليه",
+      "grams": 14,
+      "picked": {
+        "bukhari": "6405 matched",
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "6405 (1.00)",
+          "3293 (0.14)",
+          "6403 (0.14)"
+        ],
+        "muslim": [
+          "2691 (0.71)",
+          "597 (0.29)",
+          "332 (0.07)"
+        ]
+      }
+    },
+    {
+      "id": "5517",
+      "attribution": "متفق عليه",
+      "grams": 27,
+      "picked": {
+        "bukhari": null,
+        "muslim": null
+      },
+      "candidates": {
+        "bukhari": [
+          "3293 (0.63)",
+          "6403 (0.63)",
+          "2995 (0.59)"
+        ],
+        "muslim": [
+          "2691 (0.63)",
+          "593 (0.59)",
+          "1344 (0.59)"
+        ]
+      }
+    },
+    {
+      "id": "65086",
+      "attribution": "رواه مسلم",
+      "grams": 52,
+      "picked": {
+        "muslim": "385 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "385 (1.00)",
+          "379 (0.23)",
+          "382 (0.17)"
+        ]
+      }
+    },
+    {
+      "id": "3719",
+      "attribution": "رواه مسلم",
+      "grams": 7,
+      "picked": {
+        "muslim": null
+      },
+      "candidates": {
+        "muslim": [
+          "2676 (0.71)"
+        ]
+      }
+    },
+    {
+      "id": "3791",
+      "attribution": "رواه الترمذي",
+      "grams": 31,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3910",
+      "attribution": "رواه أبو داود",
+      "grams": 17,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "6274",
+      "attribution": "متفق عليه",
+      "grams": 8,
+      "picked": {
+        "bukhari": "5009 matched",
+        "muslim": "808 checked"
+      },
+      "candidates": {
+        "bukhari": [
+          "5009 (1.00)",
+          "5051 (1.00)",
+          "4008 (0.38)"
+        ],
+        "muslim": [
+          "808 (0.63)",
+          "807 (0.38)",
+          "1580 (0.38)"
+        ]
+      }
+    },
+    {
+      "id": "5490",
+      "attribution": "رواه أبو داود والترمذي والنسائي في الكبرى وابن ماجه",
+      "grams": 17,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "5503",
+      "attribution": "رواه البخاري",
+      "grams": 67,
+      "picked": {
+        "bukhari": "6306 matched"
+      },
+      "candidates": {
+        "bukhari": [
+          "6306 (0.97)",
+          "6323 (0.45)",
+          "834 (0.04)"
+        ]
+      }
+    },
+    {
+      "id": "6082",
+      "attribution": "رواه أبو داود والترمذي والنسائي",
+      "grams": 14,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "6093",
+      "attribution": "رواه أبو داود والترمذي والنسائي في الكبرى وابن ماجه وأحمد",
+      "grams": 31,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "3008",
+      "attribution": "رواه مسلم",
+      "grams": 59,
+      "picked": {
+        "muslim": "2723 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2723 (0.93)",
+          "2723 (0.58)",
+          "2723 (0.44)"
+        ]
+      }
+    },
+    {
+      "id": "5508",
+      "attribution": "رواه مسلم",
+      "grams": 30,
+      "picked": {
+        "muslim": "2726 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2726 (0.93)",
+          "484 (0.03)",
+          "2691 (0.03)"
+        ]
+      }
+    },
+    {
+      "id": "3037",
+      "attribution": "رواه مسلم",
+      "grams": 34,
+      "picked": {
+        "muslim": "2018 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "2018 (1.00)",
+          "2018 (0.06)"
+        ]
+      }
+    },
+    {
+      "id": "3504",
+      "attribution": "رواه أبو داود والترمذي",
+      "grams": 36,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "10571",
+      "attribution": "رواه أبو داود وابن ماجه وأحمد",
+      "grams": 12,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "8294",
+      "attribution": "رواه أبو داود",
+      "grams": 8,
+      "picked": {},
+      "candidates": {}
+    },
+    {
+      "id": "65092",
+      "attribution": "رواه مسلم",
+      "grams": 16,
+      "picked": {
+        "muslim": "713 matched"
+      },
+      "candidates": {
+        "muslim": [
+          "713 (1.00)",
+          "714 (0.13)",
+          "2723 (0.13)"
+        ]
+      }
+    }
+  ],
+  "heldBack": [
+    {
+      "id": "3079",
+      "topic": "manners-eating",
+      "title": "None of you should hold his penis with his right hand while urinating, nor wipe himself after answering the call of nature using his right hand, nor breathe into the vessel"
+    },
+    {
+      "id": "2952",
+      "topic": "manners-eating",
+      "title": "Every drink that intoxicates is unlawful."
+    },
+    {
+      "id": "2954",
+      "topic": "manners-eating",
+      "title": "The prohibition of wine was revealed, which is made of five things: grapes, dates, honey, wheat, and barley."
+    },
+    {
+      "id": "3021",
+      "topic": "manners-sleeping",
+      "title": "O Messenger of Allah, may anyone of us sleep while being ritually impure? He said: Yes, he may sleep if he makes ablution"
+    },
+    {
+      "id": "3033",
+      "topic": "manners-sleeping",
+      "title": "When any of you performs ablution, let him sniff water in his nose and then blow it out. Whoever cleans his private parts with stones, let him do so with an odd number of stones"
+    },
+    {
+      "id": "66521",
+      "topic": "character-good",
+      "title": "Indeed, Allah has enjoined Ihsān (kindness/excellence) in all things"
+    },
+    {
+      "id": "4319",
+      "topic": "character-good",
+      "title": "Verily, Allah has enjoined kindness in all things"
+    },
+    {
+      "id": "4709",
+      "topic": "character-good",
+      "title": "Do not get angry"
+    },
+    {
+      "id": "3331",
+      "topic": "character-avoid",
+      "title": "“Avoid the seven destructive sins"
+    },
+    {
+      "id": "3260",
+      "topic": "family-parents",
+      "title": "Then return to your parents and accompany them in a best way"
+    },
+    {
+      "id": "64654",
+      "topic": "family-animals",
+      "title": "Who has done this? May Allah curse whoever has done this. Verily, the Messenger of Allah (may Allah’s peace and blessings be upon him) invoked curse upon whoever makes any living creature a target of shooting"
+    },
+    {
+      "id": "64656",
+      "topic": "family-animals",
+      "title": "The Messenger of Allah (may Allah's peace and blessings be upon him) forbade killing an animal by tying it up and taking aim at it"
+    },
+    {
+      "id": "3337",
+      "topic": "prophet-mercy",
+      "title": "Allah brought the corners of the earth together for me, so I saw its eastern and western parts. The dominion of my Ummah will definitely reach as far as what was brought together for me (all parts of the world). I have been granted the two treasures, the red and the white"
+    },
+    {
+      "id": "5655",
+      "topic": "prophet-humility",
+      "title": "A slave girl of Madīnah would take hold of the hand of the Prophet (may Allah's peace and blessings be upon him) and would take him wherever she wished"
+    },
+    {
+      "id": "3591",
+      "topic": "worship-prayer",
+      "title": "The five (daily) prayers, Friday prayer to the next Friday prayer, and Ramadan to the next Ramadan are expiation of the sins committed between them, so long as major sins are avoided"
+    },
+    {
+      "id": "3033",
+      "topic": "worship-toilet",
+      "title": "When any of you performs ablution, let him sniff water in his nose and then blow it out. Whoever cleans his private parts with stones, let him do so with an odd number of stones"
+    },
+    {
+      "id": "3079",
+      "topic": "worship-toilet",
+      "title": "None of you should hold his penis with his right hand while urinating, nor wipe himself after answering the call of nature using his right hand, nor breathe into the vessel"
+    },
+    {
+      "id": "3030",
+      "topic": "worship-toilet",
+      "title": "When the Messenger of Allah (may Allah's peace and blessings be upon him) entered the privy, a servant and I used to carry a waterskin and a pointed staff, and he would cleanse himself with water"
+    },
+    {
+      "id": "3730",
+      "topic": "worship-clean",
+      "title": "Ten practices are part of the Fitrah: Trimming the mustache, letting the beard grow, using the tooth-stick, rinsing the nose, trimming the nails, washing the finger joints, plucking the armpit hair, shaving the pubic hair, and washing the private parts with water"
+    },
+    {
+      "id": "66049",
+      "topic": "worship-clean",
+      "title": "A time limit was set for us regarding trimming the mustache, clipping the nails, plucking the armpit hair, and shaving the pubic hair—that we should not leave them for more than forty nights"
+    },
+    {
+      "id": "3546",
+      "topic": "worship-fasting",
+      "title": "Allah said: All the deeds of the son of Adam are for himself except for fasting, as it is, indeed, for Me, and I give reward for it"
+    },
+    {
+      "id": "5863",
+      "topic": "worship-fasting",
+      "title": "Those who can afford marriage should marry, for it is more effective in lowering the gaze and guarding chastity. He who cannot afford it should fast, for indeed it serves as a restraint for him"
+    },
+    {
+      "id": "3125",
+      "topic": "worship-charity",
+      "title": "An honest Muslim storekeeper, who carries out the orders of his master and pays fully what he has been ordered to give with a good heart and pays to that person to whom he was ordered to pay, is regarded as one of the two charitable persons"
+    },
+    {
+      "id": "65021",
+      "topic": "learning-knowledge",
+      "title": "Among the portents of the Hour is that knowledge will be taken away, ignorance will prevail, adultery will spread, drinking alcohol will be common, and men will decrease in number while women will increase so much that for fifty women there will only be one man to look after them"
+    },
+    {
+      "id": "3575",
+      "topic": "learning-dhikr",
+      "title": "Shall I not inform you of the best of your deeds and the purest in the sight of your Sovereign and the highest in your ranks"
+    }
+  ]
+}

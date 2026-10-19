@@ -1,6 +1,7 @@
 {
-  "bundleVersion": "20261019085006",
-  "generatedAt": "2026-10-19T08:50:06.454Z",
+  "schemaVersion": 1,
+  "bundleVersion": "20261019091009",
+  "generatedAt": "2026-10-19T09:10:09.835Z",
   "languages": [
     "en"
   ],

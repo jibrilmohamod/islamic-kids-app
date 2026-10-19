@@ -13,3 +13,7 @@ app/android/.gradle/
 # OS
 .DS_Store
 Thumbs.db
+
+# CI scratch
+pipeline.log
+published.json

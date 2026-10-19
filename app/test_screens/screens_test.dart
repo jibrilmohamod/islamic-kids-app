@@ -115,6 +115,8 @@ void main() {
     phone(tester);
     final dir = Directory.systemTemp.createTempSync('shelf_preview');
     final store = (await tester.runAsync(() => LocalStore.open(dir)))!;
+    // test_screens/ is a test folder the analyzer does not recognise as one.
+    // ignore: invalid_use_of_visible_for_testing_member
     _state.store = store;
     final b = _state.bundle!;
     _state

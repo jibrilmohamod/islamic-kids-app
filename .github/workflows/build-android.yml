@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -24,7 +24,29 @@ jobs:
         run: node --test pipeline/pipeline.test.mjs
 
       - name: Build the content bundle from QuranEnc and HadeethEnc
-        run: node pipeline/build-bundle.mjs
+        run: |
+          node pipeline/build-bundle.mjs | tee pipeline.log
+          echo "::notice title=Content bundle::$(tail -n 1 pipeline.log)"
+
+      # Keep the shipped text under version control so every change to it can
+      # be reviewed. Only the bundle file is committed; [skip ci] stops a loop.
+      - name: Commit the content bundle if it changed
+        if: github.event_name != 'pull_request'
+        run: |
+          # bundleVersion and generatedAt change on every run; commit only when the content changed.
+          if git cat-file -e HEAD:app/assets/content/bundle.json 2>/dev/null; then
+            git show HEAD:app/assets/content/bundle.json | node pipeline/strip-stamps.mjs > "$RUNNER_TEMP/old.json"
+            node pipeline/strip-stamps.mjs < app/assets/content/bundle.json > "$RUNNER_TEMP/new.json"
+            if cmp -s "$RUNNER_TEMP/old.json" "$RUNNER_TEMP/new.json"; then
+              echo "Content unchanged, nothing to commit"
+              exit 0
+            fi
+          fi
+          git add app/assets/content/bundle.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "content: update bundle from QuranEnc and HadeethEnc [skip ci]"
+          git push
 
       - uses: actions/setup-java@v4
         with:

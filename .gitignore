@@ -25,4 +25,3 @@ app/assets/fonts/
 app/android/key.properties
 *.jks
 *.keystore
-app/test_screens/goldens/

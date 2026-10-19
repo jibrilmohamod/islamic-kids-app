@@ -37,20 +37,6 @@ class AudioService {
     return n;
   }
 
-  /// Every saved ayah number and its file size, from one folder listing.
-  Future<Map<int, int>> savedFiles() async {
-    final out = <int, int>{};
-    final dir = await _dir();
-    await for (final e in dir.list()) {
-      if (e is! File) continue;
-      final name = e.uri.pathSegments.last;
-      if (!name.endsWith('.mp3')) continue;
-      final n = int.tryParse(name.substring(0, name.length - 4));
-      if (n != null) out[n] = await e.length();
-    }
-    return out;
-  }
-
   Future<File> ensure(Ayah a) async {
     final n = a.n;
     if (n == null) throw StateError('No audio number for ${a.key}');

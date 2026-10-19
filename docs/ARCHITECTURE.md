@@ -77,42 +77,6 @@ Fail-closed rule: the pipeline writes nothing if any required text is empty or
 an id repeats. CI commits the bundle only when its content (not its timestamp)
 changes, so every text change is a reviewable commit.
 
-### Mushaf (book) view
-
-- Line and page breaks of the Madina Mushaf, 1441H print (604 pages, 15
-  lines): from the `quran-qcf4` npm package, MIT, which takes them from King
-  Fahd Complex page data. `tool/make-mushaf-layout.mjs` turns it into
-  `pipeline/data/madina-1441h-layout.json` (committed, ~250 KB, with the MIT
-  notice beside it).
-- The words on those lines are the bundle's own QuranEnc Arabic. Nothing of
-  the layout package's text is used.
-- The two texts split 18 ayat into different numbers of words (for example
-  لوما as one word or two, the sajda sign as its own word). Those words are
-  placed by letter position; every ayah ends up on exactly the lines the print
-  uses (checked in the pipeline tests for all 6,236).
-- Each ayah carries `ml`, e.g. `"3.1.9 3.2.2"`: 9 words on page 3 line 1, 2
-  on line 2. `mushaf` holds lines per page and where surah headers and
-  basmalas go.
-- The app sets the lines in Amiri Quran (OFL) and justifies each by widening
-  the spaces. The KFGQPC fonts are not used: their licence forbids
-  reproduction without written approval.
-
-### Hadith shelves and numbers
-
-- `shelves[]`: our kid-friendly groups (Good manners, Good character, ...) of
-  HadeethEnc categories. Topic names are HadeethEnc's own category titles.
-- Hadith from bulk categories are screened for adult topics
-  (`needsAdultReview`); hits are left out and listed in
-  `pipeline/reports/hadith-report.json` for a person to decide.
-- HadeethEnc names the collection ("Narrated by Muslim") but not the number.
-  The pipeline looks for the Prophet's words (the «...» quote) in the Arabic
-  of Sahih al-Bukhari and Sahih Muslim (hadith-api, pinned commit), only in
-  the collections HadeethEnc names. A number ships only on a strong match
-  (80%+ of the quote's word triples, at least 4) or when a person checked it
-  on sunnah.com (`pipeline/hadith-refs.json`, which also blocks numbers).
-- Numbering: Bukhari by the Fath al-Bari numbers, Muslim by Muhammad Fu'ad
-  Abd al-Baqi's, the same as sunnah.com's main reference (spot-checked).
-
 ### App structure
 
 | Layer | Now | Revisit when |

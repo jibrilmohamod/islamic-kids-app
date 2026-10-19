@@ -10,7 +10,6 @@ import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
 import 'missing_word_screen.dart';
-import 'mushaf_screen.dart';
 import 'order_game_screen.dart';
 
 class SurahScreen extends StatefulWidget {
@@ -253,15 +252,6 @@ class _Header extends StatelessWidget {
                     tooltip: tr('back', lang),
                     onPressed: () => Navigator.of(context).maybePop(),
                   ),
-                  if (state.book != null) ...[
-                    const SizedBox(width: 10),
-                    InkIconButton(
-                      icon: Icons.menu_book_rounded,
-                      tooltip: tr('bookView', lang),
-                      color: Pop.lemon,
-                      onPressed: () => go(context, MushafScreen(initialPage: state.book!.firstPageOf(surah.number))),
-                    ),
-                  ],
                   const Spacer(),
                   StarTile(
                     size: 72,

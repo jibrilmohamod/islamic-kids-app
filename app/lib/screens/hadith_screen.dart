@@ -6,39 +6,14 @@ import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
-import 'dua_screen.dart' show MemoriseView;
 
-/// Colour and icon per shelf. Topic ids start with their shelf id.
-({Color color, IconData icon, bool dark}) shelfStyle(String id) => switch (id) {
-      'manners' => (color: Pop.cyan, icon: Icons.emoji_people_rounded, dark: false),
-      'character' => (color: Pop.pink, icon: Icons.favorite_rounded, dark: false),
-      'family' => (color: Pop.lemon, icon: Icons.diversity_3_rounded, dark: false),
-      'prophet' => (color: Pop.violet, icon: Icons.auto_awesome_rounded, dark: true),
-      'worship' => (color: const Color(0xFF1FA187), icon: Icons.water_drop_rounded, dark: true),
-      'learning' => (color: Pop.lemon, icon: Icons.menu_book_rounded, dark: false),
-      _ => (color: Pop.pink, icon: Icons.format_quote_rounded, dark: false),
+/// Colour and icon per hadith topic.
+({Color color, IconData icon}) groupStyle(String group) => switch (group) {
+      'manners-eating' => (color: Pop.cyan, icon: Icons.restaurant_rounded),
+      'manners-sleeping' => (color: Pop.violet, icon: Icons.bedtime_rounded),
+      _ => (color: Pop.pink, icon: Icons.format_quote_rounded),
     };
 
-/// Older bundles name topics without shelves.
-({Color color, IconData icon}) groupStyle(String group) {
-  final st = shelfStyle(group.split('-').first);
-  return (color: st.color, icon: st.icon);
-}
-
-String _shelfOf(String topicId) => topicId.split('-').first;
-
-/// Topic name: HadeethEnc's own category title when the bundle has it.
-String topicTitle(ContentBundle bundle, String topicId, String lang) {
-  for (final sh in bundle.shelves) {
-    for (final t in sh.topics) {
-      if (t.id == topicId) return t.titleFor(lang);
-    }
-  }
-  return tr('group.$topicId', lang);
-}
-
-/// Hadith by shelf: Good manners, Good character, Family and kindness...
-/// Each shelf opens into HadeethEnc topics.
 class HadithListScreen extends StatelessWidget {
   const HadithListScreen({super.key});
 
@@ -46,149 +21,56 @@ class HadithListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     final lang = state.lang;
-    final bundle = state.bundle!;
-    final hadith = bundle.hadith;
-    final count = <String, int>{};
-    for (final h in hadith) {
-      count[h.group] = (count[h.group] ?? 0) + 1;
-    }
-    // Shelves from the bundle, or one shelf per old group.
-    final shelves = bundle.shelves.isNotEmpty
-        ? bundle.shelves
-        : [
-            for (final g in {for (final h in hadith) h.group})
-              HadithShelf(id: g, topics: [HadithTopic(id: g, title: const {})]),
-          ];
+    final hadith = state.bundle!.hadith;
+    final groups = <String>{for (final h in hadith) h.group}.toList();
 
     return PopPage(
       title: tr('hadith', lang),
-      subtitle: tr('hadithCount', lang, {'n': hadith.length}),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
         children: [
-          for (final sh in shelves)
-            if (sh.topics.any((t) => (count[t.id] ?? 0) > 0))
-              Padding(
-                padding: const EdgeInsets.only(bottom: 18),
-                child: _ShelfPanel(shelf: sh, count: count),
-              ),
-        ],
-      ),
-    );
-  }
-}
-
-class _ShelfPanel extends StatelessWidget {
-  final HadithShelf shelf;
-  final Map<String, int> count;
-  const _ShelfPanel({required this.shelf, required this.count});
-
-  @override
-  Widget build(BuildContext context) {
-    final state = AppScope.of(context);
-    final lang = state.lang;
-    final st = shelfStyle(_shelfOf(shelf.id));
-    final ink = st.dark ? Colors.white : Pop.ink;
-    final topics = shelf.topics.where((t) => (count[t.id] ?? 0) > 0).toList();
-    final key = 'shelf.${shelf.id}';
-    final title = tr(key, lang) == key ? topicTitle(state.bundle!, shelf.id, lang) : tr(key, lang);
-    return InkPanel(
-      color: st.color,
-      halftone: true,
-      dotColor: st.dark ? const Color(0x33FFFFFF) : const Color(0x381B1035),
-      padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(st.icon, color: ink, size: 28),
-              const SizedBox(width: 10),
-              Expanded(child: Text(title, style: TextStyle(fontFamily: Pop.display, fontSize: 18, color: ink))),
-            ],
-          ),
-          const SizedBox(height: 12),
-          for (final t in topics)
+          for (final g in groups) ...[
             Padding(
-              padding: const EdgeInsets.only(top: 8),
+              padding: const EdgeInsets.only(top: 14, bottom: 12),
               child: InkPanel(
-                border: 3,
-                shadow: 3,
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                onTap: () => go(context, TopicScreen(topicId: t.id)),
+                color: groupStyle(g).color,
+                halftone: true,
+                dotColor: const Color(0x55FFFFFF),
+                shadow: 4,
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 child: Row(
                   children: [
-                    Expanded(
-                      child: Text(topicTitle(state.bundle!, t.id, lang),
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800, height: 1.25)),
-                    ),
-                    const SizedBox(width: 8),
-                    Chip2('${count[t.id]}'),
-                    const Icon(Icons.chevron_right_rounded, color: Pop.ink),
+                    Icon(groupStyle(g).icon, color: g == 'manners-sleeping' ? Colors.white : Pop.ink),
+                    const SizedBox(width: 10),
+                    Text(tr('group.$g', lang),
+                        style: TextStyle(
+                            fontFamily: Pop.display,
+                            fontSize: 15,
+                            color: g == 'manners-sleeping' ? Colors.white : Pop.ink)),
                   ],
                 ),
               ),
             ),
-        ],
-      ),
-    );
-  }
-}
-
-/// The hadith of one topic. Short ones are marked for learning by heart.
-class TopicScreen extends StatelessWidget {
-  final String topicId;
-  const TopicScreen({super.key, required this.topicId});
-
-  @override
-  Widget build(BuildContext context) {
-    final state = AppScope.of(context);
-    final lang = state.lang;
-    final all = state.bundle!.hadith.where((h) => h.group == topicId);
-    // Short ones first, otherwise HadeethEnc's order.
-    final list = [...all.where((h) => h.isShort), ...all.where((h) => !h.isShort)];
-    final st = groupStyle(topicId);
-    return PopPage(
-      title: topicTitle(state.bundle!, topicId, lang),
-      subtitle: tr('hadithCount', lang, {'n': list.length}),
-      body: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
-        itemCount: list.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 12),
-        itemBuilder: (context, i) {
-          final h = list[i];
-          return InkPanel(
-            border: 3,
-            shadow: 4,
-            padding: const EdgeInsets.all(14),
-            onTap: () => go(context, HadithScreen(hadith: h)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                StarTile(size: 34, glaze: Glaze.full, color: st.color, label: '${i + 1}', semanticsLabel: ''),
-                const SizedBox(width: 12),
-                Expanded(
+            for (final h in hadith.where((x) => x.group == g))
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: InkPanel(
+                  border: 3,
+                  shadow: 4,
+                  padding: const EdgeInsets.all(14),
+                  onTap: () => go(context, HadithScreen(hadith: h)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(h.t(lang).title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.35)),
-                      const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 6,
-                        runSpacing: 6,
-                        children: [
-                          if (h.isShort) Chip2(tr('shortHadith', lang), color: Pop.lemon),
-                          for (final r in h.refs) Chip2(r.short, color: Pop.highlight),
-                          if (h.refs.isEmpty) Chip2(h.t(lang).attribution),
-                        ],
-                      ),
+                      const SizedBox(height: 6),
+                      Chip2(h.t(lang).grade),
                     ],
                   ),
                 ),
-              ],
-            ),
-          );
-        },
+              ),
+          ],
+        ],
       ),
     );
   }
@@ -203,8 +85,6 @@ class HadithScreen extends StatefulWidget {
 }
 
 class _HadithScreenState extends State<HadithScreen> {
-  bool _memorise = false;
-
   @override
   void initState() {
     super.initState();
@@ -218,8 +98,7 @@ class _HadithScreenState extends State<HadithScreen> {
     final lang = AppScope.of(context).lang;
     final h = widget.hadith;
     final style = groupStyle(h.group);
-    final ink = shelfStyle(_shelfOf(h.group)).dark ? Colors.white : Pop.ink;
-    final bundle = AppScope.of(context).bundle!;
+    final ink = h.group == 'manners-sleeping' ? Colors.white : Pop.ink;
 
     return Scaffold(
       body: Column(
@@ -254,13 +133,8 @@ class _HadithScreenState extends State<HadithScreen> {
                                 children: [
                                   Icon(style.icon, size: 18, color: Pop.ink),
                                   const SizedBox(width: 6),
-                                  ConstrainedBox(
-                                    constraints: const BoxConstraints(maxWidth: 200),
-                                    child: Text(topicTitle(bundle, h.group, lang),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
-                                  ),
+                                  Text(tr('group.${h.group}', lang),
+                                      style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
                                 ],
                               ),
                             ),
@@ -280,21 +154,7 @@ class _HadithScreenState extends State<HadithScreen> {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(18, 16, 18, 32),
               children: [
-                InkPanel(
-                  border: 3,
-                  shadow: 0,
-                  padding: const EdgeInsets.all(14),
-                  child: _memorise ? MemoriseView(arabic: h.quote) : QuotedArabic(h.arabic),
-                ),
-                if (h.isShort) ...[
-                  const SizedBox(height: 12),
-                  ComicButton(
-                    label: _memorise ? tr('showAll', lang) : tr('memorise', lang),
-                    icon: _memorise ? Icons.visibility_rounded : Icons.psychology_alt_rounded,
-                    color: Pop.lemon,
-                    onPressed: () => setState(() => _memorise = !_memorise),
-                  ),
-                ],
+                InkPanel(border: 3, shadow: 0, padding: const EdgeInsets.all(14), child: QuotedArabic(h.arabic)),
                 const SizedBox(height: 16),
                 HadithDetails(hadith: h),
               ],
@@ -336,11 +196,9 @@ class HadithDetails extends StatelessWidget {
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   Chip2(t.grade, color: const Color(0xFF1FA187), textColor: Colors.white),
-                  for (final r in hadith.refs) Chip2(r.full, color: Pop.highlight),
                   Text(t.attribution, style: const TextStyle(fontSize: 13, color: Pop.muted)),
                 ],
               ),
-              if (hadith.refs.isNotEmpty) SourceLabel('hadithRefs'),
               SourceLabel('hadeethenc', extra: '#${hadith.hadeethencId}'),
             ],
           ),

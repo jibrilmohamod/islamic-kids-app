@@ -50,6 +50,12 @@ class Meaning {
       );
 }
 
+/// The language used when an item has no text in the chosen language.
+const fallbackLang = 'en';
+
+Meaning? _pick(Map<String, Meaning> m, String lang) =>
+    m[lang] ?? m[fallbackLang] ?? (m.isEmpty ? null : m.values.first);
+
 Map<String, Meaning> _meanings(Object? raw) {
   return _map(raw).map((k, v) => MapEntry(k, Meaning.fromJson(_map(v))));
 }
@@ -61,6 +67,8 @@ class Ayah {
   final Map<String, Meaning> meaning;
 
   const Ayah({required this.key, required this.aya, required this.arabic, required this.meaning});
+
+  Meaning? meaningFor(String lang) => _pick(meaning, lang);
 
   factory Ayah.fromJson(Map<String, dynamic> j) => Ayah(
         key: _s(j['key']),
@@ -139,11 +147,15 @@ class Hadith {
         group: _s(j['group']),
         arabic: _s(_map(j['ar'])['text']),
         byLang: {
-          for (final l in langs) l: HadithText.fromJson(_map(j[l])),
+          for (final l in langs)
+            if (j[l] is Map) l: HadithText.fromJson(_map(j[l])),
         },
       );
 
-  HadithText t(String lang) => byLang[lang] ?? byLang.values.first;
+  bool has(String lang) => byLang.containsKey(lang);
+
+  HadithText t(String lang) =>
+      byLang[lang] ?? byLang[fallbackLang] ?? byLang.values.first;
 }
 
 /// A dua is either a hadith from HadeethEnc or a Quranic ayah from QuranEnc.
@@ -166,6 +178,8 @@ class Dua {
 
   bool get isQuran => quranKey != null;
 
+  Meaning? meaningFor(String lang) => _pick(meaning, lang);
+
   factory Dua.fromJson(Map<String, dynamic> j, List<String> langs) {
     if (j['kind'] == 'quran') {
       return Dua(
@@ -184,6 +198,7 @@ class Dua {
 class ContentBundle {
   final String version;
   final List<String> languages;
+  final List<String> optionalLanguages;
   final Map<String, SourceInfo> sources;
   final List<Surah> surahs;
   final List<Hadith> hadith;
@@ -192,6 +207,7 @@ class ContentBundle {
   const ContentBundle({
     required this.version,
     required this.languages,
+    this.optionalLanguages = const [],
     required this.sources,
     required this.surahs,
     required this.hadith,
@@ -199,12 +215,15 @@ class ContentBundle {
   });
 
   factory ContentBundle.fromJson(Map<String, dynamic> j) {
-    final langs = ((j['languages'] as List?) ?? const ['en', 'so']).map((e) => e.toString()).toList();
+    final required = ((j['languages'] as List?) ?? const ['en']).map((e) => e.toString()).toList();
+    final optional = ((j['optionalLanguages'] as List?) ?? const []).map((e) => e.toString()).toList();
+    final langs = [...required, ...optional];
     List<Map<String, dynamic>> list(String k) =>
         ((j[k] as List?) ?? const []).map(_map).toList();
     return ContentBundle(
       version: _s(j['bundleVersion']),
-      languages: langs,
+      languages: required,
+      optionalLanguages: optional,
       sources: _map(j['sources']).map((k, v) => MapEntry(k, SourceInfo.fromJson(k, _map(v)))),
       surahs: list('surahs').map(Surah.fromJson).toList(),
       hadith: list('hadith').map((h) => Hadith.fromJson(h, langs)).toList(),

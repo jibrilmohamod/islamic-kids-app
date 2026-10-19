@@ -1,35 +1,116 @@
 {
-  "languages": ["en", "so"],
+  "languages": [
+    "en"
+  ],
+  "optionalLanguages": [
+    "so"
+  ],
   "quranTranslations": {
     "en": "english_saheeh",
     "so": "somali_yacob"
   },
   "surahs": [
-    { "number": 1, "name": "Al-Fatiha", "nameAr": "الفاتحة" },
-    { "number": 105, "name": "Al-Fil", "nameAr": "الفيل" },
-    { "number": 106, "name": "Quraysh", "nameAr": "قريش" },
-    { "number": 107, "name": "Al-Ma'un", "nameAr": "الماعون" },
-    { "number": 108, "name": "Al-Kawthar", "nameAr": "الكوثر" },
-    { "number": 109, "name": "Al-Kafirun", "nameAr": "الكافرون" },
-    { "number": 110, "name": "An-Nasr", "nameAr": "النصر" },
-    { "number": 111, "name": "Al-Masad", "nameAr": "المسد" },
-    { "number": 112, "name": "Al-Ikhlas", "nameAr": "الإخلاص" },
-    { "number": 113, "name": "Al-Falaq", "nameAr": "الفلق" },
-    { "number": 114, "name": "An-Nas", "nameAr": "الناس" }
+    {
+      "number": 1,
+      "name": "Al-Fatiha",
+      "nameAr": "الفاتحة"
+    },
+    {
+      "number": 105,
+      "name": "Al-Fil",
+      "nameAr": "الفيل"
+    },
+    {
+      "number": 106,
+      "name": "Quraysh",
+      "nameAr": "قريش"
+    },
+    {
+      "number": 107,
+      "name": "Al-Ma'un",
+      "nameAr": "الماعون"
+    },
+    {
+      "number": 108,
+      "name": "Al-Kawthar",
+      "nameAr": "الكوثر"
+    },
+    {
+      "number": 109,
+      "name": "Al-Kafirun",
+      "nameAr": "الكافرون"
+    },
+    {
+      "number": 110,
+      "name": "An-Nasr",
+      "nameAr": "النصر"
+    },
+    {
+      "number": 111,
+      "name": "Al-Masad",
+      "nameAr": "المسد"
+    },
+    {
+      "number": 112,
+      "name": "Al-Ikhlas",
+      "nameAr": "الإخلاص"
+    },
+    {
+      "number": 113,
+      "name": "Al-Falaq",
+      "nameAr": "الفلق"
+    },
+    {
+      "number": 114,
+      "name": "An-Nas",
+      "nameAr": "الناس"
+    }
   ],
   "hadithGroups": [
-    { "id": "manners-eating", "categoryId": 290, "max": 10 },
-    { "id": "manners-sleeping", "categoryId": 293, "max": 10 }
+    {
+      "id": "manners-eating",
+      "categoryId": 290,
+      "max": 10
+    },
+    {
+      "id": "manners-sleeping",
+      "categoryId": 293,
+      "max": 10
+    }
   ],
   "duaCategories": [
-    { "moment": "morning-evening", "categoryId": 301 },
-    { "moment": "home", "categoryId": 303 },
-    { "moment": "bathroom", "categoryId": 305 },
-    { "moment": "mosque", "categoryId": 306 }
+    {
+      "moment": "morning-evening",
+      "categoryId": 301
+    },
+    {
+      "moment": "home",
+      "categoryId": 303
+    },
+    {
+      "moment": "bathroom",
+      "categoryId": 305
+    },
+    {
+      "moment": "mosque",
+      "categoryId": 306
+    }
   ],
   "quranDuas": [
-    { "moment": "anytime", "sura": 2, "aya": 201 },
-    { "moment": "anytime", "sura": 20, "aya": 114 },
-    { "moment": "anytime", "sura": 17, "aya": 24 }
+    {
+      "moment": "anytime",
+      "sura": 2,
+      "aya": 201
+    },
+    {
+      "moment": "anytime",
+      "sura": 20,
+      "aya": 114
+    },
+    {
+      "moment": "anytime",
+      "sura": 17,
+      "aya": 24
+    }
   ]
 }

@@ -55,6 +55,15 @@ node --test pipeline/pipeline.test.mjs   # pipeline, uses fake API data
 cd app; flutter test                      # models, order game, dua-for-now
 ```
 
+## Languages
+
+English is required for every item and is the launch language. Somali is
+added per item wherever QuranEnc or HadeethEnc has it; the app falls back to
+English otherwise. The Somali switch is hidden (`AppState.somaliEnabled`)
+until coverage is good enough. Each pipeline run prints the Somali coverage.
+
+Design and trade-offs: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## What is in v0.1
 
 - Learn: 11 surahs (Al-Fatiha, 105 to 114), hadith on eating and sleeping manners

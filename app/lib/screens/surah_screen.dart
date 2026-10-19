@@ -38,7 +38,7 @@ class _AyahCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final lang = AppScope.of(context).lang;
-    final m = ayah.meaning[lang];
+    final m = ayah.meaningFor(lang);
     return ContentCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

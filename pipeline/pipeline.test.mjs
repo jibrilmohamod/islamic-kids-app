@@ -108,3 +108,29 @@ test('full build against a fake API', async () => {
   assert.equal(bundle.duas[1].meaning.so.text, 'SO-20-114');
   assert.equal(bundle.sources.somali_yacob.version, '1.0.26');
 });
+
+test('optional language is added where available and never required', async () => {
+  const config = {
+    languages: ['en'],
+    optionalLanguages: ['so'],
+    quranTranslations: { en: 'english_saheeh', so: 'somali_yacob' },
+    surahs: [],
+    hadithGroups: [{ id: 'g', categoryId: 290, max: 5 }],
+    duaCategories: [],
+    quranDuas: [],
+  };
+  const fake = async (url) => {
+    if (url.includes('/translations/list/en')) return { translations: [{ key: 'english_saheeh', version: '1', title: 'EN' }] };
+    if (url.includes('/translations/list/so')) return { translations: [{ key: 'somali_yacob', version: '2', title: 'SO' }] };
+    if (url.includes('category_id=290')) return { data: [{ id: '11', translations: ['en'] }, { id: '12', translations: ['en', 'so'] }, { id: '13', translations: ['so'] }], meta: { last_page: 1 } };
+    const m = url.match(/hadeeths\/one\/\?id=(\d+)&language=(\w+)/);
+    if (m) return hadithDetail(m[1], m[2]);
+    throw new Error(`unexpected url ${url}`);
+  };
+  const { bundle, errors } = await build(config, fake, () => {});
+  assert.deepEqual(errors, []);
+  assert.deepEqual(bundle.hadith.map((h) => h.hadeethencId), ['11', '12']);
+  assert.equal(bundle.hadith[0].so, undefined);
+  assert.equal(bundle.hadith[1].so.text, 'so text 12');
+  assert.deepEqual(bundle.optionalLanguages, ['so']);
+});

@@ -32,13 +32,18 @@ export async function fetchJson(url, { retries = 3, pauseMs = 250 } = {}) {
 }
 
 export async function build(config, get = fetchJson, log = console.log) {
+  // Required languages must exist for every item; optional ones are added
+  // per item when the source has them (the app falls back to the first
+  // required language).
   const langs = config.languages;
+  const optional = config.optionalLanguages ?? [];
+  const allLangs = [...langs, ...optional];
   const keys = config.quranTranslations;
   const warnings = [];
 
   // Sources and their versions (QuranEnc terms: show version, keep updated).
   const sources = {};
-  for (const lang of langs) {
+  for (const lang of allLangs) {
     const list = await get(`${QURANENC}/translations/list/${lang}`);
     const meta = findTranslationMeta(list, keys[lang]);
     sources[keys[lang]] = {
@@ -58,7 +63,7 @@ export async function build(config, get = fetchJson, log = console.log) {
   const surahs = [];
   for (const s of config.surahs) {
     const rowsByLang = {};
-    for (const lang of langs) {
+    for (const lang of allLangs) {
       rowsByLang[lang] = extractList(await get(`${QURANENC}/translation/sura/${keys[lang]}/${s.number}`));
     }
     const { surah, warnings: w } = buildSurah(s, rowsByLang, keys);
@@ -67,22 +72,26 @@ export async function build(config, get = fetchJson, log = console.log) {
     log(`surah ${s.number}: ${surah.ayat.length} ayat`);
   }
 
-  // Hadith in every configured language only
+  // Hadith that exist in every required language, with optional languages
+  // added where HadeethEnc has them.
   async function hadithFromCategory(categoryId, max) {
     const picked = [];
     for (let page = 1; picked.length < max; page++) {
       const res = await get(`${HADEETHENC}/hadeeths/list/?language=${langs[0]}&category_id=${categoryId}&page=${page}&per_page=50`);
       for (const item of res.data ?? []) {
         if (picked.length >= max) break;
-        if (hasAllLanguages(item, langs)) picked.push(item.id);
+        if (hasAllLanguages(item, langs)) picked.push(item);
         else log(`  skip hadith ${item.id}: not in all of ${langs.join(', ')}`);
       }
       if (page >= Number(res.meta?.last_page ?? 1)) break;
     }
     const out = [];
-    for (const id of picked) {
+    for (const item of picked) {
       const detail = {};
-      for (const lang of langs) detail[lang] = await get(`${HADEETHENC}/hadeeths/one/?id=${id}&language=${lang}`);
+      for (const lang of allLangs) {
+        if (!(item.translations ?? []).includes(lang)) continue;
+        detail[lang] = await get(`${HADEETHENC}/hadeeths/one/?id=${item.id}&language=${lang}`);
+      }
       out.push(detail);
     }
     return out;
@@ -110,7 +119,7 @@ export async function build(config, get = fetchJson, log = console.log) {
   }
   for (const q of config.quranDuas) {
     const rowByLang = {};
-    for (const lang of langs) {
+    for (const lang of allLangs) {
       rowByLang[lang] = await get(`${QURANENC}/translation/aya/${keys[lang]}/${q.sura}/${q.aya}`);
       if (rowByLang[lang]?.result && !rowByLang[lang].translation) rowByLang[lang] = rowByLang[lang].result;
     }
@@ -122,6 +131,7 @@ export async function build(config, get = fetchJson, log = console.log) {
     bundleVersion: now.toISOString().slice(0, 19).replace(/[-:T]/g, ''),
     generatedAt: now.toISOString(),
     languages: langs,
+    optionalLanguages: optional,
     sources,
     surahs,
     hadith,
@@ -142,7 +152,12 @@ async function main() {
   await mkdir(dirname(OUT), { recursive: true });
   await writeFile(OUT, JSON.stringify(bundle, null, 2) + '\n', 'utf8');
   console.log(`\nWrote ${OUT}`);
-  console.log(`${bundle.surahs.length} surahs, ${bundle.hadith.length} hadith, ${bundle.duas.length} duas`);
+  const opt = (bundle.optionalLanguages ?? []).map((l) => {
+    const n = [...bundle.hadith, ...bundle.duas].filter((x) => x[l] || x.meaning?.[l]).length;
+    return `${l}: ${n} of ${bundle.hadith.length + bundle.duas.length} hadith and duas`;
+  });
+  console.log(`${bundle.surahs.length} surahs, ${bundle.hadith.length} hadith, ${bundle.duas.length} duas` +
+    (opt.length ? ` (${opt.join('; ')})` : ''));
 }
 
 const samePath = (a, b) => resolve(a).toLowerCase() === resolve(b).toLowerCase();

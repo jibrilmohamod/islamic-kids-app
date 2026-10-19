@@ -8,7 +8,10 @@ import 'models.dart';
 /// App-wide state. Progress lives in memory for now; saving it on the device
 /// comes with the first storage package, once one is checked.
 class AppState extends ChangeNotifier {
-  String lang = 'so';
+  /// English first. Somali can be switched on once its coverage is ready.
+  static const bool somaliEnabled = false;
+
+  String lang = 'en';
   ContentBundle? bundle;
   String? error;
   final Set<String> completedGames = {};

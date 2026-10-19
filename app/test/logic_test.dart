@@ -83,6 +83,40 @@ void main() {
     expect(game.placed['109:5'], 3);
   });
 
+  test('missing optional language falls back to English', () {
+    final b = ContentBundle.fromJson({
+      'languages': ['en'],
+      'optionalLanguages': ['so'],
+      'hadith': [
+        {
+          'id': 'hadith-9',
+          'ar': {'text': 'AR'},
+          'en': {'title': 'English title', 'text': 'X', 'explanation': '', 'attribution': 'A', 'grade': 'G'},
+        },
+      ],
+      'surahs': [
+        {
+          'id': 'surah-1',
+          'number': 1,
+          'ayat': [
+            {
+              'key': '1:1',
+              'aya': 1,
+              'arabic': 'A',
+              'meaning': {
+                'en': {'text': 'EN', 'footnotes': '', 'source': 'english_saheeh'},
+              },
+            },
+          ],
+        },
+      ],
+    });
+    expect(b.optionalLanguages, ['so']);
+    expect(b.hadith.single.has('so'), isFalse);
+    expect(b.hadith.single.t('so').title, 'English title');
+    expect(b.surahs.single.ayat.single.meaningFor('so')!.text, 'EN');
+  });
+
   test('dua for now follows the time of day', () {
     expect(duaForNow(bundle.duas, DateTime(2026, 10, 19, 7))!.moment, 'morning-evening');
     expect(duaForNow(bundle.duas, DateTime(2026, 10, 19, 13))!.moment, 'anytime');

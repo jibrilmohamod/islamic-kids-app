@@ -18,17 +18,19 @@ class ParentScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(tr('language', lang), style: Theme.of(context).textTheme.titleMedium),
-          const SizedBox(height: 8),
-          SegmentedButton<String>(
-            segments: const [
-              ButtonSegment(value: 'so', label: Text('Soomaali')),
-              ButtonSegment(value: 'en', label: Text('English')),
-            ],
-            selected: {lang},
-            onSelectionChanged: (s) => state.setLang(s.first),
-          ),
-          const SizedBox(height: 28),
+          if (AppState.somaliEnabled) ...[
+            Text(tr('language', lang), style: Theme.of(context).textTheme.titleMedium),
+            const SizedBox(height: 8),
+            SegmentedButton<String>(
+              segments: const [
+                ButtonSegment(value: 'so', label: Text('Soomaali')),
+                ButtonSegment(value: 'en', label: Text('English')),
+              ],
+              selected: {lang},
+              onSelectionChanged: (s) => state.setLang(s.first),
+            ),
+            const SizedBox(height: 28),
+          ],
           Text(tr('sources', lang), style: Theme.of(context).textTheme.titleMedium),
           if (bundle != null) ...[
             for (final s in bundle.sources.values)

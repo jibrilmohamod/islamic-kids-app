@@ -22,7 +22,7 @@ class _DuaScreenState extends State<DuaScreen> {
     final lang = AppScope.of(context).lang;
     final d = widget.dua;
     final h = d.hadith;
-    final m = d.meaning[lang];
+    final m = d.meaningFor(lang);
 
     return Scaffold(
       appBar: AppBar(

@@ -17,7 +17,7 @@ export function failures(jsonLines) {
     if (e.type === 'testStart') names.set(e.test.id, e.test.name);
     if (e.type === 'error') errors.set(e.testID, [...(errors.get(e.testID) ?? []), e.error]);
     // Framework exceptions (overflow, assertion) arrive as print events.
-    if (e.type === 'print' && /EXCEPTION|overflowed|was thrown|Assertion|Error/.test(e.message)) {
+    if (e.type === 'print' && /EXCEPTION|overflowed|was thrown|Assertion|Error|Warning/.test(e.message)) {
       prints.set(e.testID, [...(prints.get(e.testID) ?? []), e.message]);
     }
     if (e.type === 'testDone' && e.result !== 'success' && !e.hidden) failed.push(e.testID);

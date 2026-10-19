@@ -72,8 +72,11 @@ void main() {
     phone(tester);
     await tester.pumpWidget(app(stateAt(DateTime(2026, 10, 19, 13)), reduceMotion: true));
     await tester.pumpAndSettle();
-    await tester.ensureVisible(find.text('Duas'));
-    await tester.tap(find.text('Duas'));
+    // Tap the middle of the niche, where a child's finger lands.
+    final niche = find.ancestor(of: find.text('Duas'), matching: find.byType(GestureDetector)).first;
+    await tester.ensureVisible(niche);
+    await tester.pumpAndSettle();
+    await tester.tap(niche);
     await tester.pumpAndSettle();
     expect(find.byType(DuasScreen), findsOneWidget);
   });

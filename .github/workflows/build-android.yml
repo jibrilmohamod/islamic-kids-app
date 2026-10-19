@@ -107,7 +107,12 @@ jobs:
 
       - name: Test
         working-directory: app
-        run: flutter test
+        run: |
+          set -o pipefail
+          if ! flutter test --file-reporter json:test-results.json; then
+            node ../tool/test-failures.mjs test-results.json
+            exit 1
+          fi
 
       # Screenshots of key screens with the real fonts and content, pushed to
       # the "previews" branch so the work can be looked at without a phone.

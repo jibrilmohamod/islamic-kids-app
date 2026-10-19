@@ -9,63 +9,19 @@
     "en": "english_saheeh",
     "so": "somali_yacob"
   },
-  "surahs": [
-    {
-      "number": 1,
-      "name": "Al-Fatiha",
-      "nameAr": "الفاتحة"
-    },
-    {
-      "number": 105,
-      "name": "Al-Fil",
-      "nameAr": "الفيل"
-    },
-    {
-      "number": 106,
-      "name": "Quraysh",
-      "nameAr": "قريش"
-    },
-    {
-      "number": 107,
-      "name": "Al-Ma'un",
-      "nameAr": "الماعون"
-    },
-    {
-      "number": 108,
-      "name": "Al-Kawthar",
-      "nameAr": "الكوثر"
-    },
-    {
-      "number": 109,
-      "name": "Al-Kafirun",
-      "nameAr": "الكافرون"
-    },
-    {
-      "number": 110,
-      "name": "An-Nasr",
-      "nameAr": "النصر"
-    },
-    {
-      "number": 111,
-      "name": "Al-Masad",
-      "nameAr": "المسد"
-    },
-    {
-      "number": 112,
-      "name": "Al-Ikhlas",
-      "nameAr": "الإخلاص"
-    },
-    {
-      "number": 113,
-      "name": "Al-Falaq",
-      "nameAr": "الفلق"
-    },
-    {
-      "number": 114,
-      "name": "An-Nas",
-      "nameAr": "الناس"
-    }
-  ],
+  "surahs": "all",
+  "surahMetaUrl": "https://api.alquran.cloud/v1/surah",
+  "audio": {
+    "edition": "ar.alafasy",
+    "bitrates": [
+      64,
+      128
+    ],
+    "base": "https://cdn.islamic.network/quran/audio",
+    "reciter": "Mishary Rashid Alafasy",
+    "publisher": "Islamic Network (alquran.cloud)",
+    "terms": "https://alquran.cloud/terms-and-conditions"
+  },
   "hadithGroups": [
     {
       "id": "manners-eating",

@@ -5,7 +5,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   extractList, findTranslationMeta, buildSurah, hasAllLanguages, buildHadith,
-  validateBundle,
+  validateBundle, surahConfigsFromMeta,
 } from './lib.mjs';
 import { build } from './build-bundle.mjs';
 
@@ -136,4 +136,39 @@ test('optional language is added where available and never required', async () =
   assert.equal(bundle.hadith[0].so, undefined);
   assert.equal(bundle.hadith[1].so.text, 'so text 12');
   assert.deepEqual(bundle.optionalLanguages, ['so']);
+});
+
+test('surah metadata gives 114 configs with short Arabic names', () => {
+  const data = Array.from({ length: 114 }, (_, i) => ({
+    number: i + 1, name: 'سُورَةُ ٱلۡفَاتِحَةِ', englishName: `S${i + 1}`, numberOfAyahs: 7,
+  }));
+  const cfgs = surahConfigsFromMeta({ data });
+  assert.equal(cfgs.length, 114);
+  assert.equal(cfgs[0].nameAr, 'ٱلۡفَاتِحَةِ');
+  assert.equal(cfgs[113].ayahCount, 7);
+  assert.throws(() => surahConfigsFromMeta({ data: data.slice(1) }));
+});
+
+test('audio picks the first bitrate that answers and every ayah gets its number', async () => {
+  const config = {
+    languages: ['en'],
+    quranTranslations: { en: 'english_saheeh' },
+    surahs: [{ number: 1, name: 'Al-Fatiha', nameAr: 'x', ayahCount: 2 }],
+    audio: { edition: 'ar.alafasy', bitrates: [64, 128], base: 'https://cdn.example/quran/audio', reciter: 'R', publisher: 'P', terms: 'T' },
+    hadithGroups: [], duaCategories: [], quranDuas: [],
+  };
+  const fake = async (url) => {
+    if (url.includes('/translations/list/en')) return { translations: [{ key: 'english_saheeh', version: '1', title: 'EN' }] };
+    if (url.includes('translation/sura/english_saheeh/1')) return { result: [1, 2].map((a) => ({ id: String(a), sura: '1', aya: String(a), arabic_text: `A${a}`, translation: `E${a}`, footnotes: '' })) };
+    throw new Error(`unexpected url ${url}`);
+  };
+  const tried = [];
+  const head = async (url) => { tried.push(url); return url.includes('/128/'); };
+  const { bundle, errors } = await build(config, fake, () => {}, head);
+  assert.deepEqual(errors, []);
+  assert.equal(bundle.audio.bitrate, 128);
+  assert.equal(bundle.audio.urlTemplate, 'https://cdn.example/quran/audio/128/ar.alafasy/{n}.mp3');
+  assert.equal(tried.length, 2);
+  assert.deepEqual(bundle.surahs[0].ayat.map((a) => a.n), [1, 2]);
+  assert.equal(bundle.surahs[0].ayahCount, 2);
 });

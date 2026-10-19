@@ -17,3 +17,6 @@ Thumbs.db
 # CI scratch
 pipeline.log
 published.json
+
+# Fetched by tool/fetch-fonts.mjs
+app/assets/fonts/

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../app_state.dart';
 import '../models.dart';
 import '../strings.dart';
+import '../theme.dart';
+import '../widgets.dart';
+import 'common.dart';
 import 'dua_screen.dart';
 
 const momentOrder = ['morning-evening', 'home', 'bathroom', 'mosque', 'anytime'];
@@ -16,21 +19,38 @@ class DuasScreen extends StatelessWidget {
     final lang = state.lang;
     final duas = state.bundle!.duas;
 
-    return Scaffold(
-      appBar: AppBar(title: Text(tr('duas', lang))),
+    return PopPage(
+      title: tr('duas', lang),
       body: ListView(
+        padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
         children: [
           for (final moment in momentOrder)
             if (duas.any((d) => d.moment == moment)) ...[
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 20, 16, 4),
-                child: Text(tr('moment.$moment', lang), style: Theme.of(context).textTheme.titleMedium),
+                padding: const EdgeInsets.only(top: 14, bottom: 10),
+                child: Align(alignment: Alignment.centerLeft, child: Caption(tr('moment.$moment', lang))),
               ),
               for (final d in duas.where((x) => x.moment == moment))
-                ListTile(
-                  leading: Icon(d.isQuran ? Icons.auto_stories : Icons.format_quote),
-                  title: Text(_title(d, lang), maxLines: 2, overflow: TextOverflow.ellipsis),
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => DuaScreen(dua: d))),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: InkPanel(
+                    border: 3,
+                    shadow: 4,
+                    padding: const EdgeInsets.all(14),
+                    onTap: () => go(context, DuaScreen(dua: d)),
+                    child: Row(
+                      children: [
+                        Icon(d.isQuran ? Icons.auto_stories_rounded : Icons.format_quote_rounded, color: Pop.ink),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Text(_title(d, lang),
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.35)),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
             ],
         ],

@@ -6,47 +6,74 @@ import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'audio_service.dart';
 import 'content_store.dart';
 import 'models.dart';
+import 'progress.dart';
 
-/// App-wide state: content, language and progress. Progress is saved on the
-/// device only; there are no accounts.
+/// App-wide state: content, language, progress and audio. Everything is kept
+/// on the device; there are no accounts.
 class AppState extends ChangeNotifier {
   /// English first. Somali can be switched on once its coverage is ready.
   static const bool somaliEnabled = false;
 
   static const _kLang = 'lang';
-  static const _kCompleted = 'completedGames';
+  static const _kRounds = 'rounds';
+  static const _kLegacyCompleted = 'completedGames';
 
   String lang = 'en';
   ContentBundle? bundle;
   String? error;
-  final Set<String> completedGames = {};
+  Progress progress = Progress();
+  AudioService? audio;
   SharedPreferences? _prefs;
 
   Future<void> load() async {
+    List<String> legacy = const [];
     try {
       _prefs = await SharedPreferences.getInstance();
       final savedLang = _prefs!.getString(_kLang);
       if (savedLang != null && (savedLang == 'en' || somaliEnabled)) lang = savedLang;
-      completedGames.addAll(_prefs!.getStringList(_kCompleted) ?? const []);
+      progress = Progress(_prefs!.getStringList(_kRounds) ?? const []);
+      legacy = _prefs!.getStringList(_kLegacyCompleted) ?? const [];
     } catch (_) {
       // Preferences are a convenience; the app still runs without them.
     }
 
+    Future<Directory> support() => getApplicationSupportDirectory();
     final store = ContentStore(
       loadAsset: () => rootBundle.loadString('assets/content/bundle.json'),
-      cacheDir: () async => Directory('${(await getApplicationSupportDirectory()).path}/content'),
+      cacheDir: () async => Directory('${(await support()).path}/content'),
     );
     try {
       bundle = await store.loadBest();
     } catch (e) {
       error = e.toString();
     }
-    notifyListeners();
 
     final current = bundle;
-    if (current != null) unawaited(store.checkForUpdate(current.version));
+    if (current != null) {
+      _migrateLegacy(current, legacy);
+      final info = current.audio;
+      if (info != null) audio = AudioService(info: info, baseDir: support);
+      unawaited(store.checkForUpdate(current.version));
+    }
+    notifyListeners();
+  }
+
+  /// v0.1 saved finished games as "order-surah-N"; those count as all rounds.
+  void _migrateLegacy(ContentBundle b, List<String> legacy) {
+    if (legacy.isEmpty) return;
+    for (final id in legacy) {
+      final n = int.tryParse(id.replaceFirst('order-surah-', ''));
+      final s = b.surahs.where((x) => x.number == n).firstOrNull;
+      if (s == null) continue;
+      for (var r = 0; r < roundsFor(s.ayat.length).length; r++) {
+        progress.completeRound(s.number, r);
+      }
+    }
+    _prefs?.setStringList(_kRounds, progress.toSaved());
+    _prefs?.remove(_kLegacyCompleted);
   }
 
   void setLang(String value) {
@@ -56,9 +83,9 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  void completeGame(String id) {
-    if (!completedGames.add(id)) return;
-    _prefs?.setStringList(_kCompleted, completedGames.toList());
+  void completeRound(Surah s, int round) {
+    if (!progress.completeRound(s.number, round)) return;
+    _prefs?.setStringList(_kRounds, progress.toSaved());
     notifyListeners();
   }
 }

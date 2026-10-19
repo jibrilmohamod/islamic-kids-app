@@ -63,16 +63,20 @@ Map<String, Meaning> _meanings(Object? raw) {
 class Ayah {
   final String key;
   final int aya;
+
+  /// Position in the whole Quran (1 to 6236); names the audio file.
+  final int? n;
   final String arabic;
   final Map<String, Meaning> meaning;
 
-  const Ayah({required this.key, required this.aya, required this.arabic, required this.meaning});
+  const Ayah({required this.key, required this.aya, this.n, required this.arabic, required this.meaning});
 
   Meaning? meaningFor(String lang) => _pick(meaning, lang);
 
   factory Ayah.fromJson(Map<String, dynamic> j) => Ayah(
         key: _s(j['key']),
         aya: (j['aya'] as num).toInt(),
+        n: (j['n'] as num?)?.toInt(),
         arabic: _s(j['arabic']),
         meaning: _meanings(j['meaning']),
       );
@@ -195,11 +199,42 @@ class Dua {
   }
 }
 
+/// Where per-ayah recitation audio comes from, and whose it is.
+class AudioInfo {
+  final String urlTemplate;
+  final String edition;
+  final int bitrate;
+  final String reciter;
+  final String publisher;
+  final String terms;
+
+  const AudioInfo({
+    required this.urlTemplate,
+    required this.edition,
+    required this.bitrate,
+    required this.reciter,
+    required this.publisher,
+    required this.terms,
+  });
+
+  factory AudioInfo.fromJson(Map<String, dynamic> j) => AudioInfo(
+        urlTemplate: _s(j['urlTemplate']),
+        edition: _s(j['edition']),
+        bitrate: (j['bitrate'] as num?)?.toInt() ?? 0,
+        reciter: _s(j['reciter']),
+        publisher: _s(j['publisher']),
+        terms: _s(j['terms']),
+      );
+
+  Uri urlFor(int n) => Uri.parse(urlTemplate.replaceAll('{n}', '$n'));
+}
+
 class ContentBundle {
   final String version;
   final List<String> languages;
   final List<String> optionalLanguages;
   final Map<String, SourceInfo> sources;
+  final AudioInfo? audio;
   final List<Surah> surahs;
   final List<Hadith> hadith;
   final List<Dua> duas;
@@ -209,6 +244,7 @@ class ContentBundle {
     required this.languages,
     this.optionalLanguages = const [],
     required this.sources,
+    this.audio,
     required this.surahs,
     required this.hadith,
     required this.duas,
@@ -225,6 +261,7 @@ class ContentBundle {
       languages: required,
       optionalLanguages: optional,
       sources: _map(j['sources']).map((k, v) => MapEntry(k, SourceInfo.fromJson(k, _map(v)))),
+      audio: j['audio'] is Map ? AudioInfo.fromJson(_map(j['audio'])) : null,
       surahs: list('surahs').map(Surah.fromJson).toList(),
       hadith: list('hadith').map((h) => Hadith.fromJson(h, langs)).toList(),
       duas: list('duas').map((d) => Dua.fromJson(d, langs)).toList(),

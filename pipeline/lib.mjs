@@ -50,7 +50,10 @@ export function buildSurah(surahCfg, rowsByLang, translationKeys) {
         source: translationKeys[lang],
       };
     }
-    return { key: `${surahCfg.number}:${aya}`, aya, arabic: row.arabic_text, meaning };
+    // QuranEnc's id is the ayah's position in the whole Quran (1 to 6236),
+    // which is also how the audio CDN names its files.
+    const n = Number(row.id);
+    return { key: `${surahCfg.number}:${aya}`, aya, n: Number.isInteger(n) ? n : null, arabic: row.arabic_text, meaning };
   });
 
   ayat.sort((a, b) => a.aya - b.aya);
@@ -64,6 +67,19 @@ export function buildSurah(surahCfg, rowsByLang, translationKeys) {
     },
     warnings,
   };
+}
+
+// AlQuran.cloud surah list -> pipeline surah configs. The Arabic name drops
+// the leading word "surah" so the app can show the short name.
+export function surahConfigsFromMeta(json) {
+  const list = json?.data;
+  if (!Array.isArray(list) || list.length !== 114) throw new Error('Expected 114 surahs in metadata');
+  return list.map((s) => ({
+    number: s.number,
+    name: s.englishName,
+    nameAr: String(s.name).replace(/^سُورَةُ\s+/, ''),
+    ayahCount: s.numberOfAyahs,
+  }));
 }
 
 // HadeethEnc list items carry the language codes each hadith is translated into.
@@ -130,8 +146,16 @@ export function validateBundle(bundle, langs) {
   const errors = [];
   if (bundle.schemaVersion !== 1) errors.push('schemaVersion must be 1');
   if (!bundle.surahs?.length) errors.push('no surahs');
+  const seenN = new Set();
   for (const s of bundle.surahs ?? []) {
     if (!s.ayat?.length) errors.push(`${s.id}: no ayat`);
+    if (s.ayahCount && s.ayat?.length !== s.ayahCount) errors.push(`${s.id}: ${s.ayat?.length} ayat, expected ${s.ayahCount}`);
+    if (bundle.audio) {
+      for (const a of s.ayat ?? []) {
+        if (!Number.isInteger(a.n) || a.n < 1 || a.n > 6236 || seenN.has(a.n)) errors.push(`${a.key}: bad audio number ${a.n}`);
+        seenN.add(a.n);
+      }
+    }
     for (const a of s.ayat ?? []) {
       if (isBlank(a.arabic)) errors.push(`${a.key}: empty Arabic`);
       for (const l of langs) {

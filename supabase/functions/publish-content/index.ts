@@ -16,7 +16,7 @@ const AUDIENCE = "islamic-kids-app-publish";
 const REPOSITORY = "jibrilmohamod/islamic-kids-app";
 const REF = "refs/heads/main";
 const SCHEMA_VERSION = 1;
-const MAX_BYTES = 5 * 1024 * 1024;
+const MAX_BYTES = 20 * 1024 * 1024;
 
 const jwks = createRemoteJWKSet(new URL(`${ISSUER}/.well-known/jwks`));
 

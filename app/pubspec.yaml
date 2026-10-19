@@ -1,16 +1,18 @@
 name: islamic_kids_app
 description: Free Islamic learning app for children aged 8 to 12, in Somali and English.
 publish_to: 'none'
-version: 0.1.0+1
+version: 0.2.0+2
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
 
-# Only first-party flutter.dev packages so far. Check maintenance and licence
-# before adding anything else.
+# path_provider and shared_preferences: flutter.dev. audioplayers: blue-fire,
+# checked active (6.6.0, March 2026). Check maintenance and licence before
+# adding anything else.
 dependencies:
   flutter:
     sdk: flutter
+  audioplayers: ^6.1.0
   path_provider: ^2.1.0
   shared_preferences: ^2.5.0
 
@@ -22,3 +24,20 @@ flutter:
   uses-material-design: true
   assets:
     - assets/content/bundle.json
+    - assets/fonts/OFL-licenses.txt
+  # Font files are fetched by tool/fetch-fonts.mjs (SIL Open Font License).
+  fonts:
+    - family: Bungee
+      fonts:
+        - asset: assets/fonts/Bungee-Regular.ttf
+    - family: Baloo 2
+      fonts:
+        - asset: assets/fonts/Baloo2-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Baloo2-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Baloo2-ExtraBold.ttf
+          weight: 800
+    - family: Amiri Quran
+      fonts:
+        - asset: assets/fonts/AmiriQuran-Regular.ttf

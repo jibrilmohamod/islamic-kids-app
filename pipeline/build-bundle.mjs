@@ -8,7 +8,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   QURANENC, HADEETHENC, extractList, findTranslationMeta, buildSurah,
-  hasAllLanguages, buildHadith, buildQuranDua, validateBundle,
+  hasAllLanguages, buildHadith, buildQuranDua, validateBundle, surahConfigsFromMeta,
 } from './lib.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -31,7 +31,16 @@ export async function fetchJson(url, { retries = 3, pauseMs = 250 } = {}) {
   }
 }
 
-export async function build(config, get = fetchJson, log = console.log) {
+export async function headOk(url) {
+  try {
+    const res = await fetch(url, { method: 'HEAD' });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+export async function build(config, get = fetchJson, log = console.log, head = headOk) {
   // Required languages must exist for every item; optional ones are added
   // per item when the source has them (the app falls back to the first
   // required language).
@@ -59,14 +68,18 @@ export async function build(config, get = fetchJson, log = console.log) {
     url: 'https://hadeethenc.com',
   };
 
-  // Surahs
+  // Surahs: either a fixed list or all 114 from AlQuran.cloud metadata
+  const surahCfgs = config.surahs === 'all'
+    ? surahConfigsFromMeta(await get(config.surahMetaUrl))
+    : config.surahs;
   const surahs = [];
-  for (const s of config.surahs) {
+  for (const s of surahCfgs) {
     const rowsByLang = {};
     for (const lang of allLangs) {
       rowsByLang[lang] = extractList(await get(`${QURANENC}/translation/sura/${keys[lang]}/${s.number}`));
     }
     const { surah, warnings: w } = buildSurah(s, rowsByLang, keys);
+    if (s.ayahCount) surah.ayahCount = s.ayahCount;
     warnings.push(...w);
     surahs.push(surah);
     log(`surah ${s.number}: ${surah.ayat.length} ayat`);
@@ -126,6 +139,28 @@ export async function build(config, get = fetchJson, log = console.log) {
     duas.push(buildQuranDua(q, rowByLang, keys));
   }
 
+  // Audio: per-ayah files on the AlQuran.cloud CDN, named by global ayah
+  // number. Use the smallest published bitrate that answers.
+  let audio = null;
+  if (config.audio) {
+    const a = config.audio;
+    for (const bitrate of a.bitrates) {
+      if (await head(`${a.base}/${bitrate}/${a.edition}/1.mp3`)) {
+        audio = {
+          urlTemplate: `${a.base}/${bitrate}/${a.edition}/{n}.mp3`,
+          edition: a.edition,
+          bitrate,
+          reciter: a.reciter,
+          publisher: a.publisher,
+          terms: a.terms,
+        };
+        break;
+      }
+    }
+    if (!audio) throw new Error('No audio bitrate answered on the CDN');
+    log(`audio: ${audio.edition} at ${audio.bitrate} kbps`);
+  }
+
   const now = new Date();
   const bundle = {
     // Bump only when the app can no longer read the old shape. Old app
@@ -136,6 +171,7 @@ export async function build(config, get = fetchJson, log = console.log) {
     languages: langs,
     optionalLanguages: optional,
     sources,
+    audio,
     surahs,
     hadith,
     duas,

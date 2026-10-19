@@ -35,10 +35,15 @@ jobs:
       - name: Build the content bundle from QuranEnc and HadeethEnc
         run: |
           set -o pipefail
-          if node pipeline/build-bundle.mjs | tee pipeline.log; then
+          # 2>&1: the pipeline reports problems on stderr; keep them in the log.
+          if node pipeline/build-bundle.mjs 2>&1 | tee pipeline.log; then
             echo "::notice title=Content bundle::$(tail -n 1 pipeline.log)"
             echo "::notice title=References and mushaf::$(grep -E '^(references|mushaf):' pipeline.log | tr '\n' ';')"
           else
+            # Job logs cannot be read from outside GitHub, so put the end of
+            # the log in an annotation (one annotation, newlines encoded).
+            tail_log=$(grep -vE '^(surah|hadith|dua moment) ' pipeline.log | tail -n 25 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' | awk '{printf "%s%%0A", $0}')
+            echo "::error title=Content bundle failed (last lines)::${tail_log}"
             echo "::warning title=Content bundle::Fetch or validation failed; using the committed bundle"
             git checkout -- app/assets/content/bundle.json
           fi

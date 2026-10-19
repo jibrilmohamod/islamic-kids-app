@@ -141,6 +141,177 @@ export function buildQuranDua(cfg, rowByLang, translationKeys) {
   };
 }
 
+// ---------------------------------------------------------------------------
+// Mushaf layout
+//
+// Arabic letters that two Uthmani editions write differently (alif forms,
+// hamza seats, alif maqsura) are left out, and so are all marks. What is
+// left lines the two texts up letter by letter.
+const SKIP_LETTERS = /[اٱأإآءؤئى]/g;
+export function skeleton(s) {
+  return String(s).replace(/[^ء-ي]/g, '').replace(SKIP_LETTERS, '');
+}
+export const skeletonLength = (s) => skeleton(s).length;
+
+// Words of an ayah as the app splits them: on spaces.
+export const ayahWords = (arabic) => String(arabic).trim().split(/\s+/);
+
+// Places the words of one ayah (our text) on the mushaf lines of the layout.
+// layoutRuns: [[page, line, wordCount, letterCount]] in the layout's own
+// word positions. Returns runs in our words: [[page, line, wordCount]].
+//
+// Same number of words: the n-th word goes where the layout puts its n-th
+// word. Otherwise each word goes on the line holding the same share of the
+// ayah's letters. Marks with no letters (۞, ۩) join the next word, or the
+// previous one at the end.
+export function placeAyahWords(arabic, layoutRuns) {
+  const words = ayahWords(arabic);
+  const lettered = words.map((w) => skeletonLength(w) > 0);
+  const slots = []; // one entry per layout word: index into layoutRuns
+  layoutRuns.forEach((r, i) => { for (let k = 0; k < r[2]; k++) slots.push(i); });
+  const realCount = lettered.filter(Boolean).length;
+  const runOf = new Array(words.length).fill(-1);
+
+  if (realCount === slots.length) {
+    let k = 0;
+    words.forEach((_, i) => { if (lettered[i]) runOf[i] = slots[k++]; });
+  } else {
+    const ourTotal = words.reduce((t, w) => t + skeletonLength(w), 0);
+    const theirTotal = layoutRuns.reduce((t, r) => t + r[3], 0);
+    const bounds = []; // cumulative letter end of each layout run
+    layoutRuns.reduce((t, r) => { bounds.push(t + r[3]); return t + r[3]; }, 0);
+    let seen = 0;
+    words.forEach((w, i) => {
+      if (!lettered[i]) return;
+      const len = skeletonLength(w);
+      const mid = ((seen + len / 2) / Math.max(1, ourTotal)) * theirTotal;
+      seen += len;
+      let r = bounds.findIndex((b) => mid <= b);
+      if (r < 0) r = layoutRuns.length - 1;
+      runOf[i] = r;
+    });
+  }
+  // Letterless marks: next placed word, else previous.
+  for (let i = 0; i < words.length; i++) {
+    if (runOf[i] >= 0) continue;
+    const next = runOf.slice(i + 1).find((r) => r >= 0);
+    const prev = runOf.slice(0, i).reverse().find((r) => r >= 0);
+    runOf[i] = next ?? prev ?? 0;
+  }
+  // Never move backwards (keeps reading order if letter shares disagree).
+  for (let i = 1; i < runOf.length; i++) runOf[i] = Math.max(runOf[i], runOf[i - 1]);
+
+  const out = [];
+  runOf.forEach((r) => {
+    const [p, l] = layoutRuns[r];
+    const last = out[out.length - 1];
+    if (last && last[0] === p && last[1] === l) last[2]++;
+    else out.push([p, l, 1]);
+  });
+  return out;
+}
+
+export const encodeRuns = (runs) => runs.map((r) => r.join('.')).join(' ');
+
+// Adds `ml` (mushaf lines, "page.line.words ...") to every ayah and returns
+// the bundle's `mushaf` block. Throws if anything does not fit, so a broken
+// layout never ships.
+export function attachMushaf(surahs, layout) {
+  let placed = 0;
+  for (const s of surahs) {
+    for (const a of s.ayat) {
+      const runs = layout.verses[a.key];
+      if (!runs) throw new Error(`Mushaf layout has no ${a.key}`);
+      const mine = placeAyahWords(a.arabic, runs);
+      const words = ayahWords(a.arabic).length;
+      if (mine.reduce((t, r) => t + r[2], 0) !== words) throw new Error(`${a.key}: words lost in layout`);
+      a.ml = encodeRuns(mine);
+      placed++;
+    }
+  }
+  return {
+    layout: layout.layout,
+    pages: layout.pages,
+    linesPerPage: layout.linesPerPage,
+    specials: layout.specials,
+    source: layout.source,
+    placed,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Hadith references (Bukhari and Muslim numbers)
+//
+// HadeethEnc names the collections ("Narrated by Muslim", "Agreed upon") but
+// not the numbers. We find the number by looking for the Prophet's words
+// (the «...» quote) in the Arabic of each collection, and only for the
+// collections HadeethEnc itself names.
+
+export function normalizeArabic(s) {
+  return String(s)
+    .replace(/[ؐ-ًؚ-ٰٟۖ-ۭـ͏]/g, '')
+    .replace(/[إأآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه')
+    .replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+    .replace(/[^ء-ي ]/g, ' ')
+    .split(/\s+/).filter(Boolean);
+}
+
+export function trigrams(words) {
+  const out = new Set();
+  for (let i = 0; i + 3 <= words.length; i++) out.add(words.slice(i, i + 3).join(' '));
+  return out;
+}
+
+// The quoted words, or the whole text when there is no quote.
+export function hadithQuote(arabic) {
+  const quotes = [...String(arabic).matchAll(/«([^»]+)»/g)].map((m) => m[1]);
+  return quotes.length ? quotes.join(' ') : String(arabic);
+}
+
+// Which of the two collections HadeethEnc's Arabic attribution names.
+export function namedCollections(attributionAr) {
+  const a = String(attributionAr);
+  const out = [];
+  if (/متفق عليه/.test(a) || /البخاري/.test(a)) out.push('bukhari');
+  if (/متفق عليه/.test(a) || /مسلم/.test(a)) out.push('muslim');
+  return out;
+}
+
+// index: [{ number, ref, grams }] for one collection. Returns the best two.
+export function bestMatches(quoteGrams, index) {
+  const scored = [];
+  for (const h of index) {
+    let hit = 0;
+    for (const g of quoteGrams) if (h.grams.has(g)) hit++;
+    if (hit) scored.push({ number: h.number, ref: h.ref, score: hit / quoteGrams.size });
+  }
+  scored.sort((x, y) => y.score - x.score || x.number - y.number);
+  return scored.slice(0, 3);
+}
+
+export const REF_MIN_SCORE = 0.8;
+export const REF_MIN_GRAMS = 4;
+
+// Decides the reference for one collection. Manual entries (checked by a
+// person against sunnah.com) always win; a number of null blocks a match.
+export function decideRef({ collection, quoteGrams, candidates, manual }) {
+  if (manual && Object.hasOwn(manual, collection)) {
+    const n = manual[collection];
+    return n == null ? null : { collection, number: n, how: 'checked' };
+  }
+  const best = candidates[0];
+  if (!best || quoteGrams.size < REF_MIN_GRAMS || best.score < REF_MIN_SCORE) return null;
+  return { collection, number: best.number, how: 'matched' };
+}
+
+// Child-suitability screen for hadith pulled in bulk from a category. A hit
+// does not mean the hadith is wrong, only that an adult should pick it by
+// hand rather than it arriving automatically in a children's app.
+const ADULT_TOPICS = /\b(adulter|fornicat|intercourse|sexual|menstrua|semen|private parts|naked|wine|alcohol|intoxica|lash|flog|stoning|stoned|crucif|suicide|kill(ed|ing|s)?\b|slay|execut|amputat|slave girl|concubine|divorc|wet dream|ritual bath after)/i;
+export function needsAdultReview(text) {
+  return ADULT_TOPICS.test(String(text));
+}
+
 const isBlank = (v) => typeof v !== 'string' || v.trim() === '';
 
 // Returns a list of problems. An empty list means the bundle may ship.
@@ -166,7 +337,39 @@ export function validateBundle(bundle, langs) {
       }
     }
   }
+  if (bundle.mushaf) {
+    const pages = bundle.mushaf.pages;
+    for (const s of bundle.surahs ?? []) {
+      for (const a of s.ayat ?? []) {
+        const runs = String(a.ml ?? '').split(' ').filter(Boolean).map((r) => r.split('.').map(Number));
+        const ok = runs.length > 0 && runs.every(([p, l, c]) =>
+          p >= 1 && p <= pages && l >= 1 && l <= (bundle.mushaf.linesPerPage?.[p] ?? 15) && c >= 1);
+        if (!ok) errors.push(`${a.key}: bad mushaf lines "${a.ml}"`);
+        else if (runs.reduce((t, r) => t + r[2], 0) !== ayahWords(a.arabic).length) errors.push(`${a.key}: mushaf word count`);
+      }
+    }
+  }
+  const topicIds = new Set((bundle.shelves ?? []).flatMap((s) => s.topics.map((t) => t.id)));
+  for (const s of bundle.shelves ?? []) {
+    for (const t of s.topics) {
+      for (const l of langs) if (isBlank(t.title?.[l])) errors.push(`topic ${t.id}: no ${l} title`);
+    }
+  }
+  for (const h of bundle.hadith ?? []) {
+    if (topicIds.size && !topicIds.has(h.group)) errors.push(`${h.id}: topic ${h.group} is not on a shelf`);
+  }
+  const checkRefs = (h) => {
+    for (const r of h.refs ?? []) {
+      if (!['bukhari', 'muslim'].includes(r.collection) || !Number.isInteger(r.number) || r.number < 1) {
+        errors.push(`${h.id}: bad reference ${JSON.stringify(r)}`);
+      }
+      if (!namedCollections(h.ar?.attribution).includes(r.collection)) {
+        errors.push(`${h.id}: ${r.collection} number but HadeethEnc does not name ${r.collection}`);
+      }
+    }
+  };
   const checkHadith = (h) => {
+    checkRefs(h);
     if (isBlank(h.ar?.text)) errors.push(`${h.id}: empty Arabic`);
     for (const l of langs) {
       for (const f of ['title', 'text', 'attribution', 'grade']) {

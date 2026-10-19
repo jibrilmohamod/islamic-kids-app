@@ -37,6 +37,7 @@ jobs:
           set -o pipefail
           if node pipeline/build-bundle.mjs | tee pipeline.log; then
             echo "::notice title=Content bundle::$(tail -n 1 pipeline.log)"
+            echo "::notice title=References and mushaf::$(grep -E '^(references|mushaf):' pipeline.log | tr '\n' ';')"
           else
             echo "::warning title=Content bundle::Fetch or validation failed; using the committed bundle"
             git checkout -- app/assets/content/bundle.json
@@ -135,6 +136,7 @@ jobs:
         if: env.ON_MAIN == 'true'
         run: |
           git add app/assets/content/bundle.json app/android app/pubspec.lock
+          [ -f pipeline/reports/hadith-report.json ] && git add pipeline/reports/hadith-report.json
           if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

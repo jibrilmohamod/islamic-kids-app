@@ -1,0 +1,11 @@
+{
+  "_about": "Hadith numbers checked by hand on sunnah.com. Keys are HadeethEnc ids. A number wins over the automatic match; null means show no number for that collection. 'checked' lists the pages read.",
+  "4966": { "bukhari": 3563, "muslim": 2064, "checked": ["https://sunnah.com/bukhari:3563", "https://sunnah.com/muslim:2064a"] },
+  "2935": { "bukhari": 5456, "checked": ["https://sunnah.com/bukhari:5456"] },
+  "4235": { "bukhari": 6294, "muslim": 2016, "checked": ["https://sunnah.com/bukhari:6294", "https://sunnah.com/muslim:2016"] },
+  "58119": { "bukhari": 5399, "checked": ["https://sunnah.com/bukhari:5399"] },
+  "3372": { "muslim": 2021, "checked": ["https://sunnah.com/muslim:2021"] },
+  "3021": { "bukhari": 287, "muslim": 306, "checked": ["https://sunnah.com/bukhari:287", "https://sunnah.com/muslim:306a"] },
+  "6274": { "muslim": 808, "checked": ["https://sunnah.com/muslim:808a"] },
+  "3033": { "bukhari": 162, "muslim": null, "checked": ["https://sunnah.com/bukhari:162", "https://sunnah.com/muslim:278a"], "note": "HadeethEnc joins two Muslim narrations (237 and 278); Bukhari 162 has the whole text." }
+}

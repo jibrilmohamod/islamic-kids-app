@@ -9,10 +9,13 @@ import { fileURLToPath } from 'node:url';
 import {
   QURANENC, HADEETHENC, extractList, findTranslationMeta, buildSurah,
   hasAllLanguages, buildHadith, buildQuranDua, validateBundle, surahConfigsFromMeta,
+  attachMushaf, normalizeArabic, trigrams, hadithQuote, namedCollections, bestMatches,
+  decideRef, needsAdultReview,
 } from './lib.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const OUT = join(here, '..', 'app', 'assets', 'content', 'bundle.json');
+const REPORT = join(here, 'reports', 'hadith-report.json');
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -110,12 +113,48 @@ export async function build(config, get = fetchJson, log = console.log, head = h
     return out;
   }
 
-  const hadith = [];
-  for (const g of config.hadithGroups) {
-    for (const d of await hadithFromCategory(g.categoryId, g.max)) {
-      hadith.push(buildHadith(d, { group: g.id }));
+  // Category names come from HadeethEnc itself, in each language.
+  const categoryTitles = {};
+  for (const lang of (config.hadithShelves ?? []).length ? allLangs : []) {
+    let list = [];
+    try {
+      list = extractList(await get(`${HADEETHENC}/categories/list/?language=${lang}`));
+    } catch (err) {
+      if (langs.includes(lang)) throw err;
     }
-    log(`hadith group ${g.id}: ${hadith.filter((h) => h.group === g.id).length}`);
+    for (const c of list) (categoryTitles[String(c.id)] ??= {})[lang] = c.title;
+  }
+
+  // Hadith shelves: kid-friendly groups of HadeethEnc categories. Bulk
+  // categories are screened; anything on an adult topic is left out and
+  // listed in the report for a person to decide.
+  const hadith = [];
+  const shelves = [];
+  const heldBack = [];
+  const seenHadith = new Set();
+  for (const shelf of config.hadithShelves ?? []) {
+    const topics = [];
+    for (const t of shelf.topics) {
+      const title = categoryTitles[String(t.categoryId)];
+      if (!title?.[langs[0]]) throw new Error(`HadeethEnc has no category ${t.categoryId} (${t.id})`);
+      let count = 0;
+      for (const d of await hadithFromCategory(t.categoryId, t.max * 2)) {
+        if (count >= t.max) break;
+        const h = buildHadith(d, { group: t.id });
+        if (seenHadith.has(h.hadeethencId)) continue;
+        const en = h[langs[0]];
+        if (needsAdultReview(`${en.title} ${en.text} ${en.explanation} ${(en.hints ?? []).join(' ')}`)) {
+          heldBack.push({ id: h.hadeethencId, topic: t.id, title: en.title });
+          continue;
+        }
+        seenHadith.add(h.hadeethencId);
+        hadith.push(h);
+        count++;
+      }
+      topics.push({ id: t.id, categoryId: t.categoryId, title });
+      log(`hadith ${shelf.id}/${t.id}: ${count}`);
+    }
+    shelves.push({ id: shelf.id, topics });
   }
 
   // Duas
@@ -161,6 +200,58 @@ export async function build(config, get = fetchJson, log = console.log, head = h
     log(`audio: ${audio.edition} at ${audio.bitrate} kbps`);
   }
 
+  // Bukhari and Muslim numbers for every hadith and hadith dua.
+  const refReport = [];
+  if (config.hadithRefs) {
+    const r = config.hadithRefs;
+    const manual = r.manualFile ? JSON.parse(await readFile(join(here, r.manualFile), 'utf8')) : {};
+    const indexes = {};
+    for (const [collection, edition] of Object.entries(r.editions)) {
+      const json = await get(`${r.base}/${edition}.min.json`);
+      indexes[collection] = (json.hadiths ?? [])
+        .filter((h) => typeof h.text === 'string' && h.text.trim())
+        .map((h) => ({ number: refNumber(collection, h), ref: h.reference, grams: trigrams(normalizeArabic(h.text)) }));
+      log(`references: ${collection} ${indexes[collection].length} hadith`);
+    }
+    for (const item of [...hadith, ...duas.filter((d) => d.kind === 'hadith')]) {
+      const quoteGrams = trigrams(normalizeArabic(hadithQuote(item.ar.text)));
+      const refs = [];
+      const row = { id: item.hadeethencId, attribution: item.ar.attribution, grams: quoteGrams.size, picked: {}, candidates: {} };
+      for (const collection of namedCollections(item.ar.attribution)) {
+        const candidates = indexes[collection] ? bestMatches(quoteGrams, indexes[collection]) : [];
+        row.candidates[collection] = candidates.map((c) => `${c.number} (${c.score.toFixed(2)})`);
+        const ref = decideRef({ collection, quoteGrams, candidates, manual: manual[item.hadeethencId] });
+        row.picked[collection] = ref ? `${ref.number} ${ref.how}` : null;
+        if (ref) refs.push(ref);
+      }
+      item.refs = refs;
+      refReport.push(row);
+    }
+    sources.hadithRefs = {
+      publisher: r.publisher,
+      title: r.title,
+      url: r.url,
+      version: r.version,
+    };
+    const unmatched = refReport.filter((x) => Object.values(x.picked).some((v) => v === null)).length;
+    log(`references: ${refReport.length - unmatched} of ${refReport.length} fully numbered`);
+  }
+
+  // Madina mushaf pages: line breaks from the layout file, words from the
+  // QuranEnc Arabic above.
+  let mushaf = null;
+  if (config.mushafLayout) {
+    const layout = JSON.parse(await readFile(join(here, config.mushafLayout), 'utf8'));
+    mushaf = attachMushaf(surahs, layout);
+    sources.mushafLayout = {
+      publisher: layout.source.name,
+      title: `${layout.layout}, ${layout.source.license}, ${layout.source.copyright}`,
+      version: layout.source.version,
+      url: layout.source.url,
+    };
+    log(`mushaf: ${mushaf.placed} ayat on ${mushaf.pages} pages`);
+  }
+
   const now = new Date();
   const bundle = {
     // Bump only when the app can no longer read the old shape. Old app
@@ -172,17 +263,32 @@ export async function build(config, get = fetchJson, log = console.log, head = h
     optionalLanguages: optional,
     sources,
     audio,
+    mushaf,
     surahs,
+    shelves,
     hadith,
     duas,
   };
-  return { bundle, warnings, errors: validateBundle(bundle, langs) };
+  const report = { references: refReport, heldBack };
+  return { bundle, warnings, report, errors: validateBundle(bundle, langs) };
+}
+
+// Bukhari by its usual (Fath al-Bari) number; Muslim by Muhammad Fu'ad
+// Abd al-Baqi's number, which the source gives as "2022" or "2022.01".
+// Bukhari sometimes carries a sub-number ("5051.2"); the citation is 5051.
+function refNumber(collection, h) {
+  const raw = collection === 'muslim' ? (h.arabicnumber ?? h.hadithnumber) : h.hadithnumber;
+  return parseInt(String(raw), 10);
 }
 
 async function main() {
   const config = JSON.parse(await readFile(join(here, 'config.json'), 'utf8'));
-  const { bundle, warnings, errors } = await build(config);
+  const { bundle, warnings, errors, report } = await build(config);
   warnings.forEach((w) => console.warn(`warning: ${w}`));
+  // The reference report is for people: which numbers were matched, which
+  // need checking, and which hadith were held back for adult review.
+  await mkdir(dirname(REPORT), { recursive: true });
+  await writeFile(REPORT, JSON.stringify(report, null, 2) + '\n', 'utf8');
   if (errors.length) {
     errors.forEach((e) => console.error(`error: ${e}`));
     console.error(`\nBundle NOT written: ${errors.length} problem(s).`);

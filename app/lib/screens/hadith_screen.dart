@@ -183,7 +183,7 @@ class ShelfScreen extends StatelessWidget {
                       style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, height: 1.25)),
                 ),
                 const SizedBox(width: 8),
-                Chip2(tr('hadithCount', lang, {'n': count[topics[i].id]})),
+                Chip2(tr('hadithCount', lang, {'n': count[topics[i].id] ?? 0})),
                 const Icon(Icons.chevron_right_rounded, color: Pop.ink),
               ],
             ),

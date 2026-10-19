@@ -380,7 +380,7 @@ class SkyArchPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
     if (sky == Sky.evening) {
       // Crescent fades in; three stars twinkle.
-      final moon = Offset(w * 0.77, h * 0.24);
+      final moon = Offset(w * 0.7, h * 0.3);
       canvas.saveLayer(null, Paint()..color = Colors.white.withValues(alpha: t));
       canvas.drawCircle(moon, w * 0.074, Paint()..color = Colors.white);
       canvas.drawCircle(moon + Offset(w * 0.034, -h * 0.027), w * 0.069, Paint()..color = skyColor);

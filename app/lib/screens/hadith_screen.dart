@@ -370,7 +370,11 @@ class HadithDetails extends StatelessWidget {
             shadow: 0,
             color: Pop.highlight,
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Theme(
+            // ExpansionTile's ListTile needs its own Material inside a coloured
+            // panel, or Flutter reports its ink as hidden behind the panel.
+            child: Material(
+              type: MaterialType.transparency,
+              child: Theme(
               data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
               child: ExpansionTile(
                 tilePadding: EdgeInsets.zero,
@@ -384,6 +388,7 @@ class HadithDetails extends StatelessWidget {
                   const SizedBox(height: 12),
                 ],
               ),
+            ),
             ),
           ),
         ],

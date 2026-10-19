@@ -18,12 +18,16 @@ AppState stateAt(DateTime now) {
     ..now = () => now;
 }
 
-Widget app(AppState state, {bool reduceMotion = false}) => AppScope(
+Widget app(AppState state, {bool reduceMotion = false, double textScale = 1}) => AppScope(
       state: state,
       child: MaterialApp(
         theme: popTheme(),
         home: MediaQuery(
-          data: MediaQueryData(size: const Size(412, 892), disableAnimations: reduceMotion),
+          data: MediaQueryData(
+            size: const Size(412, 892),
+            disableAnimations: reduceMotion,
+            textScaler: TextScaler.linear(textScale),
+          ),
           child: const HomeScreen(),
         ),
       ),
@@ -102,4 +106,14 @@ void main() {
     expect(title, startsWith('A dua from the Quran: '));
     expect(title.contains('['), isFalse);
   });
+
+  for (final scale in [1.3, 2.0]) {
+    testWidgets('Home fits its text at ${scale}x', (tester) async {
+      phone(tester);
+      await tester.pumpWidget(app(stateAt(DateTime(2026, 10, 19, 7)), reduceMotion: true, textScale: scale));
+      await tester.pumpAndSettle();
+      expect(tester.takeException(), isNull);
+      expect(find.text('Keep going'), findsOneWidget);
+    });
+  }
 }

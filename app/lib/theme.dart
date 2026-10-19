@@ -15,6 +15,23 @@ abstract final class Pop {
   static const glazes = [lemon, cyan, pink, violet];
   static Color glazeFor(int surah) => glazes[surah % glazes.length];
 
+  /// Card glazes in the order neighbours take them, so two cards next to
+  /// each other never share a colour (canvas row G).
+  static const cardGlazes = [cyan, pink, lemon, violet];
+  static Color cardGlaze(int i) => cardGlazes[i % cardGlazes.length];
+
+  /// Halftone dot colour that reads on each glaze.
+  static Color dotsOn(Color glaze) => switch (glaze) {
+        pink => const Color(0x381B1035),
+        cyan => const Color(0x8CFFFFFF),
+        lemon => const Color(0x73FF3D8B),
+        violet => const Color(0x4DFFFFFF),
+        _ => const Color(0x00000000),
+      };
+
+  /// Text colour on a glaze: white on violet, ink on the rest.
+  static Color onGlaze(Color glaze) => glaze == violet ? const Color(0xFFFFFFFF) : ink;
+
   static const display = 'Bungee';
   static const body = 'Baloo 2';
   static const quran = 'Scheherazade New';

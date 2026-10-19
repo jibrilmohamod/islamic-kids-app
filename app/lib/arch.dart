@@ -18,7 +18,9 @@ Path archPath(Rect r) {
 }
 
 /// An arch filled with [fill]; with an ink outline and an optional label
-/// band line at [divider] unless [fill] is ink (the hard shadow).
+/// band line at [divider] unless [fill] is ink (the hard shadow). With a
+/// [divider], the band below it is white and the arch above is glazed with
+/// halftone dots (canvas row G).
 class ArchPainter extends CustomPainter {
   final Color fill;
   final double? divider;
@@ -26,15 +28,27 @@ class ArchPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawPath(archPath(Offset.zero & size), Paint()..color = fill);
+    final arch = archPath(Offset.zero & size);
+    canvas.drawPath(arch, Paint()..color = fill);
     if (fill == Pop.ink) return;
+    final d = divider;
+    canvas.save();
+    canvas.clipPath(arch);
+    final dots = Paint()..color = Pop.dotsOn(fill);
+    final dotsTo = d ?? size.height;
+    for (var y = 5.0; y < dotsTo; y += 10) {
+      for (var x = 5.0; x < size.width; x += 10) {
+        canvas.drawCircle(Offset(x, y), 2, dots);
+      }
+    }
+    if (d != null) canvas.drawRect(Rect.fromLTRB(0, d, size.width, size.height), Paint()..color = Colors.white);
+    canvas.restore();
     final stroke = Paint()
       ..color = Pop.ink
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 3;
-    canvas.drawPath(archPath(const Offset(1.5, 1.5) & Size(size.width - 3, size.height - 3)), stroke);
-    final d = divider;
-    if (d != null) canvas.drawLine(Offset(1.5, d), Offset(size.width - 1.5, d), stroke);
+      ..strokeWidth = 3.5;
+    canvas.drawPath(archPath(const Offset(1.75, 1.75) & Size(size.width - 3.5, size.height - 3.5)), stroke);
+    if (d != null) canvas.drawLine(Offset(1.5, d), Offset(size.width - 1.5, d), stroke..strokeWidth = 3);
   }
 
   @override
@@ -47,6 +61,9 @@ class ArchNiche extends StatefulWidget {
   final PopIcon icon;
   final String label;
   final String? sublabel;
+
+  /// The arch's glaze; the label band stays white.
+  final Color glaze;
   final double width;
   final double height;
 
@@ -58,6 +75,7 @@ class ArchNiche extends StatefulWidget {
     required this.icon,
     required this.label,
     this.sublabel,
+    this.glaze = Pop.cyan,
     required this.width,
     required this.height,
     required this.band,
@@ -105,19 +123,19 @@ class _ArchNicheState extends State<ArchNiche> with SingleTickerProviderStateMix
           widget.onTap();
         },
         child: SizedBox(
-          width: w + 4,
-          height: h + 4,
+          width: w + 5,
+          height: h + 5,
           child: Stack(
             children: [
-              Positioned(left: 4, top: 4, child: CustomPaint(size: Size(w, h), painter: const ArchPainter(fill: Pop.ink))),
+              Positioned(left: 5, top: 5, child: CustomPaint(size: Size(w, h), painter: const ArchPainter(fill: Pop.ink))),
               AnimatedContainer(
                 duration: still ? Duration.zero : const Duration(milliseconds: 80),
-                transform: Matrix4.translationValues(_down ? 4 : 0, _down ? 4 : 0, 0),
+                transform: Matrix4.translationValues(_down ? 5 : 0, _down ? 5 : 0, 0),
                 width: w,
                 height: h,
                 child: Stack(
                   children: [
-                    CustomPaint(size: Size(w, h), painter: ArchPainter(fill: Colors.white, divider: h - widget.band)),
+                    CustomPaint(size: Size(w, h), painter: ArchPainter(fill: widget.glaze, divider: h - widget.band)),
                     Positioned(left: 0, right: 0, top: 0, bottom: widget.band, child: Center(child: Padding(
                       padding: EdgeInsets.only(top: w * 0.12),
                       child: icon,

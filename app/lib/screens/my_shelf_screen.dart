@@ -45,6 +45,8 @@ class MyShelfScreen extends StatelessWidget {
     Widget enter(Widget child) => Entrance(index: n++, child: child);
 
     return PopPage(
+      bandTop: Pop.lemon,
+      bandBottom: Pop.cyan,
       title: tr('myShelf', lang),
       subtitle: tr('myShelfSub', lang),
       body: ListView(
@@ -59,6 +61,8 @@ class MyShelfScreen extends StatelessWidget {
                 if (read != null)
                   Expanded(
                     child: _CarryOn(
+                      glaze: Pop.cyan,
+                      tilt: -1,
                       icon: PopIcon.quran,
                       kind: tr('reading', lang),
                       title: surahs[read.surah]!.name,
@@ -70,6 +74,8 @@ class MyShelfScreen extends StatelessWidget {
                 if (listen != null)
                   Expanded(
                     child: _CarryOn(
+                      glaze: Pop.violet,
+                      tilt: 1,
                       icon: PopIcon.downloads,
                       kind: tr('listening', lang),
                       title: surahs[listen.surah]!.name,
@@ -86,8 +92,9 @@ class MyShelfScreen extends StatelessWidget {
               spacing: 8,
               runSpacing: 10,
               children: [
-                for (final (s, a) in marks)
-                  InkPanel(
+                for (final (i, (s, a)) in marks.indexed)
+                  GlazeCard(
+                    glaze: [Pop.lemon, Pop.cyan, Pop.pink][i % 3],
                     border: 3,
                     shadow: 3,
                     padding: const EdgeInsets.fromLTRB(8, 6, 12, 6),
@@ -95,7 +102,7 @@ class MyShelfScreen extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const PopIconView(PopIcon.bookmarkOn, size: 22, shadow: false),
+                        PopIconView(i % 3 == 2 ? PopIcon.bookmarkOff : PopIcon.bookmarkOn, size: 22, shadow: false),
                         const SizedBox(width: 6),
                         Text('${s.name} ${a.key}', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15)),
                       ],
@@ -106,14 +113,16 @@ class MyShelfScreen extends StatelessWidget {
           ],
           if (favDuas.isNotEmpty || favHadith.isNotEmpty) ...[
             _Heading(tr('favourites', lang)),
-            for (final h in favHadith)
+            for (final (i, h) in favHadith.indexed)
               enter(_Favourite(
+                glaze: i.isEven ? Pop.pink : Pop.lemon,
                 kind: '${tr('hadith', lang)} · ${topicTitle(bundle, h.group, lang)}',
                 title: h.t(lang).title,
                 onTap: () => go(context, HadithScreen(hadith: h)),
               )),
-            for (final d in favDuas)
+            for (final (i, d) in favDuas.indexed)
               enter(_Favourite(
+                glaze: (favHadith.length + i).isEven ? Pop.pink : Pop.lemon,
                 kind: tr('dua', lang),
                 title: homeDuaTitle(d, bundle, lang),
                 onTap: () => go(context, DuaScreen(duas: [d], index: 0, stop: stopFor(d, state.now()))),
@@ -121,18 +130,17 @@ class MyShelfScreen extends StatelessWidget {
           ],
           if (state.audio != null) ...[
             const SizedBox(height: 10),
-            enter(InkPanel(
-              border: 3,
-              shadow: 4,
-              color: const Color(0xFFE6F7FF),
+            enter(GlazeCard(
+              glaze: Pop.violet,
+              shadow: 5,
               padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
               onTap: () => go(context, const DownloadsScreen()),
               child: Row(
                 children: [
                   const PopIconView(PopIcon.downloads, size: 34),
                   const SizedBox(width: 12),
-                  Expanded(child: Text(tr('downloads', lang), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16))),
-                  const Icon(Icons.chevron_right_rounded, color: Pop.ink),
+                  Expanded(child: Text(tr('downloads', lang), style: const TextStyle(fontFamily: Pop.display, fontSize: 15))),
+                  const Icon(Icons.chevron_right_rounded, color: Colors.white),
                 ],
               ),
             )),
@@ -184,62 +192,80 @@ class _Heading extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
         padding: const EdgeInsets.only(top: 14, bottom: 10),
-        child: Semantics(header: true, child: Text(text, style: const TextStyle(fontFamily: Pop.display, fontSize: 16))),
+        child: Semantics(
+          header: true,
+          child: Align(alignment: AlignmentDirectional.centerStart, child: StickerTab(text)),
+        ),
       );
 }
 
 class _CarryOn extends StatelessWidget {
+  final Color glaze;
+  final double tilt;
   final PopIcon icon;
   final String kind;
   final String title;
   final String detail;
   final VoidCallback onTap;
-  const _CarryOn({required this.icon, required this.kind, required this.title, required this.detail, required this.onTap});
+  const _CarryOn({
+    required this.glaze,
+    required this.tilt,
+    required this.icon,
+    required this.kind,
+    required this.title,
+    required this.detail,
+    required this.onTap,
+  });
 
   @override
-  Widget build(BuildContext context) => InkPanel(
-        border: 3,
-        shadow: 4,
+  Widget build(BuildContext context) => GlazeCard(
+        glaze: glaze,
+        tab: kind,
+        tabColor: glaze == Pop.violet ? Pop.lemon : Colors.white,
+        tilt: tilt,
+        shadow: 5,
         padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+        semanticsLabel: '$kind: $title, $detail',
         onTap: onTap,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            PopIconView(icon, size: 34),
-            const SizedBox(height: 4),
-            Text(kind, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Pop.muted)),
-            Text(title, style: const TextStyle(fontFamily: Pop.display, fontSize: 15, height: 1.1)),
-            Text(detail, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-          ],
+        child: ExcludeSemantics(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              PopIconView(icon, size: 34),
+              const SizedBox(height: 4),
+              Text(title, style: const TextStyle(fontFamily: Pop.display, fontSize: 16, height: 1.1)),
+              Text(detail, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800)),
+            ],
+          ),
         ),
       );
 }
 
 class _Favourite extends StatelessWidget {
+  final Color glaze;
   final String kind;
   final String title;
   final VoidCallback onTap;
-  const _Favourite({required this.kind, required this.title, required this.onTap});
+  const _Favourite({required this.glaze, required this.kind, required this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: InkPanel(
-          border: 3,
-          shadow: 4,
+        padding: const EdgeInsets.only(bottom: 12),
+        child: GlazeCard(
+          glaze: glaze,
+          shadow: 5,
           padding: const EdgeInsets.fromLTRB(10, 8, 12, 8),
           onTap: onTap,
           child: Row(
             children: [
-              const PopIconView(PopIcon.heartOn, size: 28, shadow: false),
+              PopIconView(glaze == Pop.pink ? PopIcon.heartOff : PopIcon.heartOn, size: 30, shadow: false),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(kind, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Pop.muted)),
-                    Text(title,
-                        style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, height: 1.25)),
+                    Text(kind, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800)),
+                    Text(title, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, height: 1.25)),
                   ],
                 ),
               ),

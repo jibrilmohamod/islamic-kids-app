@@ -33,11 +33,18 @@ void main() {
     return state;
   }
 
-  Widget app(AppState state, Widget home) => AppScope(
+  Widget app(AppState state, Widget home, {double textScale = 1}) => AppScope(
         state: state,
         child: MaterialApp(
           theme: popTheme(),
-          home: MediaQuery(data: const MediaQueryData(size: Size(412, 892), disableAnimations: true), child: home),
+          home: MediaQuery(
+            data: MediaQueryData(
+              size: const Size(412, 892),
+              disableAnimations: true,
+              textScaler: TextScaler.linear(textScale),
+            ),
+            child: home,
+          ),
         ),
       );
 
@@ -77,8 +84,11 @@ void main() {
   testWidgets('the heart on a hadith topic keeps it as a favourite', (tester) async {
     phone(tester);
     final state = await stateWithStore(tester);
-    final h = state.bundle!.hadith.first;
-    await tester.pumpWidget(app(state, TopicScreen(topicId: h.group)));
+    final group = state.bundle!.hadith.first.group;
+    final inGroup = state.bundle!.hadith.where((x) => x.group == group);
+    // The topic lists short hadith first; take the one at the top.
+    final h = inGroup.firstWhere((x) => x.isShort, orElse: () => inGroup.first);
+    await tester.pumpWidget(app(state, TopicScreen(topicId: group)));
     await tester.pumpAndSettle();
     expect(state.isFavourite(favouriteId(h)), isFalse);
     final card = find.ancestor(of: find.text(h.t('en').title), matching: find.byType(InkPanel)).first;
@@ -103,4 +113,31 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(ShelfScreen), findsOneWidget);
   });
+
+  // Text must fit by wrapping, never by overflowing, at the largest text
+  // size Android offers (200%). An overflow fails the test.
+  for (final scale in [1.0, 1.3, 2.0]) {
+    testWidgets('pages fit their text at ${scale}x', (tester) async {
+      phone(tester);
+      final state = await stateWithStore(tester);
+      final h = state.bundle!.hadith.first;
+      state
+        ..toggleBookmark('36:1')
+        ..toggleBookmark('2:255')
+        ..toggleFavourite(favouriteId(h))
+        ..recordHistory(HistoryKind.listen, 36, 4)
+        ..recordHistory(HistoryKind.read, 18, 0);
+      for (final page in <Widget>[
+        const MyShelfScreen(),
+        const HadithListScreen(),
+        TopicScreen(topicId: h.group),
+        const TopicScreen(topicId: TopicScreen.shortOnes),
+      ]) {
+        await tester.pumpWidget(app(state, page, textScale: scale));
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull, reason: '${page.runtimeType} at ${scale}x');
+      }
+      await flush(tester);
+    });
+  }
 }

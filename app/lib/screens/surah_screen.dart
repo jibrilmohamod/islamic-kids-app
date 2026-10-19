@@ -200,7 +200,7 @@ class _SurahScreenState extends State<SurahScreen> {
             sliver: SliverList.builder(
               itemCount: s.ayat.length,
               itemBuilder: (context, i) => Padding(
-                padding: const EdgeInsets.only(bottom: 14),
+                padding: const EdgeInsets.only(bottom: 18),
                 child: _AyahCard(
                   ayah: s.ayat[i],
                   playing: playing == i,
@@ -307,41 +307,59 @@ class _AyahCard extends StatelessWidget {
     final state = AppScope.of(context);
     final lang = state.lang;
     final m = ayah.meaningFor(lang);
-    return InkPanel(
-      border: 3,
-      shadow: 0,
-      color: playing ? Pop.highlight : Colors.white,
-      padding: const EdgeInsets.fromLTRB(14, 10, 14, 14),
+    // Canvas row G: a glazed strip on top, the reading text on white. The
+    // ayah playing gets lemon, a heavier border and a hard shadow.
+    final strip = playing ? Pop.lemon : const [Pop.cyan, Pop.pink, Pop.violet][ayah.aya % 3];
+    return Container(
+      decoration: BoxDecoration(
+        color: playing ? Pop.highlight : Colors.white,
+        border: Border.all(color: Pop.ink, width: playing ? 4 : 3),
+        boxShadow: [BoxShadow(color: Pop.ink, offset: playing ? const Offset(6, 6) : const Offset(4, 4))],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              StarTile(
-                size: 42,
-                glaze: Glaze.full,
-                color: Pop.lemon,
-                label: '${ayah.aya}',
-                semanticsLabel: ayah.key,
-              ),
-              const Spacer(),
-              ToggleIconButton(
-                on: state.isBookmarked(ayah.key),
-                onIcon: PopIcon.bookmarkOn,
-                offIcon: PopIcon.bookmarkOff,
-                tooltip: tr(state.isBookmarked(ayah.key) ? 'removeBookmark' : 'addBookmark', lang, {'key': ayah.key}),
-                onPressed: () => state.toggleBookmark(ayah.key),
-              ),
-              const SizedBox(width: 6),
-              if (canPlay)
-                InkIconButton(
-                  icon: playing ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  tooltip: tr('listen', lang, {'n': ayah.aya}),
-                  color: Pop.cyan,
-                  onPressed: onPlay,
+          DecoratedBox(
+            decoration: BoxDecoration(color: strip, border: const Border(bottom: BorderSide(color: Pop.ink, width: 3))),
+            child: CustomPaint(
+              painter: HalftonePainter(Pop.dotsOn(strip)),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(6, 4, 8, 4),
+                child: Row(
+                  children: [
+                    StarTile(
+                      size: 40,
+                      glaze: Glaze.full,
+                      color: playing ? Colors.white : Pop.lemon,
+                      label: '${ayah.aya}',
+                      semanticsLabel: ayah.key,
+                    ),
+                    const Spacer(),
+                    ToggleIconButton(
+                      on: state.isBookmarked(ayah.key),
+                      onIcon: PopIcon.bookmarkOn,
+                      offIcon: PopIcon.bookmarkOff,
+                      tooltip: tr(state.isBookmarked(ayah.key) ? 'removeBookmark' : 'addBookmark', lang, {'key': ayah.key}),
+                      onPressed: () => state.toggleBookmark(ayah.key),
+                    ),
+                    const SizedBox(width: 6),
+                    if (canPlay)
+                      InkIconButton(
+                        icon: playing ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                        tooltip: tr('listen', lang, {'n': ayah.aya}),
+                        color: playing ? Pop.cyan : Colors.white,
+                        onPressed: onPlay,
+                      ),
+                  ],
                 ),
-            ],
+              ),
+            ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(14, 6, 14, 14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
           ArabicText(ayah.arabic),
           if (m != null) ...[
             const SizedBox(height: 4),
@@ -352,6 +370,9 @@ class _AyahCard extends StatelessWidget {
                 child: Text(m.footnotes, style: const TextStyle(fontSize: 13, color: Pop.muted, height: 1.4)),
               ),
           ],
+              ],
+            ),
+          ),
         ],
       ),
     );

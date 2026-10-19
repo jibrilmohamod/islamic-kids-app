@@ -123,25 +123,36 @@ void main() {
 
   Future<void> settle() => pumpEventQueue();
 
+  /// Waits for [done]: saving files is real disk work, so a fixed number of
+  /// event-loop turns is not enough on a busy CI machine.
+  Future<void> until(bool Function() done, {String? reason}) async {
+    final end = DateTime.now().add(const Duration(seconds: 5));
+    while (!done()) {
+      if (DateTime.now().isAfter(end)) fail('Timed out waiting for ${reason ?? 'condition'}');
+      await Future<void>.delayed(const Duration(milliseconds: 5));
+    }
+  }
+
   test('recites to the end of the surah, a few ayat ahead, without pauses', () async {
     final s = surah(1, 7);
     await rec.start(s, 0);
+    // Ayah 1 plays; 2, 3 and 4 are fetched and queued in the same playlist.
+    await until(() => player.playlist.length == 1 + Recitation.ahead, reason: 'three ayat queued ahead');
     await settle();
     expect(rec.playing, isTrue);
-    // Ayah 1 plays; 2, 3 and 4 are already queued in the same playlist.
-    expect(player.playlist.length, 1 + Recitation.ahead);
+    expect(player.playlist.length, 1 + Recitation.ahead, reason: 'stays only three ahead');
     expect(fetched, [1, 2, 3, 4]);
 
     for (var i = 1; i < 7; i++) {
+      await until(() => player.playlist.length > i, reason: 'ayah ${i + 1} queued');
       player.finishFile();
-      await settle();
-      expect(rec.index, i);
+      await until(() => rec.index == i, reason: 'moved to ayah ${i + 1}');
       expect(rec.key, '1:${i + 1}');
+      expect(rec.waiting, isFalse, reason: 'no pause between ayat');
     }
     expect(player.playlist.length, 7);
     player.finishFile();
-    await settle();
-    expect(rec.active, isFalse);
+    await until(() => !rec.active, reason: 'run ended');
   });
 
   test('one ayah only when not asked to carry on', () async {
@@ -162,12 +173,10 @@ void main() {
     await settle();
     expect(player.playlist.length, 1);
     player.finishFile(); // ayah 1 ends before ayah 2 has arrived
-    await settle();
     expect(rec.waiting, isTrue);
     expect(rec.active, isTrue);
     gates[2]!.complete();
-    await settle();
-    expect(rec.waiting, isFalse);
+    await until(() => !rec.waiting, reason: 'ayah 2 arrived');
     expect(rec.index, 1);
     expect(player.isPlaying, isTrue);
   });
@@ -176,14 +185,12 @@ void main() {
     final s = surah(4, 6);
     failing.add(3);
     await rec.start(s, 0);
-    await settle();
-    expect(rec.failures.value, 1);
+    await until(() => rec.failures.value == 1, reason: 'the failure counted');
     expect(player.playlist.length, 2);
     player.finishFile();
-    await settle();
+    await until(() => rec.index == 1, reason: 'ayah 2 playing');
     player.finishFile();
-    await settle();
-    expect(rec.active, isFalse);
+    await until(() => !rec.active, reason: 'run ended');
   });
 
   test('the first ayah failing throws and leaves nothing playing', () async {

@@ -115,7 +115,14 @@ jobs:
         if: env.ON_MAIN == 'true' || github.event_name == 'pull_request'
         continue-on-error: true
         working-directory: app
-        run: flutter test --update-goldens test_screens/
+        run: |
+          set -o pipefail
+          if ! flutter test --update-goldens test_screens/ 2>&1 | tee previews.log; then
+            # Logs cannot be read from outside GitHub: name the failing screen here.
+            msg=$(grep -E '\[E\]|EXCEPTION CAUGHT|overflowed|Expected:|Actual:|^  ' previews.log | head -25 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' | awk '{printf "%s%%0A", $0}')
+            echo "::warning title=A screen preview failed::${msg}"
+            exit 1
+          fi
 
       - name: Publish previews
         if: env.ON_MAIN == 'true' || github.event_name == 'pull_request'

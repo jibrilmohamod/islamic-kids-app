@@ -132,6 +132,16 @@ const Map<String, Map<String, String>> _strings = {
     'so': 'Weli waxba lama kaydin. Fur suurad oo taabo badhanka kaydinta.',
   },
   'deleteAudioQ': {'en': 'Remove the saved audio for {name}?', 'so': 'Ma tirtirtaa codka {name}?'},
+  'goodMorning': {'en': 'Good morning', 'so': 'Subax wanaagsan'},
+  'goodAfternoon': {'en': 'Good afternoon', 'so': 'Galab wanaagsan'},
+  'goodEvening': {'en': 'Good evening', 'so': 'Fiid wanaagsan'},
+  'keepGoing': {'en': 'Keep going', 'so': 'Sii wad'},
+  'roundOf': {'en': 'Round {n} of {total}', 'so': 'Wareegga {n} / {total}'},
+  'duaThisMorning': {'en': 'Dua for this morning', 'so': 'Ducada subaxan'},
+  'duaThisEvening': {'en': 'Dua for this evening', 'so': 'Ducada fiidkan'},
+  'daysCount': {'en': '{n} days', 'so': '{n} maalmood'},
+  'daysCountOne': {'en': '1 day', 'so': '1 maalin'},
+  'gamesFor': {'en': 'Games for {name}', 'so': 'Ciyaaraha {name}'},
 };
 
 String tr(String key, String lang, [Map<String, Object> args = const {}]) {

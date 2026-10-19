@@ -53,7 +53,11 @@ class AudioService {
   Future<File> ensure(Ayah a) {
     final n = a.n;
     if (n == null) return Future.error(StateError('No audio number for ${a.key}'));
-    return _inFlight[n] ??= _fetch(a, n).whenComplete(() => _inFlight.remove(n));
+    // The block body matters: an arrow would return the removed Future, and
+    // whenComplete would then wait on itself forever.
+    return _inFlight[n] ??= _fetch(a, n).whenComplete(() {
+      _inFlight.remove(n);
+    });
   }
 
   Future<File> _fetch(Ayah a, int n) async {

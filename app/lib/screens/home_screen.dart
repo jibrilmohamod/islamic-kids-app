@@ -262,8 +262,7 @@ class _Pop extends StatelessWidget {
 class _Pressable extends StatefulWidget {
   final Widget child;
   final VoidCallback onTap;
-  final double shadow;
-  const _Pressable({required this.child, required this.onTap, this.shadow = 4});
+  const _Pressable({required this.child, required this.onTap});
 
   @override
   State<_Pressable> createState() => _PressableState();
@@ -274,7 +273,7 @@ class _PressableState extends State<_Pressable> {
 
   @override
   Widget build(BuildContext context) {
-    final s = widget.shadow;
+    const s = 4.0;
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTapDown: (_) => setState(() => _down = true),

@@ -78,9 +78,15 @@ jobs:
           fi
           grep -q 'android.permission.INTERNET' android/app/src/main/AndroidManifest.xml
 
+      # Findings become annotations on the run, so they are readable without
+      # downloading the log.
       - name: Analyze
         working-directory: app
-        run: flutter analyze --no-fatal-infos
+        run: |
+          set +e
+          dart analyze --format=machine . > "$RUNNER_TEMP/analyze.txt" 2>&1
+          awk -F'|' 'NF>=8 && $1!="INFO" { f=$4; sub(/.*\/app\//,"app/",f); printf "::%s file=%s,line=%s,col=%s,title=%s::%s\n", ($1=="ERROR"?"error":"warning"), f, $5, $6, $3, $8 }' "$RUNNER_TEMP/analyze.txt"
+          flutter analyze --no-fatal-infos
 
       - name: Test
         working-directory: app

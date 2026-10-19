@@ -105,27 +105,24 @@ class _DuaForNowCard extends StatelessWidget {
 class _Tile extends StatelessWidget {
   final IconData icon;
   final String label;
-  final String? subtitle;
   final Color color;
-  final Widget? page;
-  const _Tile({required this.icon, required this.label, required this.color, this.subtitle, this.page});
+  final Widget page;
+  const _Tile({required this.icon, required this.label, required this.color, required this.page});
 
   @override
   Widget build(BuildContext context) {
-    final p = page;
     return Material(
       color: color,
       borderRadius: BorderRadius.circular(20),
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
-        onTap: p == null ? null : () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => p)),
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => page)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 48, color: Colors.white),
             const SizedBox(height: 8),
             Text(label, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white)),
-            if (subtitle != null) Text(subtitle!, style: const TextStyle(color: Colors.white)),
           ],
         ),
       ),

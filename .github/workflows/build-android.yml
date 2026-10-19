@@ -96,9 +96,40 @@ jobs:
         working-directory: app
         run: flutter test
 
+      # Release signing uses an upload key kept only in GitHub secrets.
+      # Until those secrets exist the APK stays debug-signed.
+      - name: Set up release signing when the key exists
+        id: signing
+        if: env.ON_MAIN == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::notice title=Signing::No release key in secrets yet; the APK is debug-signed"
+            exit 0
+          fi
+          echo "$KEYSTORE_BASE64" | base64 -d > app/android/app/upload-keystore.jks
+          printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=upload-keystore.jks\n' \
+            "$KEYSTORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > app/android/key.properties
+          echo "signed=true" >> "$GITHUB_OUTPUT"
+
       - name: Build APK
         working-directory: app
         run: flutter build apk --release
+
+      - name: Build app bundle for Google Play
+        if: steps.signing.outputs.signed == 'true'
+        working-directory: app
+        run: flutter build appbundle --release
+
+      - uses: actions/upload-artifact@v4
+        if: steps.signing.outputs.signed == 'true'
+        with:
+          name: islamic-kids-app-aab
+          path: app/build/app/outputs/bundle/release/app-release.aab
 
       - name: Commit the bundle, lock file and android/ if they changed
         if: env.ON_MAIN == 'true'

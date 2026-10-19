@@ -20,3 +20,8 @@ published.json
 
 # Fetched by tool/fetch-fonts.mjs
 app/assets/fonts/
+
+# Release signing (never commit)
+app/android/key.properties
+*.jks
+*.keystore

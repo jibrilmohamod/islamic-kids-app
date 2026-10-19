@@ -1,0 +1,22 @@
+name: islamic_kids_app
+description: Free Islamic learning app for children aged 8 to 12, in Somali and English.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+# No third-party packages yet. Every package added later is checked first for
+# current maintenance and licence.
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/content/bundle.json

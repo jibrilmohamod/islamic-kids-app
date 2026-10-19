@@ -1,0 +1,4 @@
+# Standard analyzer only. Add flutter_lints later if wanted.
+analyzer:
+  language:
+    strict-casts: false

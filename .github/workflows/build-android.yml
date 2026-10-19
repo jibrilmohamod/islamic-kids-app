@@ -1,0 +1,65 @@
+name: Build Android
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test the content pipeline
+        run: node --test pipeline/pipeline.test.mjs
+
+      - name: Build the content bundle from QuranEnc and HadeethEnc
+        run: node pipeline/build-bundle.mjs
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Add the Android project files
+        working-directory: app
+        run: flutter create --platforms android --org com.jibrilmohamod --project-name islamic_kids_app .
+
+      - name: Analyze
+        working-directory: app
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        working-directory: app
+        run: flutter test
+
+      - name: Build APK
+        working-directory: app
+        run: flutter build apk --release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: islamic-kids-app-apk
+          path: app/build/app/outputs/flutter-apk/app-release.apk
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: content-bundle
+          path: app/assets/content/bundle.json
+          if-no-files-found: ignore

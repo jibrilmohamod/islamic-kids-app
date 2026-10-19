@@ -483,11 +483,7 @@ class _ContinueCard extends StatelessWidget {
                         children: [
                           Text(tr('keepGoing', lang),
                               style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Pop.muted, height: 1.1)),
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            alignment: Alignment.centerLeft,
-                            child: Text(next.name, style: const TextStyle(fontFamily: Pop.display, fontSize: 17, height: 1.15)),
-                          ),
+                          Text(next.name, style: const TextStyle(fontFamily: Pop.display, fontSize: 17, height: 1.15)),
                           Text(tr('roundOf', lang, {'n': math.min(done + 1, rounds), 'total': rounds}),
                               style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, height: 1.1)),
                         ],
@@ -597,30 +593,37 @@ class _WeekRow extends StatelessWidget {
     final dots = state.activity.weekDots(now);
     final labels = tr('weekdaysShort', lang).split(',');
     final today = weekOf(now).indexWhere((d) => dayKey(d) == dayKey(now));
-    return Row(
+    // Wraps onto two lines with large text instead of overflowing.
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 8,
+      runSpacing: 6,
       children: [
         Text(tr('thisWeek', lang), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800)),
-        const SizedBox(width: 6),
-        for (var i = 0; i < 7; i++)
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 1.5),
-            child: _Pop(
-              t: CurvedAnimation(
-                parent: intro,
-                curve: Interval((700 + 40 * i) / 1600, ((700 + 40 * i) + 420) / 1600, curve: Curves.easeOutBack),
-              ),
-              child: ScaleTransition(
-                scale: i == today ? Tween(begin: 1.0, end: 1.3).animate(pulse) : const AlwaysStoppedAnimation(1.0),
-                child: StarTile(
-                  size: 26,
-                  glaze: dots[i] ? Glaze.full : (i == today ? Glaze.next : Glaze.empty),
-                  color: Pop.glazes[i % Pop.glazes.length],
-                  semanticsLabel: labels.length == 7 ? labels[i] : '',
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (var i = 0; i < 7; i++)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 1.5),
+                child: _Pop(
+                  t: CurvedAnimation(
+                    parent: intro,
+                    curve: Interval((700 + 40 * i) / 1600, ((700 + 40 * i) + 420) / 1600, curve: Curves.easeOutBack),
+                  ),
+                  child: ScaleTransition(
+                    scale: i == today ? Tween(begin: 1.0, end: 1.3).animate(pulse) : const AlwaysStoppedAnimation(1.0),
+                    child: StarTile(
+                      size: 26,
+                      glaze: dots[i] ? Glaze.full : (i == today ? Glaze.next : Glaze.empty),
+                      color: Pop.glazes[i % Pop.glazes.length],
+                      semanticsLabel: labels.length == 7 ? labels[i] : '',
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        const Spacer(),
+          ],
+        ),
         Text(
             state.activity.daysThisWeek(now) == 1
                 ? tr('daysCountOne', lang)
@@ -663,7 +666,10 @@ class _Niches extends StatelessWidget {
     return LayoutBuilder(builder: (context, c) {
       const gap = 10.0;
       final w = (c.maxWidth - 2 * gap - 4) / 3;
-      final h = w * 132 / 106;
+      // The label band grows with the phone's text size (two lines at most),
+      // so labels are never shrunk to fit.
+      final band = MediaQuery.textScalerOf(context).scale(13) * 2.3 + 14;
+      final h = w * 0.98 + band;
       return Wrap(
         spacing: gap,
         runSpacing: gap + 4,
@@ -676,7 +682,7 @@ class _Niches extends StatelessWidget {
                 curve: Interval(((850 + 70 * i) / 1600).clamp(0.0, 1.0), ((850 + 70 * i + 420) / 1600).clamp(0.0, 1.0),
                     curve: Curves.easeOutBack),
               ),
-              child: _Niche(spec: specs[i], width: w, height: h, ambient: ambient),
+              child: _Niche(spec: specs[i], width: w, height: h, band: band, ambient: ambient),
             ),
         ],
       );
@@ -688,8 +694,9 @@ class _Niche extends StatefulWidget {
   final _NicheSpec spec;
   final double width;
   final double height;
+  final double band;
   final Animation<double> ambient;
-  const _Niche({required this.spec, required this.width, required this.height, required this.ambient});
+  const _Niche({required this.spec, required this.width, required this.height, required this.band, required this.ambient});
 
   @override
   State<_Niche> createState() => _NicheState();
@@ -742,15 +749,20 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
                 height: h,
                 child: Stack(
                   children: [
-                    CustomPaint(size: Size(w, h), painter: _ArchPainter(fill: Colors.white, divider: h - 34)),
-                    Positioned(left: 0, right: 0, top: h * 0.24, child: Center(child: ExcludeSemantics(child: icon))),
+                    CustomPaint(size: Size(w, h), painter: _ArchPainter(fill: Colors.white, divider: h - widget.band)),
+                    Positioned(left: 0, right: 0, top: w * 0.3, child: Center(child: ExcludeSemantics(child: icon))),
                     Positioned(
-                      left: 2,
-                      right: 2,
-                      bottom: 9,
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(label, style: const TextStyle(fontFamily: Pop.display, fontSize: 13, height: 1)),
+                      left: 4,
+                      right: 4,
+                      bottom: 0,
+                      height: widget.band,
+                      child: Center(
+                        child: ExcludeSemantics(
+                          child: Text(label,
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              style: const TextStyle(fontFamily: Pop.display, fontSize: 13, height: 1.1)),
+                        ),
                       ),
                     ),
                   ],

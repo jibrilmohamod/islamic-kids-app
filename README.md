@@ -64,6 +64,14 @@ until coverage is good enough. Each pipeline run prints the Somali coverage.
 
 Design and trade-offs: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
+## Content updates
+
+Every push to `main` builds the bundle, commits it if the text changed, and
+publishes it to Supabase Storage through the `publish-content` edge function
+(`supabase/functions/`). Phones check the public manifest in the background
+and use a newer bundle from their next launch. The APK always carries a copy,
+so the app works offline from first install.
+
 ## What is in v0.1
 
 - Learn: 11 surahs (Al-Fatiha, 105 to 114), hadith on eating and sleeping manners

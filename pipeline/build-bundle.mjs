@@ -128,6 +128,9 @@ export async function build(config, get = fetchJson, log = console.log) {
 
   const now = new Date();
   const bundle = {
+    // Bump only when the app can no longer read the old shape. Old app
+    // versions ignore published bundles with a schema they do not know.
+    schemaVersion: 1,
     bundleVersion: now.toISOString().slice(0, 19).replace(/[-:T]/g, ''),
     generatedAt: now.toISOString(),
     languages: langs,

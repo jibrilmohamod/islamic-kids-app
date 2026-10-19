@@ -6,11 +6,13 @@ version: 0.1.0+1
 environment:
   sdk: '>=3.3.0 <4.0.0'
 
-# No third-party packages yet. Every package added later is checked first for
-# current maintenance and licence.
+# Only first-party flutter.dev packages so far. Check maintenance and licence
+# before adding anything else.
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^2.1.0
+  shared_preferences: ^2.5.0
 
 dev_dependencies:
   flutter_test:

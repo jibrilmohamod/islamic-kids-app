@@ -63,6 +63,7 @@ test('buildHadith maps fields per language', () => {
 
 test('validateBundle catches empty text and duplicate ids', () => {
   const bundle = {
+    schemaVersion: 1,
     sources: { e: {}, s: {} },
     surahs: [{ id: 'surah-1', ayat: [{ key: '1:1', arabic: 'x', meaning: { en: { text: '', source: 'e' }, so: { text: 'y', source: 's' } } }] }],
     hadith: [{ id: 'dup', ar: { text: 'a' }, en: { title: 't', text: 't', attribution: 'a', grade: 'g' }, so: { title: 't', text: 't', attribution: 'a', grade: 'g' } }],
@@ -114,7 +115,7 @@ test('optional language is added where available and never required', async () =
     languages: ['en'],
     optionalLanguages: ['so'],
     quranTranslations: { en: 'english_saheeh', so: 'somali_yacob' },
-    surahs: [],
+    surahs: [{ number: 112, name: 'Al-Ikhlas', nameAr: 'الإخلاص' }],
     hadithGroups: [{ id: 'g', categoryId: 290, max: 5 }],
     duaCategories: [],
     quranDuas: [],
@@ -122,6 +123,8 @@ test('optional language is added where available and never required', async () =
   const fake = async (url) => {
     if (url.includes('/translations/list/en')) return { translations: [{ key: 'english_saheeh', version: '1', title: 'EN' }] };
     if (url.includes('/translations/list/so')) return { translations: [{ key: 'somali_yacob', version: '2', title: 'SO' }] };
+    const sm = url.match(/translation\/sura\/(\w+)\/(\d+)/);
+    if (sm) return { result: [1, 2].map((a) => ayaRow(Number(sm[2]), a, sm[1].startsWith('english') ? 'en' : 'so')) };
     if (url.includes('category_id=290')) return { data: [{ id: '11', translations: ['en'] }, { id: '12', translations: ['en', 'so'] }, { id: '13', translations: ['so'] }], meta: { last_page: 1 } };
     const m = url.match(/hadeeths\/one\/\?id=(\d+)&language=(\w+)/);
     if (m) return hadithDetail(m[1], m[2]);

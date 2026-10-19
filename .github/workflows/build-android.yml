@@ -7,12 +7,19 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write   # commit the content bundle and the generated android/ folder
+  id-token: write   # GitHub OIDC token for the publish-content function
+
+env:
+  SUPABASE_URL: https://jmczkzlzvwkfbxsiftls.supabase.co
+  PUBLISH_AUDIENCE: islamic-kids-app-publish
 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      ON_MAIN: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -23,30 +30,31 @@ jobs:
       - name: Test the content pipeline
         run: node --test pipeline/pipeline.test.mjs
 
+      # If QuranEnc or HadeethEnc is down, build with the last committed
+      # bundle instead of failing the whole build.
       - name: Build the content bundle from QuranEnc and HadeethEnc
         run: |
-          node pipeline/build-bundle.mjs | tee pipeline.log
-          echo "::notice title=Content bundle::$(tail -n 1 pipeline.log)"
+          set -o pipefail
+          if node pipeline/build-bundle.mjs | tee pipeline.log; then
+            echo "::notice title=Content bundle::$(tail -n 1 pipeline.log)"
+          else
+            echo "::warning title=Content bundle::Fetch or validation failed; using the committed bundle"
+            git checkout -- app/assets/content/bundle.json
+          fi
 
-      # Keep the shipped text under version control so every change to it can
-      # be reviewed. Only the bundle file is committed; [skip ci] stops a loop.
-      - name: Commit the content bundle if it changed
-        if: github.event_name != 'pull_request'
+      # bundleVersion and generatedAt change on every run. When the content
+      # itself is unchanged, keep the committed file so its version and hash
+      # stay stable and phones are not told to re-download the same text.
+      - name: Keep the committed bundle if only timestamps changed
         run: |
-          # bundleVersion and generatedAt change on every run; commit only when the content changed.
           if git cat-file -e HEAD:app/assets/content/bundle.json 2>/dev/null; then
             git show HEAD:app/assets/content/bundle.json | node pipeline/strip-stamps.mjs > "$RUNNER_TEMP/old.json"
             node pipeline/strip-stamps.mjs < app/assets/content/bundle.json > "$RUNNER_TEMP/new.json"
             if cmp -s "$RUNNER_TEMP/old.json" "$RUNNER_TEMP/new.json"; then
-              echo "Content unchanged, nothing to commit"
-              exit 0
+              git checkout -- app/assets/content/bundle.json
+              echo "Content unchanged"
             fi
           fi
-          git add app/assets/content/bundle.json
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "content: update bundle from QuranEnc and HadeethEnc [skip ci]"
-          git push
 
       - uses: actions/setup-java@v4
         with:
@@ -58,9 +66,17 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Add the Android project files
+      # One-off: generate android/ when it is not in the repo yet. It is then
+      # committed, so manifest, app id and signing changes are versioned.
+      - name: Generate the Android project if missing
         working-directory: app
-        run: flutter create --platforms android --org com.jibrilmohamod --project-name islamic_kids_app .
+        run: |
+          if [ ! -d android ]; then
+            flutter create --platforms android --org com.jibrilmohamod --project-name islamic_kids_app .
+            # Release builds need INTERNET for content updates and YouTube.
+            sed -i 's#<manifest xmlns:android="http://schemas.android.com/apk/res/android">#&\n    <uses-permission android:name="android.permission.INTERNET"/>#' android/app/src/main/AndroidManifest.xml
+          fi
+          grep -q 'android.permission.INTERNET' android/app/src/main/AndroidManifest.xml
 
       - name: Analyze
         working-directory: app
@@ -74,14 +90,37 @@ jobs:
         working-directory: app
         run: flutter build apk --release
 
+      - name: Commit the bundle, lock file and android/ if they changed
+        if: env.ON_MAIN == 'true'
+        run: |
+          git add app/assets/content/bundle.json app/android app/pubspec.lock
+          if git diff --cached --quiet; then echo "Nothing to commit"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "build: update content bundle and generated files [skip ci]"
+          git pull --rebase origin main
+          git push
+
+      # Publishes the bundle to Supabase Storage. Same content gives the same
+      # hash and file, so republishing is harmless.
+      - name: Publish content to Supabase
+        if: env.ON_MAIN == 'true'
+        run: |
+          set -euo pipefail
+          url="$SUPABASE_URL/functions/v1/publish-content"
+          token=$(curl -sS -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$PUBLISH_AUDIENCE" | jq -r .value)
+          curl -sS --fail-with-body -X POST -H "Authorization: Bearer $token" \
+            -H "Content-Type: application/json" \
+            --data-binary @app/assets/content/bundle.json "$url" > published.json
+          echo "::notice title=Published to Supabase::$(cat published.json)"
+
+          # Safety checks: strangers cannot publish, and anyone can read.
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$url" -d '{}')
+          [ "$code" = 401 ] || { echo "::error::publish-content accepted an unauthenticated call ($code)"; exit 1; }
+          curl -sS --fail "$SUPABASE_URL/storage/v1/object/public/content/v1/manifest.json" > /dev/null
+
       - uses: actions/upload-artifact@v4
         with:
           name: islamic-kids-app-apk
           path: app/build/app/outputs/flutter-apk/app-release.apk
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: content-bundle
-          path: app/assets/content/bundle.json
-          if-no-files-found: ignore

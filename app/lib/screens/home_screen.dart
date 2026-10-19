@@ -67,7 +67,6 @@ class HomeScreen extends StatelessWidget {
                       _Tile(icon: Icons.menu_book, label: tr('learn', lang), color: sceneGarden.first, page: const LearnScreen()),
                       _Tile(icon: Icons.volunteer_activism, label: tr('duas', lang), color: sceneNight.first, page: const DuasScreen()),
                       _Tile(icon: Icons.extension, label: tr('play', lang), color: sceneDesert.first, page: const PlayScreen()),
-                      _Tile(icon: Icons.play_circle_outline, label: tr('watch', lang), color: const Color(0xFF6B6B6B), subtitle: tr('comingSoon', lang)),
                     ],
                   ),
                 ),

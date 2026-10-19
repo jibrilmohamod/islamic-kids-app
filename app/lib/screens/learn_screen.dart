@@ -29,7 +29,7 @@ class LearnScreen extends StatelessWidget {
                   ListTile(
                     leading: CircleAvatar(child: Text('${s.number}')),
                     title: Text(s.name),
-                    subtitle: Text('${s.ayat.length}'),
+                    subtitle: Text('${s.ayat.length} ${tr('ayat', lang)}'),
                     trailing: Directionality(
                       textDirection: TextDirection.rtl,
                       child: Text(s.nameAr, style: const TextStyle(fontSize: 20)),

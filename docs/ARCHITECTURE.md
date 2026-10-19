@@ -35,24 +35,31 @@ coverage is good enough.
 ## 2. High-level design
 
 ```
- BUILD TIME (GitHub Actions)                         RUN TIME (phone)
- ───────────────────────────                         ────────────────
- QuranEnc API ──┐                                    ┌──────────────────────────┐
-                ├─► pipeline/build-bundle.mjs ──┐    │ Flutter app              │
- HadeethEnc API ┘   fetch · validate · fail     │    │                          │
-                    closed on any empty text    │    │  ContentRepository       │
-                                                ▼    │    └ bundle.json (asset) │
-                          app/assets/content/bundle.json ──► Learn / Duas / Play │
-                          (committed to git, reviewable)│    Basics / Parents     │
-                                                ▼    │                          │
-                          flutter analyze, test, build  │  Watch ──► YouTube      │
-                                                ▼    │   IFrame (allowlist only)│
-                                     APK artifact ──────►  Local progress store   │
-                                                     └──────────────────────────┘
+ BUILD (GitHub Actions, main branch)
+ ───────────────────────────────────
+ QuranEnc ─┐
+           ├─► pipeline ─► bundle.json ─► commit to git (reviewable diff)
+ HadeethEnc┘   fail closed      │
+                                ├─► flutter analyze · test · build APK (bundle inside)
+                                │
+                                └─► POST publish-content (Supabase Edge Function)
+                                      auth: GitHub OIDC token, this repo + main only
+                                      writes with service role:
+                                        content/v1/bundles/<sha256>.json  (immutable, 1 y cache)
+                                        content/v1/manifest.json          (60 s cache)
+
+ PHONE
+ ─────
+ launch ─► ContentStore.loadBest()
+             cached download newer than APK copy?  yes ─► use it
+                                                   no  ─► use APK copy
+        └─► background: GET manifest (public URL, no key)
+              newer + same schema? ─► GET bundle, check size, parse, atomic write
+              used from the NEXT launch (text never changes mid-lesson)
 ```
 
-The only runtime network call in v1 is the YouTube player. Content updates
-ship as app updates.
+Runtime network calls: the public manifest and bundle URLs, and the YouTube
+player. No API keys ship in the app.
 
 ## 3. Deep dive
 
@@ -75,8 +82,8 @@ changes, so every text change is a reviewable commit.
 | Layer | Now | Revisit when |
 |---|---|---|
 | State | `AppState` (ChangeNotifier) via `InheritedNotifier` | More than ~5 screens share mutable state |
-| Content | Loaded once from the asset bundle | Remote bundle (below) |
-| Progress | In memory | Next step: a local key-value store, package vetted first |
+| Content | `ContentStore`: APK copy, replaced by a newer published bundle on the next launch | Content grows past a few MB: split into packs |
+| Progress | `shared_preferences` (games completed, language) | Streaks and badges need a schema |
 | Navigation | `Navigator.push` | Deep links or more than ~15 routes |
 | Strings | Map in `strings.dart` | Somali launch: move to ARB files and `flutter gen-l10n` |
 
@@ -106,7 +113,10 @@ There is no server, so load is not a concern. Risks are upstream:
 
 | Risk | Effect | Mitigation |
 |---|---|---|
-| QuranEnc or HadeethEnc down during CI | Pipeline fails, no APK | Fall back to the committed bundle when the fetch fails (to build) |
+| QuranEnc or HadeethEnc down during CI | Fetch fails | CI falls back to the committed bundle and still builds |
+| Bad bundle published | Phones could get broken text | Fail-closed pipeline, edge function checks schema, app re-validates and keeps the old copy on any error |
+| New bundle shape | Old app versions misread it | `schemaVersion`: apps ignore bundles they do not understand |
+| Supabase project paused or down | No updates | App keeps working on its last bundle |
 | API field renamed | Validation fails closed | Fixture tests; fix the mapping |
 | Translation updated upstream | Bundle text changes | Shows up as a bot commit to review |
 | YouTube video removed | Blank player | Weekly CI check of the allowlist (to build) |
@@ -117,7 +127,9 @@ Monitoring: Play Console crash and ANR reports only. No in-app analytics.
 
 | Decision | Chosen | Alternative | Why |
 |---|---|---|---|
-| Content delivery | Bundled in APK | Remote bundle on GitHub Pages | Offline by default, zero hosting; costs an app update per content change |
+| Content delivery | APK copy plus Supabase Storage updates | APK only; GitHub Pages | Offline first, text fixes reach phones without a Play release, free tier |
+| Publish auth | GitHub OIDC verified in an edge function | Service key stored as a CI secret | No long-lived secret anywhere |
+| Update timing | Next launch | Swap immediately | Text never changes under a child mid-lesson |
 | Language coverage | English required, Somali optional with fallback | Only items in both languages | Full English launch now; Somali grows as sources add it |
 | State management | Built-in `InheritedNotifier` | Riverpod, Bloc | No dependency to vet; small app |
 | Build | GitHub Actions | Local Flutter | No local Flutter; reproducible builds |
@@ -125,8 +137,8 @@ Monitoring: Play Console crash and ANR reports only. No in-app analytics.
 
 ## 6. Revisit as it grows
 
-1. Remote content bundle (GitHub Pages or Releases) so text updates skip the Play review cycle.
-2. Persistent progress, streaks and badges.
+1. Streaks and badges on top of the saved progress.
+2. Hash check on the phone (needs the `crypto` package) in addition to the size check.
 3. ARB-based localization for the Somali launch.
 4. Audio packs downloaded on demand.
 5. iOS once macOS build capacity exists.

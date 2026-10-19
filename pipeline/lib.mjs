@@ -128,6 +128,8 @@ const isBlank = (v) => typeof v !== 'string' || v.trim() === '';
 // Returns a list of problems. An empty list means the bundle may ship.
 export function validateBundle(bundle, langs) {
   const errors = [];
+  if (bundle.schemaVersion !== 1) errors.push('schemaVersion must be 1');
+  if (!bundle.surahs?.length) errors.push('no surahs');
   for (const s of bundle.surahs ?? []) {
     if (!s.ayat?.length) errors.push(`${s.id}: no ayat`);
     for (const a of s.ayat ?? []) {

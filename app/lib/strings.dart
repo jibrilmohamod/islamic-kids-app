@@ -13,6 +13,7 @@ const Map<String, Map<String, String>> _strings = {
   'comingSoon': {'en': 'Coming soon', 'so': 'Dhowaan'},
   'surahs': {'en': 'Surahs', 'so': 'Suuradaha'},
   'hadith': {'en': 'Hadith', 'so': 'Xadiisyada'},
+  'ayat': {'en': 'ayat', 'so': 'aayadood'},
   'meaning': {'en': 'Meaning', 'so': 'Macnaha'},
   'understand': {'en': 'Understand it', 'so': 'Faham'},
   'source': {'en': 'Source', 'so': 'Isha'},

@@ -10,6 +10,7 @@ import 'activity.dart';
 import 'audio_service.dart';
 import 'content_store.dart';
 import 'models.dart';
+import 'mushaf.dart';
 import 'progress.dart';
 
 /// App-wide state: content, language, progress and audio. Everything is kept
@@ -25,6 +26,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   static const _kMinutes = 'minutesByDay';
   static const _kExtra = 'extraByDay';
   static const _kLimit = 'dailyLimit';
+  static const _kLastPage = 'mushafPage';
 
   String lang = 'en';
   ContentBundle? bundle;
@@ -34,6 +36,29 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   Activity activity = Activity();
   SharedPreferences? _prefs;
   Timer? _ticker;
+  MushafBook? _book;
+
+  /// The mushaf page the child was last reading, like a bookmark.
+  int lastPage = 1;
+
+  void setLastPage(int page) {
+    lastPage = page;
+    _prefs?.setInt(_kLastPage, page);
+  }
+
+  ContentBundle? _bookFor;
+
+  /// The Madina mushaf pages for the current bundle, built once. Null when
+  /// the bundle carries no page layout.
+  MushafBook? get book {
+    final b = bundle;
+    if (b == null) return null;
+    if (!identical(_bookFor, b)) {
+      _bookFor = b;
+      _book = MushafBook.from(b);
+    }
+    return _book;
+  }
 
   /// Injectable clock for tests.
   DateTime Function() now = DateTime.now;
@@ -52,6 +77,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
         extraByDay: Activity.decodeCounts(_prefs!.getStringList(_kExtra) ?? const []),
         dailyLimit: _prefs!.getInt(_kLimit) ?? 0,
       )..prune(DateTime.now());
+      lastPage = _prefs!.getInt(_kLastPage) ?? 1;
     } catch (_) {
       // Preferences are a convenience; the app still runs without them.
     }

@@ -109,6 +109,31 @@ jobs:
         working-directory: app
         run: flutter test
 
+      # Screenshots of key screens with the real fonts and content, pushed to
+      # the "previews" branch so the work can be looked at without a phone.
+      - name: Render screen previews
+        if: env.ON_MAIN == 'true'
+        continue-on-error: true
+        working-directory: app
+        run: flutter test --update-goldens test_screens/
+
+      - name: Publish previews
+        if: env.ON_MAIN == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          d="$RUNNER_TEMP/previews"
+          rm -rf "$d" && mkdir -p "$d"
+          cp app/test_screens/goldens/*.png "$d"/
+          cd "$d"
+          echo "Screens from ${GITHUB_SHA}" > README.md
+          git init -q -b previews
+          git add .
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Previews for ${GITHUB_SHA}"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" previews
+          echo "::notice title=Previews::$(ls *.png | tr '\n' ' ')"
+
       # Release signing uses an upload key kept only in GitHub secrets.
       # Until those secrets exist the APK stays debug-signed.
       - name: Set up release signing when the key exists

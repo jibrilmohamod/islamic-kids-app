@@ -104,8 +104,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "build: update content bundle and generated files [skip ci]"
-          git pull --rebase origin main
-          git push
+          echo "::notice title=Left unstaged::$(git status --short | tr '\n' ' ')"
+          git push || { git pull --rebase --autostash origin main && git push; }
 
       # Publishes the bundle to Supabase Storage. Same content gives the same
       # hash and file, so republishing is harmless.

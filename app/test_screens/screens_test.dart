@@ -44,7 +44,8 @@ Widget _app(Widget home) => AppScope(
 Future<void> _shot(WidgetTester tester, String name, Widget home) async {
   await tester.pumpWidget(_app(home));
   await tester.pump(const Duration(milliseconds: 100));
-  await tester.pump(const Duration(milliseconds: 500));
+  // Past Home's opening (1.6 s) so the screen is shown as it settles.
+  await tester.pump(const Duration(milliseconds: 2000));
   await expectLater(find.byType(MaterialApp), matchesGoldenFile('goldens/$name.png'));
 }
 

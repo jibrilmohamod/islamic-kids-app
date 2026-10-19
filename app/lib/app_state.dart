@@ -27,6 +27,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   static const _kExtra = 'extraByDay';
   static const _kLimit = 'dailyLimit';
   static const _kLastPage = 'mushafPage';
+  static const _kHomeIntro = 'homeIntroDay';
 
   String lang = 'en';
   ContentBundle? bundle;
@@ -40,6 +41,15 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   /// The mushaf page the child was last reading, like a bookmark.
   int lastPage = 1;
+
+  /// The day Home last played its opening animation (dayKey), so it plays
+  /// in full once a day and only fades in after that.
+  String? homeIntroDay;
+
+  void setHomeIntroDay(String day) {
+    homeIntroDay = day;
+    _prefs?.setString(_kHomeIntro, day);
+  }
 
   void setLastPage(int page) {
     lastPage = page;
@@ -78,6 +88,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
         dailyLimit: _prefs!.getInt(_kLimit) ?? 0,
       )..prune(DateTime.now());
       lastPage = _prefs!.getInt(_kLastPage) ?? 1;
+      homeIntroDay = _prefs!.getString(_kHomeIntro);
     } catch (_) {
       // Preferences are a convenience; the app still runs without them.
     }

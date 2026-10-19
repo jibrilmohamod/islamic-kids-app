@@ -75,6 +75,13 @@ jobs:
       - name: Fetch fonts (SIL Open Font License)
         run: node tool/fetch-fonts.mjs
 
+      # A glyph missing from the Quran font draws an empty box in the text.
+      - name: Check the Quran font covers every Arabic character
+        run: |
+          python3 -m venv "$RUNNER_TEMP/ft"
+          "$RUNNER_TEMP/ft/bin/pip" install --quiet fonttools
+          "$RUNNER_TEMP/ft/bin/python" tool/check-font-coverage.py app/assets/fonts/ScheherazadeNew-Regular.ttf app/assets/content/bundle.json
+
       # One-off: generate android/ when it is not in the repo yet. It is then
       # committed, so manifest, app id and signing changes are versioned.
       - name: Generate the Android project if missing

@@ -17,7 +17,7 @@ abstract final class Pop {
 
   static const display = 'Bungee';
   static const body = 'Baloo 2';
-  static const quran = 'Amiri Quran';
+  static const quran = 'Scheherazade New';
 }
 
 ThemeData popTheme() {

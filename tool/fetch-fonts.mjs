@@ -12,7 +12,14 @@ const out = join(dirname(fileURLToPath(import.meta.url)), '..', 'app', 'assets',
 const FONTS = [
   { query: 'Bungee', files: { 400: 'Bungee-Regular.ttf' }, license: 'bungee' },
   { query: 'Baloo+2:wght@500;700;800', files: { 500: 'Baloo2-Medium.ttf', 700: 'Baloo2-Bold.ttf', 800: 'Baloo2-ExtraBold.ttf' }, license: 'baloo2' },
-  { query: 'Amiri+Quran', files: { 400: 'AmiriQuran-Regular.ttf' }, license: 'amiriquran', prefer: 'arabic' },
+  // The Quran font comes whole, never as a Google Fonts subset: a subset can
+  // drop rare Quranic marks. Amiri Quran lacked U+065E (open dammatan in the
+  // King Fahd Complex encoding, 1,807 times in the text) and drew empty boxes.
+  {
+    direct: 'https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/scheherazadenew/ScheherazadeNew-Regular.ttf',
+    files: { 400: 'ScheherazadeNew-Regular.ttf' },
+    license: 'scheherazadenew',
+  },
 ];
 
 async function get(url, as = 'text') {
@@ -42,9 +49,11 @@ async function main() {
   await mkdir(out, { recursive: true });
   const licenses = [];
   for (const font of FONTS) {
-    const urls = ttfUrls(await get(`https://fonts.googleapis.com/css2?family=${font.query}`), font.prefer);
+    const urls = font.direct
+      ? { 400: font.direct }
+      : ttfUrls(await get(`https://fonts.googleapis.com/css2?family=${font.query}`), font.prefer);
     for (const [weight, file] of Object.entries(font.files)) {
-      if (!urls[weight]) throw new Error(`${font.query}: no TTF for weight ${weight}`);
+      if (!urls[weight]) throw new Error(`${font.query ?? font.direct}: no TTF for weight ${weight}`);
       await writeFile(join(out, file), await get(urls[weight], 'bytes'));
       console.log(`${file}`);
     }

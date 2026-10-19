@@ -28,7 +28,7 @@ void main() {
     final state = AppState()
       ..bundle = ContentBundle.fromJson(jsonDecode(raw) as Map<String, dynamic>)
       ..now = () => DateTime(2026, 10, 20, 9);
-    store = (await tester.runAsync(() => LocalStore.open(dir)))!;
+    store = (await tester.runAsync(() => LocalStore.open(dir, autoFlush: null)))!;
     state.store = store;
     return state;
   }

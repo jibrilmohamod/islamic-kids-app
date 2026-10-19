@@ -27,7 +27,7 @@ Future<void> _font(String family, List<String> files) async {
 Future<void> _loadFonts() async {
   await _font('Bungee', ['assets/fonts/Bungee-Regular.ttf']);
   await _font('Baloo 2', ['assets/fonts/Baloo2-Medium.ttf', 'assets/fonts/Baloo2-Bold.ttf', 'assets/fonts/Baloo2-ExtraBold.ttf']);
-  await _font('Amiri Quran', ['assets/fonts/AmiriQuran-Regular.ttf']);
+  await _font('Scheherazade New', ['assets/fonts/ScheherazadeNew-Regular.ttf']);
   final root = Platform.environment['FLUTTER_ROOT'];
   if (root != null) {
     await _font('MaterialIcons', ['$root/bin/cache/artifacts/material_fonts/MaterialIcons-Regular.otf']);

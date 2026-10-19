@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'activity.dart';
 import 'audio_service.dart';
 import 'content_store.dart';
 import 'models.dart';
@@ -13,20 +14,29 @@ import 'progress.dart';
 
 /// App-wide state: content, language, progress and audio. Everything is kept
 /// on the device; there are no accounts.
-class AppState extends ChangeNotifier {
+class AppState extends ChangeNotifier with WidgetsBindingObserver {
   /// English first. Somali can be switched on once its coverage is ready.
   static const bool somaliEnabled = false;
 
   static const _kLang = 'lang';
   static const _kRounds = 'rounds';
   static const _kLegacyCompleted = 'completedGames';
+  static const _kActiveDays = 'activeDays';
+  static const _kMinutes = 'minutesByDay';
+  static const _kExtra = 'extraByDay';
+  static const _kLimit = 'dailyLimit';
 
   String lang = 'en';
   ContentBundle? bundle;
   String? error;
   Progress progress = Progress();
   AudioService? audio;
+  Activity activity = Activity();
   SharedPreferences? _prefs;
+  Timer? _ticker;
+
+  /// Injectable clock for tests.
+  DateTime Function() now = DateTime.now;
 
   Future<void> load() async {
     List<String> legacy = const [];
@@ -36,6 +46,12 @@ class AppState extends ChangeNotifier {
       if (savedLang != null && (savedLang == 'en' || somaliEnabled)) lang = savedLang;
       progress = Progress(_prefs!.getStringList(_kRounds) ?? const []);
       legacy = _prefs!.getStringList(_kLegacyCompleted) ?? const [];
+      activity = Activity(
+        activeDays: (_prefs!.getStringList(_kActiveDays) ?? const []).toSet(),
+        minutesByDay: Activity.decodeCounts(_prefs!.getStringList(_kMinutes) ?? const []),
+        extraByDay: Activity.decodeCounts(_prefs!.getStringList(_kExtra) ?? const []),
+        dailyLimit: _prefs!.getInt(_kLimit) ?? 0,
+      )..prune(DateTime.now());
     } catch (_) {
       // Preferences are a convenience; the app still runs without them.
     }
@@ -58,6 +74,53 @@ class AppState extends ChangeNotifier {
       if (info != null) audio = AudioService(info: info, baseDir: support);
       unawaited(store.checkForUpdate(current.version));
     }
+    WidgetsBinding.instance.addObserver(this);
+    _startTicker();
+    notifyListeners();
+  }
+
+  // ---- Time on screen, for the parent's daily limit ----
+
+  void _startTicker() {
+    _ticker?.cancel();
+    _ticker = Timer.periodic(const Duration(minutes: 1), (_) {
+      final wasUp = activity.timeUp(now());
+      activity.addMinute(now());
+      _prefs?.setStringList(_kMinutes, Activity.encodeCounts(activity.minutesByDay));
+      if (activity.timeUp(now()) != wasUp) notifyListeners();
+    });
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _startTicker();
+      notifyListeners();
+    } else {
+      _ticker?.cancel();
+      _ticker = null;
+    }
+  }
+
+  bool get timeUp => activity.timeUp(now());
+
+  void setDailyLimit(int minutes) {
+    activity.dailyLimit = minutes;
+    _prefs?.setInt(_kLimit, minutes);
+    notifyListeners();
+  }
+
+  void allowMoreTime(int minutes) {
+    activity.allowMore(now(), minutes);
+    _prefs?.setStringList(_kExtra, Activity.encodeCounts(activity.extraByDay));
+    notifyListeners();
+  }
+
+  /// Counts today on the weekly dots. Called when a child finishes a round
+  /// or opens a dua or hadith.
+  void markActive() {
+    if (!activity.markActive(now())) return;
+    _prefs?.setStringList(_kActiveDays, activity.activeDays.toList());
     notifyListeners();
   }
 
@@ -84,6 +147,7 @@ class AppState extends ChangeNotifier {
   }
 
   void completeRound(Surah s, int round) {
+    markActive();
     if (!progress.completeRound(s.number, round)) return;
     _prefs?.setStringList(_kRounds, progress.toSaved());
     notifyListeners();

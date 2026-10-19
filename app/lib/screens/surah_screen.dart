@@ -9,6 +9,7 @@ import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
+import 'missing_word_screen.dart';
 import 'order_game_screen.dart';
 
 class SurahScreen extends StatefulWidget {
@@ -179,6 +180,13 @@ class _SurahScreenState extends State<SurahScreen> {
                           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
                       const SizedBox(height: 10),
                       ComicButton(label: tr('play', lang), icon: Icons.extension_rounded, onPressed: _openGame),
+                      const SizedBox(height: 12),
+                      ComicButton(
+                        label: tr('missingWord', lang),
+                        icon: Icons.search_rounded,
+                        color: Pop.cyan,
+                        onPressed: () => go(context, MissingWordScreen(surah: s)),
+                      ),
                     ],
                   ),
                 ),

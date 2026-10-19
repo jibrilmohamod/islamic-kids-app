@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../activity.dart';
 import '../models.dart';
 import '../progress.dart';
 import '../strings.dart';
@@ -11,6 +12,7 @@ import 'dua_screen.dart';
 import 'duas_screen.dart';
 import 'hadith_screen.dart';
 import 'mosaic_screen.dart';
+import 'parent_gate.dart';
 import 'parent_screen.dart';
 import 'surah_screen.dart';
 
@@ -60,14 +62,18 @@ class HomeScreen extends StatelessWidget {
                         InkIconButton(
                           icon: Icons.lock_outline_rounded,
                           tooltip: tr('parents', lang),
-                          onPressed: () => go(context, const ParentScreen()),
+                          onPressed: () async {
+                            if (await askParent(context) && context.mounted) go(context, const ParentScreen());
+                          },
                         ),
                       ],
                     ),
                     const SizedBox(height: 18),
                     _MosaicPanel(bundle: bundle, progress: state.progress),
+                    const SizedBox(height: 22),
+                    _WeekPanel(activity: state.activity),
                     const SizedBox(height: 26),
-                    _DuaForNowCard(dua: duaForNow(bundle.duas, DateTime.now())),
+                    _DuaForNowCard(dua: duaForNow(bundle.duas, DateTime.now()), all: bundle.duas),
                     const SizedBox(height: 22),
                     Row(
                       children: [
@@ -151,9 +157,61 @@ class _MosaicPanel extends StatelessWidget {
   }
 }
 
+class _WeekPanel extends StatelessWidget {
+  final Activity activity;
+  const _WeekPanel({required this.activity});
+
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppScope.of(context).lang;
+    final now = DateTime.now();
+    final dots = activity.weekDots(now);
+    final labels = tr('weekdaysShort', lang).split(',');
+    final todayIndex = weekOf(now).indexWhere((d) => d.day == now.day && d.month == now.month);
+    return InkPanel(
+      border: 3,
+      shadow: 4,
+      padding: const EdgeInsets.fromLTRB(14, 10, 14, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Text(tr('thisWeek', lang), style: const TextStyle(fontFamily: Pop.display, fontSize: 15)),
+              const Spacer(),
+              Text(tr('daysThisWeek', lang, {'n': activity.daysThisWeek(now)}),
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800)),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              for (var i = 0; i < 7; i++)
+                Column(
+                  children: [
+                    StarTile(
+                      size: 32,
+                      glaze: dots[i] ? Glaze.full : (i == todayIndex ? Glaze.next : Glaze.empty),
+                      color: Pop.glazes[i % Pop.glazes.length],
+                      semanticsLabel: labels.length == 7 ? labels[i] : '',
+                    ),
+                    Text(labels.length == 7 ? labels[i] : '',
+                        style: TextStyle(fontSize: 12, fontWeight: i == todayIndex ? FontWeight.w800 : FontWeight.w500)),
+                  ],
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _DuaForNowCard extends StatelessWidget {
   final Dua? dua;
-  const _DuaForNowCard({required this.dua});
+  final List<Dua> all;
+  const _DuaForNowCard({required this.dua, required this.all});
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +225,10 @@ class _DuaForNowCard extends StatelessWidget {
         InkPanel(
           tiltDegrees: -1,
           padding: const EdgeInsets.fromLTRB(16, 24, 16, 14),
-          onTap: () => go(context, DuaScreen(dua: d)),
+          onTap: () {
+            final list = all.where((x) => x.moment == d.moment).toList();
+            go(context, DuaScreen(duas: list, index: list.indexOf(d), stop: stopFor(d, DateTime.now())));
+          },
           child: Text(title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, height: 1.35)),
         ),
         Positioned(left: 12, top: -14, child: Caption(tr('duaForNow', lang))),

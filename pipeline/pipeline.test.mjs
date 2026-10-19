@@ -17,7 +17,7 @@ const ayaRow = (sura, aya, lang) => ({
 const hadithDetail = (id, lang) => ({
   id: String(id), title: `${lang} title ${id}`, hadeeth: `${lang} text ${id}`,
   attribution: `${lang} attribution`, grade: `${lang} grade`, explanation: `${lang} explanation`,
-  hints: [], categories: ['301'], translations: ['ar', 'en', 'so'],
+  hints: [`${lang} lesson`, ''], categories: ['301'], translations: ['ar', 'en', 'so'],
   hadeeth_ar: `AR hadith ${id}`, attribution_ar: 'AR attribution', grade_ar: 'AR grade',
 });
 
@@ -59,6 +59,7 @@ test('buildHadith maps fields per language', () => {
   assert.equal(h.so.text, 'so text 9');
   assert.equal(h.ar.text, 'AR hadith 9');
   assert.equal(h.group, 'g');
+  assert.deepEqual(h.so.hints, ['so lesson']);
 });
 
 test('validateBundle catches empty text and duplicate ids', () => {

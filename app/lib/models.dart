@@ -113,12 +113,16 @@ class HadithText {
   final String attribution;
   final String grade;
 
+  /// HadeethEnc's own short lessons, verbatim.
+  final List<String> hints;
+
   const HadithText({
     required this.title,
     required this.text,
     required this.explanation,
     required this.attribution,
     required this.grade,
+    this.hints = const [],
   });
 
   factory HadithText.fromJson(Map<String, dynamic> j) => HadithText(
@@ -127,6 +131,7 @@ class HadithText {
         explanation: _s(j['explanation']),
         attribution: _s(j['attribution']),
         grade: _s(j['grade']),
+        hints: ((j['hints'] as List?) ?? const []).map(_s).where((h) => h.isNotEmpty).toList(),
       );
 }
 

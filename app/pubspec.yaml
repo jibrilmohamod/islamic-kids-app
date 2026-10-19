@@ -1,7 +1,7 @@
 name: islamic_kids_app
 description: Free Islamic learning app for children aged 8 to 12, in Somali and English.
 publish_to: 'none'
-version: 0.2.0+2
+version: 0.3.0+3
 
 environment:
   sdk: '>=3.3.0 <4.0.0'

@@ -35,6 +35,28 @@ class ParentScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
           ],
+          Text(tr('dailyLimit', lang), style: const TextStyle(fontFamily: Pop.display, fontSize: 16)),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final m in const [0, 20, 30, 45, 60])
+                ChoiceChip(
+                  label: Text(m == 0 ? tr('limitOff', lang) : tr('minutes', lang, {'n': m}),
+                      style: const TextStyle(fontWeight: FontWeight.w800)),
+                  selected: state.activity.dailyLimit == m,
+                  selectedColor: Pop.lemon,
+                  side: const BorderSide(color: Pop.ink, width: 2),
+                  shape: const RoundedRectangleBorder(),
+                  onSelected: (_) => state.setDailyLimit(m),
+                ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(tr('usedToday', lang, {'n': state.activity.minutesToday(DateTime.now())}),
+              style: const TextStyle(fontSize: 14, color: Pop.muted)),
+          const SizedBox(height: 24),
           Text(tr('sources', lang), style: const TextStyle(fontFamily: Pop.display, fontSize: 16)),
           const SizedBox(height: 10),
           if (bundle != null)

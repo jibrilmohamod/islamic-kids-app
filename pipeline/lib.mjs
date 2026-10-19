@@ -113,6 +113,8 @@ export function buildHadith(detailByLang, extra = {}) {
       explanation: d.explanation,
       attribution: d.attribution,
       grade: d.grade,
+      // HadeethEnc's own short lessons, verbatim.
+      hints: Array.isArray(d.hints) ? d.hints.filter((h) => typeof h === 'string' && h.trim()) : [],
     };
   }
   return out;

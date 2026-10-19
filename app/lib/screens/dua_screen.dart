@@ -1,28 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../app_state.dart';
 import '../models.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
-import 'common.dart';
+import 'duas_screen.dart';
 import 'hadith_screen.dart';
 
 class DuaScreen extends StatefulWidget {
-  final Dua dua;
-  const DuaScreen({super.key, required this.dua});
+  final List<Dua> duas;
+  final int index;
+  final DayStop stop;
+  const DuaScreen({super.key, required this.duas, required this.index, required this.stop});
 
   @override
   State<DuaScreen> createState() => _DuaScreenState();
 }
 
 class _DuaScreenState extends State<DuaScreen> {
+  late int index = widget.index;
   bool memorise = false;
+  int count = 0;
   AppState? _state;
+
+  Dua get dua => widget.duas[index];
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) AppScope.of(context).markActive();
+    });
+  }
+
+  @override
+  void dispose() {
+    _state?.audio?.stop();
+    super.dispose();
+  }
+
+  void _goTo(int i) => setState(() {
+        index = i;
+        count = 0;
+        memorise = false;
+        _state?.audio?.stop();
+      });
 
   /// Quranic duas can use the same recitation audio as the surahs.
   Ayah? _ayah(AppState state) {
-    final key = widget.dua.quranKey;
+    final key = dua.quranKey;
     if (key == null) return null;
     final surah = int.tryParse(key.split(':').first);
     for (final s in state.bundle?.surahs ?? const <Surah>[]) {
@@ -44,69 +72,202 @@ class _DuaScreenState extends State<DuaScreen> {
   }
 
   @override
-  void dispose() {
-    _state?.audio?.stop();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     _state = state;
     final lang = state.lang;
-    final d = widget.dua;
+    final d = dua;
     final h = d.hadith;
-    final m = d.meaningFor(lang);
+    final stop = widget.stop;
+    final ink = stop.dark ? Colors.white : Pop.ink;
+    final headerColor = stop.color == Colors.white ? Pop.cyan : stop.color;
     final ayah = _ayah(state);
 
-    return PopPage(
-      title: tr('moment.${d.moment}', lang),
-      subtitle: tr('duas', lang),
-      trailing: InkIconButton(
-        icon: memorise ? Icons.visibility_rounded : Icons.psychology_rounded,
-        tooltip: tr('memorise', lang),
-        color: memorise ? Pop.lemon : Colors.white,
-        onPressed: () => setState(() => memorise = !memorise),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          if (memorise)
-            InkPanel(border: 3, shadow: 0, child: MemoriseView(arabic: d.arabic))
-          else if (h != null)
-            HadithBody(hadith: h)
-          else
-            InkPanel(
-              border: 3,
-              shadow: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      Caption('${tr('quran', lang)} ${d.quranKey}', color: Colors.white),
-                      const Spacer(),
-                      if (ayah != null && ayah.n != null && state.audio != null)
-                        InkIconButton(
-                          icon: Icons.play_arrow_rounded,
-                          tooltip: tr('listen', lang, {'n': ayah.aya}),
-                          color: Pop.cyan,
-                          onPressed: () => _listen(state, ayah),
+          Container(
+            decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Pop.ink, width: 4))),
+            child: ColoredBox(
+              color: headerColor,
+              child: CustomPaint(
+                painter: HalftonePainter(stop.dark ? const Color(0x40FFFFFF) : const Color(0x55FF3D8B)),
+                child: SafeArea(
+                  bottom: false,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Row(
+                          children: [
+                            InkIconButton(
+                              icon: Icons.arrow_back_rounded,
+                              tooltip: tr('back', lang),
+                              onPressed: () => Navigator.of(context).maybePop(),
+                            ),
+                            const Spacer(),
+                            InkIconButton(
+                              icon: memorise ? Icons.visibility_rounded : Icons.visibility_off_rounded,
+                              tooltip: tr('memorise', lang),
+                              color: memorise ? Pop.lemon : Colors.white,
+                              onPressed: () => setState(() => memorise = !memorise),
+                            ),
+                          ],
                         ),
-                    ],
+                        const SizedBox(height: 12),
+                        Text(
+                          '${tr(stop.labelKey, lang)}, ${tr('nOfTotal', lang, {'n': index + 1, 'total': widget.duas.length})}',
+                          style: TextStyle(fontFamily: Pop.display, fontSize: 20, color: ink),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(duaTitle(d, lang),
+                            maxLines: 4,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.3, color: ink)),
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 6),
-                  ArabicText(d.arabic),
-                  if (m != null) ...[
-                    Heading(tr('meaning', lang)),
-                    Text(m.text, style: const TextStyle(fontSize: 17, height: 1.5)),
-                    SourceLabel(m.source),
-                  ],
-                ],
+                ),
               ),
             ),
+          ),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.fromLTRB(18, 16, 18, 24),
+              children: [
+                InkPanel(
+                  border: 3,
+                  shadow: 0,
+                  padding: const EdgeInsets.all(14),
+                  child: memorise
+                      ? MemoriseView(arabic: d.arabic)
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            if (ayah != null && ayah.n != null && state.audio != null)
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: InkIconButton(
+                                  icon: Icons.play_arrow_rounded,
+                                  tooltip: tr('listen', lang, {'n': ayah.aya}),
+                                  color: Pop.cyan,
+                                  onPressed: () => _listen(state, ayah),
+                                ),
+                              ),
+                            h != null ? QuotedArabic(d.arabic) : ArabicText(d.arabic),
+                          ],
+                        ),
+                ),
+                const SizedBox(height: 16),
+                _Counter(
+                  count: count,
+                  color: headerColor == Pop.violet ? Pop.cyan : headerColor,
+                  onTap: () {
+                    HapticFeedback.selectionClick();
+                    setState(() => count++);
+                  },
+                  onReset: () => setState(() => count = 0),
+                ),
+                const SizedBox(height: 16),
+                if (h != null)
+                  HadithDetails(hadith: h)
+                else if (d.meaningFor(lang) != null)
+                  InkPanel(
+                    border: 3,
+                    shadow: 0,
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Heading(tr('meaning', lang)),
+                        Text(d.meaningFor(lang)!.text, style: const TextStyle(fontSize: 17, height: 1.5)),
+                        SourceLabel(d.meaningFor(lang)!.source, extra: '${tr('quran', lang)} ${d.quranKey}'),
+                      ],
+                    ),
+                  ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    if (index > 0)
+                      Expanded(
+                        child: ComicButton(
+                          label: tr('previous', lang),
+                          icon: Icons.arrow_back_rounded,
+                          color: Colors.white,
+                          onPressed: () => _goTo(index - 1),
+                        ),
+                      ),
+                    if (index > 0 && index < widget.duas.length - 1) const SizedBox(width: 12),
+                    if (index < widget.duas.length - 1)
+                      Expanded(
+                        child: ComicButton(
+                          label: tr('next', lang),
+                          icon: Icons.arrow_forward_rounded,
+                          onPressed: () => _goTo(index + 1),
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
+    );
+  }
+}
+
+class _Counter extends StatelessWidget {
+  final int count;
+  final Color color;
+  final VoidCallback onTap;
+  final VoidCallback onReset;
+  const _Counter({required this.count, required this.color, required this.onTap, required this.onReset});
+
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppScope.of(context).lang;
+    return Row(
+      children: [
+        Semantics(
+          button: true,
+          label: '${tr('tapEachTime', lang)}: $count',
+          child: GestureDetector(
+            onTap: onTap,
+            child: Container(
+              width: 96,
+              height: 96,
+              decoration: BoxDecoration(
+                color: color,
+                shape: BoxShape.circle,
+                border: Border.all(color: Pop.ink, width: 4),
+                boxShadow: const [BoxShadow(color: Pop.ink, offset: Offset(5, 5))],
+              ),
+              alignment: Alignment.center,
+              child: Text('$count', style: const TextStyle(fontFamily: Pop.display, fontSize: 34, color: Pop.ink)),
+            ),
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(tr('tapEachTime', lang), style: const TextStyle(fontFamily: Pop.display, fontSize: 15)),
+              Text(tr('highlightHint', lang),
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Pop.muted)),
+              if (count > 0)
+                TextButton(
+                  onPressed: onReset,
+                  style: TextButton.styleFrom(padding: EdgeInsets.zero, foregroundColor: Pop.ink),
+                  child: Text(tr('resetCount', lang), style: const TextStyle(fontWeight: FontWeight.w800)),
+                ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

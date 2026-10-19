@@ -478,3 +478,62 @@ class SceneBands extends StatelessWidget {
   Widget _band(Color color, Color dot) =>
       ColoredBox(color: color, child: CustomPaint(painter: HalftonePainter(dot, spacing: 9, radius: 1.8), child: const SizedBox.expand()));
 }
+
+/// Hadith Arabic shown whole, with the Prophet's quoted words (inside « »)
+/// highlighted so a child can find the dua or saying itself. Nothing is cut.
+class QuotedArabic extends StatelessWidget {
+  final String text;
+  final double size;
+  const QuotedArabic(this.text, {super.key, this.size = 21});
+
+  /// Splits [text] into (segment, isQuote) pairs on « and ».
+  static List<(String, bool)> segments(String text) {
+    final out = <(String, bool)>[];
+    final re = RegExp(r'«[^»]*»');
+    var last = 0;
+    for (final m in re.allMatches(text)) {
+      if (m.start > last) out.add((text.substring(last, m.start), false));
+      out.add((m.group(0)!, true));
+      last = m.end;
+    }
+    if (last < text.length) out.add((text.substring(last), false));
+    return out;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final base = TextStyle(fontFamily: Pop.quran, fontSize: size, height: 2.1, color: Pop.ink);
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Text.rich(
+        TextSpan(
+          children: [
+            for (final (seg, quote) in segments(text))
+              TextSpan(
+                text: seg,
+                style: quote ? base.copyWith(fontSize: size + 3, backgroundColor: Pop.highlight) : base,
+              ),
+          ],
+        ),
+        textAlign: TextAlign.right,
+      ),
+    );
+  }
+}
+
+/// Small coloured label, e.g. a hadith grade.
+class Chip2 extends StatelessWidget {
+  final String text;
+  final Color color;
+  final Color textColor;
+  const Chip2(this.text, {super.key, this.color = Pop.lemon, this.textColor = Pop.ink});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      decoration: BoxDecoration(color: color, border: Border.all(color: Pop.ink, width: 2)),
+      child: Text(text, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: textColor)),
+    );
+  }
+}

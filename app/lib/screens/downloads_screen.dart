@@ -1,9 +1,8 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
 import '../models.dart';
+import '../recitation.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
@@ -54,26 +53,37 @@ class DownloadsScreen extends StatefulWidget {
 
 class _DownloadsScreenState extends State<DownloadsScreen> {
   List<SavedSurah>? _list;
-  (int surah, int index)? _playing; // surah number, ayah index
   final Map<int, (int, int)> _saving = {};
-  StreamSubscription<void>? _done;
   late AppState _state;
+  Recitation? _rec;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
     _state = AppScope.of(context);
-    if (_done == null && _state.audio != null) {
-      _done = _state.audio!.onComplete.listen((_) => _next());
-      _refresh();
+    final rec = _state.recitation;
+    if (!identical(rec, _rec)) {
+      _rec?.removeListener(_onRecitation);
+      _rec = rec?..addListener(_onRecitation);
     }
+    if (_list == null && _state.audio != null) _refresh();
   }
 
   @override
   void dispose() {
-    _done?.cancel();
-    if (_playing != null) _state.audio?.stop();
+    // Recitation carries on after the screen closes (ADR 0002).
+    _rec?.removeListener(_onRecitation);
     super.dispose();
+  }
+
+  void _onRecitation() {
+    if (mounted) setState(() {});
+  }
+
+  /// (surah number, ayah index) being recited, or null.
+  (int, int)? get _playing {
+    final s = _rec?.surah;
+    return s == null ? null : (s.number, _rec!.index);
   }
 
   Future<void> _refresh() async {
@@ -85,30 +95,16 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
   Surah _surah(int number) => _state.bundle!.surahs.firstWhere((s) => s.number == number);
 
   Future<void> _play(int surah, int index) async {
-    setState(() => _playing = (surah, index));
     try {
-      await _state.audio!.play(_surah(surah).ayat[index]);
-    } catch (_) {
+      await _rec?.start(_surah(surah), index);
+    } catch (e) {
+      debugPrint('Recitation failed to start: $e');
       if (!mounted) return;
-      setState(() => _playing = null);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('audioFailed', _state.lang))));
     }
   }
 
-  void _next() {
-    final p = _playing;
-    if (p == null || !mounted) return;
-    if (p.$2 + 1 < _surah(p.$1).ayat.length) {
-      _play(p.$1, p.$2 + 1);
-    } else {
-      setState(() => _playing = null);
-    }
-  }
-
-  Future<void> _stop() async {
-    await _state.audio?.stop();
-    if (mounted) setState(() => _playing = null);
-  }
+  Future<void> _stop() async => _rec?.stop();
 
   Future<void> _finish(Surah s) async {
     if (_saving.containsKey(s.number)) return;

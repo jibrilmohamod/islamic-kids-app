@@ -126,6 +126,9 @@ const Map<String, Map<String, String>> _strings = {
   'readyOffline': {'en': 'Plays offline, {mb} MB', 'so': 'Internet la\'aan ayuu shaqeeyaa, {mb} MB'},
   'partlySaved': {'en': '{n} of {total} ayat saved', 'so': '{n} / {total} aayadood ayaa la kaydiyay'},
   'finishSaving': {'en': 'Save the rest', 'so': 'Kaydi inta hartay'},
+  'pauseAudio': {'en': 'Pause', 'so': 'Hakad'},
+  'resumeAudio': {'en': 'Play', 'so': 'Shid'},
+  'ayahOf': {'en': 'Ayah {n} of {total}', 'so': 'Aayadda {n} ee {total}'},
   'nowPlaying': {'en': 'Playing ayah {n}', 'so': 'Waxaa socda aayadda {n}'},
   'noDownloads': {
     'en': 'Nothing saved yet. Open a surah and tap the download button to listen without internet.',

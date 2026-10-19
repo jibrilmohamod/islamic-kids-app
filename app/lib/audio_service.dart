@@ -1,23 +1,17 @@
 import 'dart:io';
 
-import 'package:audioplayers/audioplayers.dart';
-
 import 'models.dart';
 
-/// Recitation audio, one mp3 per ayah. Files are saved on the device the
+/// Recitation files, one mp3 per ayah. Files are saved on the device the
 /// first time they play (or when a whole surah is downloaded) and play
-/// offline from then on.
+/// offline from then on. Playing them is [Recitation]'s job.
 class AudioService {
   final AudioInfo info;
   final Future<Directory> Function() baseDir;
   final Future<void> Function(Uri url, File target) download;
-  AudioPlayer? _p;
-  AudioPlayer get _player => _p ??= AudioPlayer();
 
   AudioService({required this.info, required this.baseDir, Future<void> Function(Uri, File)? download})
       : download = download ?? downloadFile;
-
-  Stream<void> get onComplete => _player.onPlayerComplete;
 
   Future<Directory> _dir() async {
     final d = Directory('${(await baseDir()).path}/audio/${info.edition}-${info.bitrate}');
@@ -51,9 +45,18 @@ class AudioService {
     return out;
   }
 
-  Future<File> ensure(Ayah a) async {
+  final Map<int, Future<File>> _inFlight = {};
+
+  /// The saved file for [a], fetching it first if needed. A download already
+  /// running for the same ayah (recitation and "save surah" can overlap) is
+  /// shared rather than started twice into the same temp file.
+  Future<File> ensure(Ayah a) {
     final n = a.n;
-    if (n == null) throw StateError('No audio number for ${a.key}');
+    if (n == null) return Future.error(StateError('No audio number for ${a.key}'));
+    return _inFlight[n] ??= _fetch(a, n).whenComplete(() => _inFlight.remove(n));
+  }
+
+  Future<File> _fetch(Ayah a, int n) async {
     final f = await fileFor(a);
     if (!await f.exists()) await download(info.urlFor(n), f);
     return f;
@@ -83,15 +86,6 @@ class AudioService {
     }
   }
 
-  Future<void> play(Ayah a) async {
-    final f = await ensure(a);
-    await _player.stop();
-    await _player.play(DeviceFileSource(f.path));
-  }
-
-  Future<void> stop() async => _p?.stop();
-
-  Future<void> dispose() async => _p?.dispose();
 }
 
 /// Downloads to a temp file and renames it, so a cut connection never

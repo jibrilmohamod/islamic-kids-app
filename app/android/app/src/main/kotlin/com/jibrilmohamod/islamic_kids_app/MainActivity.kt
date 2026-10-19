@@ -1,5 +1,7 @@
 package com.jibrilmohamod.islamic_kids_app
 
-import io.flutter.embedding.android.FlutterActivity
+import com.ryanheise.audioservice.AudioServiceActivity
 
-class MainActivity : FlutterActivity()
+// AudioServiceActivity shares the Flutter engine with the media service, so
+// recitation keeps playing when the activity goes away (ADR 0002).
+class MainActivity : AudioServiceActivity()

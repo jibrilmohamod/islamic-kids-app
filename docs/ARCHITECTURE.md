@@ -113,6 +113,12 @@ changes, so every text change is a reviewable commit.
 - Numbering: Bukhari by the Fath al-Bari numbers, Muslim by Muhammad Fu'ad
   Abd al-Baqi's, the same as sunnah.com's main reference (spot-checked).
 
+### Recitation audio
+- **Ownership.** One `Recitation` object in `AppState` owns playback. Screens start it and show its state, but they don't stop it when they close.
+- **Playback.** Ayat play as one gapless just_audio playlist, fetched and saved up to 3 ayat ahead.
+- **Background.** `audio_service` runs a foreground media service with a notification, so recitation continues with the app in the background or the screen off.
+- **Details.** See ADR 0002.
+
 ### App structure
 
 | Layer | Now | Revisit when |

@@ -18,6 +18,7 @@ import 'hadith_screen.dart';
 import 'missing_word_screen.dart';
 import 'mosaic_screen.dart';
 import 'mushaf_screen.dart';
+import 'now_playing.dart';
 import 'order_game_screen.dart';
 import 'parent_gate.dart';
 import 'parent_screen.dart';
@@ -165,6 +166,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           child: FadeTransition(opacity: _fade, child: content),
         ),
       ),
+      bottomNavigationBar: const NowPlayingBar(),
     );
   }
 }

@@ -37,7 +37,8 @@ class _DuaScreenState extends State<DuaScreen> {
 
   @override
   void dispose() {
-    _state?.audio?.stop();
+    // A dua's ayah belongs to its card, so it stops with it.
+    _stopDuaAyah();
     super.dispose();
   }
 
@@ -45,13 +46,19 @@ class _DuaScreenState extends State<DuaScreen> {
         index = i;
         count = 0;
         memorise = false;
-        _state?.audio?.stop();
+        _stopDuaAyah();
       });
 
+  void _stopDuaAyah() {
+    final rec = _state?.recitation;
+    final a = _ayah(_state);
+    if (rec != null && a != null && rec.key == a.key) rec.stop();
+  }
+
   /// Quranic duas can use the same recitation audio as the surahs.
-  Ayah? _ayah(AppState state) {
+  Ayah? _ayah(AppState? state) {
     final key = dua.quranKey;
-    if (key == null) return null;
+    if (key == null || state == null) return null;
     final surah = int.tryParse(key.split(':').first);
     for (final s in state.bundle?.surahs ?? const <Surah>[]) {
       if (s.number != surah) continue;
@@ -63,9 +70,13 @@ class _DuaScreenState extends State<DuaScreen> {
   }
 
   Future<void> _listen(AppState state, Ayah a) async {
+    final rec = state.recitation;
+    final surah = state.bundle?.surahs.where((s) => s.ayat.contains(a)).firstOrNull;
+    if (rec == null || surah == null) return;
     try {
-      await state.audio!.play(a);
-    } catch (_) {
+      await rec.start(surah, a.aya - 1, toEnd: false);
+    } catch (e) {
+      debugPrint('Recitation failed to start: $e');
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('audioFailed', state.lang))));
     }

@@ -565,7 +565,7 @@ class _DuaCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(label, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Pop.muted)),
-                    Text(duaTitle(d, lang),
+                    Text(homeDuaTitle(d, state.bundle!, lang),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3)),
@@ -578,6 +578,16 @@ class _DuaCard extends StatelessWidget {
       ),
     );
   }
+}
+
+/// The dua's name on Home. A hadith dua has a title; a Quranic dua shows its
+/// reference (surah and ayah), and its translation stays on the dua screen.
+String homeDuaTitle(Dua d, ContentBundle bundle, String lang) {
+  final key = d.quranKey;
+  if (key == null) return duaTitle(d, lang);
+  final number = int.tryParse(key.split(':').first);
+  final surah = bundle.surahs.where((s) => s.number == number).firstOrNull;
+  return tr('quranDuaRef', lang, {'surah': surah?.name ?? '', 'key': key});
 }
 
 class _WeekRow extends StatelessWidget {
@@ -665,7 +675,9 @@ class _Niches extends StatelessWidget {
     ];
     return LayoutBuilder(builder: (context, c) {
       const gap = 10.0;
-      final w = (c.maxWidth - 2 * gap - 4) / 3;
+      const shadow = 4.0; // each niche is its width plus a 4 px hard shadow
+      // Three per row: 3 x (w + shadow) + 2 gaps must fit the width.
+      final w = ((c.maxWidth - 2 * gap) / 3 - shadow).floorToDouble();
       // The label band grows with the phone's text size (two lines at most),
       // so labels are never shrunk to fit.
       final band = MediaQuery.textScalerOf(context).scale(13) * 2.3 + 14;

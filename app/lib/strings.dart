@@ -141,6 +141,7 @@ const Map<String, Map<String, String>> _strings = {
   'duaThisEvening': {'en': 'Dua for this evening', 'so': 'Ducada fiidkan'},
   'daysCount': {'en': '{n} days', 'so': '{n} maalmood'},
   'daysCountOne': {'en': '1 day', 'so': '1 maalin'},
+  'quranDuaRef': {'en': 'A dua from the Quran: {surah} {key}', 'so': 'Duco Quraan ah: {surah} {key}'},
   'gamesFor': {'en': 'Games for {name}', 'so': 'Ciyaaraha {name}'},
 };
 

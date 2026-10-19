@@ -80,4 +80,26 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(DuasScreen), findsOneWidget);
   });
+
+  testWidgets('niches sit three to a row', (tester) async {
+    phone(tester);
+    await tester.pumpWidget(app(stateAt(DateTime(2026, 10, 19, 13)), reduceMotion: true));
+    await tester.pumpAndSettle();
+    final labels = ['Surahs', 'Duas', 'Hadith', 'Games'];
+    final tops = {for (final l in labels) l: tester.getTopLeft(find.text(l)).dy};
+    // Surahs, Duas sit in the first row with Quran book; Hadith, Games in the second.
+    expect(tops['Surahs'], closeTo(tops['Duas']!, 1));
+    expect(tops['Hadith'], closeTo(tops['Games']!, 1));
+    expect(tops['Hadith']! > tops['Duas']!, isTrue);
+    final rowWidth = tester.getTopRight(find.text('Duas')).dx;
+    expect(rowWidth <= 412, isTrue);
+  });
+
+  test('a Quranic dua on Home shows its reference, not the translation', () {
+    final b = stateAt(DateTime(2026, 10, 19, 13)).bundle!;
+    final q = b.duas.firstWhere((d) => d.quranKey != null);
+    final title = homeDuaTitle(q, b, 'en');
+    expect(title, startsWith('A dua from the Quran: '));
+    expect(title.contains('['), isFalse);
+  });
 }

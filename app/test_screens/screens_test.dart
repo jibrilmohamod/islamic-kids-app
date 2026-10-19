@@ -8,10 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:islamic_kids_app/app_state.dart';
+import 'package:islamic_kids_app/local_store.dart';
 import 'package:islamic_kids_app/models.dart';
 import 'package:islamic_kids_app/screens/hadith_screen.dart';
 import 'package:islamic_kids_app/screens/home_screen.dart';
 import 'package:islamic_kids_app/screens/mushaf_screen.dart';
+import 'package:islamic_kids_app/screens/my_shelf_screen.dart';
+import 'package:islamic_kids_app/screens/surah_screen.dart';
 import 'package:islamic_kids_app/theme.dart';
 
 Future<void> _font(String family, List<String> files) async {
@@ -94,5 +97,35 @@ void main() {
     await _shot(tester, 'hadith_topic', TopicScreen(topicId: topic));
     final withRefs = b.hadith.where((h) => h.refs.length == 2).firstOrNull ?? b.hadith.first;
     await _shot(tester, 'hadith_detail', HadithScreen(hadith: withRefs));
+  });
+
+  testWidgets('hadith shelf', (tester) async {
+    phone(tester);
+    final b = _state.bundle!;
+    if (b.shelves.isEmpty) return;
+    await _shot(tester, 'hadith_shelf', ShelfScreen(shelf: b.shelves.first));
+  });
+
+  testWidgets('surah', (tester) async {
+    phone(tester);
+    await _shot(tester, 'surah_36', SurahScreen(surah: _state.bundle!.surahs.firstWhere((s) => s.number == 36)));
+  });
+
+  testWidgets('my shelf', (tester) async {
+    phone(tester);
+    final dir = Directory.systemTemp.createTempSync('shelf_preview');
+    final store = (await tester.runAsync(() => LocalStore.open(dir)))!;
+    _state.store = store;
+    final b = _state.bundle!;
+    _state
+      ..toggleBookmark('36:1')
+      ..toggleBookmark('2:255')
+      ..toggleBookmark('112:1')
+      ..toggleFavourite('hadith:${b.hadith.first.id}')
+      ..toggleFavourite('dua:${b.duas.last.id}')
+      ..recordHistory(HistoryKind.read, 36, 0)
+      ..recordHistory(HistoryKind.listen, 67, 11);
+    await _shot(tester, 'my_shelf', const MyShelfScreen());
+    await tester.runAsync(store.flush);
   });
 }

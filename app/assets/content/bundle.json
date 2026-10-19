@@ -1,0 +1,1406 @@
+{
+  "bundleVersion": "20261019083819",
+  "generatedAt": "2026-10-19T08:38:19.614Z",
+  "languages": [
+    "en",
+    "so"
+  ],
+  "sources": {
+    "english_saheeh": {
+      "publisher": "QuranEnc.com",
+      "title": "English Translation - Noor International Center",
+      "version": "1.1.2",
+      "url": "https://quranenc.com"
+    },
+    "somali_yacob": {
+      "publisher": "QuranEnc.com",
+      "title": "Somali Translation - Abdullah Hasan Yaqoub",
+      "version": "1.0.26",
+      "url": "https://quranenc.com"
+    },
+    "hadeethenc": {
+      "publisher": "HadeethEnc.com",
+      "title": "Encyclopedia of Translated Prophetic Hadiths",
+      "url": "https://hadeethenc.com"
+    }
+  },
+  "surahs": [
+    {
+      "id": "surah-1",
+      "number": 1,
+      "name": "Al-Fatiha",
+      "nameAr": "الفاتحة",
+      "ayat": [
+        {
+          "key": "1:1",
+          "aya": 1,
+          "arabic": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
+          "meaning": {
+            "en": {
+              "text": "In the name of Allāh,[2] the Entirely Merciful, the Especially Merciful.[3]",
+              "footnotes": "[2] Allāh is a proper name belonging only to the one Almighty God, Creator and Sustainer of the heavens and the earth and all that is within them, the Eternal and Absolute, to whom alone all worship is due.\n[3] Ar-Raḥmān and ar-Raḥeem are two names of Allāh derived from the word \"raḥmah\" (mercy) . In Arabic grammar both are intensive forms of \"merciful\" (i.e., extremely merciful) . A complimentary and comprehensive meaning is intended by using both together. Raḥmān is used only to describe Allāh, while raḥeem might be used to describe a person as well. The Prophet (ﷺ) was described in the Qur’ān as raḥeem. Raḥmān is above the human level (i.e., intensely merciful) . Since one usually understands intensity to be something of short duration, Allāh describes Himself also as raḥeem (i.e., continually merciful) . Raḥmān also carries a wider meaning - merciful to all creation. Justice is a part of this mercy. Raḥeem includes the concept of speciality - especially and specifically merciful to the believers. Forgiveness is a part of this mercy. In addition, Raḥmān is adjectival, referring to an attribute of Allāh and is part of His essence. Raḥeem is verbal, indicating what He does: i.e., bestowing and implementing mercy.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Waxaan Ku billaabi Magaca Alle, Naxariistaha (Naxariis guud ahaaneed),  Naxariista badan.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "1:2",
+          "aya": 2,
+          "arabic": "ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ",
+          "meaning": {
+            "en": {
+              "text": "[All] praise is [due] to Allāh, Lord[4] of the worlds -",
+              "footnotes": "[4] When referring to Allāh (subḥānahu wa taʿālā) , the Arabic term \"rabb\" (translated as \"Lord\") includes all of the following meanings: \"owner, master, ruler, controller, sustainer, provider, guardian and caretaker.\"",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Ammaan idilkeed iyo mahad waxaa leh Allaah, Rabbiga uumanka.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "1:3",
+          "aya": 3,
+          "arabic": "ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
+          "meaning": {
+            "en": {
+              "text": "The Entirely Merciful, the Especially Merciful,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Naxariistaha (Naxariis guud ahaaneed), Naxariista Badan [1].",
+              "footnotes": "[1]. Ar-Raxmaan iyo Ar-Raxiim waa labo magac uu leeyahay Alle ee ka soo jeeda kelmedda Raxmah. Xagga naxwaha afka Carabiga labada magacba waa ku xeel dheeraansho Naxariisashada. Waa Deeq ballaaran iyo Naxariisasho guud ahaaneed labaduba. Raxmaan waxaa lagu tilmaamaa Alle oo keliya, waana sifad aan cid kale la wadaagin, halka Raxiim lagu tilmaami karo qof gaar ah. Nabiga s.c.w. waxaa uu Qur’aanku ku tilmaamay inuu yahay Raxiim. Raxmaan se waa wax ka sarreeya heerka Aadmiga (waa Naxariisasho durba ah oo guud ahaaneed) oo waqti ku kooban oo uunka oo idil gaadha, caddaaladdu waa qayb ka mid ah Naxariistan. Alle wuxuu isku tilaamamay sidoo kale Raxiim oo ah Naxariisasho joogto ah oo gaar ahaaneed oo u naxariisto mu’miniinta, denbi dhaafka iyo ceeb asturidda waa qayb ka mid ah Naxariistan.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "1:4",
+          "aya": 4,
+          "arabic": "مَٰلِكِ يَوۡمِ ٱلدِّينِ",
+          "meaning": {
+            "en": {
+              "text": "Sovereign of the Day of Recompense.[5]",
+              "footnotes": "[5] i.e., repayment and compensation for whatever was earned of good or evil during life on this earth.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Boqorka Maalinta Jaazeynta [2].",
+              "footnotes": "[2]. Qiyaamada ee iska leh wax walba.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "1:5",
+          "aya": 5,
+          "arabic": "إِيَّاكَ نَعۡبُدُ وَإِيَّاكَ نَسۡتَعِينُ",
+          "meaning": {
+            "en": {
+              "text": "It is You we worship and You we ask for help.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Adigoo Keliya baynu (Allow) ku caabudi, oo Adigoo Keliya baynu ku weydiisan kaalmo.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "1:6",
+          "aya": 6,
+          "arabic": "ٱهۡدِنَا ٱلصِّرَٰطَ ٱلۡمُسۡتَقِيمَ",
+          "meaning": {
+            "en": {
+              "text": "Guide us to the straight path -",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "6. Nagu hanuuni (oo sug) Jidka Toosan.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "1:7",
+          "aya": 7,
+          "arabic": "صِرَٰطَ ٱلَّذِينَ أَنۡعَمۡتَ عَلَيۡهِمۡ غَيۡرِ ٱلۡمَغۡضُوبِ عَلَيۡهِمۡ وَلَا ٱلضَّآلِّينَ",
+          "meaning": {
+            "en": {
+              "text": "The path of those upon whom You have bestowed favor, not of those who have earned [Your] anger or of those who are astray.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "7. Jidka kuwa aad u Nicmaysay [3], aan aheyn (jidka) kuwa loo cadhooday [4] iyo (jidka) kuwa lunsan midna [5].",
+              "footnotes": "[3]. Kuwo Alle siiyey Galladdiisa waa Nabiyada, runlowyada, suubbanayaasha, iyo shuhadada. \n[4]. Kuwa uu Alle u cadhooday waa kuwa iyagoo u cilmi leh aan ku camal falin diinta ee diida xaqa, sida Yuhuudda iwm. \n[5]. Kuwa lunsan waa kuwo cilmi la’aan iska cibaadeysta iyagoo ku socda caqiidooyin gurracan sida Nasaarada iwm.",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-105",
+      "number": 105,
+      "name": "Al-Fil",
+      "nameAr": "الفيل",
+      "ayat": [
+        {
+          "key": "105:1",
+          "aya": 1,
+          "arabic": "أَلَمۡ تَرَ كَيۡفَ فَعَلَ رَبُّكَ بِأَصۡحَٰبِ ٱلۡفِيلِ",
+          "meaning": {
+            "en": {
+              "text": "Have you not considered, [O Muḥammad], how your Lord dealt with the companions of the elephant?[1992]",
+              "footnotes": "[1992] i.e., the army under the command of Abrahah al-Ashram which was accompanied by a huge elephant and came with the intention of destroying the Kaʿbah at Makkah.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Mawaadan ogaan sida Rabbigaa u galay qoladii maroodiga?",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "105:2",
+          "aya": 2,
+          "arabic": "أَلَمۡ يَجۡعَلۡ كَيۡدَهُمۡ فِي تَضۡلِيلٖ",
+          "meaning": {
+            "en": {
+              "text": "Did He not make their plan into misguidance?[1993]",
+              "footnotes": "[1993] Causing them to perish.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Sow kama uu dhigin dhagartoodii wax dhumay (ku dhammaaday jab iyo jah wareer),",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "105:3",
+          "aya": 3,
+          "arabic": "وَأَرۡسَلَ عَلَيۡهِمۡ طَيۡرًا أَبَابِيلَ",
+          "meaning": {
+            "en": {
+              "text": "And He sent against them birds in flocks,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Oo ku soo dirin shimbiro guutoooyin ah,",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "105:4",
+          "aya": 4,
+          "arabic": "تَرۡمِيهِم بِحِجَارَةٖ مِّن سِجِّيلٖ",
+          "meaning": {
+            "en": {
+              "text": "Striking them with stones of hard clay,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Ku soo ganeysa dhagaxyo dhoobo la kululeeyey ah,",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "105:5",
+          "aya": 5,
+          "arabic": "فَجَعَلَهُمۡ كَعَصۡفٖ مَّأۡكُولِۭ",
+          "meaning": {
+            "en": {
+              "text": "And He made them like eaten straw.[1994]",
+              "footnotes": "[1994] i.e., husks which have been chewed by cattle. This event took place in the year of the Prophet's birth.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Markaas ka yeelay sidii bal la daaqay?",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-106",
+      "number": 106,
+      "name": "Quraysh",
+      "nameAr": "قريش",
+      "ayat": [
+        {
+          "key": "106:1",
+          "aya": 1,
+          "arabic": "لِإِيلَٰفِ قُرَيۡشٍ",
+          "meaning": {
+            "en": {
+              "text": "For the accustomed security of the Quraysh[1996] -",
+              "footnotes": "[1996] i.e., the honor and reputation Allāh had given them as guardians of the Holy Kaʿbah, which allowed them to travel without fear of being harmed.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Caadeysigii Quraysh darteed.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "106:2",
+          "aya": 2,
+          "arabic": "إِۦلَٰفِهِمۡ رِحۡلَةَ ٱلشِّتَآءِ وَٱلصَّيۡفِ",
+          "meaning": {
+            "en": {
+              "text": "Their accustomed security [in] the caravan of winter and summer[1997] -",
+              "footnotes": "[1997] i.e., the trading caravans that traveled south in winter and north in summer.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Ay ka caada yeesheen safarka xagaaga iyo jilaalka (si nabdoonaan ah ganacsiga).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "106:3",
+          "aya": 3,
+          "arabic": "فَلۡيَعۡبُدُواْ رَبَّ هَٰذَا ٱلۡبَيۡتِ",
+          "meaning": {
+            "en": {
+              "text": "Let them worship the Lord of this House,[1998]",
+              "footnotes": "[1998] i.e., the Kaʿbah.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Ee ha caabudeen Rabbiga Baytkan (Kacbada Makkah ku taal).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "106:4",
+          "aya": 4,
+          "arabic": "ٱلَّذِيٓ أَطۡعَمَهُم مِّن جُوعٖ وَءَامَنَهُم مِّنۡ خَوۡفِۭ",
+          "meaning": {
+            "en": {
+              "text": "Who has fed them, [saving them] from hunger and made them safe, [saving them] from fear.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Kaasoo ka quudiyey gaajo, kana aamin yeelay cabsi.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-107",
+      "number": 107,
+      "name": "Al-Ma'un",
+      "nameAr": "الماعون",
+      "ayat": [
+        {
+          "key": "107:1",
+          "aya": 1,
+          "arabic": "أَرَءَيۡتَ ٱلَّذِي يُكَذِّبُ بِٱلدِّينِ",
+          "meaning": {
+            "en": {
+              "text": "Have you seen the one who denies the Recompense?",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Ka warran kan beeniya is abaal marinta (Aakhiro).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "107:2",
+          "aya": 2,
+          "arabic": "فَذَٰلِكَ ٱلَّذِي يَدُعُّ ٱلۡيَتِيمَ",
+          "meaning": {
+            "en": {
+              "text": "For that is the one who drives away the orphan",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Kaasu waa kan ula dhaqma agoonta si qallafsan [1].",
+              "footnotes": "[1]. Rasuulkii Alle s.c.w. wuxuu yidhi: Aniga iyo kan daryeela agoonka oo kafaala qaada, waxaan gali Jannada innagoo sidaas oo kale ah. Wuxuuna kor u qaaday fardhexeda iyo murugsatada oo simay oo isu dhoweeyey.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "107:3",
+          "aya": 3,
+          "arabic": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلۡمِسۡكِينِ",
+          "meaning": {
+            "en": {
+              "text": "And does not encourage the feeding of the poor.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Oo aan ku dhiirra gelin (dadka) quudinta miskiinka [2].",
+              "footnotes": "[2]. Nabigu s.c.w wuxuu yidhi: Qofka u dadaala oo u shaqeeya dumarka da'da ah ee laga dhintay iyo masaakiinta wuxuu heli ajar la mid ah mujaahidka u diriraya Jidka Alle ama kan habeenkii oo dhan u taagan salaad oo aan daaleyn iyo soomanaha aan afurin.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "107:4",
+          "aya": 4,
+          "arabic": "فَوَيۡلٞ لِّلۡمُصَلِّينَ",
+          "meaning": {
+            "en": {
+              "text": "So woe to those who pray",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Waxaa hoog leh kuwaa tukada (munaafiqiinta ah),",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "107:5",
+          "aya": 5,
+          "arabic": "ٱلَّذِينَ هُمۡ عَن صَلَاتِهِمۡ سَاهُونَ",
+          "meaning": {
+            "en": {
+              "text": "[But] who are heedless of their prayer[2000] -",
+              "footnotes": "[2000] i.e., the hypocrites who are unconcerned if they miss prayers when no one sees them.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Ee ka dhoohan salaaddooda (ka dib dhiga waqtiyadooda).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "107:6",
+          "aya": 6,
+          "arabic": "ٱلَّذِينَ هُمۡ يُرَآءُونَ",
+          "meaning": {
+            "en": {
+              "text": "Those who make show [of their deeds]",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "6. Kuwaasoo u fala (samaha) si loo arko.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "107:7",
+          "aya": 7,
+          "arabic": "وَيَمۡنَعُونَ ٱلۡمَاعُونَ",
+          "meaning": {
+            "en": {
+              "text": "And withhold [simple] assistance.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "7. U diida (dadka) maacuunta (waxyaalaha yar yar ee laysugu kaalmeeyo, zako iyo sadaqo iyaga warkoodba daaye).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-108",
+      "number": 108,
+      "name": "Al-Kawthar",
+      "nameAr": "الكوثر",
+      "ayat": [
+        {
+          "key": "108:1",
+          "aya": 1,
+          "arabic": "إِنَّآ أَعۡطَيۡنَٰكَ ٱلۡكَوۡثَرَ",
+          "meaning": {
+            "en": {
+              "text": "Indeed, We have granted you, [O Muḥammad], al-Kawthar.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Waxaanu xaqiiq ku siinnay (Nabi Muxammadow) Al-Kawthar (webi ah Jannada iyo khayr tiro badan).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "108:2",
+          "aya": 2,
+          "arabic": "فَصَلِّ لِرَبِّكَ وَٱنۡحَرۡ",
+          "meaning": {
+            "en": {
+              "text": "So pray to your Lord and offer sacrifice [to Him alone].",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Ee u tuko Rabbigaa Dartiis, (oo u) gawrac xoolo (adigoo Isaga Keliya Magaciisa ku xusi, uguna dhowaan).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "108:3",
+          "aya": 3,
+          "arabic": "إِنَّ شَانِئَكَ هُوَ ٱلۡأَبۡتَرُ",
+          "meaning": {
+            "en": {
+              "text": "Indeed, your enemy is the one cut off.[2002]",
+              "footnotes": "[2002] From all good in this world and the Hereafter.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3.Hubaal nacabkaaga waa kan cidhib go’i [1].",
+              "footnotes": "[1]. Rasuulkii Alle s.c.w. wuxuu yidhi: Waxaan ku dhaartay Kan ay Gacantiisu ku jirto nafteyda, midkiinna ma ahaan doono mu'min dhan jeer uu i jeclaado in ka badan waalidki iyo ilmahiisa iyo dadka oo dhammi\".",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-109",
+      "number": 109,
+      "name": "Al-Kafirun",
+      "nameAr": "الكافرون",
+      "ayat": [
+        {
+          "key": "109:1",
+          "aya": 1,
+          "arabic": "قُلۡ يَٰٓأَيُّهَا ٱلۡكَٰفِرُونَ",
+          "meaning": {
+            "en": {
+              "text": "Say, \"O disbelievers,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Dheh: Gaalooy.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "109:2",
+          "aya": 2,
+          "arabic": "لَآ أَعۡبُدُ مَا تَعۡبُدُونَ",
+          "meaning": {
+            "en": {
+              "text": "I do not worship what you worship.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Anigu ma caabudayo waxaad caabudeysaan,",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "109:3",
+          "aya": 3,
+          "arabic": "وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ",
+          "meaning": {
+            "en": {
+              "text": "Nor are you worshippers of what I worship.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Idinkuna ma caabuddaan Kaan Anigu caabudo (Alle Keliya).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "109:4",
+          "aya": 4,
+          "arabic": "وَلَآ أَنَا۠ عَابِدٞ مَّا عَبَدتُّمۡ",
+          "meaning": {
+            "en": {
+              "text": "Nor will I be a worshipper of what you worship.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Anigu ma caabudayo waxaad idinku caabudeysaan (oo ilaahyo been ah).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "109:5",
+          "aya": 5,
+          "arabic": "وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ",
+          "meaning": {
+            "en": {
+              "text": "Nor will you be worshippers of what I worship.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Idinkuna ma caabuddaan Kaan anigu caabudo (Alle Weyne kor ahaaye).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "109:6",
+          "aya": 6,
+          "arabic": "لَكُمۡ دِينُكُمۡ وَلِيَ دِينِ",
+          "meaning": {
+            "en": {
+              "text": "For you is your religion, and for me is my religion.\"",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "6.Waxaad leedihiin diintiinna (camalkiinna), aniguna waxaa leeyahay diinteyda (camalkeyga, oo barii baan idinka ahay).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-110",
+      "number": 110,
+      "name": "An-Nasr",
+      "nameAr": "النصر",
+      "ayat": [
+        {
+          "key": "110:1",
+          "aya": 1,
+          "arabic": "إِذَا جَآءَ نَصۡرُ ٱللَّهِ وَٱلۡفَتۡحُ",
+          "meaning": {
+            "en": {
+              "text": "When the victory of Allāh has come and the conquest,[2005]",
+              "footnotes": "[2005] The conquest of Makkah.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Markuu yimaado Gargaarka Alle iyo guusha (Furashada Makkah).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "110:2",
+          "aya": 2,
+          "arabic": "وَرَأَيۡتَ ٱلنَّاسَ يَدۡخُلُونَ فِي دِينِ ٱللَّهِ أَفۡوَاجٗا",
+          "meaning": {
+            "en": {
+              "text": "And you see the people entering into the religion of Allāh in multitudes,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Oo aad aragto dadka oo u soo galaya diinta Alle (Islaamka) rac-rac (kooxo),",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "110:3",
+          "aya": 3,
+          "arabic": "فَسَبِّحۡ بِحَمۡدِ رَبِّكَ وَٱسۡتَغۡفِرۡهُۚ إِنَّهُۥ كَانَ تَوَّابَۢا",
+          "meaning": {
+            "en": {
+              "text": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of Repentance.[2006]",
+              "footnotes": "[2006] Refer to footnote of 2:37.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Markaas ku tasbiixso Ammaanaha Rabbigaa, weydiisona Denbi Dhaaf. Hubaal Alle waa Tawbad aqbal Badane.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-111",
+      "number": 111,
+      "name": "Al-Masad",
+      "nameAr": "المسد",
+      "ayat": [
+        {
+          "key": "111:1",
+          "aya": 1,
+          "arabic": "تَبَّتۡ يَدَآ أَبِي لَهَبٖ وَتَبَّ",
+          "meaning": {
+            "en": {
+              "text": "May the hands of Abū Lahab be ruined, and ruined is he.[2008]",
+              "footnotes": "[2008] Abū Lahab (the Prophet's uncle) , who was an enemy of Islām.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Ha hoogeen labada gacmood ee Abuu-Lahab [1], hoogyeyna [2].",
+              "footnotes": "[1]. Waa Nabiga adeerki oo ahaa cadow Islaam, waxaana la mid ah oo soo galaya cadow Islaam kasta.\n[2]. Markay soo degtay Aayadda Qur'aanka ee leh: \"U dig xigaaladaada kuu dhow\". Nabigu s.c.w. wuxuu billaabay inuu u yeeraa ( qabaa'isha Carbeed): Reer Banii Fihirow, Reer Banii Cadiyow, isagoo mid mid u xusaya jilbaha iyo laamaha ay ka kooban yihiin Quraysh. Xitaa ninkii aan imaan karin wuxuu soo dirsaday cid ka socota isaga si uu u soo eego waxa jira. Markaasaa waxaa yimid Abuu Lahab iyo odayaashii Quraysh. Nabigu s.c.w. wuxuu yidhi: Ka warrama haddaan idiin sheego ciidan fardooley ah oo soo socda toggan gadaashiisa ee dooneysa inay idin weeraraan ma iga rumeysan laheydeen? Waxay yidhaahdeen: Haa , kuguma baran waxaan run aheyn.. markaasuu Nabigu s.c.w. wuxuu yidhi: Haddaba waxaan idiinka digayaa cadaab daran oo idinku soo fool leh haddii aydaan Allaah rumeyn iyo Rusushiisa. Abuu Lahab wuxuu yidhi: Hoog oo ba' maanta oo idil, ma waxaan baad isugu kaaya yeertay? Markaasaa waxaa soo degay Tabbat Yadaa Abii Lahab….",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "111:2",
+          "aya": 2,
+          "arabic": "مَآ أَغۡنَىٰ عَنۡهُ مَالُهُۥ وَمَا كَسَبَ",
+          "meaning": {
+            "en": {
+              "text": "His wealth will not avail him or that which he gained.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Waxna uma tarin maalkiisa iyo wuxuu kasbaday.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "111:3",
+          "aya": 3,
+          "arabic": "سَيَصۡلَىٰ نَارٗا ذَاتَ لَهَبٖ",
+          "meaning": {
+            "en": {
+              "text": "He will [enter to] burn in a Fire of [blazing] flame",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Wuxuu geli oo ku guban Naar olol badan.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "111:4",
+          "aya": 4,
+          "arabic": "وَٱمۡرَأَتُهُۥ حَمَّالَةَ ٱلۡحَطَبِ",
+          "meaning": {
+            "en": {
+              "text": "And his wife [as well] - the carrier of firewood.[2009]",
+              "footnotes": "[2009] She used to put thorns in the Prophet's path and slander him (ﷺ) . The word \"firewood\" was used by the Arabs to allude to slander and backbiting.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Iyo marwadiisuba, xaabo siddada ah, (xanta, xinta iyo dirdirada badan),",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "111:5",
+          "aya": 5,
+          "arabic": "فِي جِيدِهَا حَبۡلٞ مِّن مَّسَدِۭ",
+          "meaning": {
+            "en": {
+              "text": "Around her neck is a rope of [twisted] fiber.",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Qoorteeda waxaa la yeeli xadhig adag xaskul la soohay (oo Naar) ah.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-112",
+      "number": 112,
+      "name": "Al-Ikhlas",
+      "nameAr": "الإخلاص",
+      "ayat": [
+        {
+          "key": "112:1",
+          "aya": 1,
+          "arabic": "قُلۡ هُوَ ٱللَّهُ أَحَدٌ",
+          "meaning": {
+            "en": {
+              "text": "Say, \"He is Allāh, [who is] One,[2011]",
+              "footnotes": "[2011] Alone, without another, indivisible with absolute and permanent unity and distinct from all else. The one and only true deity, unique in His essence, attributes and deeds.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Dheh: Allaah waa Mid Keliya [1].",
+              "footnotes": "[1]. Axad ah aan wax shariig ah lahayn.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "112:2",
+          "aya": 2,
+          "arabic": "ٱللَّهُ ٱلصَّمَدُ",
+          "meaning": {
+            "en": {
+              "text": "Allāh, the Eternal Refuge.[2012]",
+              "footnotes": "[2012] He who is absolute, perfect, complete, essential, self-sufficient and sufficient to meet the needs of all creation; the one eternally and constantly required and sought, depended upon by all existence and to whom all matters will ultimately return.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Allaah waa Sayidka Deeqtoon [2].",
+              "footnotes": "[2]. Ee ah ma baahdaha loo wada baahan yahay.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "112:3",
+          "aya": 3,
+          "arabic": "لَمۡ يَلِدۡ وَلَمۡ يُولَدۡ",
+          "meaning": {
+            "en": {
+              "text": "He neither begets nor is born,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Ma dhalin [3], lamana dhalin [4].",
+              "footnotes": "[3]. Macnaha waa ma leh ilmo. \n[4]. Macnaha waa ma leh waalid - aabbe iyo hooyo iyo xaas midna.",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "112:4",
+          "aya": 4,
+          "arabic": "وَلَمۡ يَكُن لَّهُۥ كُفُوًا أَحَدُۢ",
+          "meaning": {
+            "en": {
+              "text": "Nor is there to Him any equivalent.\"",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Mana jiro axad u dhigma [5].",
+              "footnotes": "[5]. Alle oo la mid ah ama la barbar dhigo iyo cid wax la wadaagta midna.",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-113",
+      "number": 113,
+      "name": "Al-Falaq",
+      "nameAr": "الفلق",
+      "ayat": [
+        {
+          "key": "113:1",
+          "aya": 1,
+          "arabic": "قُلۡ أَعُوذُ بِرَبِّ ٱلۡفَلَقِ",
+          "meaning": {
+            "en": {
+              "text": "Say, \"I seek refuge in the Lord of daybreak",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Dheh: Waxaan ka magan galayaa Rabbiga oogga (dillaacsha, waa Alle'e),",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "113:2",
+          "aya": 2,
+          "arabic": "مِن شَرِّ مَا خَلَقَ",
+          "meaning": {
+            "en": {
+              "text": "From the evil of that which He created",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Sharka wuxuu abuuray;",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "113:3",
+          "aya": 3,
+          "arabic": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+          "meaning": {
+            "en": {
+              "text": "And from the evil of darkness when it settles",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Iyo sharka habeenka mugdiga badan markuu mugdigiisa daboolo (samada iyo arlada dhexdooda).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "113:4",
+          "aya": 4,
+          "arabic": "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِي ٱلۡعُقَدِ",
+          "meaning": {
+            "en": {
+              "text": "And from the evil of the blowers in knots[2014]",
+              "footnotes": "[2014] i.e., those who practice magic.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Iyo sharka kuwa wax ku tufa guntimaha (saaxirooyinka iyo sixiroolayaasha).",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "113:5",
+          "aya": 5,
+          "arabic": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+          "meaning": {
+            "en": {
+              "text": "And from the evil of an envier when he envies.\"",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Iyo sharka xaasidka markuu wax xasdo.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "surah-114",
+      "number": 114,
+      "name": "An-Nas",
+      "nameAr": "الناس",
+      "ayat": [
+        {
+          "key": "114:1",
+          "aya": 1,
+          "arabic": "قُلۡ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+          "meaning": {
+            "en": {
+              "text": "Say, \"I seek refuge in the Lord of mankind,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "1. Dheh: Waxaan ka magan galayaa Rabbiga dadka.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "114:2",
+          "aya": 2,
+          "arabic": "مَلِكِ ٱلنَّاسِ",
+          "meaning": {
+            "en": {
+              "text": "The Sovereign of mankind,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "2. Boqorka dadka.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "114:3",
+          "aya": 3,
+          "arabic": "إِلَٰهِ ٱلنَّاسِ",
+          "meaning": {
+            "en": {
+              "text": "The God of mankind,",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "3. Ilaaha dadka.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "114:4",
+          "aya": 4,
+          "arabic": "مِن شَرِّ ٱلۡوَسۡوَاسِ ٱلۡخَنَّاسِ",
+          "meaning": {
+            "en": {
+              "text": "From the evil of the retreating whisperer[2016] -",
+              "footnotes": "[2016] i.e., a devil who makes evil suggestions to man but disappears when one remembers Allāh.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "4. Sharka waswaasiyaha (sheydaanka) soo noqnoqodka badan.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "114:5",
+          "aya": 5,
+          "arabic": "ٱلَّذِي يُوَسۡوِسُ فِي صُدُورِ ٱلنَّاسِ",
+          "meaning": {
+            "en": {
+              "text": "Who whispers [evil] into the breasts of mankind -",
+              "footnotes": "",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "5. Kaasoo waswaasiya laabaha dadka.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        },
+        {
+          "key": "114:6",
+          "aya": 6,
+          "arabic": "مِنَ ٱلۡجِنَّةِ وَٱلنَّاسِ",
+          "meaning": {
+            "en": {
+              "text": "From among the jinn and mankind.\"[2017]",
+              "footnotes": "[2017] Evil prompters may be from men as well as from jinn.",
+              "source": "english_saheeh"
+            },
+            "so": {
+              "text": "6. (Shaydaankaa) oo jin iyo dadba leh.",
+              "footnotes": "",
+              "source": "somali_yacob"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "hadith": [
+    {
+      "id": "hadith-5798",
+      "hadeethencId": "5798",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن أنس بن مالك رضي الله عنه قال: قال رسول الله صلى الله عليه وسلم: «إِنَّ اللهَ لَيَرْضَى عَنِ الْعَبْدِ أَنْ يَأْكُلَ الْأَكْلَةَ فَيَحْمَدَهُ عَلَيْهَا، أَوْ يَشْرَبَ الشَّرْبَةَ فَيَحْمَدَهُ عَلَيْهَا».",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Allah is pleased with one who eats some food and praises Him for it, or drinks some drink and praises Him for it",
+        "text": "Anas ibn Mālik (may Allah be pleased with him) reported: The Messenger of Allah (may Allah’s peace and blessings be upon him) said: \"Allah is pleased with one who eats some food and praises Him for it, or drinks some drink and praises Him for it.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) points out that praising Allah for His bounty and blessings is one of the ways the servant can win the pleasure of his Lord. He eats food, says \"al-hamdulillāh\" (praise be to Allah), drinks some drink, and says al-hamdulillāh.",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Ilaahay wuu kaga raali noqdaa Qofka  markuu wax cuno oo Ilaahay ku mahadiyo iyo markuu wax cabo oo uu Ilaahay ku mahadiyo",
+        "text": "Anas Binu Maalik Allaha ka raali ahaade waxaa laga wariyey inuu yiri: Rasuulka Ilaahay nabadgelyo iyo naxariis Allaha siiyee wuxuu yiri: \"Ilaahay wuu kaga raali noqdaa Qofka  markuu wax cuno oo Ilaahay ku mahadiyo iyo markuu wax cabo oo uu Ilaahay ku mahadiyo\".",
+        "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee  wuxuu cadeeyey in marka Adoonku Ilaahay fadligiisa iyo nicmadiisa uu ku mahadiyo ay ka mid tahay arimaha lagu gaaro Ilaahay raali ahaantiisa, markuu cuntada cuno wuxuu oran: Alxamdu lilaah, haduu cabana wuxuu oran: Alxamdu lilaah.",
+        "attribution": "Waxa wariyay Muslim",
+        "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-58120",
+      "hadeethencId": "58120",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن عُمر بن أبي سلمة رضي الله عنه قال: كُنْتُ غُلَامًا فِي حَجْرِ رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَكَانَتْ يَدِي تَطِيشُ فِي الصَّحْفَةِ، فَقَالَ لِي رَسُولُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: «يَا غُلَامُ، سَمِّ اللهَ، وَكُلْ بِيَمِينِكَ، وَكُلْ مِمَّا يَلِيكَ» فَمَا زَالَتْ تِلْكَ طِعْمَتِي بَعْدُ.",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "O boy, mention Allah's name, eat with your right hand, and eat from what is nearer to you",
+        "text": "‘Umar ibn Abi Salamah (may Allah be pleased with him) reported: I was a young boy under the care of the Messenger of Allah (may Allah's peace and blessings be upon him), and my hand used to wander all over the platter (of food). The Messenger of Allah (may Allah's peace and blessings be upon him) said, \"O boy, mention Allah's name, eat with your right hand, and eat from what is nearer to you.\" Since then, I have been eating that way.",
+        "explanation": "Umar bin Abi Salamah, may God be pleased with them both, the son of the wife of the Prophet, may God bless him and grant him peace, Umm Salamah, wife Umm Salamah (may Allah be pleased with her) - and he was under his upbringing and care - narrates that while eating, he used to move his hand all over the platter to pick up food, so the Prophet, (may Allah's peace and blessings be upon him), taught him three etiquettes of Eating etiquette:\r\n\r\nFirst: Saying 'bismillāh' (in the name of Allah) when beginning to eat.\r\n\r\nSecond: Eating with the right hand.\r\n\r\nThird: Eating from the side next to one.",
+        "attribution": "Agreed upon",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Bismi Allah dheh oo Midigta ku cun, oo ka cun dhinaca ku soo xiga",
+        "text": "Cumar Binu Abii Salama Allaha ka raali ahaadee waxaa laga wariyey inuu yiri: Anoo ah Wiil yar oo ku nool Guriga Nabiga nabadgelyo iyo naxariis Allaha siiyee ayey Gacantaydu  xeerada ku dhex wareegtay markaasaa Rasuulku nabadgelyo iyo naxariis Allaha siiyee igu yiri: yarow Bismi Allah dheh oo Midigta ku cun, oo ka cun dhinaca ku soo xiga, intii ka danbaysay sidaas ayaan u cuni jiray cuntada.",
+        "explanation": "Cumar Binu Abii Salama-Allaha ka raali ahaade wuxuu sheegay inuu ahaa Wiilkii yar oo ay dhashay xaaskii Nabiga nabadgelyo iyo naxariis Allaha siiyee ee Umu Salama Allaha ka raali ahaadee- waxaana Gacanta ku hayey oo tarbiyeynaayey Nabiga nabadgelyo iyo naxariis Allaha siiyee isagoo Nabiga wax la cunaya ayuu weelkii cuntada dhinacyada cunto ka qaatay, markaasuu Nabigu nabadgelyo iyo naxarasiis Allaha siiyee wuxuu baray seddexdan aadaabta cuntada ku saabsan.\r\n\r\nTan 1aad: waa erayga \"Bismillaah\" bilawga cuntada.\r\n\r\nTan 2aad: Midigta oo lagu cuno.\r\n\r\nTan 3aad: waa inuu cuntaa ka cuno dhinaca u dhaw isaga.",
+        "attribution": "Xadiis la isku waafaqay",
+        "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-58122",
+      "hadeethencId": "58122",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن ابن عمر رضي الله عنهما أن رسول الله صلى الله عليه وسلم قال: «إِذَا أَكَلَ أَحَدُكُمْ فَلْيَأْكُلْ بِيَمِينِهِ، وَإِذَا شَرِبَ فَلْيَشْرَبْ بِيَمِينِهِ، فَإِنَّ الشَّيْطَانَ يَأْكُلُ بِشِمَالِهِ، وَيَشْرَبُ بِشِمَالِهِ».",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "If anyone of you eats, let him eat with his right hand, and if he drinks, let him drink with his right hand, for indeed the devil eats with his left hand and drinks with his left hand",
+        "text": "Ibn ‘Umar (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"If anyone of you eats, let him eat with his right hand, and if he drinks, let him drink with his right hand, for indeed the devil eats with his left hand and drinks with his left hand.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) enjoins that Muslims should eat and drink with their right hand and forbade eating and drinking with their left hand. This is because the devil eats and drinks with the left hand.",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Hadii Qof idinka mida uu wax cunayo ha ku cuno Midigtiisa, haduu wax cabaayana ha ku cabo Midigtiisa, waayo Shaydaanku wuxuu ku cunaa Bidixdiisa wuxuuna ku cabaa Bidixdiisa",
+        "text": "Ibnu Cumar Allaha ka wada raali ahaado isaga iyo Aabihiye waxaa laga wariyey in Rasuulka Ilaahay nabadgelyo iyo naxarasiis Allaha siiyee uu yiri: \"Hadii Qof idinka mida uu wax cunayo ha ku cuno Midigtiisa, haduu wax cabaayana ha ku cabo Midigtiisa, waayo Shaydaanku wuxuu ku cunaa Bidixdiisa wuxuuna ku cabaa Bidixdiisa\".",
+        "explanation": "Nabigu nabadgelyo iyo naxarasiis Allaha siiyee  wuxuu faray inuu Qofka Muslimka ahi wax ku cuno kuna cabo Gacantiisa Midig, wuuna reebay in wax lagu cuno laguna cabo Gacanta Bidix, waayo Shaydaankaa kuna cuna kuna caba Bidixda.",
+        "attribution": "Waxa wariyay Muslim",
+        "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-3079",
+      "hadeethencId": "3079",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عَنْ أَبِي قَتَادَةَ رضي الله عنه قَالَ: قَالَ رَسُولُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: «لَا يُمْسِكَنَّ أَحَدُكُمْ ذَكَرَهُ بِيَمِينِهِ وَهُوَ يَبُولُ، وَلَا يَتَمَسَّحْ مِنَ الْخَلَاءِ بِيَمِينِهِ، وَلَا يَتَنَفَّسْ فِي الْإِنَاءِ».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "None of you should hold his penis with his right hand while urinating, nor wipe himself after answering the call of nature using his right hand, nor breathe into the vessel",
+        "text": "Abu Qatādah (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) said: \"None of you should hold his penis with his right hand while urinating, nor wipe himself after answering the call of nature using his right hand, nor breathe into the vessel.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) clarified here some manners as he forbade men from holding their penis with their right hand while urinating and forbade the act of removing impurity from the private parts, front or back, with the right hand because the right hand is meant to be used for noble matters. He also forbade breathing into the vessel from which one is drinking.",
+        "attribution": "Agreed upon",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Yaanu midkiin ku qaban midigtiisa guskiisa isagoo kaadinaaya, oo yaanu midigtiisa isaga tirin najaasada, oo yaanu ku neefsan weelka uu ku cabayo",
+        "text": "Abii Qataada-Allaha ka raali ahaadee- wuxuu yiri: Rasuulka Ilaahay -naxariis iyo nabadi korkiisa ha ahaatee wuxuu yiri: \"Yaanu midkiin ku qaban midigtiisa guskiisa isagoo kaadinaaya, oo yaanu midigtiisa isaga tirin najaasada, oo yaanu ku neefsan weelka uu ku cabayo.",
+        "explanation": "Nabigu -naxariis iyo nabdi korkiisa ha ahaatee-wuxuu cadeeyey qaar ka mida aadaabta, isagoo reebay in ninku midigtiisa ku qabto guskiisa markuu kaadinaayo wuxuu kaloo reebay inuu gacantiisa midig uu kaga tiro najaasada guska ama dabada, waayo midigtu waxay u diyaarsan tahay waxyaabaha fiican. Sidaasoo kale wuxuu reebay inuu qofku ku neefsado weelka uu wax ku cabaayo.",
+        "attribution": "Xadiis la isku waafaqay",
+        "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-3372",
+      "hadeethencId": "3372",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عَنْ سَلَمَةَ بْنِ الْأَكْوَعِ رضي الله عنه: أَنَّ رَجُلًا أَكَلَ عِنْدَ رَسُولِ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ بِشِمَالِهِ، فَقَالَ: «كُلْ بِيَمِينِكَ»، قَالَ: لَا أَسْتَطِيعُ، قَالَ: «لَا اسْتَطَعْتَ»، مَا مَنَعَهُ إِلَّا الْكِبْرُ، قَالَ: فَمَا رَفَعَهَا إِلَى فِيهِ.",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "A man ate with his left hand in the presence of the Messenger of Allah (may Allah's peace and blessings be upon him), whereupon he said: \"Eat with your right hand.\" The man said: I cannot do that. Thereupon, he said: \"May you not be able to do that",
+        "text": "Salamah ibn al-Akwa‘ (may Allah be pleased with him) reported: A man ate with his left hand in the presence of the Messenger of Allah (may Allah's peace and blessings be upon him), whereupon he said: \"Eat with your right hand.\" The man said: I cannot do that. Thereupon, he said: \"May you not be able to do that.\" It was only arrogance that prevented him. He said: He could not raise it up to his mouth afterward.",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) saw a man eating with his left hand, so, he ordered him to eat with his right hand. The man lied and said, out of arrogance, that he could not do this. So, the Prophet (may Allah's peace and blessings be upon him) supplicated against him to be deprived of the ability to eat with his right hand. Allah fulfilled His Prophet's supplication and the man's right hand was paralyzed and he could not raise it to his mouth after that with any food or drink.",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Nin ayaa Bidixda ku cunay isagoo la jooga Rasuulka nabadgelyo iyo naxariis Allaha siiyee, wuxuu Rasuulku nabadgelyo iyo naxariis Allaha siiyee ku yiri: \"midigtaada ku cun\", wuxuuse yiri: ma awoodo, Rasuulku nabadgelyo iyo naxariis Allaha siiyee wuxuu yiri: \" ha awoodin",
+        "text": "Salama Binu Alakwac Allaha ka raali ahaadee waxaa laga wariyey: Nin ayaa Bidixda ku cunay isagoo la jooga Rasuulka nabadgelyo iyo naxariis Allaha siiyee, wuxuu Rasuulku nabadgelyo iyo naxariis Allaha siiyee ku yiri: \"midigtaada ku cun\", wuxuuse yiri: ma awoodo, Rasuulku nabadgelyo iyo naxariis Allaha siiyee wuxuu yiri: \" ha awoodin \", kibir baa u diiday, wuxuu yiri: mar danbe Gacantiisii Afkiisa uma qaadin, .",
+        "explanation": "Nabiga nabadgelyo iyo naxariis Allaha siiyee ayaa arkay nin Bidixda wax ku cunaaya, wuxuuna amray inuu Midigtiisa ku cuno, Wuxuu ku jawaabay inuusan awoodin isagoo ay kibir iyo been ka tahay! Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu ku habaaray inuu kari waayo Midigta inuu wax ku cuno. Ilaahayna wuu aqbalay habaarkii Nabigiisa oo waa qalashay Midigtiisii, mana awoodin inuu Afkiisa gaarsiiyo intaa ka dib cunto iyo cabitaanba.",
+        "attribution": "Waxa wariyay Muslim",
+        "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-3033",
+      "hadeethencId": "3033",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عَنْ أَبِي هُرَيْرَةَ رضي الله عنه أَنَّ رَسُولَ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ قَالَ: «إِذَا تَوَضَّأَ أَحَدُكُمْ فَلْيَجْعَلْ فِي أَنْفِهِ ثُمَّ لِيَنْثُرْ، وَمَنِ اسْتَجْمَرَ فَلْيُوتِرْ، وَإِذَا اسْتَيْقَظَ أَحَدُكُمْ مِنْ نَوْمِهِ فَلْيَغْسِلْ يَدَهُ قَبْلَ أَنْ يُدْخِلَهَا فِي وَضُوئِهِ، فَإِنَّ أَحَدَكُمْ لاَ يَدْرِي أَيْنَ بَاتَتْ يَدُهُ».\nولفظ مسلم: «إِذَا اسْتَيْقَظَ أَحَدُكُمْ مِنْ نَوْمِهِ فَلَا يَغْمِسْ يَدَهُ فِي الْإِنَاءِ حَتَّى يَغْسِلَهَا ثَلَاثًا، فَإِنَّهُ لَا يَدْرِي أَيْنَ بَاتَتْ يَدُهُ».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "When any of you performs ablution, let him sniff water in his nose and then blow it out. Whoever cleans his private parts with stones, let him do so with an odd number of stones",
+        "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: \"When any of you performs ablution, let him sniff water in his nose and then blow it out. Whoever cleans his private parts with stones, let him do so with an odd number of stones. Whoever wakes up from his sleep, let him wash his hand before putting it in the water container of ablution, for none of you knows where his hand was during his sleep.\" The wording of Muslim reads: \"Whoever wakes up from his sleep, let him not put his hand in the water container until he washes it three times, for he does not  know where his hand was during his sleep.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) clarified some of the Tahārah (ritual purity) rulings including the following: First: Whoever performs ablution must sniff water into the nose by inhaling and then blow it out by exhaling. Second: Whoever wants to clean his private parts from impurities with something other than water, like stones and the like, should do so with an odd number of stones; the least of which is three, and the most of which is what is necessary to fully cleanse the impurities off his body. Third: Whoever wakes up from night sleep should not put his hand in the water vessel to perform ablution until he washes it three times outside the vessel, for he does not know where his hand was during his sleep. It might have been affected by some impurity or the devil might have been meddling with it carrying to it what could either be harmful to man or what could make the water impure.",
+        "attribution": "Agreed upon",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Markuu  wayso qaadanayo midkiin Biyaha Sankiisa ha geliyo  hadana ha soo firdhiyo, Qofka dhagax ku istinjoodana dhagxaanta witir ha ka dhigo",
+        "text": "Abii Hurayra -Allaha ka raali ahaadee- waxaa laga wariyey in Rasuulka Ilaahay nabadgelyo iyo naxariis Allaha siiyee uu yiri: \"Markuu  wayso qaadanayo midkiin Biyaha Sankiisa ha geliyo  hadana ha soo firdhiyo, Qofka dhagax ku istinjoodana dhagxaanta witir ha ka dhigo,  markuu midkiin hurdada ka tooso ha dhaqo Gacmihiisa intaanu Biyaha waysada gelin, waayo ma oga midkiin halka ay Gacantiisu bariday\", imaam Muslim ayaa isna sidan u wariyey: \"markuu midkiin tooso yaanu gelin Gacantiisa weelka ilaa uu seddex jeer uu dhaqo, waayo ma oga halkay Gacantiisu bariday.\"",
+        "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee  wuxuu cadeeyey qaar ka mida axkaanta dahaarada, waxaana ka mida: Mida 1aad: Qofki wayso qaadanaya waa inuu  Biyaha Sanka geliyo, hadana neefta soo raaciyo oo soo firdhiyo. Mida 2aad: Qofkii doonaya inuu isaga nadiifiyo najaasada ka soo baxaysa isaga waxaan Biyo ahayn sida dhagxaanta iyo wixii la mida, wuxuu isku nadiifinayaa tirsi kinsi ah oo ugu yaraan ah seddex ugu badnaan wixii tirtiraya najaasada meeshana nadiifinaya. Mida 3aad: Qofka ka toosa hurdada habeenka Gacantiisa galinmaayo weelka markuu wayso qaadanayo ilaa uu Gacantiisa ku dhaqdo weelka dibadiisa, waayo ma oga halkay Gacantiisu bariday, kama aamin aha in  Gacantiisu najaaso taabatay, waxaana dhici kara inuu shaydaan ku ciyaaray, oo uu saaray waxyaabo dadka dhibaya ama Biyaha xumaynaya.",
+        "attribution": "Xadiis la isku waafaqay",
+        "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-65060",
+      "hadeethencId": "65060",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عَنْ ‌عَائِشَةَ رضي الله عنها: أَنَّ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ كَانَ إِذَا أَوَى إِلَى فِرَاشِهِ كُلَّ لَيْلَةٍ جَمَعَ كَفَّيْهِ، ثُمَّ نَفَثَ فِيهِمَا فَقَرَأَ فِيهِمَا: {قُلْ هُوَ اللهُ أَحَدٌ}، وَ{قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ}، وَ{قُلْ أَعُوذُ بِرَبِّ النَّاسِ}، ثُمَّ يَمْسَحُ بِهِمَا مَا اسْتَطَاعَ مِنْ جَسَدِهِ، يَبْدَأُ بِهِمَا عَلَى رَأْسِهِ وَوَجْهِهِ وَمَا أَقْبَلَ مِنْ جَسَدِهِ، يَفْعَلُ ذَلِكَ ثَلَاثَ مَرَّاتٍ.",
+        "attribution": "رواه البخاري",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "When the Prophet (may Allah’s peace and blessings be upon him) went to bed every night, he would join his palms together and blow into them and recite the Surahs al-Ikhlās, al-Falaq, and an-Nās,",
+        "text": "‘Ā’ishah (may Allah be pleased with her) reported: When the Prophet (may Allah’s peace and blessings be upon him) went to bed every night, he would join his palms together and blow into them and recite the Surahs al-Ikhlās, al-Falaq, and an-Nās, and then he would wipe with his hands over as many parts of his body as he could, starting with his head, face, and the front of his body. He used to do that three times.",
+        "explanation": "It was part of the Prophet's custom that when he went to bed, he would join his palms together and raise them as a supplicant does, and he would blow into them in a mild manner, along with little saliva. Meanwhile, he would recite the three surahs of al-Ikhlās, al-Falaq, and an-Nās. Then, he would wipe with his palms over as much of his body as he could, starting with his head, face, and the front part of his body, repeating this three times.",
+        "attribution": "Narrated by Al-Bukhāri",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Nabigu nabadgelyo iyo naxariis Allaha siiyee markuu tago Gogoshiisa Habeen walba wuu isku qaban jirey labadiisa Sacab, wuxuu ku akhrin jiray kuna tufi jiray: { قل هو الله أحد}, iyo {قل أعوذ بربّ الفلق}, iyo { قل أعوذ بربّ النّاس}",
+        "text": "Caa'isha Allaha  ka raali noqde waxaa laga wariyey: Nabigu nabadgelyo iyo naxariis Allaha siiyee markuu tago Gogoshiisa Habeen walba wuu isku qaban jirey labadiisa Sacab, wuxuu ku akhrin jiray kuna tufi jiray: { قل هو الله أحد}, iyo {قل أعوذ بربّ الفلق}, iyo { قل أعوذ بربّ النّاس}, ka dibna ku masixi jiray inta uu ka gaaro Jirkiisa, isagoo ka bilaabaya  Madaxa iyo Wajigiisa iyo inta soo qaabisha Jirkiisa, seddex jeer buu samayn jiray.",
+        "explanation": "Nabiga nabadgelyo iyo naxariis Allaha siiyee dhaqankiisa waxaa ka mid ahaa markuu tago Gogoshiisa si uu u seexdo wuxuu isku qaban jiray labadiisa Sacab isago kor u qaadaya sida Qofka ducaysanaya si khafiifa ayuu ugu tufi jiray Afkiisa Candhuufo yar, wuxuuna ku akhriyi jiray seddexda suuradood ee:{ قل هو الله أحد } iyo { قل أعوذ بربّ الفلق } iyo  قل أعوذ برب النّاس }, ka dibna wuxuu ku masixi jiray labadiisa Sacab inta uu gaaro ee Jirkiisa ah, isagoo ku bilaabaya Madaxa iyo Wajigiisa iyo soo jeedkiisa, wuuna ku celcelin jiray ficilkaa seddex jeer.",
+        "attribution": "Waxa wariyay Albukhaari",
+        "grade": "Xadiis Saxiix ah"
+      }
+    }
+  ],
+  "duas": [
+    {
+      "id": "dua-hadith-6274",
+      "hadeethencId": "6274",
+      "ar": {
+        "text": "عن أبي مسعود رضي الله عنه قال: قال النبي صلى الله عليه وسلم: «مَنْ قَرَأَ بِالْآيَتَيْنِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ فِي لَيْلَةٍ كَفَتَاهُ».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Whoever recites the last two verses of Sūrat al-Baqarah at a night, they will suffice him",
+        "text": "Abu Mas‘ūd (may Allah be pleased with him) reported: The Prophet (may Allah’s peace and blessings be upon him) said: \"Whoever recites the last two verses of Sūrat al-Baqarah at a night, they will suffice him.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) informed that whoever recites the last two verses of Surat al-Baqarah at night, Allah will protect him from evil and harm. It is also said that they are sufficient for him in place of qiyām al-layl (supererogatory prayer at night). They are also said to suffice him in place of all regular dhikrs. Others say that they are the least sufficient amount of Qur'anic recitation in qiyām al-layl. Other opinions were also expressed. Perhaps all those views are correct and consistent with the Hadīth's wording.",
+        "attribution": "Agreed upon",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Qofka akhriya labada Aayadood ee Suurada AlBaqara u dambeeya Habeenka way ku filan yihiin",
+        "text": "Abii Mascuud Allaha ka raali ahaadee waxaa laga wariyey inuu yiri: Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu yiri: \"Qofka akhriya labada Aayadood ee Suurada AlBaqara u dambeeya Habeenka way ku filan yihiin\".",
+        "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu sheegay in qofka akhriya labada Aayadood ee u dambeeya Suurada Albaqara Habeenkii Ilaahay wuuka kaafiyaa Sharka iyo Dhibaatada, waxaa kaloo la yiri: way ka kaafidaa Salaatul-laylka, waxaa kaloo la yiri: waxay ka kaafidaa adkaarta kale, waxaa kaloo la yiri: waa waxa ugu yar ee ay kaga gudmayso akhrinta Qur'aanka ee Salaatul-laylka, siyaabo kalana waa lagu fasiray, waxaa dhici kara inuu sax yahay dhamaan waxaa lagu fasiray oo dhan oo ay erayadu soo wada galaan.",
+        "attribution": "Xadiis la isku waafaqay",
+        "grade": "Xadiis Saxiix ah"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
+      "id": "dua-hadith-5503",
+      "hadeethencId": "5503",
+      "ar": {
+        "text": "عَنْ شَدَّادِ بْنِ أَوْسٍ رَضِيَ اللَّهُ عَنْهُ عَنِ النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: «سَيِّدُ الِاسْتِغْفَارِ أَنْ تَقُولَ: اللَّهُمَّ أَنْتَ رَبِّي لاَ إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي فَاغْفِرْ لِي، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ» قَالَ: «وَمَنْ قَالَهَا مِنَ النَّهَارِ مُوقِنًا بِهَا، فَمَاتَ مِنْ يَوْمِهِ قَبْلَ أَنْ يُمْسِيَ، فَهُوَ مِنْ أَهْلِ الجَنَّةِ، وَمَنْ قَالَهَا مِنَ اللَّيْلِ وَهُوَ مُوقِنٌ بِهَا، فَمَاتَ قَبْلَ أَنْ يُصْبِحَ، فَهُوَ مِنْ أَهْلِ الجَنَّةِ».",
+        "attribution": "رواه البخاري",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "The best way of seeking Allah's forgiveness",
+        "text": "Shaddād ibn Aws (may Allah be pleased with him) reported from the Prophet (may Allah's peace and blessings be upon him): \"The best way of seeking Allah's forgiveness is to say: 'Allāhumma anta rabbi la ilāha illa ant khalaqtani wa ana ‘abduk wa ana ‘ala ‘ahdika wa wa‘dika mastata‘t a‘ūdhu bika min sharri ma sana‘t abū’u laka bini‘matika ‘alayya wa abū’u bidhanbi faghfir li fa innahu la yaghfiru adh-dhunūba illa ant (O Allah, You are my Lord. You created me, and I am Your slave. I will remain faithful to Your covenant and promise as much as possible. I seek refuge with You from the evil of what I have done. I acknowledge Your favor upon me, and I admit my sin. So, forgive me. Indeed, none can forgive sins but You).'\" He (may Allah's peace and blessings be upon him) added: \"And whoever says this during the day while being certain of its meaning, then he dies before the evening, he will be from the people of Paradise, and whoever says it at night while being certain of its meaning then he dies before the morning, he will be from the people of Paradise.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) informs that seeking forgiveness has certain wordings, the greatest of which is to say: \"Allāhumma anta rabbi la ilāha illa ant khalaqtani wa ana ‘abduk wa ana ‘ala ‘ahdika wa wa‘dika mastata‘t a‘ūdhu bika min sharri ma sana‘t abū’u laka bini‘matika ‘alayya wa abū’u bidhanbi faghfir li fa innahu la yaghfiru adh-dhunūba illa ant (O Allah, You are my Lord. You created me, and I am Your slave. I will remain faithful to Your covenant and promise as much as possible. I seek refuge with You from the evil of what I have done. I acknowledge Your favor upon me, and I admit my sin. So, forgive me. Indeed, none can forgive sins but You).\" Here, the slave first acknowledges the oneness of Allah and that Allah is his Creator and God, with no partner. He states that he adheres to his covenant with Allah Almighty, to believe in Him and obey Him as much as he can because no matter what the slave offers of worship, he cannot carry out all of Allah's commands or show sufficient gratitude for the blessings He has bestowed upon him. The slave, then, seeks refuge with Allah and holds fast to Him, as He is the One with Whom refuge is sought against the evil he committed. He willingly admits and acknowledges the favor of Allah upon him, and again admits and acknowledges his sins and misdeeds. After imploring Allah, he supplicates his Lord to forgive him by concealing his sins and protecting him from dire consequences through His pardon, favor, and mercy, as none can forgive sins but Allah Almighty. Then, the Prophet (may Allah's peace and blessings be upon him) stated that this supplication is from the morning and evening Adhkār (regular supplications), and whoever recites it with certainty while recalling its meanings and believing in them at the beginning of his day, from sunrise till the sun's decline, i.e., at daytime, and he dies, he will enter Paradise. And whoever recites it at night, from sunset till the break of dawn, and dies before the morning, he will enter Paradise.",
+        "attribution": "Narrated by Al-Bukhāri",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Sayidka istiqfaartu",
+        "text": "Shadaad Binu Aws Allaha ka rali ahaadee waxaa laga wariyey in Nabiga nabadgelyo iyo naxariis Allaha siiyee uu yiri: \" Sayidka istiqfaartu waa inaad tiraahdo: Allahayow adigaa Rabigay ah Ilaah aan adiga ahayn ma jiro, adigaa i abuuray ana Adoonkaagii ayaan ahay waxaan ku taagnahay balantaada iyo balan qaadkaaga intaan awoodo, waxaan kaa magan galayaa waxaan sameeyey Shartooda, waan qirsanahay Nicmooyinka aad i siisay, waan kaaga towbadkeenay danbigayga ee ii dhaaf, adiga maahee cid kale danbiyada ma dhaaftee\" wuxuu yiri: \" Qofkii yiraahda Maalintii isagoo yaqiinsan, oo dhinta Maalintaas galabtii ka hor waa Ehlu Jano, Qofkii yiraahda Habeenkii isagoo yaqiinsan, oo dhinta Habeenkaas inta aan waagu baryin, waa Ehlu Jano\".",
+        "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu sheegay in istiqfaartu ay leedahay Ereyo, kuwa ugu fadliga badana ay yihiin inuu Adoonku dhoho: ''Allahayow, adaa Rabigay ah, Ilaah aan adiga ahayni majiro, waad i abuurtay ana Adoonkaagaan ahay, waxaanan ku jiraa balankaagii iyo balan qaadkaagii inta aan awoodo, waxaan kaa magan galayaa Sharka aan sameeyo dhibkiisa, waxaan kuu ogsoonahay oo qiraya Nicmooyinka aad i siisay, waxaan qirsanahay dambigayga, Allahayow ii dambi dhaaf, mid aan Adiga ahayn oo dambiga dhaafi karaa majiree'' Marka hore Adoonku wuxuu u qirayaa towxiidka, iyo in Ilaahay abuuray oo uu caabudayo isagoon cidna la wadaajin, oo Addoonku  ku kusugan yahay wuxuu Ilaahay kula ballamay ee iimaan iyo u hoggaansan Ilaahay ah kolba inta Awooddiisu tahay, waayo Adoonku sikasta oo uu u cibaadaysto haddana lama iman karo dhamaan wixii Ilaahay faray ee cibaado ah, iyo inuu guto mahadnaqii looga baahnaa ee Nicmooyinka Ilaahay, Adoonku llaahay buu cuskadaa, Diintiisana qabsadaa, Isaguuna Adoonku ka hoos galaa Sharka ay Naftiisu samayso. Ilaahay ayuu u qirayaa Nicmada uu siiyey, wuxuu Naftiisa ula noqonayaa  inuu  qirto oo citiraafo gafkiisa iyo dambigiisa. Codsigaa uu Ilaahay u jeediyey ka dib, Adoonku wuxuu Ilaahay ka baryayaa inuu u dambi dhaafo, oo uu u asturo dambiyadiisii oo kaga Ndiifiyo dembiyada cafiskiisa, fadligiisa iyo naxariistiisa, waayo cid aan Ilaahay wayne kor ahaaye ahayn oo dambiyada Adoomada dhaafi karta majirto. Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu sheegay  inay ka mid tahay wardiga Subaxa iyo Habeenka, Qofka akhriya bilawga Maalinta isagoo yaqiinsan macneheedana dhadhan sanaya rumaysana, inta u dhaxaysa Qorax soo baxa ilaa Sawaalka -oo ah markay bartamaha Samada u yara dhaafto wax yar Qoraxdu xagga Qorax dhaca-, waana waqtiga Maalinimada ah ee sidaa ku dhinta Janaduu gelayaa. Qofka Habeenka akhriyana, waana Qorax dhaca ilaa soo bixitaanka Fajarka, oo sidaa ku dhinta intaanu Waabariisan Janaduu gelayaa.",
+        "attribution": "Waxa wariyay Albukhaari",
+        "grade": "Xadiis Saxiix ah"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
+      "id": "dua-hadith-6082",
+      "hadeethencId": "6082",
+      "ar": {
+        "text": "عَن عبدِ اللهِ بن خُبَيب رضي الله عنه أنه قال: خَرَجْنَا فِي لَيْلَةٍ مَطِيرَةٍ وَظُلْمَةٍ شَدِيدَةٍ، نَطْلُبُ رَسُولَ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ؛ يُصَلِّي لَنَا، قَالَ: فَأَدْرَكْتُهُ، فَقَالَ: «قُلْ»، فَلَمْ أَقُلْ شَيْئًا، ثُمَّ قَالَ: «قُلْ»، فَلَمْ أَقُلْ شَيْئًا، قَالَ: «قُلْ»، فَقُلْتُ: مَا أَقُولُ؟ قَالَ: «{قُلْ هُوَ اللهُ أَحَدٌ} وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَتُصْبِحُ ثَلَاثَ مَرَّاتٍ، تَكْفِيكَ مِنْ كُلِّ شَيْءٍ».",
+        "attribution": "رواه أبو داود والترمذي والنسائي",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "{Say: \"He is Allah, the One\"} and Al-Mu'awwidhatān (Surat al-Falaq and Surat an-Nās) thrice in the evening and the morning, they will grant you protection from everything",
+        "text": "‘Abdullah ibn Khubayb (may Allah be pleased with him) reported: We went out on a rainy and extremely dark night looking for the Messenger of Allah (may Allah's peace and blessings be upon him) to lead us in prayer. He said: I caught up with him, and he said: \"Say,\" but I did not say anything. Then, he said: \"Say,\" and again, I said nothing. He said: \"Say.\" I replied: What should I say? He said:  \"{Say: \"He is Allah, the One\"} and Al-Mu'awwidhatān (Surat al-Falaq and Surat an-Nās) thrice in the evening and the morning, they will grant you protection from everything.\"",
+        "explanation": "'Abdullah ibn Khubayb (may Allah be pleased with him), the great Companion, reports that they went out one night when it was raining heavily and it was extremely dark, looking for the Messenger of Allah (may Allah's peace and blessings be upon him) to lead them in prayer and they found him. The Prophet (may Allah's peace and blessings be upon him) said to him: \"Say,\" i.e., recite, but he recited nothing. The Prophet (may Allah's peace and blessings be upon him) repeated his words to him, so, ‘Abdullah said: What should I recite, O Messenger of Allah? Thereupon, the Prophet (may Allah's peace and blessings be upon him) said: Recite Surat al-Ikhlās {Say: “He is Allah, the One”} and Al-Mu‘awwidhatān: Surat {Say, “I seek refuge with the Lord of the daybreak} and Surat {Say, “I seek refuge with the Lord of mankind} in the evening and morning three times and they will protect you from all evils and guard you against all harms.",
+        "attribution": "Narrated by Abu Dāwūd, At-Tirmidhi, and An-Nasā’i",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "{قل هو الله أحد} Ilaahay waa Allaah keligii ah-, iyo labada Suuradood ee Micwadateynka \"سورة الفلق iyo سورة الناس\"\nGalabtii iyo Subixii sedeex jeer, way kaaga filan tahay wax walba",
+        "text": "Cabdullaahi Binu Khubayb Allaha ka raali ahaadee waxaa laga wariyey inuu yiri: Waxaan soo baxnay habeen Roob da'ayo, oo Gudcur ah, anagoo Rasuulka Ilaahay raadinayna si uu noo tujiyo, wuxuu yiri: waan helnay, wuxuuna yiri: \"dheh\", waxba maana dhihin, wuxuu yiri: \"dheh\", waxba maana dhihin, wuxuu yiri: \"dheh\", waxaan iri: maxaan dhahaa? wuxuu yiri: dheh:  {قل هو الله أحد} Ilaahay waa Allaah keligii ah-, iyo labada Suuradood ee Micwadateynka \"سورة الفلق iyo سورة الناس\"\nGalabtii iyo Subixii sedeex jeer, way kaaga filan tahay wax walba\".",
+        "explanation": "Wuxuu sheegay Saxaabiga weyn ee Cabdullaahi Binu Khubayb-Allaha ka raali ahaadee-: inay bexeen Habeen Roob badan oo Gudcur ah, iyagoo raadinaya Rasuulka nabadgelyo iyo naxariis Allaha siiyee, si uu u tujiyo, wayna heleen, Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu ku yiri: waxaad dhahdaa ''dheh'' oo uu uga jeeday akhri, waxbana ma akhrin, Nabiguna nabadgelyo iyo naxariis Allaha siiyee wuu ku celiyey hadalkiisa, wuxuuna dhahay Cabdullaahi: maxaan akhriyaa Rasuul Ilaahayow? Nabigu wuxuu yiri: akhri suuradaha: {Al-ikhlaas}, {Al-falaq}, {Anaas}, waqtiga Galabta iyo waqtiga Subaxa, seddex jeer-midiiba-, waxay kaa ilaalin wax walba, xumaan oo dhana way kaa ilaaline.",
+        "attribution": "waxaa wariyey Abuu daawuud,tirmidi, iyo nasaa.i",
+        "grade": "Xadiis Saxiix ah"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
+      "id": "dua-hadith-3037",
+      "hadeethencId": "3037",
+      "ar": {
+        "text": "عَنْ جَابِرِ بْنِ عَبْدِ اللهِ رضي الله عنهما أَنَّهُ سَمِعَ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ يَقُولُ: «إِذَا دَخَلَ الرَّجُلُ بَيْتَهُ، فَذَكَرَ اللهَ عِنْدَ دُخُولِهِ وَعِنْدَ طَعَامِهِ، قَالَ الشَّيْطَانُ: لَا مَبِيتَ لَكُمْ، وَلَا عَشَاءَ، وَإِذَا دَخَلَ، فَلَمْ يَذْكُرِ اللهَ عِنْدَ دُخُولِهِ، قَالَ الشَّيْطَانُ: أَدْرَكْتُمُ الْمَبِيتَ، وَإِذَا لَمْ يَذْكُرِ اللهَ عِنْدَ طَعَامِهِ، قَالَ: أَدْرَكْتُمُ الْمَبِيتَ وَالْعَشَاءَ».",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "When one mentions Allah's name upon entering his house and upon eating, the devil says (to his companions): 'There is no night shelter nor supper here for you",
+        "text": "Jābir ibn ‘Abdullah (may Allah be pleased with him and his father) reported that he heard the Prophet (may Allah's peace and blessings be upon him) say: \"When one mentions Allah's name upon entering his house and upon eating, the devil says (to his companions): 'There is no night shelter nor supper here for you.' However, when one does not mention Allah's name upon entering his house, the devil says: 'You have found yourselves a night shelter.' If one does not mention Allah's name when starting to eat, the devil says: 'You have found yourselves both a night shelter and supper.'\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) commands us to mention Allah upon entering the house and before eating. When one mentions Allah saying: \"Bismillāh\" (in the Name of Allah) upon entering his house and before eating, the devil says to his companions: You shall not have a night shelter or supper in this house whose owner has sought protection against you by mentioning Allah Almighty. However, if one enters his house without mentioning Allah upon entering and before eating, the devil informs his companions that they will have a night shelter and supper in this house.",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Haduu ninku markuu soo gelayo Gurigiisa, ama uu cuntadiisa cunaayo, Shaydaanka wuxuu dhihin: halkan Hoy iyo Cashaba kuma lihin",
+        "text": "Jaabir Binu Cabdullaahi Allaha ka raali ahaadee waxaa laga wariyey inuu ka maqlay Nabiga nabadgelyo iyo naxariis Allaha siiyee isagoo dhahaya: \" Haduu ninku markuu soo gelayo Gurigiisa, ama uu cuntadiisa cunaayo, Shaydaanka wuxuu dhihin: halkan Hoy iyo Cashaba kuma lihin, haduu soo galo isagoon Ilaahay xusin markuu soo gelaayey, Shaydaanka ayaa oronaya: waxaad soo gaarteen Hoy, haduu Cuntada cuno isagoon Ilaahay Xusina Shaydaanku wuxuu oran: waxaad soo gaarteen Casho iyo Hoy.",
+        "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee  wuxuu amray in Ilaahay la xuso marka Guriga la gelayo iyo cuntada ka hor, marka Qofku Ilaahay xuso isagoo dhahaya (bismillaah) maarkuu gurigiisa gelayo iyo marka cuntadiisa uu bilaabayo, \nshaydaanka ayaa ku dhaha taageerayaal kiisa: hoyaatin iyo casho kuma lihidin Gurigaan ninkii iska lahaa idinka magan gelay dikriga Ilaahay. Hadiise ninku soo galo Gurigiisa oo uusan xusin Ilaahay markuu Guriga galayo iyo markuu cuntada cunaayo shaydaanka ayaa u sheegaya taageerayaalkiisa inay Guriga ku leeyihiin Hoyaatin iyo Cashaba.",
+        "attribution": "Waxa wariyay Muslim",
+        "grade": "Xadiis Saxiix ah"
+      },
+      "kind": "hadith",
+      "moment": "home"
+    },
+    {
+      "id": "dua-hadith-65092",
+      "hadeethencId": "65092",
+      "ar": {
+        "text": "عَنْ ‌أَبِي حُمَيْدٍ أَوْ عَنْ ‌أَبِي أُسَيْدٍ قَالَ: قَالَ رَسُولُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: «إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ فَلْيَقُلِ: اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ، وَإِذَا خَرَجَ فَلْيَقُلِ: اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ».",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "When any of you enters the mosque, let him say: 'Allahumma iftah li abwāba rahmatik' (O Allah, open for me the gates of Your mercy). And when he leaves, let him say: 'Allahumma inni as’aluka min fadlik' (O Allah, I ask You of Your bounty)",
+        "text": "Abu Humayd or Abu Usayd reported: The Messenger of Allah (may Allah’s peace and blessings be upon him) said: \"When any of you enters the mosque, let him say: 'Allahumma iftah li abwāba rahmatik' (O Allah, open for me the gates of Your mercy). And when he leaves, let him say: 'Allahumma inni as’aluka min fadlik' (O Allah, I ask You of Your bounty).\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) directed his Ummah to the supplication to be said upon entering the mosque: \"O Allah, open for me the gates of Your mercy.\" He asks Allah Almighty to provide him with the means to attain His mercy. And when he wants to leave, he should say: \"O Allah, I ask You of Your bounty.\" He asks Allah for His bounty and more of His benevolence in providing lawful sustenance.",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic"
+      },
+      "so": {
+        "title": "Hadii midkiin soo galo masaajidka ha dhoho: Allahayow iifur Albaabada Naxariistaada, haduu baxayana ha dhoho: Allahayow waxaan ku waydiisanayaa Fadligaaga",
+        "text": "Abii Xamiid ama Abii Usayd waxaa laga wariyey inuu yiri: Rasuulka Ilaahay nabadgelyo iyo naxariis Allaha siiyee wuxuu yiri: \"Hadii midkiin soo galo masaajidka ha dhoho: Allahayow iifur Albaabada Naxariistaada, haduu baxayana ha dhoho: Allahayow waxaan ku waydiisanayaa Fadligaaga \".",
+        "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu ku booriyey Ummaddiisa ducada la oranaayo marka Masaajidka la soo galayo:(Allahayow ii fur Albaabada Naxariistaada), oo Ilaahay la waydiisto inuu u diyaariyo asabaabta lagu helo Naxariistiisa, markuu Qofku damco inuu ka boxo Masaajidkana uu dhoho: (Allahayow waxaan ku waydiisanayaa Fadligaaga), oo Ilaahay uu waydiisto Fadligiisa uuna u siyaadiyo ixsaankiisa ay ka mid tahay irsaaqada xalaasha ah.",
+        "attribution": "Waxa wariyay Muslim",
+        "grade": "Xadiis Saxiix ah"
+      },
+      "kind": "hadith",
+      "moment": "mosque"
+    },
+    {
+      "id": "dua-quran-2-201",
+      "kind": "quran",
+      "moment": "anytime",
+      "key": "2:201",
+      "arabic": "وَمِنۡهُم مَّن يَقُولُ رَبَّنَآ ءَاتِنَا فِي ٱلدُّنۡيَا حَسَنَةٗ وَفِي ٱلۡأٓخِرَةِ حَسَنَةٗ وَقِنَا عَذَابَ ٱلنَّارِ",
+      "meaning": {
+        "en": {
+          "text": "But among them is he who says, \"Our Lord, give us in this world [that which is] good and in the Hereafter [that which is] good and protect us from the punishment of the Fire.\"",
+          "footnotes": "",
+          "source": "english_saheeh"
+        },
+        "so": {
+          "text": "201. Waxaa ka mid ahna kuwo yidhaahda: Rabbigayow! Nagu sii wanaag adduunka , iyo wanaag Aakhirada, nagana badbaadi cadaabka Naarta.",
+          "footnotes": "",
+          "source": "somali_yacob"
+        }
+      }
+    },
+    {
+      "id": "dua-quran-20-114",
+      "kind": "quran",
+      "moment": "anytime",
+      "key": "20:114",
+      "arabic": "فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۗ وَلَا تَعۡجَلۡ بِٱلۡقُرۡءَانِ مِن قَبۡلِ أَن يُقۡضَىٰٓ إِلَيۡكَ وَحۡيُهُۥۖ وَقُل رَّبِّ زِدۡنِي عِلۡمٗا",
+      "meaning": {
+        "en": {
+          "text": "So high [above all] is Allāh, the Sovereign,[861] the Truth.[862] And, [O Muḥammad], do not hasten with [recitation of] the Qur’ān before its revelation is completed to you, and say, \"My Lord, increase me in knowledge.\"",
+          "footnotes": "[861] And owner of everything in existence.\n[862] Or \"the True Reality,\" i.e., the real and permanent existence upon which all other existence depends.",
+          "source": "english_saheeh"
+        },
+        "so": {
+          "text": "114. Ee waxaa Sarreeya oo ka kor ah (dhammaan uumanka) Allaah, Boqorka Xaqa ah. Ee (Muxammadow) ha ku degdegin Qur'aanka (akhriskiisa) ka hor inta aan laguu dhammayn Waxyigiisa, oo dheh: “Rabbiyow ii kordhi cilmi.”",
+          "footnotes": "",
+          "source": "somali_yacob"
+        }
+      }
+    },
+    {
+      "id": "dua-quran-17-24",
+      "kind": "quran",
+      "moment": "anytime",
+      "key": "17:24",
+      "arabic": "وَٱخۡفِضۡ لَهُمَا جَنَاحَ ٱلذُّلِّ مِنَ ٱلرَّحۡمَةِ وَقُل رَّبِّ ٱرۡحَمۡهُمَا كَمَا رَبَّيَانِي صَغِيرٗا",
+      "meaning": {
+        "en": {
+          "text": "And lower to them the wing of humility out of mercy and say, \"My Lord, have mercy upon them as they brought me up [when I was] small.\"",
+          "footnotes": "",
+          "source": "english_saheeh"
+        },
+        "so": {
+          "text": "24. U raarici ( waalidkaa oo nuglee) garab naxariiseed (u muuji naxariis), oo dheh: Rabbiyow! Ugu Naxariiso siday ii soo koriyeen anigoo yar.",
+          "footnotes": "",
+          "source": "somali_yacob"
+        }
+      }
+    }
+  ]
+}

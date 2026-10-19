@@ -104,7 +104,8 @@ class MyShelfScreen extends StatelessWidget {
                       children: [
                         PopIconView(i % 3 == 2 ? PopIcon.bookmarkOff : PopIcon.bookmarkOn, size: 22, shadow: false),
                         const SizedBox(width: 6),
-                        Text('${s.name} ${a.key}', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15)),
+                        // Long names wrap inside the chip at large text sizes.
+                        Flexible(child: Text('${s.name} ${a.key}', style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15))),
                       ],
                     ),
                   ),

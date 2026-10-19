@@ -91,7 +91,7 @@ void main() {
     await tester.pumpWidget(app(state, TopicScreen(topicId: group)));
     await tester.pumpAndSettle();
     expect(state.isFavourite(favouriteId(h)), isFalse);
-    final card = find.ancestor(of: find.text(h.t('en').title), matching: find.byType(InkPanel)).first;
+    final card = find.ancestor(of: find.text(h.t('en').title), matching: find.byType(GlazeCard)).first;
     final heart = find.descendant(of: card, matching: find.byType(ToggleIconButton));
     await tester.ensureVisible(heart);
     await tester.pumpAndSettle();

@@ -12,7 +12,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
     final text = await rootBundle.loadString('assets/fonts/OFL-licenses.txt');
-    yield LicenseEntryWithLineBreaks(const ['Bungee', 'Baloo 2', 'Amiri Quran'], text);
+    yield LicenseEntryWithLineBreaks(const ['Bungee', 'Baloo 2', 'Scheherazade New'], text);
   });
   final state = AppState()..load();
   runApp(AppScope(state: state, child: const KidsApp()));

@@ -283,3 +283,55 @@ test('validateBundle rejects a number from a collection HadeethEnc does not name
   const errors = validateBundle({ schemaVersion: 1, sources: {}, surahs: [{ id: 's', ayat: [] }], hadith: [h], duas: [] }, ['en']);
   assert.ok(errors.some((e) => e.includes('does not name bukhari')));
 });
+
+// #21: HadeethEnc lists a Somali translation that its detail endpoint does
+// not serve (hadeeths/one/?id=66520&language=so answered HTTP 404 on
+// 2026-10-19). An optional language must never sink the build.
+test('a missing optional-language hadith is skipped, not fatal', async () => {
+  const config = {
+    languages: ['en'],
+    optionalLanguages: ['so'],
+    quranTranslations: { en: 'english_saheeh', so: 'somali_yacob' },
+    surahs: [{ number: 112, name: 'Al-Ikhlas', nameAr: 'x' }],
+    hadithShelves: [{ id: 's', topics: [{ id: 's-a', categoryId: 290, max: 5 }] }],
+    duaCategories: [], quranDuas: [],
+  };
+  const warned = [];
+  const fake = async (url) => {
+    if (url.includes('/translations/list/en')) return { translations: [{ key: 'english_saheeh', version: '1', title: 'EN' }] };
+    if (url.includes('/translations/list/so')) return { translations: [{ key: 'somali_yacob', version: '2', title: 'SO' }] };
+    const sm = url.match(/translation\/sura\/(\w+)\/(\d+)/);
+    if (sm) return { result: [ayaRow(112, 1, sm[1].startsWith('english') ? 'en' : 'so')] };
+    if (url.includes('categories/list')) return [{ id: 290, title: 'Eating' }];
+    if (url.includes('category_id=290')) return { data: [{ id: '66520', translations: ['en', 'so'] }], meta: { last_page: 1 } };
+    if (url.includes('id=66520&language=so')) throw new Error(`${url}: HTTP 404`);
+    const m = url.match(/hadeeths\/one\/\?id=(\d+)&language=(\w+)/);
+    if (m) return hadithDetail(m[1], m[2]);
+    throw new Error(`unexpected url ${url}`);
+  };
+  const { bundle, errors, warnings } = await build(config, fake, (l) => warned.push(l));
+  assert.deepEqual(errors, []);
+  assert.equal(bundle.hadith.length, 1);
+  assert.equal(bundle.hadith[0].en.text, 'en text 66520');
+  assert.equal(bundle.hadith[0].so, undefined);
+  assert.ok(warnings.some((w) => w.includes('66520') && w.includes('so')));
+});
+
+test('a missing required-language hadith still fails the build', async () => {
+  const config = {
+    languages: ['en'],
+    quranTranslations: { en: 'english_saheeh' },
+    surahs: [{ number: 112, name: 'Al-Ikhlas', nameAr: 'x' }],
+    hadithShelves: [{ id: 's', topics: [{ id: 's-a', categoryId: 290, max: 5 }] }],
+    duaCategories: [], quranDuas: [],
+  };
+  const fake = async (url) => {
+    if (url.includes('/translations/list/en')) return { translations: [{ key: 'english_saheeh', version: '1', title: 'EN' }] };
+    if (url.includes('translation/sura/')) return { result: [ayaRow(112, 1, 'en')] };
+    if (url.includes('categories/list')) return [{ id: 290, title: 'Eating' }];
+    if (url.includes('category_id=290')) return { data: [{ id: '7', translations: ['en'] }], meta: { last_page: 1 } };
+    if (url.includes('hadeeths/one/')) throw new Error(`${url}: HTTP 404`);
+    throw new Error(`unexpected url ${url}`);
+  };
+  await assert.rejects(build(config, fake, () => {}), /HTTP 404/);
+});

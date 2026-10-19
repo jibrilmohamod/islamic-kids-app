@@ -106,7 +106,18 @@ export async function build(config, get = fetchJson, log = console.log, head = h
       const detail = {};
       for (const lang of allLangs) {
         if (!(item.translations ?? []).includes(lang)) continue;
-        detail[lang] = await get(`${HADEETHENC}/hadeeths/one/?id=${item.id}&language=${lang}`);
+        const url = `${HADEETHENC}/hadeeths/one/?id=${item.id}&language=${lang}`;
+        if (langs.includes(lang)) {
+          detail[lang] = await get(url);
+          continue;
+        }
+        // Optional language: HadeethEnc sometimes lists a translation it
+        // does not serve (#21). Leave it out; the app falls back to English.
+        try {
+          detail[lang] = await get(url);
+        } catch (err) {
+          warnings.push(`hadith ${item.id}: no ${lang} text (${err.message}); left out`);
+        }
       }
       out.push(detail);
     }

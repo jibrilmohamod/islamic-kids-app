@@ -8,10 +8,12 @@ import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
+import 'downloads_screen.dart';
 import 'dua_screen.dart';
 import 'duas_screen.dart';
 import 'hadith_screen.dart';
 import 'mosaic_screen.dart';
+import 'mushaf_screen.dart';
 import 'parent_gate.dart';
 import 'parent_screen.dart';
 import 'surah_screen.dart';
@@ -96,6 +98,33 @@ class HomeScreen extends StatelessWidget {
                             onTap: () => go(context, const HadithListScreen()),
                           ),
                         ),
+                      ],
+                    ),
+                    const SizedBox(height: 14),
+                    Row(
+                      children: [
+                        if (state.book != null) ...[
+                          Expanded(
+                            child: _HomeTile(
+                              label: tr('quranBook', lang),
+                              icon: Icons.menu_book_rounded,
+                              color: Pop.lemon,
+                              dot: const Color(0x55FF3D8B),
+                              onTap: () => go(context, MushafScreen(initialPage: state.lastPage.clamp(1, state.book!.pageCount))),
+                            ),
+                          ),
+                          const SizedBox(width: 14),
+                        ],
+                        if (state.audio != null)
+                          Expanded(
+                            child: _HomeTile(
+                              label: tr('downloads', lang),
+                              icon: Icons.download_for_offline_rounded,
+                              color: Colors.white,
+                              dot: const Color(0x5519C3FF),
+                              onTap: () => go(context, const DownloadsScreen()),
+                            ),
+                          ),
                       ],
                     ),
                   ],

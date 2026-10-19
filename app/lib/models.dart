@@ -69,9 +69,23 @@ class Ayah {
   final String arabic;
   final Map<String, Meaning> meaning;
 
-  const Ayah({required this.key, required this.aya, this.n, required this.arabic, required this.meaning});
+  /// Where the ayah's words sit in the Madina mushaf: runs of
+  /// (page, line, word count), in reading order. Empty for older bundles.
+  final List<MushafRun> mushaf;
+
+  const Ayah({
+    required this.key,
+    required this.aya,
+    this.n,
+    required this.arabic,
+    required this.meaning,
+    this.mushaf = const [],
+  });
 
   Meaning? meaningFor(String lang) => _pick(meaning, lang);
+
+  /// The words as the mushaf view and the games split them.
+  List<String> get words => arabic.trim().split(RegExp(r'\s+'));
 
   factory Ayah.fromJson(Map<String, dynamic> j) => Ayah(
         key: _s(j['key']),
@@ -79,7 +93,23 @@ class Ayah {
         n: (j['n'] as num?)?.toInt(),
         arabic: _s(j['arabic']),
         meaning: _meanings(j['meaning']),
+        mushaf: parseMushafRuns(_s(j['ml'])),
       );
+}
+
+typedef MushafRun = ({int page, int line, int words});
+
+/// "3.1.9 3.2.2" -> two runs. Anything malformed gives an empty list, so
+/// the book view is simply not offered for that bundle.
+List<MushafRun> parseMushafRuns(String s) {
+  if (s.trim().isEmpty) return const [];
+  final out = <MushafRun>[];
+  for (final part in s.trim().split(' ')) {
+    final f = part.split('.').map(int.tryParse).toList();
+    if (f.length != 3 || f.any((x) => x == null || x < 1)) return const [];
+    out.add((page: f[0]!, line: f[1]!, words: f[2]!));
+  }
+  return out;
 }
 
 class Surah {
@@ -135,12 +165,34 @@ class HadithText {
       );
 }
 
+/// A hadith's number in Sahih al-Bukhari or Sahih Muslim.
+class HadithRef {
+  final String collection; // 'bukhari' or 'muslim'
+  final int number;
+
+  /// 'checked' (by a person on sunnah.com) or 'matched' (by the pipeline).
+  final String how;
+
+  const HadithRef({required this.collection, required this.number, this.how = 'matched'});
+
+  String get short => '${collection == 'bukhari' ? 'Bukhari' : 'Muslim'} $number';
+  String get full => '${collection == 'bukhari' ? 'Sahih al-Bukhari' : 'Sahih Muslim'} $number';
+
+  static HadithRef? fromJson(Map<String, dynamic> j) {
+    final c = _s(j['collection']);
+    final n = (j['number'] as num?)?.toInt();
+    if ((c != 'bukhari' && c != 'muslim') || n == null || n < 1) return null;
+    return HadithRef(collection: c, number: n, how: _s(j['how']));
+  }
+}
+
 class Hadith {
   final String id;
   final String hadeethencId;
   final String group;
   final String arabic;
   final Map<String, HadithText> byLang;
+  final List<HadithRef> refs;
 
   const Hadith({
     required this.id,
@@ -148,6 +200,7 @@ class Hadith {
     required this.group,
     required this.arabic,
     required this.byLang,
+    this.refs = const [],
   });
 
   factory Hadith.fromJson(Map<String, dynamic> j, List<String> langs) => Hadith(
@@ -159,7 +212,20 @@ class Hadith {
           for (final l in langs)
             if (j[l] is Map) l: HadithText.fromJson(_map(j[l])),
         },
+        refs: ((j['refs'] as List?) ?? const [])
+            .map((r) => HadithRef.fromJson(_map(r)))
+            .whereType<HadithRef>()
+            .toList(),
       );
+
+  /// The Prophet's own words: the «...» quotes, or the whole text.
+  String get quote {
+    final q = RegExp('«([^»]+)»').allMatches(arabic).map((m) => m.group(1)!).toList();
+    return q.isEmpty ? arabic : q.join(' ');
+  }
+
+  /// Short enough to learn by heart in a sitting.
+  bool get isShort => quote.trim().split(RegExp(r'\s+')).length <= 12;
 
   bool has(String lang) => byLang.containsKey(lang);
 
@@ -234,6 +300,70 @@ class AudioInfo {
   Uri urlFor(int n) => Uri.parse(urlTemplate.replaceAll('{n}', '$n'));
 }
 
+/// A HadeethEnc category shown as one topic on a shelf. The title is
+/// HadeethEnc's own category name.
+class HadithTopic {
+  final String id;
+  final Map<String, String> title;
+  const HadithTopic({required this.id, required this.title});
+
+  String titleFor(String lang) => title[lang] ?? title[fallbackLang] ?? (title.isEmpty ? id : title.values.first);
+
+  factory HadithTopic.fromJson(Map<String, dynamic> j) => HadithTopic(
+        id: _s(j['id']),
+        title: _map(j['title']).map((k, v) => MapEntry(k, _s(v))),
+      );
+}
+
+class HadithShelf {
+  final String id;
+  final List<HadithTopic> topics;
+  const HadithShelf({required this.id, required this.topics});
+
+  factory HadithShelf.fromJson(Map<String, dynamic> j) => HadithShelf(
+        id: _s(j['id']),
+        topics: ((j['topics'] as List?) ?? const []).map((t) => HadithTopic.fromJson(_map(t))).toList(),
+      );
+}
+
+/// Page facts of the Madina mushaf layout. Which words go where is on each
+/// ayah ([Ayah.mushaf]); this holds the rest.
+class MushafInfo {
+  final String layout;
+  final int pages;
+  final Map<int, int> linesPerPage;
+
+  /// page -> [(line, 'h' surah header | 'b' basmala, surah)]
+  final Map<int, List<({int line, String kind, int surah})>> specials;
+
+  const MushafInfo({required this.layout, required this.pages, required this.linesPerPage, required this.specials});
+
+  int linesOn(int page) => linesPerPage[page] ?? 15;
+
+  static MushafInfo? fromJson(Object? raw) {
+    if (raw is! Map) return null;
+    final j = _map(raw);
+    final pages = (j['pages'] as num?)?.toInt() ?? 0;
+    if (pages < 1) return null;
+    final lines = <int, int>{};
+    _map(j['linesPerPage']).forEach((k, v) {
+      final p = int.tryParse(k);
+      if (p != null && v is num) lines[p] = v.toInt();
+    });
+    final specials = <int, List<({int line, String kind, int surah})>>{};
+    _map(j['specials']).forEach((k, v) {
+      final p = int.tryParse(k);
+      if (p == null || v is! List) return;
+      specials[p] = [
+        for (final e in v)
+          if (e is List && e.length == 3 && e[0] is num && e[2] is num)
+            (line: (e[0] as num).toInt(), kind: _s(e[1]), surah: (e[2] as num).toInt()),
+      ];
+    });
+    return MushafInfo(layout: _s(j['layout']), pages: pages, linesPerPage: lines, specials: specials);
+  }
+}
+
 class ContentBundle {
   final String version;
   final List<String> languages;
@@ -243,6 +373,8 @@ class ContentBundle {
   final List<Surah> surahs;
   final List<Hadith> hadith;
   final List<Dua> duas;
+  final List<HadithShelf> shelves;
+  final MushafInfo? mushaf;
 
   const ContentBundle({
     required this.version,
@@ -253,7 +385,12 @@ class ContentBundle {
     required this.surahs,
     required this.hadith,
     required this.duas,
+    this.shelves = const [],
+    this.mushaf,
   });
+
+  /// The book view needs the layout and every ayah placed in it.
+  bool get hasMushaf => mushaf != null && surahs.length == 114 && surahs.every((s) => s.ayat.every((a) => a.mushaf.isNotEmpty));
 
   factory ContentBundle.fromJson(Map<String, dynamic> j) {
     final required = ((j['languages'] as List?) ?? const ['en']).map((e) => e.toString()).toList();
@@ -270,6 +407,8 @@ class ContentBundle {
       surahs: list('surahs').map(Surah.fromJson).toList(),
       hadith: list('hadith').map((h) => Hadith.fromJson(h, langs)).toList(),
       duas: list('duas').map((d) => Dua.fromJson(d, langs)).toList(),
+      shelves: list('shelves').map(HadithShelf.fromJson).toList(),
+      mushaf: MushafInfo.fromJson(j['mushaf']),
     );
   }
 

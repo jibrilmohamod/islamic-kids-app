@@ -76,6 +76,53 @@ ICONS = {
         f'<polygon points="{star(32, 32, 26)}" fill="{{lemon}}"/>',
         '<path d="M22 33l7 7 13-14" fill="none" stroke-width="4"/>',
     ],
+    # My shelf: a bookmark ribbon holding a heart (canvas row F).
+    'shelf': [
+        '<path d="M16 4h32v54L32 46 16 58z" fill="{pink}"/>',
+        '<path d="M32 33c-7-5-10-9-10-13a5 5 0 0 1 10-2 5 5 0 0 1 10 2c0 4-3 8-10 13z" fill="#fff" stroke-width="2.5"/>',
+    ],
+    # Hadith shelves (canvas row F): objects only, no figures.
+    'shelfManners': [
+        '<path d="M24 6q-5 5 0 10t0 10M34 6q-5 5 0 10t0 10" fill="none" stroke-width="2.5"/>',
+        '<path d="M44 30h4a7 7 0 0 1 0 14h-5" fill="none"/>',
+        '<path d="M12 26h32v16a14 14 0 0 1-14 14h-4a14 14 0 0 1-14-14z" fill="{cyan}"/>',
+        '<rect x="6" y="55" width="46" height="5" rx="2" fill="{lemon}"/>',
+    ],
+    'shelfCharacter': [
+        '<path d="M32 58C14 46 6 35 6 24a12 12 0 0 1 26-6 12 12 0 0 1 26 6c0 11-8 22-26 34z" fill="{pink}"/>',
+        '<path d="M16 22q2-6 8-6" fill="none" stroke="#FFFFFF"/>',
+        '<path d="M54 4v8M50 8h8" fill="none" stroke-width="2.5"/>',
+    ],
+    'shelfFamily': [
+        '<rect x="10" y="28" width="44" height="30" fill="{lemon}"/>',
+        '<polygon points="4,30 32,6 60,30" fill="{violet}"/>',
+        '<rect x="27" y="40" width="10" height="18" fill="{cyan}"/>',
+        '<rect x="15" y="35" width="8" height="8" fill="#fff" stroke-width="2.5"/>',
+        '<rect x="41" y="35" width="8" height="8" fill="#fff" stroke-width="2.5"/>',
+    ],
+    'shelfProphet': [
+        '<path d="M32 21V9" fill="none"/>',
+        '<path d="M36 4a5 5 0 1 0 0 8a4 4 0 1 1 0-8z" fill="{lemon}" stroke-width="2"/>',
+        '<path d="M13 40a19 19 0 0 1 38 0z" fill="{cyan}"/>',
+        '<rect x="10" y="40" width="44" height="18" fill="#fff"/>',
+        '<path d="M22 58v-8a4 4 0 0 1 8 0v8M34 58v-8a4 4 0 0 1 8 0v8" fill="{violet}" stroke-width="2.5"/>',
+    ],
+    'shelfWorship': [
+        '<rect x="14" y="4" width="36" height="52" rx="3" fill="{pink}"/>',
+        '<path d="M22 48V26a10 10 0 0 1 20 0v22z" fill="{lemon}"/>',
+        '<path d="M18 60v-4M24 60v-4M30 60v-4M36 60v-4M42 60v-4M48 60v-4" fill="none" stroke-width="2"/>',
+    ],
+    'shelfLearning': [
+        '<path d="M46 2L33 34" fill="none" stroke-width="4"/>',
+        '<rect x="22" y="28" width="20" height="8" fill="{cyan}"/>',
+        '<path d="M16 36h32l5 22H11z" fill="{violet}"/>',
+        '<path d="M18 46h28" fill="none" stroke="#FFD93B"/>',
+    ],
+    # Toggles: bookmark ribbon and favourite heart, on (glazed) and off.
+    'bookmarkOn': ['<path d="M18 6h28v52L32 46 18 58z" fill="{pink}" stroke-width="4"/>'],
+    'bookmarkOff': ['<path d="M18 6h28v52L32 46 18 58z" fill="#fff" stroke-width="4"/>'],
+    'heartOn': ['<path d="M32 54C16 43 9 34 9 25a11 11 0 0 1 23-5 11 11 0 0 1 23 5c0 9-7 18-23 29z" fill="{pink}" stroke-width="4"/>'],
+    'heartOff': ['<path d="M32 54C16 43 9 34 9 25a11 11 0 0 1 23-5 11 11 0 0 1 23 5c0 9-7 18-23 29z" fill="#fff" stroke-width="4"/>'],
 }
 
 FILLS = dict(pink=PINK, cyan=CYAN, lemon=LEMON, violet=VIOLET)

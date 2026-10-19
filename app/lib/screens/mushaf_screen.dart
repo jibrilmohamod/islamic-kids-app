@@ -5,8 +5,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../arch.dart';
 import '../models.dart';
 import '../mushaf.dart';
+import '../pop_icons.dart';
 import '../recitation.dart';
 import '../strings.dart';
 import '../theme.dart';
@@ -546,7 +548,8 @@ class _AyahPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppScope.of(context).lang;
+    final state = AppScope.of(context);
+    final lang = state.lang;
     final m = ayah.meaningFor(lang);
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.34),
@@ -562,8 +565,16 @@ class _AyahPanel extends StatelessWidget {
           children: [
             Row(
               children: [
-                Caption('${surah.name} ${ayah.key}'),
+                Flexible(child: Caption('${surah.name} ${ayah.key}')),
                 const Spacer(),
+                ToggleIconButton(
+                  on: state.isBookmarked(ayah.key),
+                  onIcon: PopIcon.bookmarkOn,
+                  offIcon: PopIcon.bookmarkOff,
+                  tooltip: tr(state.isBookmarked(ayah.key) ? 'removeBookmark' : 'addBookmark', lang, {'key': ayah.key}),
+                  onPressed: () => state.toggleBookmark(ayah.key),
+                ),
+                const SizedBox(width: 6),
                 if (canPlay && ayah.n != null)
                   InkIconButton(
                     icon: playing ? Icons.stop_rounded : Icons.play_arrow_rounded,

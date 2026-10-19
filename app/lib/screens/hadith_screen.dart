@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../arch.dart';
 import '../models.dart';
+import '../pop_icons.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
 import 'dua_screen.dart' show MemoriseView;
 
-/// Colour and icon per shelf. Topic ids start with their shelf id.
-({Color color, IconData icon, bool dark}) shelfStyle(String id) => switch (id) {
-      'manners' => (color: Pop.cyan, icon: Icons.emoji_people_rounded, dark: false),
-      'character' => (color: Pop.pink, icon: Icons.favorite_rounded, dark: false),
-      'family' => (color: Pop.lemon, icon: Icons.diversity_3_rounded, dark: false),
-      'prophet' => (color: Pop.violet, icon: Icons.auto_awesome_rounded, dark: true),
-      'worship' => (color: const Color(0xFF1FA187), icon: Icons.water_drop_rounded, dark: true),
-      'learning' => (color: Pop.lemon, icon: Icons.menu_book_rounded, dark: false),
-      _ => (color: Pop.pink, icon: Icons.format_quote_rounded, dark: false),
+/// Colour and icon per shelf. Topic ids start with their shelf id. Icons
+/// are objects only (canvas row F): no people.
+({Color color, PopIcon icon, bool dark}) shelfStyle(String id) => switch (id) {
+      'manners' => (color: Pop.cyan, icon: PopIcon.shelfManners, dark: false),
+      'character' => (color: Pop.pink, icon: PopIcon.shelfCharacter, dark: false),
+      'family' => (color: Pop.lemon, icon: PopIcon.shelfFamily, dark: false),
+      'prophet' => (color: Pop.violet, icon: PopIcon.shelfProphet, dark: true),
+      'worship' => (color: const Color(0xFF1FA187), icon: PopIcon.shelfWorship, dark: true),
+      'learning' => (color: Pop.lemon, icon: PopIcon.shelfLearning, dark: false),
+      _ => (color: Pop.pink, icon: PopIcon.hadith, dark: false),
     };
 
 /// Older bundles name topics without shelves.
-({Color color, IconData icon}) groupStyle(String group) {
+({Color color, PopIcon icon}) groupStyle(String group) {
   final st = shelfStyle(group.split('-').first);
   return (color: st.color, icon: st.icon);
 }
@@ -37,8 +40,21 @@ String topicTitle(ContentBundle bundle, String topicId, String lang) {
   return tr('group.$topicId', lang);
 }
 
-/// Hadith by shelf: Good manners, Good character, Family and kindness...
-/// Each shelf opens into HadeethEnc topics.
+String shelfTitle(ContentBundle bundle, String shelfId, String lang) {
+  final key = 'shelf.$shelfId';
+  return tr(key, lang) == key ? topicTitle(bundle, shelfId, lang) : tr(key, lang);
+}
+
+Map<String, int> _countByTopic(List<Hadith> hadith) {
+  final count = <String, int>{};
+  for (final h in hadith) {
+    count[h.group] = (count[h.group] ?? 0) + 1;
+  }
+  return count;
+}
+
+/// Hadith by shelf, as niches in the wall (canvas row F): Good manners, Good
+/// character, Family and kindness... Each shelf opens into its topics.
 class HadithListScreen extends StatelessWidget {
   const HadithListScreen({super.key});
 
@@ -48,88 +64,131 @@ class HadithListScreen extends StatelessWidget {
     final lang = state.lang;
     final bundle = state.bundle!;
     final hadith = bundle.hadith;
-    final count = <String, int>{};
-    for (final h in hadith) {
-      count[h.group] = (count[h.group] ?? 0) + 1;
-    }
+    final count = _countByTopic(hadith);
     // Shelves from the bundle, or one shelf per old group.
-    final shelves = bundle.shelves.isNotEmpty
-        ? bundle.shelves
-        : [
-            for (final g in {for (final h in hadith) h.group})
-              HadithShelf(id: g, topics: [HadithTopic(id: g, title: const {})]),
-          ];
+    final shelves = (bundle.shelves.isNotEmpty
+            ? bundle.shelves
+            : [
+                for (final g in {for (final h in hadith) h.group})
+                  HadithShelf(id: g, topics: [HadithTopic(id: g, title: const {})]),
+              ])
+        .where((sh) => sh.topics.any((t) => (count[t.id] ?? 0) > 0))
+        .toList();
+    final short = hadith.where((h) => h.isShort).length;
 
     return PopPage(
       title: tr('hadith', lang),
-      subtitle: tr('hadithCount', lang, {'n': hadith.length}),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
-        children: [
-          for (final sh in shelves)
-            if (sh.topics.any((t) => (count[t.id] ?? 0) > 0))
-              Padding(
-                padding: const EdgeInsets.only(bottom: 18),
-                child: _ShelfPanel(shelf: sh, count: count),
+      subtitle: tr('hadithSubtitle', lang),
+      body: LayoutBuilder(builder: (context, c) {
+        const gap = 14.0;
+        const pad = 18.0;
+        final w = ((c.maxWidth - 2 * pad - gap) / 2 - 4).floorToDouble();
+        final band = MediaQuery.textScalerOf(context).scale(16) * 2.3 + MediaQuery.textScalerOf(context).scale(14) * 1.4 + 10;
+        final h = w * 0.72 + band;
+        return ListView(
+          padding: const EdgeInsets.fromLTRB(pad, 8, pad, 32),
+          children: [
+            Wrap(
+              spacing: gap,
+              runSpacing: gap + 4,
+              children: [
+                for (var i = 0; i < shelves.length; i++)
+                  Entrance(
+                    index: i,
+                    pop: true,
+                    child: ArchNiche(
+                      icon: shelfStyle(_shelfOf(shelves[i].id)).icon,
+                      label: shelfTitle(bundle, shelves[i].id, lang),
+                      sublabel: tr('topicsCount', lang, {
+                        'n': shelves[i].topics.where((t) => (count[t.id] ?? 0) > 0).length,
+                      }),
+                      width: w,
+                      height: h,
+                      band: band,
+                      onTap: () => go(context, ShelfScreen(shelf: shelves[i])),
+                    ),
+                  ),
+              ],
+            ),
+            if (short > 0) ...[
+              const SizedBox(height: 22),
+              Entrance(
+                index: shelves.length,
+                child: InkPanel(
+                  border: 3,
+                  shadow: 4,
+                  color: Pop.highlight,
+                  padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                  onTap: () => go(context, const TopicScreen(topicId: TopicScreen.shortOnes)),
+                  child: Row(
+                    children: [
+                      const PopIconView(PopIcon.week, size: 40),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(tr('shortHadithTitle', lang), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+                            Text(tr('shortHadithSub', lang, {'n': short}),
+                                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.chevron_right_rounded, color: Pop.ink),
+                    ],
+                  ),
+                ),
               ),
-        ],
-      ),
+            ],
+          ],
+        );
+      }),
     );
   }
 }
 
-class _ShelfPanel extends StatelessWidget {
+/// One shelf's topics.
+class ShelfScreen extends StatelessWidget {
   final HadithShelf shelf;
-  final Map<String, int> count;
-  const _ShelfPanel({required this.shelf, required this.count});
+  const ShelfScreen({super.key, required this.shelf});
 
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     final lang = state.lang;
-    final st = shelfStyle(_shelfOf(shelf.id));
-    final ink = st.dark ? Colors.white : Pop.ink;
+    final bundle = state.bundle!;
+    final count = _countByTopic(bundle.hadith);
     final topics = shelf.topics.where((t) => (count[t.id] ?? 0) > 0).toList();
-    final key = 'shelf.${shelf.id}';
-    final title = tr(key, lang) == key ? topicTitle(state.bundle!, shelf.id, lang) : tr(key, lang);
-    return InkPanel(
-      color: st.color,
-      halftone: true,
-      dotColor: st.dark ? const Color(0x33FFFFFF) : const Color(0x381B1035),
-      padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(st.icon, color: ink, size: 28),
-              const SizedBox(width: 10),
-              Expanded(child: Text(title, style: TextStyle(fontFamily: Pop.display, fontSize: 18, color: ink))),
-            ],
-          ),
-          const SizedBox(height: 12),
-          for (final t in topics)
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: InkPanel(
-                border: 3,
-                shadow: 3,
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                onTap: () => go(context, TopicScreen(topicId: t.id)),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(topicTitle(state.bundle!, t.id, lang),
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800, height: 1.25)),
-                    ),
-                    const SizedBox(width: 8),
-                    Chip2('${count[t.id]}'),
-                    const Icon(Icons.chevron_right_rounded, color: Pop.ink),
-                  ],
+    final st = shelfStyle(_shelfOf(shelf.id));
+    return PopPage(
+      title: shelfTitle(bundle, shelf.id, lang),
+      subtitle: tr('topicsCount', lang, {'n': topics.length}),
+      body: ListView.separated(
+        padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
+        itemCount: topics.length,
+        separatorBuilder: (_, __) => const SizedBox(height: 12),
+        itemBuilder: (context, i) => Entrance(
+          index: i,
+          child: InkPanel(
+            border: 3,
+            shadow: 4,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            onTap: () => go(context, TopicScreen(topicId: topics[i].id)),
+            child: Row(
+              children: [
+                PopIconView(st.icon, size: 34),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(topicTitle(bundle, topics[i].id, lang),
+                      style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, height: 1.25)),
                 ),
-              ),
+                const SizedBox(width: 8),
+                Chip2(tr('hadithCount', lang, {'n': count[topics[i].id]})),
+                const Icon(Icons.chevron_right_rounded, color: Pop.ink),
+              ],
             ),
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -137,19 +196,23 @@ class _ShelfPanel extends StatelessWidget {
 
 /// The hadith of one topic. Short ones are marked for learning by heart.
 class TopicScreen extends StatelessWidget {
+  /// A HadeethEnc topic id, or [shortOnes] for every short hadith.
   final String topicId;
   const TopicScreen({super.key, required this.topicId});
+
+  static const shortOnes = '_short';
 
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     final lang = state.lang;
-    final all = state.bundle!.hadith.where((h) => h.group == topicId);
+    final bundle = state.bundle!;
+    final shortOnly = topicId == shortOnes;
+    final all = bundle.hadith.where((h) => shortOnly ? h.isShort : h.group == topicId);
     // Short ones first, otherwise HadeethEnc's order.
     final list = [...all.where((h) => h.isShort), ...all.where((h) => !h.isShort)];
-    final st = groupStyle(topicId);
     return PopPage(
-      title: topicTitle(state.bundle!, topicId, lang),
+      title: shortOnly ? tr('shortHadithTitle', lang) : topicTitle(bundle, topicId, lang),
       subtitle: tr('hadithCount', lang, {'n': list.length}),
       body: ListView.separated(
         padding: const EdgeInsets.fromLTRB(18, 8, 18, 32),
@@ -157,35 +220,47 @@ class TopicScreen extends StatelessWidget {
         separatorBuilder: (_, __) => const SizedBox(height: 12),
         itemBuilder: (context, i) {
           final h = list[i];
-          return InkPanel(
-            border: 3,
-            shadow: 4,
-            padding: const EdgeInsets.all(14),
-            onTap: () => go(context, HadithScreen(hadith: h)),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                StarTile(size: 34, glaze: Glaze.full, color: st.color, label: '${i + 1}', semanticsLabel: ''),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(h.t(lang).title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.35)),
-                      const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 6,
-                        runSpacing: 6,
-                        children: [
-                          if (h.isShort) Chip2(tr('shortHadith', lang), color: Pop.lemon),
-                          for (final r in h.refs) Chip2(r.short, color: Pop.highlight),
-                          if (h.refs.isEmpty) Chip2(h.t(lang).attribution),
-                        ],
-                      ),
-                    ],
+          final st = groupStyle(h.group);
+          final fav = state.isFavourite(favouriteId(h));
+          return Entrance(
+            index: i.clamp(0, 6),
+            child: InkPanel(
+              border: 3,
+              shadow: 4,
+              padding: const EdgeInsets.fromLTRB(14, 12, 4, 12),
+              onTap: () => go(context, HadithScreen(hadith: h)),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  StarTile(size: 34, glaze: Glaze.full, color: st.color, label: '${i + 1}', semanticsLabel: ''),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(h.t(lang).title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800, height: 1.3)),
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 6,
+                          runSpacing: 6,
+                          children: [
+                            for (final r in h.refs) Chip2(r.short, color: Pop.highlight),
+                            if (h.refs.isEmpty) Chip2(h.t(lang).attribution),
+                            if (h.isShort) Chip2(tr('shortHadith', lang), color: Pop.lemon),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  ToggleIconButton(
+                    on: fav,
+                    onIcon: PopIcon.heartOn,
+                    offIcon: PopIcon.heartOff,
+                    tooltip: tr(fav ? 'removeFavourite' : 'addFavourite', lang),
+                    onPressed: () => state.toggleFavourite(favouriteId(h)),
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -193,6 +268,9 @@ class TopicScreen extends StatelessWidget {
     );
   }
 }
+
+/// The favourites key for a hadith (see LocalStore).
+String favouriteId(Hadith h) => 'hadith:${h.id}';
 
 class HadithScreen extends StatefulWidget {
   final Hadith hadith;
@@ -215,7 +293,8 @@ class _HadithScreenState extends State<HadithScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppScope.of(context).lang;
+    final state = AppScope.of(context);
+    final lang = state.lang;
     final h = widget.hadith;
     final style = groupStyle(h.group);
     final ink = shelfStyle(_shelfOf(h.group)).dark ? Colors.white : Pop.ink;
@@ -246,16 +325,24 @@ class _HadithScreenState extends State<HadithScreen> {
                               onPressed: () => Navigator.of(context).maybePop(),
                             ),
                             const Spacer(),
+                            ToggleIconButton(
+                              on: state.isFavourite(favouriteId(h)),
+                              onIcon: PopIcon.heartOn,
+                              offIcon: PopIcon.heartOff,
+                              tooltip: tr(state.isFavourite(favouriteId(h)) ? 'removeFavourite' : 'addFavourite', lang),
+                              onPressed: () => state.toggleFavourite(favouriteId(h)),
+                            ),
+                            const SizedBox(width: 6),
                             Container(
                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                               decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Pop.ink, width: 3)),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(style.icon, size: 18, color: Pop.ink),
+                                  PopIconView(style.icon, size: 20, shadow: false),
                                   const SizedBox(width: 6),
                                   ConstrainedBox(
-                                    constraints: const BoxConstraints(maxWidth: 200),
+                                    constraints: const BoxConstraints(maxWidth: 170),
                                     child: Text(topicTitle(bundle, h.group, lang),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,

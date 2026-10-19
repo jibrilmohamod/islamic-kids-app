@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../activity.dart';
+import '../arch.dart';
 import '../app_state.dart';
 import '../models.dart';
 import '../pop_icons.dart';
@@ -11,13 +12,13 @@ import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
-import 'downloads_screen.dart';
 import 'dua_screen.dart';
 import 'duas_screen.dart';
 import 'hadith_screen.dart';
 import 'missing_word_screen.dart';
 import 'mosaic_screen.dart';
 import 'mushaf_screen.dart';
+import 'my_shelf_screen.dart';
 import 'now_playing.dart';
 import 'order_game_screen.dart';
 import 'parent_gate.dart';
@@ -332,17 +333,6 @@ class _Hero extends StatelessWidget {
       );
     });
   }
-}
-
-/// Arch-topped shape: a rectangle whose top is a half circle.
-Path archPath(Rect r) {
-  final rad = r.width / 2;
-  return Path()
-    ..moveTo(r.left, r.bottom)
-    ..lineTo(r.left, r.top + rad)
-    ..arcToPoint(Offset(r.right, r.top + rad), radius: Radius.circular(rad))
-    ..lineTo(r.right, r.bottom)
-    ..close();
 }
 
 class SkyArchPainter extends CustomPainter {
@@ -673,7 +663,7 @@ class _Niches extends StatelessWidget {
       _NicheSpec(PopIcon.duas, 'duas', (c) => go(c, const DuasScreen())),
       _NicheSpec(PopIcon.hadith, 'hadith', (c) => go(c, const HadithListScreen())),
       _NicheSpec(PopIcon.games, 'gamesTitle', (c) => openGames(c)),
-      if (state.audio != null) _NicheSpec(PopIcon.downloads, 'downloads', (c) => go(c, const DownloadsScreen())),
+      _NicheSpec(PopIcon.shelf, 'myShelf', (c) => go(c, const MyShelfScreen())),
     ];
     return LayoutBuilder(builder: (context, c) {
       const gap = 10.0;
@@ -755,7 +745,7 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
           height: h + 4,
           child: Stack(
             children: [
-              Positioned(left: 4, top: 4, child: CustomPaint(size: Size(w, h), painter: const _ArchPainter(fill: Pop.ink))),
+              Positioned(left: 4, top: 4, child: CustomPaint(size: Size(w, h), painter: const ArchPainter(fill: Pop.ink))),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 80),
                 transform: Matrix4.translationValues(_down ? 4 : 0, _down ? 4 : 0, 0),
@@ -763,7 +753,7 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
                 height: h,
                 child: Stack(
                   children: [
-                    CustomPaint(size: Size(w, h), painter: _ArchPainter(fill: Colors.white, divider: h - widget.band)),
+                    CustomPaint(size: Size(w, h), painter: ArchPainter(fill: Colors.white, divider: h - widget.band)),
                     Positioned(left: 0, right: 0, top: w * 0.3, child: Center(child: ExcludeSemantics(child: icon))),
                     Positioned(
                       left: 4,
@@ -788,29 +778,6 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
       ),
     );
   }
-}
-
-class _ArchPainter extends CustomPainter {
-  final Color fill;
-  final double? divider;
-  const _ArchPainter({required this.fill, this.divider});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = archPath(Offset.zero & size);
-    canvas.drawPath(path, Paint()..color = fill);
-    if (fill == Pop.ink) return;
-    final stroke = Paint()
-      ..color = Pop.ink
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3;
-    canvas.drawPath(archPath(const Offset(1.5, 1.5) & Size(size.width - 3, size.height - 3)), stroke);
-    final d = divider;
-    if (d != null) canvas.drawLine(Offset(1.5, d), Offset(size.width - 1.5, d), stroke);
-  }
-
-  @override
-  bool shouldRepaint(_ArchPainter old) => old.fill != fill || old.divider != divider;
 }
 
 /// The two games, for the surah that is next up.

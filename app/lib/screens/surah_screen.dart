@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../arch.dart';
 import '../models.dart';
+import '../pop_icons.dart';
 import '../progress.dart';
 import '../recitation.dart';
 import '../strings.dart';
@@ -302,7 +304,8 @@ class _AyahCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final lang = AppScope.of(context).lang;
+    final state = AppScope.of(context);
+    final lang = state.lang;
     final m = ayah.meaningFor(lang);
     return InkPanel(
       border: 3,
@@ -322,6 +325,14 @@ class _AyahCard extends StatelessWidget {
                 semanticsLabel: ayah.key,
               ),
               const Spacer(),
+              ToggleIconButton(
+                on: state.isBookmarked(ayah.key),
+                onIcon: PopIcon.bookmarkOn,
+                offIcon: PopIcon.bookmarkOff,
+                tooltip: tr(state.isBookmarked(ayah.key) ? 'removeBookmark' : 'addBookmark', lang, {'key': ayah.key}),
+                onPressed: () => state.toggleBookmark(ayah.key),
+              ),
+              const SizedBox(width: 6),
               if (canPlay)
                 InkIconButton(
                   icon: playing ? Icons.stop_rounded : Icons.play_arrow_rounded,

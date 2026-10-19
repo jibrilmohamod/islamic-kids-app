@@ -4,6 +4,7 @@ import '../app_state.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
+import 'now_playing.dart';
 
 Future<T?> go<T>(BuildContext context, Widget page) =>
     Navigator.of(context).push<T>(MaterialPageRoute(builder: (_) => page));
@@ -30,6 +31,8 @@ class PopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppScope.of(context).lang;
     return Scaffold(
+      // Recitation that carries on from another screen shows here (ADR 0002).
+      bottomNavigationBar: const NowPlayingBar(),
       body: DottedPaper(
         color: background,
         dot: dot,

@@ -1,8 +1,10 @@
 {
-  "bundleVersion": "20261019083819",
-  "generatedAt": "2026-10-19T08:38:19.614Z",
+  "bundleVersion": "20261019085006",
+  "generatedAt": "2026-10-19T08:50:06.454Z",
   "languages": [
-    "en",
+    "en"
+  ],
+  "optionalLanguages": [
     "so"
   ],
   "sources": {
@@ -1171,6 +1173,108 @@
       }
     },
     {
+      "id": "hadith-4966",
+      "hadeethencId": "4966",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن أبي هريرة رضي الله عنه قال: ما عاب رسول الله صلى الله عليه وسلم طعاما قط، إن اشتهاه أكله، وإن كرهه تركه.",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "The Messenger of Allah (may Allah's peace and blessings be upon him) never found fault with any food. If he liked it, he would eat; and if he disliked it, he would leave it",
+        "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) never found fault with any food. If he liked it, he would eat; and if he disliked it, he would leave it.",
+        "explanation": "The Prophet never spoke badly of any food served to him. Rather, if he liked it, he would eat it, if not, he would leave it, not belittling it.",
+        "attribution": "Narrated by Bukhari & Muslim",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-58119",
+      "hadeethencId": "58119",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن أبي جُحَيْفَة رضي الله عنه قال: كنتُ عند النبي صلى الله عليه وسلم فقال لرجل عنده: «لا آكُلُ وأنا مُتَّكِئ».",
+        "attribution": "رواه البخاري",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "I do not eat while reclining on my side",
+        "text": "Abu Juhayfah (may Allah be pleased with him) reported: I was with the Prophet (may Allah's peace and blessings be upon him) when he said to a man there: \"I do not eat while reclining on my side.\"",
+        "explanation": "Abu Juhayfah Wahb ibn ‘Abdullāh As-Sawā’i (may Allah be pleased with him) reports in this Hadīth that it was not of the practice of the Prophet (may Allah's peace and blessings be upon him) that he ate leaning on a pillow or something, putting his hand on the ground and reclining on it. The Prophet (may Allah's peace and blessings be upon him) would not sit this way because when doing so, one eats a lot. Eating a lot makes one lazy, and this results in physical problems. Leaning while eating entails that the food runs down the stomach in a way that is not straight, which is abnormal and could be harmful. Also, leaning while eating is position that indicates arrogance, which is not decorous.",
+        "attribution": "Narrated by Bukhari",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-58123",
+      "hadeethencId": "58123",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن ابن عباس رضي الله عنهما قال: «نهى رسول الله صلى الله عليه وسلم أنْ يُتَنَفَّسَ في الإناء، أو يُنْفَخَ فيه».",
+        "attribution": "رواه أبو داود والترمذي وابن ماجه وأحمد والدارمي",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "The Messenger of Allah (may Allah's peace and blessings be upon him) forbade breathing into the pot or blowing into it",
+        "text": "Ibn ‘Abbās (may Allah be pleased with him) reported: The Messenger of Allah (may Allah's peace and blessings be upon him) forbade breathing into the pot or blowing into it.",
+        "explanation": "This Hadīth relates one of the manners of eating and drinking, which is the prohibition to breathe or blow into the pot when eating or drinking. Breathing is forbidden because of its demerits, such as blemishing the cleanness of the pot and contaminating the drink, besides the fact that doing this entails that the person breathes and drinks at the same time, which may cause suffocating. As the Sunnah indicates, one should drink three times, breathing outside the pot, which makes drinking more enjoyable and pleasing. The Hadīth in hand forbids blowing into the food and drink for any reason, such as hotness or for removing something. This way, one keeps the food clean from saliva or bad smell.",
+        "attribution": "Narrated by Ibn Majah - Narrated by At-Termedhy - Narrated by Abu Daoud - Narrated by Ahmad - Ad-Daarimi",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-2935",
+      "hadeethencId": "2935",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عَنْ ابْنِ عَبَّاسٍ رضي الله عنهما أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ: ««إذَا أَكَلَ أَحَدُكُمْ طَعَامًا فَلا يَمْسَحْ يَدَهُ حَتَّى يَلْعَقَهَا، أَوْ يُلْعِقَهَا».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "When anyone of you eats food, let him not wipe his hand until he licks it or has it licked.",
+        "text": "Ibn ‘Abbās (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"When anyone of you eats food, let him not wipe his hand until he licks it or has it licked.\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) ordered whoever eats not to wipe his hand or wash it until he licks it or has it licked. The reason for this, as some narrations state, is that one does not know where the blessing lies in the food. Therefore, the Prophet (may Allah's peace and blessings be upon him) ordered licking one's fingers, because the blessing may be in the traces of food on fingers.",
+        "attribution": "Narrated by Bukhari & Muslim",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-2952",
+      "hadeethencId": "2952",
+      "group": "manners-eating",
+      "ar": {
+        "text": "عن عائشة رضي الله عنها: «أَنَّ رسول الله صلى الله عليه وسلم سُئِل عن الْبِتْعِ؟ فقال: كل شَرَابٍ أَسْكَر فهو حَرَامٌ».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Every drink that intoxicates is unlawful.",
+        "text": "‘Ā’ishah (may Allah be pleased with her) reported that the Messenger of Allah (may Allah’s peace and blessings be upon him) was asked about mead, and he said: \"Every drink that intoxicates is unlawful.\"",
+        "explanation": "The Messenger of Allah (may Allah’s peace and blessings be upon him) was asked about mead, an alcoholic drink made of honey, and his answer was complete and comprehensive, to the effect that the difference of names does not matter as long as the meaning and essence is the same.\nEvery drink that causes intoxication is forbidden wine, regardless of its kind or name.\nThis Hadīth constitutes one of the concise and profound statements made by the Prophet (may Allah’s peace and blessings be upon him) as he demonstrated the rulings laid down by his Lord. The period of his prophet-hood contained such knowledge that would render all humanity blissful in the worldly life and in the Hereafter.",
+        "attribution": "Narrated by Bukhari & Muslim",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-3021",
+      "hadeethencId": "3021",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عن عبد الله بنِ عمر رضي الله عنهما أن عمرَ بْن الخطاب رضي الله عنه قال: ((يا رسول الله، أّيَرقُدُ أَحَدُنا وهو جُنُب؟ قال: نعم، إِذَا تَوَضَّأ أَحَدُكُم فَليَرقُد)).",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "O Messenger of Allah, may anyone of us sleep while being ritually impure? He said: Yes, he may sleep if he makes ablution",
+        "text": "‘Abdullāh ibn ‘Umar (may Allah be pleased with him) reported: ‘Umar ibn al-Khattāb (may Allah be pleased with him) said: \"O Messenger of Allah, may anyone of us sleep while being ritually impure?\" He said: \"Yes, he may sleep if he makes ablution.\"",
+        "explanation": "‘Umar ibn al-Khattāb (may Allah be pleased with him) asked the Prophet (may Allah’s peace and blessings be upon him) about whether it is permissible for a man to sleep in a state of ritual impurity at the earlier part of the night, after having sexual intercourse with his wife, even if there is no ejaculation, or having a wet dream. The Prophet (may Allah’s peace and blessings be upon him) declared it permissible, provided that this major ritual impurity is lessened with ablution.",
+        "attribution": "Narrated by Bukhari & Muslim",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
       "id": "hadith-3033",
       "hadeethencId": "3033",
       "group": "manners-sleeping",
@@ -1192,6 +1296,23 @@
         "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee  wuxuu cadeeyey qaar ka mida axkaanta dahaarada, waxaana ka mida: Mida 1aad: Qofki wayso qaadanaya waa inuu  Biyaha Sanka geliyo, hadana neefta soo raaciyo oo soo firdhiyo. Mida 2aad: Qofkii doonaya inuu isaga nadiifiyo najaasada ka soo baxaysa isaga waxaan Biyo ahayn sida dhagxaanta iyo wixii la mida, wuxuu isku nadiifinayaa tirsi kinsi ah oo ugu yaraan ah seddex ugu badnaan wixii tirtiraya najaasada meeshana nadiifinaya. Mida 3aad: Qofka ka toosa hurdada habeenka Gacantiisa galinmaayo weelka markuu wayso qaadanayo ilaa uu Gacantiisa ku dhaqdo weelka dibadiisa, waayo ma oga halkay Gacantiisu bariday, kama aamin aha in  Gacantiisu najaaso taabatay, waxaana dhici kara inuu shaydaan ku ciyaaray, oo uu saaray waxyaabo dadka dhibaya ama Biyaha xumaynaya.",
         "attribution": "Xadiis la isku waafaqay",
         "grade": "Xadiis Saxiix ah"
+      }
+    },
+    {
+      "id": "hadith-8930",
+      "hadeethencId": "8930",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عن ابن عمر رضي الله عنهما مرفوعاً: «لا تَتْرُكُوا النار في بيوتكم حين تنامون».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Do not keep the fire burning in your homes when you go to bed",
+        "text": "Ibn ‘Umar (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Do not keep the fire burning in your homes when you go to bed.\"",
+        "explanation": "Meaning of the Hadīth: The Prophet (may Allah's peace and blessings be upon him) prohibits his Ummah from sleeping before putting out the fire that they lit.",
+        "attribution": "Narrated by Bukhari & Muslim",
+        "grade": "Authentic hadith"
       }
     },
     {
@@ -1217,6 +1338,57 @@
         "attribution": "Waxa wariyay Albukhaari",
         "grade": "Xadiis Saxiix ah"
       }
+    },
+    {
+      "id": "hadith-3006",
+      "hadeethencId": "3006",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عن أبي هريرة رضي الله عنه أن أبا بكر الصديق رضي الله عنه قال: يا رسول الله مُرني بكلمات أقُولُهُنَّ إذا أصبَحتُ وإذا أمسَيتُ، قال: «قل: اللهم فاطِرَ السماوات والأرض عالم الغيبِ والشهادة، ربَّ كُلِّ شَيءٍ ومَلِيكَه، أَشْهد أن لا إله إلا أنت، أعوذ بك من شرِّ نفسي وشرِّ الشيطان وشِرْكِهِ وأن أقترف على نفسي سوءًا أو أجرُّه إلى مسلم» قال: «قلها إذا أصبحت، وإذا أمسيت، وإذا أخذْتَ مَضْجَعَك».",
+        "attribution": "رواه أبو داود والترمذي والنسائي وأحمد",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "He said: Say: O Allah, Creator of the heavens and the earth, Knower of the hidden and the apparent, Lord of everything and its Possessor, I bear witness that there is no god but You. I seek refuge in You from the evil of my own self and from the evil of the devil and the evil of polytheism to which he calls.",
+        "text": "Abu Hurayrah (may Allah be pleased with him) reported that Abu Bakr (may Allah be pleased with him) said: \"O Messenger of Allah, teach me some words to recite in the morning and in the evening.\" He said: \"Say: 'O Allah, Creator of the heavens and the earth, Knower of the hidden and the apparent, Lord of everything and its Possessor. I bear witness that there is no god but You. I seek refuge in You from the evil of my own self and from the evil of the devil and the evil of polytheism to which he calls, and from incurring any sin upon myself or upon any other Muslim.'\" He added: \"Recite them in the morning, in the evening, and when you go to bed.\"",
+        "explanation": "This Dhikr is one of the supplications that are recited in the morning and in the evening, which the Prophet (may Allah’s peace and blessings be upon him) taught Abu Bakr (may Allah be pleased with him), who said: \"Teach me!\" So, the Prophet (may Allah's peace and blessings be upon him) taught him a Dhikr and a supplication that he could recite every morning and every evening. He ordered him to say: O Allah, the Creator of the heavens and the earth in an unprecedented manner, Who originated them and brought them into existence from non-existence. Knower of what is hidden from the creatures and what is apparent to them, because Allah, the Almighty, knows the present, the past, and the future. Lord of everything and its Possessor, as Allah, the Almighty, is the Lord of everything and the Owner of everything. I testify with my tongue and heart that there is no god but You. Everything worshiped other than Allah is a false deity that has no right to be worshiped, and none has the right to be worshiped but Allah alone, may He be Glorified. I seek refuge in You from the evil of my own self, because the self has evils, as a verse reads: {And I do not acquit myself. Indeed, the soul is a persistent enjoiner of evil, except those upon whom my Lord has mercy} [Yusuf: 53]. So, if Allah does not protect you from the evils of your own self, then it will harm you and order you to do evil things. If He protects you from its evil, then He has guided you to all goodness. The Prophet (may Allah's peace and blessings be upon him) concluded his supplication with: and from the evil of the devil and the evil of polytheism to which he calls, or from the evil of his trap which he sets for people through desires, doubts, or other means of temptation. The completion of the supplication is to say: I seek refuge in Allah from committing evil against myself or causing evil to another Muslim. This supplication is what the Prophet (may Allah's peace and blessings be upon him) taught Abu Bakr to say in the morning, evening, and before going to bed.",
+        "attribution": "Narrated by At-Termedhy - An-Nasaa’i - Narrated by Abu Daoud - Narrated by Ahmad",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-4235",
+      "hadeethencId": "4235",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عن أبي موسى الأشعري رضي الله عنه قال: احْتَرَقَ بَيْتٌ بالمَدِينَةِ عَلَى أهْلِهِ مِنَ اللَّيْلِ، فَلَمَّا حُدِّثَ رَسُولُ اللهِ صلى الله عليه وسلم بِشَأنِهِم، قالَ: «إنَّ هذه النارَ عَدُوٌّ لَكُمْ، فَإِذَا نِمْتُم، فَأَطْفِئُوهَا عَنْكُمْ».",
+        "attribution": "متفق عليه",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "This fire is your enemy, so put it out before going to bed",
+        "text": "Abu Mūsa al-Ash‘ari (may Allah be pleased with him) reported: One night, a house in Madīnah was burnt with its inhabitants inside. When this was reported to the Messenger of Allah (may Allah's peace and blessings be upon him) he said: “This fire is your enemy, so put it out before going to bed.\"",
+        "explanation": "A house in Madīnah was burnt one night, and the Prophet (may Allah's peace and blessings be upon him) heard about it. So, he informed people that this fire is their enemy if they do not take precautions against its flames and burning effect. Then, he ordered them to put it out before sleeping so as to avoid its outbreak.",
+        "attribution": "Narrated by Bukhari & Muslim",
+        "grade": "Authentic hadith"
+      }
+    },
+    {
+      "id": "hadith-6167",
+      "hadeethencId": "6167",
+      "group": "manners-sleeping",
+      "ar": {
+        "text": "عَنْ حُذَيْفَةَ بْنِ اليَمَانِ رَضيَ اللهُ عنه: أَنَّ النَّبِيَّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ كَانَ إِذَا أَرَادَ أَنْ يَنَامَ وَضَعَ يَدَهُ تَحْتَ رَأْسِهِ، ثُمَّ قَالَ: «اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَجْمَعُ أَوْ تَبْعَثُ عِبَادَكَ».",
+        "attribution": "رواه الترمذي",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Allāhumma qini ‘adhābaka yawma tajma‘u or tab‘athu ‘ibādak (O Allah, protect me from Your punishment on the Day You gather or resurrect Your servants)",
+        "text": "Hudhayfah ibn al-Yamān (may Allah be pleased with him) reported: When the Prophet (may Allah's peace and blessings be upon him) intended to sleep, he would place his hand under his head, then say: \"Allāhumma qini ‘adhābaka yawma tajma‘u or tab‘athu ‘ibādak (O Allah, protect me from Your punishment on the Day You gather or resurrect Your servants).\"",
+        "explanation": "When the Prophet (may Allah's peace and blessings be upon him) lay down to sleep, he would rest his head on his right hand and place his right cheek upon it, and he would say: \"O Allah\" my Lord, \"protect me\" and guard me against \"Your punishment\" and torment \"on the Day You gather or resurrect Your servants\" for reckoning, i.e., the Day of Judgment.",
+        "attribution": "Narrated by At-Tirmidhi",
+        "grade": "Authentic"
+      }
     }
   ],
   "duas": [
@@ -1241,6 +1413,24 @@
         "explanation": "Nabigu nabadgelyo iyo naxariis Allaha siiyee wuxuu sheegay in qofka akhriya labada Aayadood ee u dambeeya Suurada Albaqara Habeenkii Ilaahay wuuka kaafiyaa Sharka iyo Dhibaatada, waxaa kaloo la yiri: way ka kaafidaa Salaatul-laylka, waxaa kaloo la yiri: waxay ka kaafidaa adkaarta kale, waxaa kaloo la yiri: waa waxa ugu yar ee ay kaga gudmayso akhrinta Qur'aanka ee Salaatul-laylka, siyaabo kalana waa lagu fasiray, waxaa dhici kara inuu sax yahay dhamaan waxaa lagu fasiray oo dhan oo ay erayadu soo wada galaan.",
         "attribution": "Xadiis la isku waafaqay",
         "grade": "Xadiis Saxiix ah"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
+      "id": "dua-hadith-5490",
+      "hadeethencId": "5490",
+      "ar": {
+        "text": "عَنْ أَبِي هُرَيْرَةَ رضي الله عنه عَنِ النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: أَنَّهُ كَانَ يَقُولُ إِذَا أَصْبَحَ: «اللهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ» وَإِذَا أَمْسَى قَالَ: «بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ» قَالَ: وَمَرَّةً أُخْرَى: «وَإِلَيْكَ الْمَصِيرُ».",
+        "attribution": "رواه أبو داود والترمذي والنسائي في الكبرى وابن ماجه",
+        "grade": "حسن"
+      },
+      "en": {
+        "title": "O Allah, by You we have reached the morning, and by You we have reached the evening; by You we live, and by You we die, and to You is the Resurrection",
+        "text": "Abu Hurayrah (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him): Upon reaching the morning, he used to say: \"O Allah, by You we have reached the morning, and by You we have reached the evening; by You we live, and by You we die, and to You is the Resurrection.\" Upon reaching the evening, he would say: \"By You we have reached the evening, and by You we have reached the morning, by You we live, and by You we die, and to You is the resurrection.\" He said: And another time: \"And to You is the final destination.\".",
+        "explanation": "Upon reaching the morning, i.e., the early part of the day, with the break of dawn, the Prophet (may Allah's peace and blessings be upon him) used to say:\r\n\r\n(O Allah, by You we have reached the morning) enjoying Your protection, overwhelmed with Your Favor, preoccupied with remembering You, seeking help with Your name, encompassed by Your guidance, and proceeding with Your might and strength. (And by You we have reached the evening, by You we live, and by You we die), i.e., like the previous wording along with reciting it in the evening saying: O Allah, by You we have reached the evening. So, by Your name, the Bestower of Life, we live, and by Your name, the Bringer of Death, we die. (And to You is the Resurrection), the return to life after death, and the separation after assembly. We continue like this at all times and in all situations, and I will never stop or leave it.\r\n\r\nUpon reaching the evening, right after ‘Asr, he would say: (O Allah, by You we have reached the evening, and by You we have reached the morning, by You we live, and by You we die, and to You is the final destination), the return in this world, and the return in the Hereafter, as it is You Who give me life and it is You Who cause me to die.",
+        "attribution": "Narrated by Abu Dāwūd, At-Tirmidhi, and An-Nasā’i in Al-Kubra and by Ibn Mājah",
+        "grade": "Hasan"
       },
       "kind": "hadith",
       "moment": "morning-evening"
@@ -1296,6 +1486,60 @@
       "moment": "morning-evening"
     },
     {
+      "id": "dua-hadith-6093",
+      "hadeethencId": "6093",
+      "ar": {
+        "text": "عَنْ أَبَانَ بْنِ عُثْمَانَ قَالَ: سَمِعْتُ عُثْمَانَ ابْنِ عَفَّانَ رضي الله عنه يَقُولُ: سَمِعْتُ رَسُولَ اللَّهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ يَقُولُ: «مَنْ قَالَ بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ، فِي الْأَرْضِ، وَلَا فِي السَّمَاءِ، وَهُوَ السَّمِيعُ الْعَلِيمُ، ثَلَاثَ مَرَّاتٍ، لَمْ تُصِبْهُ فَجْأَةُ بَلَاءٍ، حَتَّى يُصْبِحَ، وَمَنْ قَالَهَا حِينَ يُصْبِحُ ثَلَاثُ مَرَّاتٍ، لَمْ تُصِبْهُ فَجْأَةُ بَلَاءٍ حَتَّى يُمْسِيَ»، قَالَ: فَأَصَابَ أَبَانَ بْنَ عُثْمَانَ الْفَالِجُ، فَجَعَلَ الرَّجُلُ الَّذِي سَمِعَ مِنْهُ الْحَدِيثَ يَنْظُرُ إِلَيْهِ، فَقَالَ لَهُ: مَا لَكَ تَنْظُرُ إِلَيَّ؟ فَوَاللَّهِ مَا كَذَبْتُ عَلَى عُثْمَانَ، وَلَا كَذَبَ عُثْمَانُ عَلَى النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَلَكِنَّ الْيَوْمَ الَّذِي أَصَابَنِي فِيهِ مَا أَصَابَنِي غَضِبْتُ فَنَسِيتُ أَنْ أَقُولَهَا.",
+        "attribution": "رواه أبو داود والترمذي والنسائي في الكبرى وابن ماجه وأحمد",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Whoever says three times: 'In the name of Allah, with Whose name nothing in the earth or the heaven can cause harm, and He is the All-Hearing, the All-Knowing' will not suffer sudden affliction until the morning",
+        "text": "Abān ibn ‘Uthmān reported: I heard ‘Uthmān ibn ‘Affān (may Allah be pleased with him) say: I heard the Messenger of Allah (may Allah's peace and blessings be upon him) say: \"Whoever says three times: 'In the name of Allah, with Whose name nothing in the earth or the heaven can cause harm, and He is the All-Hearing, the All-Knowing' will not suffer sudden affliction until the morning; and whoever says it in the morning three times will not suffer sudden affliction until the evening.\" He said: Abān ibn ‘Uthmān was struck with paralysis, and the man who heard the Hadīth from him started looking at him, so, he said to him: Why are you looking at me? By Allah, I did not tell a lie about 'Uthmān, nor did ‘Uthmān tell a lie about the Prophet (may Allah's peace and blessings be upon him), but the day I was afflicted with this, I got angry and forgot to say it.",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) clarified that whoever says three times every morning, after the break of dawn, and every evening, before sunset: (In the name of Allah with Whose name) I seek help and protection against whatever is harmful that can cause no harm no matter how great it is along with mentioning His name, (in the earth) and the afflictions coming thereof (and the heaven) and the afflictions descending therefrom, (and He is the All-Hearing) of what we say (the All-Knowing) of our conditions.\r\n\r\nWhoever says it in the evening will not be overtaken by calamity until the morning comes, and whoever says it in the morning will not be overtaken by calamity until the evening comes.\r\n\r\nThe Hadīth narrator, Abān ibn ‘Uthmān, was then afflicted with paralysis, i.e., loss of control over one half of the body, so the man who heard the Hadīth from him kept looking at Abān in wonder. Thereupon, Abān said to the man: Why are you looking at me?! By Allah, I did not tell a lie about 'Uthmān, nor did ‘Uthmān tell a lie about the Prophet (may Allah's peace and blessings be upon him). However, that day when I was afflicted by this, Allah did not decree for me to say it; I got angry, and I forgot to say the aforementioned words.",
+        "attribution": "Narrated by Abu Dāwūd, At-Tirmidhi, and An-Nasā’i in Al-Kubra and by Ibn Mājah and Ahmad",
+        "grade": "Authentic"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
+      "id": "dua-hadith-3008",
+      "hadeethencId": "3008",
+      "ar": {
+        "text": "عن عبد الله بن مسعود رضي الله عنه قال: كان نبي الله صلى الله عليه وسلم إذا أمسى قال: «أمسينا وأمسى الملك لله، والحمد لله، لا إله إلا الله وحده لا شريك له» قال الراوي: أَرَاهُ قال فِيهِنَّ: «له الملك وله الحمد وهو على كل شيء قدير، ربِّ أسألك خير ما في هذه الليلة وخير ما بعدها، وأعوذ بك من شر ما في هذه الليلة وشر ما بعدها، رب أعوذ بك من الكسل، وسُوءِ الكِبَرِ، رب أعوذ بك من عذاب في النار، وعذاب في القبر»، وإذا أصبح قال ذلك أيضا «أصبحنا وأصبح الملك لله».",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "In the evening, the Prophet (may Allah's peace and blessings be upon him) used to say: The evening has reached, and all the dominion belongs to Allah and praise be to Allah. There is no god but Allah, alone with no partner.",
+        "text": "‘Abdullāh ibn Mas‘ūd (may Allah be pleased with him) reported: In the evening, the Prophet (may Allah's peace and blessings be upon him) used to say: \"The evening has reached, and all the dominion belongs to Allah and praise be to Allah. There is no god but Allah, alone without any partner.\" The narrator said: \"I believe he said along with them: 'To Him belongs the dominion, and to Him belongs praise, and He is Omnipotent over all things. My Lord, I ask You for the good of this night and the good of what follows it, and I seek refuge with You from the evil of this night and the evil of what follows it. My Lord, I seek refuge with You from laziness and woeful aging. My Lord, I seek refuge with You from torment of the fire and torment in the grave.' In the morning, he used to say: 'The morning has reached and all the dominion belongs to Allah.'\"",
+        "explanation": "It was from the guidance of the Prophet (may Allah’s peace and blessings be upon him) to say these blessed supplications in the morning and evening. \"The evening has reached and the dominion belongs to Allah\"; that's the time of evening has entered and the dominion continues therein to be for Allah exclusively. \"And praise be to Allah\"; that is we realize that the dominion therein belongs to Allah and all praise is due to Allah alone. \"There is no god but Allah\"; that is divinity belongs exclusively to Him. \"O Allah, I ask You for the good of this night\"; that is the goodness of it, as well as the goodness that occurs in it, and the goodness that rests in it. \"And I seek refuge with You from the evil of this night and the evil (therein)\"; that is from the nights and what lies therein of evil concerning religion and worldly affairs. \"O Allah, I seek refuge with You from laziness\"; that is from sluggishness in obedience while having the ability. \"Senility\" means aging that leads to the loss and weakness of some abilities, which is reversal to the most decrepit old age, because the purpose of life, represented in knowledge and action, are missed in such a stage. \"And woeful aging\"; that is senility and feeble-mindedness, and it was narrated with a different pronunciation meaning vanity. The meaning intended by \"woeful aging\" is the loss of reason that aging results in, as well as confusion and disorder in judgment, and the incapability to perform acts of obedience and other such things that worsen the condition. \"And the torment in the grave\"; that is from its punishment or from whatever causes it. \"In the morning, he used to say that as well\"; that's what he said in the evening. However, he would replace \"the evening\" with \"the morning\" and \"the night\" with \"the day\" saying: \"O Allah, I ask You for the good of this day.\"",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic hadith"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
+      "id": "dua-hadith-5508",
+      "hadeethencId": "5508",
+      "ar": {
+        "text": "عَنْ جُوَيْرِيَةَ أُمِّ المؤْمنينَ رَضيَ اللهُ عنها: أَنَّ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ خَرَجَ مِنْ عِنْدِهَا بُكْرَةً حِينَ صَلَّى الصُّبْحَ، وَهِيَ فِي مَسْجِدِهَا، ثُمَّ رَجَعَ بَعْدَ أَنْ أَضْحَى، وَهِيَ جَالِسَةٌ، فَقَالَ: «مَا زِلْتِ عَلَى الْحَالِ الَّتِي فَارَقْتُكِ عَلَيْهَا؟» قَالَتْ: نَعَمْ، قَالَ النَّبِيُّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: «لَقَدْ قُلْتُ بَعْدَكِ أَرْبَعَ كَلِمَاتٍ، ثَلَاثَ مَرَّاتٍ، لَوْ وُزِنَتْ بِمَا قُلْتِ مُنْذُ الْيَوْمِ لَوَزَنَتْهُنَّ: سُبْحَانَ اللهِ وَبِحَمْدِهِ، عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ».",
+        "attribution": "رواه مسلم",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "I said four words three times after I had left you; if they were to be weighed against what you have been saying since morning, they would outweigh them",
+        "text": "Juwayriyah, Mother of the Believers, (may Allah be pleased with her) reported: The Prophet (may Allah's peace and blessings be upon him) went out from her house in the early morning when he prayed the Morning prayer, while she was in her prayer place. Then he returned after offering the Forenoon prayer while she was still sitting. He said: \"Are you still in the state I left you in?\" She said: Yes. The Prophet (may Allah's peace and blessings be upon him) said: \"I said four words three times after I had left you; if they were to be weighed against what you have been saying since morning, they would outweigh them: Subhānallāh wa bihamdih, ‘adada khalqih, wa rida nafsih, a zinata ‘arshih, wa midāda kalimātih (Glory be to Allah and all praise is due to Him by the number of His creation, by His own pleasure, by the weight of His Throne, and by the ink of His words.).\"",
+        "explanation": "The Prophet (may Allah's peace and blessings be upon him) left the house of his wife Juwayriyah, Mother of the Believers, (may Allah be pleased with her) early in the morning after performing the Fajr prayer, while she was sitting in her place of prayer. He returned after the sun had passed its zenith, during the time of Duha, and she was still sitting in the same spot. He then said: Are you still in the state I left you in? She replied: Yes. The Prophet (may Allah's peace and blessings be upon him) said: I said four words after I had left you, and I repeated them three times. If they were to be weighed in terms of reward against all that you have been saying during the time you have been sitting here, they would outweigh them. (Glory be to Allah) and may He be Exalted above all imperfections (and all praise is due to Him). For to Him belongs the beautiful praise for having guided to that (by the number of His creation) whom none can count but Allah, (by His own pleasure) as much as pleases Him with those of His slaves with whom Allah is pleased—something that cannot be encompassed, (by the weight of His Throne), which is the greatest and heaviest of the whole creation, (and by the ink of His words) and the words of Allah are countless and endless. This encompasses and includes the three aspects, as the ink of His words, exalted is He, is limitless in its extent, description, and number. However, the intent here is to emphasize the great abundance. First, a countable measure is mentioned—the number of His creations. Then, it progresses to something even greater, expressed as \"His own pleasure.\" Next is the weight of the greatest creation, the Throne. The first relates to number and quantity, the second to description and quality, and the third to greatness and weight.",
+        "attribution": "Narrated by Muslim",
+        "grade": "Authentic"
+      },
+      "kind": "hadith",
+      "moment": "morning-evening"
+    },
+    {
       "id": "dua-hadith-3037",
       "hadeethencId": "3037",
       "ar": {
@@ -1319,6 +1563,60 @@
       },
       "kind": "hadith",
       "moment": "home"
+    },
+    {
+      "id": "dua-hadith-3504",
+      "hadeethencId": "3504",
+      "ar": {
+        "text": "عن أنس بن مالك رضي الله عنه مرفوعًا: «من قال -يعني: إذا خَرج من بَيتِه-: بِسم الله تَوَكَّلتُ على اللهِ، وَلاَ حول ولا قُوَّة إِلَّا بالله، يُقَال له: هُدِيتَ وَكُفِيتَ وَوُقِيتَ، وَتَنَحَّى عَنه الشَّيطَان».\nزاد أبو داود: «فيقول -يعني: الشيطان- لِشَيطان آخر: كَيف لَك بِرَجلٍ قَد هُدِيَ وكُفِيَ ووُقِيَ؟».",
+        "attribution": "رواه أبو داود والترمذي",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Whoever says (upon leaving his house) \"In the name of Allah; I rely on Allah; there is no might and no power save in Allah\", it will be said to him: \"You are guided, sufficed, and protected\", and the devil will go far away from him",
+        "text": "Anas ibn Mālik (may Allah be pleased with him) reported that the Prophet (may Allah's peace and blessings be upon him) said: \"Whoever says (upon leaving his house) 'In the name of Allah; I rely on Allah; there is no might and no power save in Allah', it will be said to him: 'You are guided, sufficed, and protected', and the devil will go far away from him.\"\nThe narration by Abu Dawūd has the following addition: \"So he (the devil) says to another devil: How can you approach a man who has been guided, granted relief, and protected?”",
+        "explanation": "The Messenger of Allah (may Allah's peace and blessings be upon him) informs us in this Hadīth that if someone leaves their house and says, \"In the name of Allah; I trust in Allah; there is no might and no power save in Allah\", an angel will call out to him, saying: O servant of Allah, you have been guided to the straight path, you have been sufficed against your worries, and you have been protected from your enemies. So the devil assigned to him will move away from him, and another devil will say to the former: How can you misguide someone who has been guided, sufficed, and protected from all of the devils! Because he said those words, you cannot overpower him.",
+        "attribution": "Narrated by At-Termedhy - Narrated by Abu Daoud",
+        "grade": "Authentic hadith"
+      },
+      "kind": "hadith",
+      "moment": "home"
+    },
+    {
+      "id": "dua-hadith-10571",
+      "hadeethencId": "10571",
+      "ar": {
+        "text": "عن زيد بن أرقم رضي الله عنه ، عن رسول الله صلى الله عليه وسلم قال:«إنَّ هذه الحُشُوشَ مُحْتَضَرَةٌ، فإذا أتى أحدُكم الخَلَاءَ فَلْيَقُلْ: أعوذُ باللهِ مِنَ الخُبُثِ والخَبَائث».",
+        "attribution": "رواه أبو داود وابن ماجه وأحمد",
+        "grade": "صحيح"
+      },
+      "en": {
+        "title": "Those privies are attended by the devils, so if anyone of you goes to a privy, let him say: I seek refuge with Allah from the male and female devils",
+        "text": "Zayd ibn Arqam (may Allah be pleased with him) reported that the Messenger of Allah (may Allah's peace and blessings be upon him) said: \"Those privies are attended by the devils, so if anyone of you goes to a privy, let him say: I seek refuge with Allah from the male and female devils.\"",
+        "explanation": "The place where one relieves himself (privy) is attended by the Jinn and the devils who wait there to inflict harm and trouble on humans. A privy is a place where one's private parts are uncovered, and the name of Allah is not mentioned. So, when a Muslim goes there, he should say this supplication: I seek refuge with Allah from the males and females from among the devils.",
+        "attribution": "Narrated by Ibn Majah - Narrated by Abu Daoud - Narrated by Ahmad",
+        "grade": "Authentic hadith"
+      },
+      "kind": "hadith",
+      "moment": "bathroom"
+    },
+    {
+      "id": "dua-hadith-8294",
+      "hadeethencId": "8294",
+      "ar": {
+        "text": "عن عبد الله بن عمرو بن العاص رضي الله عنهما: عن النبي صلى الله عليه وسلم أنه كان إذا دخل المسجد قال: «أعوذ بالله العظيم، وبوجهه الكريم، وسلطانه القديم، من الشيطان الرَّجِيم»، قال: أَقَطُّ؟ قلت: نعم، قال: فإذا قال ذلك قال الشيطان: حُفِظَ منِّي سائر اليوم.",
+        "attribution": "رواه أبو داود",
+        "grade": "حسن"
+      },
+      "en": {
+        "title": "When the Prophet (may Allah's peace and blessings be upon him) entered the mosque, he would say: \"a‘ūdhu billāhi al-‘azhīm wa biwajhihi al-karīm wa sultānihi al-qadīm min ash-shaytān ar-rajīm\" (I seek refuge in Allah, the Majestic, and in His noble Countenance, and in His eternal dominion, from the accursed devil)",
+        "text": "‘Abdullāh ibn ‘Amr ibn al-‘Ās (may Allah be pleased with him) reported: When the Prophet (may Allah's peace and blessings be upon him) entered the mosque, he would say: \"a‘ūdhu billāhi al-‘azhīm wa biwajhihi al-karīm wa sultānihi al-qadīm min ash-shaytān ar-rajīm\" (I seek refuge in Allah, the Majestic, and in His noble Countenance, and in His eternal dominion, from the accursed devil) He said: \"Is that all?\" I said: 'Yes.' He said: \"And when he says that, the devil says: \"He is protected from me for the rest of the day.\"",
+        "explanation": "When the Prophet (may Allah's peace and blessings be upon him) entered the mosque, he would say: \"I seek refuge with Allah, the Majestic\" i.e., I resort and turn for help to Allah and His attributes. \"and in His noble Countenance\" i.e., the Generous Giver. \"and in His eternal dominion\" i.e., His dominance, power, and the ability to vanquish anyone of His creation He wills. 'eternal' i.e., permanent, timeless. \"from the accursed devil\", who is banished and expelled from the mercy of Allah. i.e., O Allah, protect me from his whisperings, his temptations, his steps, his ideas, his insinuations, and his misguidance, for he is the one who causes misguidance and leads to temptation and ignorance. It was said to ‘Abdullāh ibn ‘Amr: \"Is that all?\" i.e., did the Prophet (may Allah's peace and blessings be upon him) say that only? He said: Yes.\r\n\r\nIf a person says this supplication upon entering the mosque, the devil will say: He has protected himself from me the whole time, during the day and night.",
+        "attribution": "Narrated by Abu Dāwūd",
+        "grade": "Hasan"
+      },
+      "kind": "hadith",
+      "moment": "mosque"
     },
     {
       "id": "dua-hadith-65092",

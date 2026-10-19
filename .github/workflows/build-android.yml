@@ -87,6 +87,7 @@ jobs:
         working-directory: app
         run: |
           set +e
+          flutter pub get > /dev/null
           dart analyze --format=machine . > "$RUNNER_TEMP/analyze.txt" 2>&1
           awk -F'|' 'NF>=8 && $1!="INFO" { f=$4; sub(/.*\/app\//,"app/",f); printf "::%s file=%s,line=%s,col=%s,title=%s::%s\n", ($1=="ERROR"?"error":"warning"), f, $5, $6, $3, $8 }' "$RUNNER_TEMP/analyze.txt"
           flutter analyze --no-fatal-infos

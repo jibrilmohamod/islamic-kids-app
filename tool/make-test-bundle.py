@@ -19,15 +19,13 @@ HADITH_PER_TOPIC = 4
 src = sys.argv[1] if len(sys.argv) > 1 else 'app/assets/content/bundle.json'
 b = json.load(open(src, encoding='utf-8'))
 
-b['surahs'] = [s for s in b['surahs'] if s['number'] in SURAHS]
-mushaf = b.get('mushaf')
-if mushaf:
-    # Keep surah headers and basmalas only for the surahs kept.
-    mushaf['specials'] = {
-        page: [sp for sp in items if sp[2] in SURAHS]
-        for page, items in mushaf['specials'].items()
-    }
-    mushaf['specials'] = {p: v for p, v in mushaf['specials'].items() if v}
+# All 114 surahs stay, so the 604-page book still builds (the app only
+# builds it from a complete Quran). Translations are kept only for the
+# surahs tests read; the rest keep their Arabic and page layout.
+for sur in b['surahs']:
+    if sur['number'] not in SURAHS:
+        for a in sur['ayat']:
+            a['meaning'] = {}
 
 # The first few hadith of each topic, in HadeethEnc's order.
 kept, per_topic = [], {}

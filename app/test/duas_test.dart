@@ -70,8 +70,9 @@ void main() {
     await tester.ensureVisible(find.text('Start the count again'));
     await tester.tap(find.text('Start the count again'));
     await tester.pumpAndSettle();
-    expect(find.text('0'), findsOneWidget);
     expect(find.text('Start the count again'), findsNothing);
+    await tester.scrollUntilVisible(find.text('0'), -200);
+    expect(find.text('0'), findsOneWidget);
 
     // Memorise hides words for display only.
     await tester.tap(find.byTooltip('Memorise'));
@@ -139,7 +140,8 @@ void main() {
         DuaScreen(duas: of('mosque'), index: 0, stop: dayStops[2]),
         DuaScreen(duas: of('anytime'), index: 0, stop: anytimeStop),
       ]) {
-        await tester.pumpWidget(testApp(state, page, textScale: scale));
+        // A key per page: the same widget type must not keep the last page's state.
+        await tester.pumpWidget(testApp(state, KeyedSubtree(key: UniqueKey(), child: page), textScale: scale));
         await tester.pumpAndSettle();
         expect(tester.takeException(), isNull, reason: '$page at ${scale}x');
       }

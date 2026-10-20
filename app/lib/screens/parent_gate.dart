@@ -102,27 +102,36 @@ class BreakScreen extends StatelessWidget {
         color: Pop.violet,
         dot: const Color(0x40FFFFFF),
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const Icon(Icons.nightlight_round, size: 72, color: Pop.lemon),
-                const SizedBox(height: 16),
-                MisprintText(tr('breakTitle', lang), size: 30, color: Colors.white, heavyShadow: true),
-                const SizedBox(height: 12),
-                Text(tr('breakBody', lang),
-                    style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: Colors.white, height: 1.35)),
-                const SizedBox(height: 32),
-                ComicButton(
-                  label: '${tr('moreTime', lang)} (${tr('forGrownUps', lang)})',
-                  color: Colors.white,
-                  onPressed: () async {
-                    if (await askParent(context)) state.allowMoreTime(15);
-                  },
+          // Centred, and scrolls when large text makes it taller than the
+          // screen (it overflowed at 200% text before).
+          child: LayoutBuilder(
+            builder: (context, box) => SingleChildScrollView(
+              padding: const EdgeInsets.all(24),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: box.maxHeight - 48),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Icon(Icons.nightlight_round, size: 72, color: Pop.lemon),
+                    const SizedBox(height: 16),
+                    MisprintText(tr('breakTitle', lang), size: 30, color: Colors.white, heavyShadow: true),
+                    const SizedBox(height: 12),
+                    Text(
+                      tr('breakBody', lang),
+                      style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: Colors.white, height: 1.35),
+                    ),
+                    const SizedBox(height: 32),
+                    ComicButton(
+                      label: '${tr('moreTime', lang)} (${tr('forGrownUps', lang)})',
+                      color: Colors.white,
+                      onPressed: () async {
+                        if (await askParent(context)) state.allowMoreTime(15);
+                      },
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ),

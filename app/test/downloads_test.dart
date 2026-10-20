@@ -42,11 +42,12 @@ void main() {
   setUp(() => dir = Directory.systemTemp.createTempSync('downloads_test'));
   tearDown(() => dir.deleteSync(recursive: true));
 
-  /// Lets real file work finish, then the frames that follow it.
+  /// Lets real file work finish, then the frames that follow it. Uses plain
+  /// pumps: the loading spinner never settles.
   Future<void> settle(WidgetTester tester) async {
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 4; i++) {
       await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 50)));
-      await tester.pumpAndSettle();
+      await tester.pump(const Duration(milliseconds: 300));
     }
   }
 

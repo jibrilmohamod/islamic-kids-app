@@ -272,6 +272,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "build: update content bundle and generated files [skip ci]"
           echo "::notice title=Left unstaged::$(git status --short | tr '\n' ' ')"
+          # Tracked files a build step changed: show what changed, so the step
+          # can be fixed instead of the change being silently dropped.
+          if ! git diff --quiet; then
+            echo "::warning title=Build changed tracked files::$(git diff -U0 | head -40 | sed -e 's/%/%25/g' | awk '{printf "%s%%0A", $0}')"
+          fi
           git push || { git pull --rebase --autostash origin main && git push; }
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

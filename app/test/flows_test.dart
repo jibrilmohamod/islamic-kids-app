@@ -90,6 +90,9 @@ void main() {
 
     await tester.tap(find.byTooltip('Back').first);
     await tester.pumpAndSettle();
+    // My shelf is the last niche, below the fold on a phone.
+    await tester.ensureVisible(find.text('My shelf'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('My shelf'));
     await tester.pumpAndSettle();
     expect(find.byType(MyShelfScreen), findsOneWidget);

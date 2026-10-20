@@ -618,6 +618,8 @@ class _GlazeCardState extends State<GlazeCard> {
       card = Padding(
         padding: const EdgeInsets.only(top: 14),
         child: Stack(
+          // Passthrough: a card given a width (in a Row's Expanded) fills it.
+          fit: StackFit.passthrough,
           clipBehavior: Clip.none,
           children: [
             card,

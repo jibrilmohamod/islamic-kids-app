@@ -82,7 +82,8 @@ class HadithListScreen extends StatelessWidget {
       body: LayoutBuilder(builder: (context, c) {
         const gap = 14.0;
         const pad = 18.0;
-        final w = ((c.maxWidth - 2 * pad - gap) / 2 - 4).floorToDouble();
+        // Two per row: each niche is its width plus a 5 px hard shadow.
+        final w = ((c.maxWidth - 2 * pad - gap) / 2 - 5).floorToDouble();
         final band = MediaQuery.textScalerOf(context).scale(16) * 2.3 + MediaQuery.textScalerOf(context).scale(14) * 1.4 + 10;
         final h = w * 0.72 + band;
         return ListView(

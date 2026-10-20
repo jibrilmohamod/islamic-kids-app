@@ -41,6 +41,9 @@ ThemeData popTheme() {
   final base = ThemeData(
     useMaterial3: true,
     fontFamily: Pop.body,
+    // Baloo 2 has no ﷺ (U+FDFA); Scheherazade New draws it and other Arabic
+    // marks that turn up in English text.
+    fontFamilyFallback: const [Pop.quran],
     scaffoldBackgroundColor: Pop.paper,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Pop.violet,

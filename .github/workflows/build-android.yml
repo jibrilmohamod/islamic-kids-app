@@ -6,9 +6,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Least privilege (audit S2): read by default. The build job may write
+# (bundle commit on main, preview branches); only the publish job, on main,
+# may ask GitHub for an OIDC token. Actions are pinned by commit (audit S3).
 permissions:
-  contents: write   # commit the content bundle and the generated android/ folder
-  id-token: write   # GitHub OIDC token for the publish-content function
+  contents: read
 
 env:
   SUPABASE_URL: https://jmczkzlzvwkfbxsiftls.supabase.co
@@ -18,10 +20,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    permissions:
+      contents: write   # commit the content bundle on main; push preview branches
     env:
       ON_MAIN: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0   # to see which files a PR changes
 
@@ -39,7 +43,7 @@ jobs:
             echo "::notice title=Content bundle::Pipeline unchanged; using the committed bundle"
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
 
@@ -80,13 +84,13 @@ jobs:
             fi
           fi
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
         with:
           distribution: temurin
           java-version: 17
           cache: gradle   # Gradle dependencies between runs (test audit T10)
 
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
         with:
           channel: stable
           cache: true
@@ -139,7 +143,7 @@ jobs:
           node ../tool/coverage-report.mjs coverage/lcov.info lib || true
 
       # Screenshots of key screens with the real fonts and content, pushed to
-      # the "previews" branch so the work can be looked at without a phone.
+      # a "previews-<branch>" branch so the work can be looked at without a phone.
       - name: Render screen previews
         if: env.ON_MAIN == 'true' || github.event_name == 'pull_request'
         continue-on-error: true
@@ -163,12 +167,16 @@ jobs:
           rm -rf "$d" && mkdir -p "$d"
           cp app/test_screens/goldens/*.png "$d"/
           cd "$d"
-          echo "Screens from ${GITHUB_SHA} (${GITHUB_HEAD_REF:-main})" > README.md
+          # One preview branch per source branch, so parallel PRs don't
+          # overwrite each other's screenshots.
+          src="${GITHUB_HEAD_REF:-main}"
+          dest="previews-$(echo "$src" | tr -c 'A-Za-z0-9._-' '-' | sed 's/-*$//')"
+          echo "Screens from ${GITHUB_SHA} (${src})" > README.md
           git init -q -b previews
           git add .
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -qm "Previews for ${GITHUB_SHA}"
-          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" previews
-          echo "::notice title=Previews::$(ls *.png | tr '\n' ' ')"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "previews:refs/heads/${dest}"
+          echo "::notice title=Previews (${dest})::$(ls *.png | tr '\n' ' ')"
 
       # Release signing uses an upload key kept only in GitHub secrets.
       # Until those secrets exist the APK stays debug-signed.
@@ -224,7 +232,7 @@ jobs:
         working-directory: app
         run: flutter build appbundle --release
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: steps.signing.outputs.signed == 'true'
         with:
           name: islamic-kids-app-aab
@@ -242,10 +250,34 @@ jobs:
           echo "::notice title=Left unstaged::$(git status --short | tr '\n' ' ')"
           git push || { git pull --rebase --autostash origin main && git push; }
 
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: env.ON_MAIN == 'true'
+        with:
+          name: content-bundle
+          path: app/assets/content/bundle.json
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: islamic-kids-app-apk
+          path: app/build/app/outputs/flutter-apk/app-release.apk
+
+  # Separate job so only this one, on main, can get an OIDC token (audit S2).
+  publish:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write   # GitHub OIDC token for the publish-content function
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: content-bundle
+
       # Publishes the bundle to Supabase Storage. Same content gives the same
       # hash and file, so republishing is harmless.
       - name: Publish content to Supabase
-        if: env.ON_MAIN == 'true'
         run: |
           set -euo pipefail
           url="$SUPABASE_URL/functions/v1/publish-content"
@@ -253,15 +285,10 @@ jobs:
             "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$PUBLISH_AUDIENCE" | jq -r .value)
           curl -sS --fail-with-body -X POST -H "Authorization: Bearer $token" \
             -H "Content-Type: application/json" \
-            --data-binary @app/assets/content/bundle.json "$url" > published.json
+            --data-binary @bundle.json "$url" > published.json
           echo "::notice title=Published to Supabase::$(cat published.json)"
 
           # Safety checks: strangers cannot publish, and anyone can read.
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$url" -d '{}')
           [ "$code" = 401 ] || { echo "::error::publish-content accepted an unauthenticated call ($code)"; exit 1; }
           curl -sS --fail "$SUPABASE_URL/storage/v1/object/public/content/v1/manifest.json" > /dev/null
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: islamic-kids-app-apk
-          path: app/build/app/outputs/flutter-apk/app-release.apk

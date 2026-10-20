@@ -6,14 +6,15 @@ version: 0.3.0+3
 environment:
   sdk: '>=3.3.0 <4.0.0'
 
-# path_provider and shared_preferences: flutter.dev. audioplayers: blue-fire,
-# checked active (6.6.0, March 2026). Check maintenance and licence before
-# adding anything else.
+# path_provider and shared_preferences: flutter.dev. just_audio 0.10.6 and
+# audio_service 0.18.19: ryanheise.com, both released June 2026 (ADR 0002).
+# Check maintenance and licence before adding anything else.
 dependencies:
   flutter:
     sdk: flutter
-  audioplayers: ^6.1.0
+  audio_service: ^0.18.19
   flutter_svg: ^2.3.0
+  just_audio: ^0.10.6
   path_provider: ^2.1.0
   shared_preferences: ^2.5.0
 

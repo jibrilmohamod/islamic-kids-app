@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import '../app_state.dart';
 import '../models.dart';
 import '../mushaf.dart';
+import '../recitation.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
@@ -33,8 +34,8 @@ class _MushafScreenState extends State<MushafScreen> {
   late final PageController _pc = PageController(initialPage: widget.initialPage - 1);
   late int _page = widget.initialPage;
   String? _selected;
-  String? _playing;
-  StreamSubscription<void>? _done;
+  Recitation? _rec;
+  String? _followed; // last recited ayah the page turned to
   late AppState _state;
 
   @override
@@ -50,15 +51,36 @@ class _MushafScreenState extends State<MushafScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     _state = AppScope.of(context);
-    _done ??= _state.audio?.onComplete.listen((_) => _next());
+    final rec = _state.recitation;
+    if (!identical(rec, _rec)) {
+      _rec?.removeListener(_onRecitation);
+      _rec = rec?..addListener(_onRecitation);
+    }
   }
 
   @override
   void dispose() {
-    _done?.cancel();
-    if (_playing != null) _state.audio?.stop();
+    // Recitation carries on after the book closes (ADR 0002).
+    _rec?.removeListener(_onRecitation);
     _pc.dispose();
     super.dispose();
+  }
+
+  /// The ayah being recited, as "surah:ayah", or null.
+  String? get _playing => _rec?.key;
+
+  /// Turns to the page of the ayah being recited, as it moves on.
+  void _onRecitation() {
+    if (!mounted) return;
+    final key = _playing;
+    if (key != null && key != _followed) {
+      _followed = key;
+      final page = _state.book!.pageOf(key);
+      if (page != _page && _pc.hasClients) {
+        unawaited(_pc.animateToPage(page - 1, duration: const Duration(milliseconds: 350), curve: Curves.easeOut));
+      }
+    }
+    setState(() {});
   }
 
   (Surah, Ayah)? _find(String key) {
@@ -70,40 +92,21 @@ class _MushafScreenState extends State<MushafScreen> {
     return a >= 1 && a <= surah.ayat.length ? (surah, surah.ayat[a - 1]) : null;
   }
 
+  /// Recites from [key] to the end of its surah, turning pages as it goes.
   Future<void> _play(String key) async {
-    final audio = _state.audio;
+    final rec = _rec;
     final found = _find(key);
-    if (audio == null || found == null) return;
-    setState(() => _playing = key);
-    final page = _state.book!.pageOf(key);
-    if (page != _page) unawaited(_pc.animateToPage(page - 1, duration: const Duration(milliseconds: 350), curve: Curves.easeOut));
+    if (rec == null || found == null) return;
     try {
-      await audio.play(found.$2);
-    } catch (_) {
+      await rec.start(found.$1, found.$2.aya - 1);
+    } catch (e) {
+      debugPrint('Recitation failed to start: $e');
       if (!mounted) return;
-      setState(() => _playing = null);
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('audioFailed', _state.lang))));
     }
   }
 
-  /// Keeps reciting to the end of the surah, turning pages as it goes.
-  void _next() {
-    final key = _playing;
-    if (key == null || !mounted) return;
-    final found = _find(key);
-    if (found == null) return;
-    final (surah, ayah) = found;
-    if (ayah.aya < surah.ayat.length) {
-      _play('${surah.number}:${ayah.aya + 1}');
-    } else {
-      setState(() => _playing = null);
-    }
-  }
-
-  Future<void> _stop() async {
-    await _state.audio?.stop();
-    if (mounted) setState(() => _playing = null);
-  }
+  Future<void> _stop() async => _rec?.stop();
 
   void _playFromHere() {
     final start = _selected ?? _state.book!.page(_page).ayat.firstOrNull?.key;

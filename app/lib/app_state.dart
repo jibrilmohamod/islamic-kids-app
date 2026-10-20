@@ -12,6 +12,9 @@ import 'content_store.dart';
 import 'models.dart';
 import 'mushaf.dart';
 import 'progress.dart';
+import 'recitation.dart';
+import 'recitation_player.dart';
+import 'strings.dart';
 
 /// App-wide state: content, language, progress and audio. Everything is kept
 /// on the device; there are no accounts.
@@ -34,6 +37,12 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   String? error;
   Progress progress = Progress();
   AudioService? audio;
+
+  /// Plays recitation; keeps going after the child leaves the screen.
+  Recitation? recitation;
+
+  /// Android media notification, set by main() before load().
+  RecitationHandler? media;
   Activity activity = Activity();
   SharedPreferences? _prefs;
   Timer? _ticker;
@@ -108,7 +117,16 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     if (current != null) {
       _migrateLegacy(current, legacy);
       final info = current.audio;
-      if (info != null) audio = AudioService(info: info, baseDir: support);
+      if (info != null) {
+        final files = AudioService(info: info, baseDir: support);
+        audio = files;
+        recitation = Recitation(files: files, player: JustAudioRecitationPlayer());
+        final m = media;
+        if (m != null) {
+          m.ayahLabel = (n, total) => tr('ayahOf', lang, {'n': n, 'total': total});
+          m.attach(recitation!);
+        }
+      }
       unawaited(store.checkForUpdate(current.version));
     }
     WidgetsBinding.instance.addObserver(this);

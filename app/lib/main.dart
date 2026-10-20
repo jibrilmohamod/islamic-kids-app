@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app_state.dart';
+import 'recitation_player.dart';
 import 'screens/home_screen.dart';
 import 'screens/parent_gate.dart';
 import 'strings.dart';
 import 'theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
     final text = await rootBundle.loadString('assets/fonts/OFL-licenses.txt');
@@ -18,7 +19,11 @@ void main() {
   LicenseRegistry.addLicense(() async* {
     yield const LicenseEntryWithLineBreaks(['quran-qcf4 (mushaf page layout)'], _qcf4License);
   });
-  final state = AppState()..load();
+  // Before load(): the media service must exist when recitation is created.
+  final media = await startMediaService();
+  final state = AppState()
+    ..media = media
+    ..load();
   runApp(AppScope(state: state, child: const KidsApp()));
 }
 

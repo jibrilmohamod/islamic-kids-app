@@ -5,7 +5,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   extractList, findTranslationMeta, buildSurah, hasAllLanguages, buildHadith,
-  validateBundle, surahConfigsFromMeta, placeAyahWords, attachMushaf, skeleton,
+  validateBundle, surahConfigsFromMeta, juzOfSurahs, placeAyahWords, attachMushaf, skeleton,
   normalizeArabic, trigrams, hadithQuote, namedCollections, bestMatches, decideRef, needsAdultReview,
 } from './lib.mjs';
 import { readFileSync } from 'node:fs';
@@ -153,6 +153,36 @@ test('surah metadata gives 114 configs with short Arabic names', () => {
   assert.equal(cfgs[0].nameAr, 'ٱلۡفَاتِحَةِ');
   assert.equal(cfgs[113].ayahCount, 7);
   assert.throws(() => surahConfigsFromMeta({ data: data.slice(1) }));
+});
+
+test('surah facts: revelation and name meaning come from the metadata, unknown values are dropped', () => {
+  const data = Array.from({ length: 114 }, (_, i) => ({
+    number: i + 1, name: 'x', englishName: `S${i + 1}`, numberOfAyahs: 7,
+    englishNameTranslation: i === 0 ? 'The Opening' : undefined,
+    revelationType: i === 0 ? 'Meccan' : i === 1 ? 'Medinan' : 'Unknown',
+  }));
+  const cfgs = surahConfigsFromMeta({ data });
+  assert.equal(cfgs[0].revelation, 'meccan');
+  assert.equal(cfgs[1].revelation, 'medinan');
+  assert.equal(cfgs[2].revelation, undefined);
+  assert.deepEqual(cfgs[0].nameMeaning, { en: 'The Opening' });
+  assert.equal(cfgs[1].nameMeaning, undefined);
+});
+
+test('juz of each surah: the juz its first ayah is in', () => {
+  // The 30 juz starts of the Madina mushaf as AlQuran.cloud lists them.
+  const starts = [[1, 1], [2, 142], [2, 253], [3, 93], [4, 24], [4, 148], [5, 82], [6, 111], [7, 88], [8, 41],
+    [9, 93], [11, 6], [12, 53], [15, 1], [17, 1], [18, 75], [21, 1], [23, 1], [25, 21], [27, 56],
+    [29, 46], [33, 31], [36, 28], [39, 32], [41, 47], [46, 1], [51, 31], [58, 1], [67, 1], [78, 1]]
+    .map(([surah, ayah]) => ({ surah, ayah }));
+  const juz = juzOfSurahs({ data: { juzs: { references: starts } } });
+  assert.equal(juz[1], 1);
+  assert.equal(juz[2], 1);
+  assert.equal(juz[18], 15);
+  assert.equal(juz[36], 22);
+  assert.equal(juz[67], 29);
+  assert.equal(juz[114], 30);
+  assert.throws(() => juzOfSurahs({ data: { juzs: { references: starts.slice(1) } } }));
 });
 
 test('audio picks the first bitrate that answers and every ayah gets its number', async () => {

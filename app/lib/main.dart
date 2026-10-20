@@ -46,7 +46,11 @@ class KidsApp extends StatelessWidget {
           if (child != null) child,
           if (state.timeUp)
             Positioned.fill(
-              child: Navigator(onGenerateRoute: (_) => MaterialPageRoute(builder: (_) => const BreakScreen())),
+              // Its own hero scope: two navigators may not share the app's
+              // HeroController (Flutter asserts, found by flows_test).
+              child: HeroControllerScope.none(
+                child: Navigator(onGenerateRoute: (_) => MaterialPageRoute(builder: (_) => const BreakScreen())),
+              ),
             ),
         ],
       ),

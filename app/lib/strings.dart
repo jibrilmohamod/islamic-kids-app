@@ -155,6 +155,10 @@ const Map<String, Map<String, String>> _strings = {
   'controlsNotAsked': {'en': 'Not set up yet: play a surah once to be asked.', 'so': 'Weli lama dejin: hal mar suurad shid.'},
   'controlsBroken': {'en': 'Off: the phone did not start them ({reason}).', 'so': 'Dansan: taleefanku ma bilaabin ({reason}).'},
   'allowNotifications': {'en': 'Allow notifications', 'so': 'Oggolow ogeysiisyada'},
+  'meccan': {'en': 'Revealed in Makkah', 'so': 'Waxay ku soo degtay Makka'},
+  'medinan': {'en': 'Revealed in Madinah', 'so': 'Waxay ku soo degtay Madiina'},
+  'juzN': {'en': 'Juz {n}', 'so': 'Juz {n}'},
+  'meaningOfName': {'en': 'Name means: {m}', 'so': 'Magacu wuxuu la micno yahay: {m}'},
   'ayahOf': {'en': 'Ayah {n} of {total}', 'so': 'Aayadda {n} ee {total}'},
   'nowPlaying': {'en': 'Playing ayah {n}', 'so': 'Waxaa socda aayadda {n}'},
   'noDownloads': {

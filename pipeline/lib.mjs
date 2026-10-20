@@ -63,6 +63,9 @@ export function buildSurah(surahCfg, rowsByLang, translationKeys) {
       number: surahCfg.number,
       name: surahCfg.name,
       nameAr: surahCfg.nameAr,
+      ...(surahCfg.revelation ? { revelation: surahCfg.revelation } : {}),
+      ...(surahCfg.nameMeaning ? { nameMeaning: surahCfg.nameMeaning } : {}),
+      ...(surahCfg.juz ? { juz: surahCfg.juz } : {}),
       ayat,
     },
     warnings,
@@ -74,12 +77,34 @@ export function buildSurah(surahCfg, rowsByLang, translationKeys) {
 export function surahConfigsFromMeta(json) {
   const list = json?.data;
   if (!Array.isArray(list) || list.length !== 114) throw new Error('Expected 114 surahs in metadata');
-  return list.map((s) => ({
-    number: s.number,
-    name: s.englishName,
-    nameAr: String(s.name).replace(/^سُورَةُ\s+/, ''),
-    ayahCount: s.numberOfAyahs,
-  }));
+  return list.map((s) => {
+    const revelation = String(s.revelationType ?? '').toLowerCase();
+    return {
+      number: s.number,
+      name: s.englishName,
+      nameAr: String(s.name).replace(/^سُورَةُ\s+/, ''),
+      ayahCount: s.numberOfAyahs,
+      // Surah facts (#28), from the same AlQuran.cloud record.
+      ...(revelation === 'meccan' || revelation === 'medinan' ? { revelation } : {}),
+      ...(s.englishNameTranslation ? { nameMeaning: { en: s.englishNameTranslation } } : {}),
+    };
+  });
+}
+
+// AlQuran.cloud /meta: data.juzs.references lists where each of the 30 juz
+// starts ({surah, ayah}). Returns the juz each surah's first ayah is in.
+export function juzOfSurahs(metaJson) {
+  const starts = metaJson?.data?.juzs?.references;
+  if (!Array.isArray(starts) || starts.length !== 30) throw new Error('Expected 30 juz in metadata');
+  const juz = {};
+  for (let s = 1; s <= 114; s++) {
+    let j = 1;
+    starts.forEach((st, i) => {
+      if (st.surah < s || (st.surah === s && st.ayah <= 1)) j = i + 1;
+    });
+    juz[s] = j;
+  }
+  return juz;
 }
 
 // HadeethEnc list items carry the language codes each hadith is translated into.
@@ -323,6 +348,8 @@ export function validateBundle(bundle, langs) {
   for (const s of bundle.surahs ?? []) {
     if (!s.ayat?.length) errors.push(`${s.id}: no ayat`);
     if (s.ayahCount && s.ayat?.length !== s.ayahCount) errors.push(`${s.id}: ${s.ayat?.length} ayat, expected ${s.ayahCount}`);
+    if (s.revelation !== undefined && s.revelation !== 'meccan' && s.revelation !== 'medinan') errors.push(`${s.id}: bad revelation ${s.revelation}`);
+    if (s.juz !== undefined && !(Number.isInteger(s.juz) && s.juz >= 1 && s.juz <= 30)) errors.push(`${s.id}: bad juz ${s.juz}`);
     if (bundle.audio) {
       for (const a of s.ayat ?? []) {
         if (!Number.isInteger(a.n) || a.n < 1 || a.n > 6236 || seenN.has(a.n)) errors.push(`${a.key}: bad audio number ${a.n}`);

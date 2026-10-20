@@ -130,6 +130,8 @@ class _SurahScreenState extends State<SurahScreen> {
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
             sliver: SliverList.list(
               children: [
+                _Facts(surah: s, page: state.book?.firstPageOf(s.number)),
+                const SizedBox(height: 18),
                 if (state.audio != null) ...[
                   Row(
                     children: [
@@ -291,6 +293,34 @@ class _Header extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Surah facts (#28) as stickers that wrap at any text size: where it was
+/// revealed, what its name means, its juz and its first page in the book.
+/// Each fact shows only when the bundle has it (AlQuran.cloud metadata).
+class _Facts extends StatelessWidget {
+  final Surah surah;
+  final int? page;
+  const _Facts({required this.surah, required this.page});
+
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppScope.of(context).lang;
+    final meaning = surah.nameMeaning[lang] ?? surah.nameMeaning['en'];
+    final juz = surah.juz;
+    final facts = [
+      if (surah.revelation != null) (tr(surah.revelation!, lang), surah.revelation == 'meccan' ? Pop.lemon : Pop.cyan),
+      if (meaning != null) (tr('meaningOfName', lang, {'m': meaning}), Colors.white),
+      if (juz != null) (tr('juzN', lang, {'n': juz}), Pop.pink),
+      if (page != null) (tr('pageN', lang, {'n': page!}), Colors.white),
+    ];
+    if (facts.isEmpty) return const SizedBox.shrink();
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [for (final (text, color) in facts) StickerTab(text, color: color)],
     );
   }
 }

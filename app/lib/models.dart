@@ -119,12 +119,24 @@ class Surah {
   final String nameAr;
   final List<Ayah> ayat;
 
+  /// 'meccan' or 'medinan' (AlQuran.cloud); null in older bundles.
+  final String? revelation;
+
+  /// What the name means, by language (English from AlQuran.cloud).
+  final Map<String, String> nameMeaning;
+
+  /// The juz (1 to 30) the surah starts in; null in older bundles.
+  final int? juz;
+
   const Surah({
     required this.id,
     required this.number,
     required this.name,
     required this.nameAr,
     required this.ayat,
+    this.revelation,
+    this.nameMeaning = const {},
+    this.juz,
   });
 
   factory Surah.fromJson(Map<String, dynamic> j) => Surah(
@@ -133,6 +145,12 @@ class Surah {
         name: _s(j['name']),
         nameAr: _s(j['nameAr']),
         ayat: ((j['ayat'] as List?) ?? const []).map((a) => Ayah.fromJson(_map(a))).toList(),
+        revelation: switch (j['revelation']) { 'meccan' => 'meccan', 'medinan' => 'medinan', _ => null },
+        nameMeaning: {
+          for (final e in _map(j['nameMeaning']).entries)
+            if (e.value is String) e.key: e.value as String,
+        },
+        juz: j['juz'] is int ? j['juz'] as int : null,
       );
 }
 

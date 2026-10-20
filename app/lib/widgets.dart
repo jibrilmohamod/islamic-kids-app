@@ -615,17 +615,20 @@ class _GlazeCardState extends State<GlazeCard> {
       ),
     );
     if (t != null) {
-      card = Padding(
-        padding: const EdgeInsets.only(top: 14),
-        child: Stack(
-          // Passthrough: a card given a width (in a Row's Expanded) fills it.
-          fit: StackFit.passthrough,
-          clipBehavior: Clip.none,
-          children: [
-            card,
-            PositionedDirectional(start: 10, top: -14, end: 10, child: Align(alignment: AlignmentDirectional.centerStart, child: StickerTab(t, color: w.tabColor))),
-          ],
-        ),
+      // The tab sits inside the Stack's bounds (the card is pushed down
+      // instead of the tab pulled up), so a tap on the tab reaches the card.
+      card = Stack(
+        // Passthrough: a card given a width (in a Row's Expanded) fills it.
+        fit: StackFit.passthrough,
+        children: [
+          Padding(padding: const EdgeInsets.only(top: 14), child: card),
+          PositionedDirectional(
+            start: 10,
+            top: 0,
+            end: 10,
+            child: Align(alignment: AlignmentDirectional.centerStart, child: StickerTab(t, color: w.tabColor)),
+          ),
+        ],
       );
     }
     if (w.onTap != null) {

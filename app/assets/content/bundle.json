@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "bundleVersion": "20261019204605",
-  "generatedAt": "2026-10-19T20:46:05.230Z",
+  "bundleVersion": "20261020090605",
+  "generatedAt": "2026-10-20T09:06:05.948Z",
   "languages": [
     "en"
   ],
@@ -2000,6 +2000,11 @@
       "number": 1,
       "name": "Al-Faatiha",
       "nameAr": "ٱلْفَاتِحَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Opening"
+      },
+      "juz": 1,
       "ayat": [
         {
           "key": "1:1",
@@ -2142,6 +2147,11 @@
       "number": 2,
       "name": "Al-Baqara",
       "nameAr": "البَقَرَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Cow"
+      },
+      "juz": 1,
       "ayat": [
         {
           "key": "2:1",
@@ -7585,6 +7595,11 @@
       "number": 3,
       "name": "Aal-i-Imraan",
       "nameAr": "آلِ عِمۡرَانَ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Family of Imraan"
+      },
+      "juz": 3,
       "ayat": [
         {
           "key": "3:1",
@@ -11394,6 +11409,11 @@
       "number": 4,
       "name": "An-Nisaa",
       "nameAr": "النِّسَاءِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Women"
+      },
+      "juz": 4,
       "ayat": [
         {
           "key": "4:1",
@@ -14747,6 +14767,11 @@
       "number": 5,
       "name": "Al-Maaida",
       "nameAr": "المَائـِدَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Table"
+      },
+      "juz": 6,
       "ayat": [
         {
           "key": "5:1",
@@ -17036,6 +17061,11 @@
       "number": 6,
       "name": "Al-An'aam",
       "nameAr": "الأَنۡعَامِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Cattle"
+      },
+      "juz": 7,
       "ayat": [
         {
           "key": "6:1",
@@ -20180,6 +20210,11 @@
       "number": 7,
       "name": "Al-A'raaf",
       "nameAr": "الأَعۡرَافِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Heights"
+      },
+      "juz": 8,
       "ayat": [
         {
           "key": "7:1",
@@ -24103,6 +24138,11 @@
       "number": 8,
       "name": "Al-Anfaal",
       "nameAr": "الأَنفَالِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Spoils of War"
+      },
+      "juz": 9,
       "ayat": [
         {
           "key": "8:1",
@@ -25537,6 +25577,11 @@
       "number": 9,
       "name": "At-Tawba",
       "nameAr": "التَّوۡبَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Repentance"
+      },
+      "juz": 10,
       "ayat": [
         {
           "key": "9:1",
@@ -27997,6 +28042,11 @@
       "number": 10,
       "name": "Yunus",
       "nameAr": "يُونُسَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Jonas"
+      },
+      "juz": 11,
       "ayat": [
         {
           "key": "10:1",
@@ -30077,6 +30127,11 @@
       "number": 11,
       "name": "Hud",
       "nameAr": "هُودٍ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Hud"
+      },
+      "juz": 11,
       "ayat": [
         {
           "key": "11:1",
@@ -32423,6 +32478,11 @@
       "number": 12,
       "name": "Yusuf",
       "nameAr": "يُوسُفَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Joseph"
+      },
+      "juz": 12,
       "ayat": [
         {
           "key": "12:1",
@@ -34541,6 +34601,11 @@
       "number": 13,
       "name": "Ar-Ra'd",
       "nameAr": "الرَّعۡدِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Thunder"
+      },
+      "juz": 13,
       "ayat": [
         {
           "key": "13:1",
@@ -35367,6 +35432,11 @@
       "number": 14,
       "name": "Ibrahim",
       "nameAr": "إِبۡرَاهِيمَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Abraham"
+      },
+      "juz": 13,
       "ayat": [
         {
           "key": "14:1",
@@ -36364,6 +36434,11 @@
       "number": 15,
       "name": "Al-Hijr",
       "nameAr": "الحِجۡرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Rock"
+      },
+      "juz": 14,
       "ayat": [
         {
           "key": "15:1",
@@ -38254,6 +38329,11 @@
       "number": 16,
       "name": "An-Nahl",
       "nameAr": "النَّحۡلِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Bee"
+      },
+      "juz": 14,
       "ayat": [
         {
           "key": "16:1",
@@ -40695,6 +40775,11 @@
       "number": 17,
       "name": "Al-Israa",
       "nameAr": "الإِسۡرَاءِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Night Journey"
+      },
+      "juz": 15,
       "ayat": [
         {
           "key": "17:1",
@@ -42813,6 +42898,11 @@
       "number": 18,
       "name": "Al-Kahf",
       "nameAr": "الكَهۡفِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Cave"
+      },
+      "juz": 15,
       "ayat": [
         {
           "key": "18:1",
@@ -44912,6 +45002,11 @@
       "number": 19,
       "name": "Maryam",
       "nameAr": "مَرۡيَمَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Mary"
+      },
+      "juz": 16,
       "ayat": [
         {
           "key": "19:1",
@@ -46783,6 +46878,11 @@
       "number": 20,
       "name": "Taa-Haa",
       "nameAr": "طه",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Taa-Haa"
+      },
+      "juz": 16,
       "ayat": [
         {
           "key": "20:1",
@@ -49357,6 +49457,11 @@
       "number": 21,
       "name": "Al-Anbiyaa",
       "nameAr": "الأَنبِيَاءِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Prophets"
+      },
+      "juz": 17,
       "ayat": [
         {
           "key": "21:1",
@@ -51494,6 +51599,11 @@
       "number": 22,
       "name": "Al-Hajj",
       "nameAr": "الحَجِّ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Pilgrimage"
+      },
+      "juz": 17,
       "ayat": [
         {
           "key": "22:1",
@@ -52985,6 +53095,11 @@
       "number": 23,
       "name": "Al-Muminoon",
       "nameAr": "المُؤۡمِنُونَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Believers"
+      },
+      "juz": 18,
       "ayat": [
         {
           "key": "23:1",
@@ -55236,6 +55351,11 @@
       "number": 24,
       "name": "An-Noor",
       "nameAr": "النُّورِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Light"
+      },
+      "juz": 18,
       "ayat": [
         {
           "key": "24:1",
@@ -56461,6 +56581,11 @@
       "number": 25,
       "name": "Al-Furqaan",
       "nameAr": "الفُرۡقَانِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Criterion"
+      },
+      "juz": 18,
       "ayat": [
         {
           "key": "25:1",
@@ -57933,6 +58058,11 @@
       "number": 26,
       "name": "Ash-Shu'araa",
       "nameAr": "الشُّعَرَاءِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Poets"
+      },
+      "juz": 19,
       "ayat": [
         {
           "key": "26:1",
@@ -62255,6 +62385,11 @@
       "number": 27,
       "name": "An-Naml",
       "nameAr": "النَّمۡلِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Ant"
+      },
+      "juz": 19,
       "ayat": [
         {
           "key": "27:1",
@@ -64031,6 +64166,11 @@
       "number": 28,
       "name": "Al-Qasas",
       "nameAr": "القَصَصِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Stories"
+      },
+      "juz": 20,
       "ayat": [
         {
           "key": "28:1",
@@ -65712,6 +65852,11 @@
       "number": 29,
       "name": "Al-Ankaboot",
       "nameAr": "العَنكَبُوتِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Spider"
+      },
+      "juz": 20,
       "ayat": [
         {
           "key": "29:1",
@@ -67032,6 +67177,11 @@
       "number": 30,
       "name": "Ar-Room",
       "nameAr": "الرُّومِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Romans"
+      },
+      "juz": 21,
       "ayat": [
         {
           "key": "30:1",
@@ -68181,6 +68331,11 @@
       "number": 31,
       "name": "Luqman",
       "nameAr": "لُقۡمَانَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Luqman"
+      },
+      "juz": 21,
       "ayat": [
         {
           "key": "31:1",
@@ -68836,6 +68991,11 @@
       "number": 32,
       "name": "As-Sajda",
       "nameAr": "السَّجۡدَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Prostration"
+      },
+      "juz": 21,
       "ayat": [
         {
           "key": "32:1",
@@ -69415,6 +69575,11 @@
       "number": 33,
       "name": "Al-Ahzaab",
       "nameAr": "الأَحۡزَابِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Clans"
+      },
+      "juz": 21,
       "ayat": [
         {
           "key": "33:1",
@@ -70811,6 +70976,11 @@
       "number": 34,
       "name": "Saba",
       "nameAr": "سَبَإٍ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Sheba"
+      },
+      "juz": 22,
       "ayat": [
         {
           "key": "34:1",
@@ -71846,6 +72016,11 @@
       "number": 35,
       "name": "Faatir",
       "nameAr": "فَاطِرٍ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Originator"
+      },
+      "juz": 22,
       "ayat": [
         {
           "key": "35:1",
@@ -72710,6 +72885,11 @@
       "number": 36,
       "name": "Yaseen",
       "nameAr": "يسٓ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Yaseen"
+      },
+      "juz": 22,
       "ayat": [
         {
           "key": "36:1",
@@ -74296,6 +74476,11 @@
       "number": 37,
       "name": "As-Saaffaat",
       "nameAr": "الصَّافَّاتِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Those drawn up in Ranks"
+      },
+      "juz": 23,
       "ayat": [
         {
           "key": "37:1",
@@ -77763,6 +77948,11 @@
       "number": 38,
       "name": "Saad",
       "nameAr": "صٓ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The letter Saad"
+      },
+      "juz": 23,
       "ayat": [
         {
           "key": "38:1",
@@ -79444,6 +79634,11 @@
       "number": 39,
       "name": "Az-Zumar",
       "nameAr": "الزُّمَرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Groups"
+      },
+      "juz": 23,
       "ayat": [
         {
           "key": "39:1",
@@ -80878,6 +81073,11 @@
       "number": 40,
       "name": "Ghafir",
       "nameAr": "غَافِرٍ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Forgiver"
+      },
+      "juz": 24,
       "ayat": [
         {
           "key": "40:1",
@@ -82502,6 +82702,11 @@
       "number": 41,
       "name": "Fussilat",
       "nameAr": "فُصِّلَتۡ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Explained in detail"
+      },
+      "juz": 24,
       "ayat": [
         {
           "key": "41:1",
@@ -83537,6 +83742,11 @@
       "number": 42,
       "name": "Ash-Shura",
       "nameAr": "الشُّورَىٰ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Consultation"
+      },
+      "juz": 25,
       "ayat": [
         {
           "key": "42:1",
@@ -84553,6 +84763,11 @@
       "number": 43,
       "name": "Az-Zukhruf",
       "nameAr": "الزُّخۡرُفِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Ornaments of gold"
+      },
+      "juz": 25,
       "ayat": [
         {
           "key": "43:1",
@@ -86253,6 +86468,11 @@
       "number": 44,
       "name": "Ad-Dukhaan",
       "nameAr": "الدُّخَانِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Smoke"
+      },
+      "juz": 25,
       "ayat": [
         {
           "key": "44:1",
@@ -87383,6 +87603,11 @@
       "number": 45,
       "name": "Al-Jaathiya",
       "nameAr": "الجَاثِيَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Crouching"
+      },
+      "juz": 25,
       "ayat": [
         {
           "key": "45:1",
@@ -88095,6 +88320,11 @@
       "number": 46,
       "name": "Al-Ahqaf",
       "nameAr": "الأَحۡقَافِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Dunes"
+      },
+      "juz": 26,
       "ayat": [
         {
           "key": "46:1",
@@ -88769,6 +88999,11 @@
       "number": 47,
       "name": "Muhammad",
       "nameAr": "مُحَمَّدٍ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "Muhammad"
+      },
+      "juz": 26,
       "ayat": [
         {
           "key": "47:1",
@@ -89500,6 +89735,11 @@
       "number": 48,
       "name": "Al-Fath",
       "nameAr": "الفَتۡحِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Victory"
+      },
+      "juz": 26,
       "ayat": [
         {
           "key": "48:1",
@@ -90060,6 +90300,11 @@
       "number": 49,
       "name": "Al-Hujuraat",
       "nameAr": "الحُجُرَاتِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Inner Apartments"
+      },
+      "juz": 26,
       "ayat": [
         {
           "key": "49:1",
@@ -90411,6 +90656,11 @@
       "number": 50,
       "name": "Qaaf",
       "nameAr": "قٓ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The letter Qaaf"
+      },
+      "juz": 26,
       "ayat": [
         {
           "key": "50:1",
@@ -91275,6 +91525,11 @@
       "number": 51,
       "name": "Adh-Dhaariyat",
       "nameAr": "الذَّارِيَاتِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Winnowing Winds"
+      },
+      "juz": 26,
       "ayat": [
         {
           "key": "51:1",
@@ -92424,6 +92679,11 @@
       "number": 52,
       "name": "At-Tur",
       "nameAr": "الطُّورِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Mount"
+      },
+      "juz": 27,
       "ayat": [
         {
           "key": "52:1",
@@ -93364,6 +93624,11 @@
       "number": 53,
       "name": "An-Najm",
       "nameAr": "النَّجۡمِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Star"
+      },
+      "juz": 27,
       "ayat": [
         {
           "key": "53:1",
@@ -94551,6 +94816,11 @@
       "number": 54,
       "name": "Al-Qamar",
       "nameAr": "القَمَرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Moon"
+      },
+      "juz": 27,
       "ayat": [
         {
           "key": "54:1",
@@ -95605,6 +95875,11 @@
       "number": 55,
       "name": "Ar-Rahmaan",
       "nameAr": "الرَّحۡمَٰن",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Beneficent"
+      },
+      "juz": 27,
       "ayat": [
         {
           "key": "55:1",
@@ -97096,6 +97371,11 @@
       "number": 56,
       "name": "Al-Waaqia",
       "nameAr": "الوَاقِعَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Inevitable"
+      },
+      "juz": 27,
       "ayat": [
         {
           "key": "56:1",
@@ -98929,6 +99209,11 @@
       "number": 57,
       "name": "Al-Hadid",
       "nameAr": "الحَدِيدِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Iron"
+      },
+      "juz": 27,
       "ayat": [
         {
           "key": "57:1",
@@ -99489,6 +99774,11 @@
       "number": 58,
       "name": "Al-Mujaadila",
       "nameAr": "المُجَادلَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Pleading Woman"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "58:1",
@@ -99916,6 +100206,11 @@
       "number": 59,
       "name": "Al-Hashr",
       "nameAr": "الحَشۡرِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Exile"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "59:1",
@@ -100381,6 +100676,11 @@
       "number": 60,
       "name": "Al-Mumtahana",
       "nameAr": "المُمۡتَحنَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "She that is to be examined"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "60:1",
@@ -100637,6 +100937,11 @@
       "number": 61,
       "name": "As-Saff",
       "nameAr": "الصَّفِّ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Ranks"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "61:1",
@@ -100912,6 +101217,11 @@
       "number": 62,
       "name": "Al-Jumu'a",
       "nameAr": "الجُمُعَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "Friday"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "62:1",
@@ -101130,6 +101440,11 @@
       "number": 63,
       "name": "Al-Munaafiqoon",
       "nameAr": "المُنَافِقُونَ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Hypocrites"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "63:1",
@@ -101348,6 +101663,11 @@
       "number": 64,
       "name": "At-Taghaabun",
       "nameAr": "التَّغَابُنِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "Mutual Disillusion"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "64:1",
@@ -101699,6 +102019,11 @@
       "number": 65,
       "name": "At-Talaaq",
       "nameAr": "الطَّلَاقِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "Divorce"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "65:1",
@@ -101936,6 +102261,11 @@
       "number": 66,
       "name": "At-Tahrim",
       "nameAr": "التَّحۡرِيمِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Prohibition"
+      },
+      "juz": 28,
       "ayat": [
         {
           "key": "66:1",
@@ -102173,6 +102503,11 @@
       "number": 67,
       "name": "Al-Mulk",
       "nameAr": "المُلۡكِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Sovereignty"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "67:1",
@@ -102752,6 +103087,11 @@
       "number": 68,
       "name": "Al-Qalam",
       "nameAr": "القَلَمِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Pen"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "68:1",
@@ -103749,6 +104089,11 @@
       "number": 69,
       "name": "Al-Haaqqa",
       "nameAr": "الحَاقَّةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Reality"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "69:1",
@@ -104746,6 +105091,11 @@
       "number": 70,
       "name": "Al-Ma'aarij",
       "nameAr": "المَعَارِجِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Ascending Stairways"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "70:1",
@@ -105591,6 +105941,11 @@
       "number": 71,
       "name": "Nooh",
       "nameAr": "نُوحٍ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Noah"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "71:1",
@@ -106132,6 +106487,11 @@
       "number": 72,
       "name": "Al-Jinn",
       "nameAr": "الجِنِّ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Jinn"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "72:1",
@@ -106673,6 +107033,11 @@
       "number": 73,
       "name": "Al-Muzzammil",
       "nameAr": "المُزَّمِّلِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Enshrouded One"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "73:1",
@@ -107062,6 +107427,11 @@
       "number": 74,
       "name": "Al-Muddaththir",
       "nameAr": "المُدَّثِّرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Cloaked One"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "74:1",
@@ -108135,6 +108505,11 @@
       "number": 75,
       "name": "Al-Qiyaama",
       "nameAr": "القِيَامَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Resurrection"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "75:1",
@@ -108904,6 +109279,11 @@
       "number": 76,
       "name": "Al-Insaan",
       "nameAr": "الإِنسَانِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "Man"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "76:1",
@@ -109502,6 +109882,11 @@
       "number": 77,
       "name": "Al-Mursalaat",
       "nameAr": "المُرۡسَلَاتِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Emissaries"
+      },
+      "juz": 29,
       "ayat": [
         {
           "key": "77:1",
@@ -110461,6 +110846,11 @@
       "number": 78,
       "name": "An-Naba",
       "nameAr": "النَّبَإِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Announcement"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "78:1",
@@ -111230,6 +111620,11 @@
       "number": 79,
       "name": "An-Naazi'aat",
       "nameAr": "النَّازِعَاتِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Those who drag forth"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "79:1",
@@ -112113,6 +112508,11 @@
       "number": 80,
       "name": "Abasa",
       "nameAr": "عَبَسَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "He frowned"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "80:1",
@@ -112920,6 +113320,11 @@
       "number": 81,
       "name": "At-Takwir",
       "nameAr": "التَّكۡوِيرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Overthrowing"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "81:1",
@@ -113480,6 +113885,11 @@
       "number": 82,
       "name": "Al-Infitaar",
       "nameAr": "الانفِطَارِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Cleaving"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "82:1",
@@ -113850,6 +114260,11 @@
       "number": 83,
       "name": "Al-Mutaffifin",
       "nameAr": "المُطَفِّفِينَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Defrauding"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "83:1",
@@ -114543,6 +114958,11 @@
       "number": 84,
       "name": "Al-Inshiqaaq",
       "nameAr": "الانشِقَاقِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Splitting Open"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "84:1",
@@ -115027,6 +115447,11 @@
       "number": 85,
       "name": "Al-Burooj",
       "nameAr": "البُرُوجِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Constellations"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "85:1",
@@ -115454,6 +115879,11 @@
       "number": 86,
       "name": "At-Taariq",
       "nameAr": "الطَّارِقِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Morning Star"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "86:1",
@@ -115786,6 +116216,11 @@
       "number": 87,
       "name": "Al-A'laa",
       "nameAr": "الأَعۡلَىٰ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Most High"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "87:1",
@@ -116156,6 +116591,11 @@
       "number": 88,
       "name": "Al-Ghaashiya",
       "nameAr": "الغَاشِيَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Overwhelming"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "88:1",
@@ -116659,6 +117099,11 @@
       "number": 89,
       "name": "Al-Fajr",
       "nameAr": "الفَجۡرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Dawn"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "89:1",
@@ -117238,6 +117683,11 @@
       "number": 90,
       "name": "Al-Balad",
       "nameAr": "البَلَدِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The City"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "90:1",
@@ -117627,6 +118077,11 @@
       "number": 91,
       "name": "Ash-Shams",
       "nameAr": "الشَّمۡسِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Sun"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "91:1",
@@ -117921,6 +118376,11 @@
       "number": 92,
       "name": "Al-Lail",
       "nameAr": "اللَّيۡلِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Night"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "92:1",
@@ -118329,6 +118789,11 @@
       "number": 93,
       "name": "Ad-Dhuhaa",
       "nameAr": "الضُّحَىٰ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Morning Hours"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "93:1",
@@ -118547,6 +119012,11 @@
       "number": 94,
       "name": "Ash-Sharh",
       "nameAr": "الشَّرۡحِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Consolation"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "94:1",
@@ -118708,6 +119178,11 @@
       "number": 95,
       "name": "At-Tin",
       "nameAr": "التِّينِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Fig"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "95:1",
@@ -118869,6 +119344,11 @@
       "number": 96,
       "name": "Al-Alaq",
       "nameAr": "العَلَقِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Clot"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "96:1",
@@ -119239,6 +119719,11 @@
       "number": 97,
       "name": "Al-Qadr",
       "nameAr": "القَدۡرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Power, Fate"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "97:1",
@@ -119343,6 +119828,11 @@
       "number": 98,
       "name": "Al-Bayyina",
       "nameAr": "البَيِّنَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Evidence"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "98:1",
@@ -119504,6 +119994,11 @@
       "number": 99,
       "name": "Az-Zalzala",
       "nameAr": "الزَّلۡزَلَةِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "The Earthquake"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "99:1",
@@ -119665,6 +120160,11 @@
       "number": 100,
       "name": "Al-Aadiyaat",
       "nameAr": "العَادِيَاتِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Chargers"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "100:1",
@@ -119883,6 +120383,11 @@
       "number": 101,
       "name": "Al-Qaari'a",
       "nameAr": "القَارِعَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Calamity"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "101:1",
@@ -120101,6 +120606,11 @@
       "number": 102,
       "name": "At-Takaathur",
       "nameAr": "التَّكَاثُرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Competition"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "102:1",
@@ -120262,6 +120772,11 @@
       "number": 103,
       "name": "Al-Asr",
       "nameAr": "العَصۡرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Declining Day, Epoch"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "103:1",
@@ -120328,6 +120843,11 @@
       "number": 104,
       "name": "Al-Humaza",
       "nameAr": "الهُمَزَةِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Traducer"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "104:1",
@@ -120508,6 +121028,11 @@
       "number": 105,
       "name": "Al-Fil",
       "nameAr": "الفِيلِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Elephant"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "105:1",
@@ -120612,6 +121137,11 @@
       "number": 106,
       "name": "Quraish",
       "nameAr": "قُرَيۡشٍ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Quraysh"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "106:1",
@@ -120697,6 +121227,11 @@
       "number": 107,
       "name": "Al-Maa'un",
       "nameAr": "المَاعُونِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Almsgiving"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "107:1",
@@ -120839,6 +121374,11 @@
       "number": 108,
       "name": "Al-Kawthar",
       "nameAr": "الكَوۡثَرِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Abundance"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "108:1",
@@ -120905,6 +121445,11 @@
       "number": 109,
       "name": "Al-Kaafiroon",
       "nameAr": "الكَافِرُونَ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Disbelievers"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "109:1",
@@ -121028,6 +121573,11 @@
       "number": 110,
       "name": "An-Nasr",
       "nameAr": "النَّصۡرِ",
+      "revelation": "medinan",
+      "nameMeaning": {
+        "en": "Divine Support"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "110:1",
@@ -121094,6 +121644,11 @@
       "number": 111,
       "name": "Al-Masad",
       "nameAr": "المَسَدِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Palm Fibre"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "111:1",
@@ -121198,6 +121753,11 @@
       "number": 112,
       "name": "Al-Ikhlaas",
       "nameAr": "الإِخۡلَاصِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Sincerity"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "112:1",
@@ -121283,6 +121843,11 @@
       "number": 113,
       "name": "Al-Falaq",
       "nameAr": "الفَلَقِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "The Dawn"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "113:1",
@@ -121387,6 +121952,11 @@
       "number": 114,
       "name": "An-Naas",
       "nameAr": "النَّاسِ",
+      "revelation": "meccan",
+      "nameMeaning": {
+        "en": "Mankind"
+      },
+      "juz": 30,
       "ayat": [
         {
           "key": "114:1",

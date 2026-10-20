@@ -16,7 +16,7 @@ ContentBundle tinyBook() {
   final j = {
     'bundleVersion': 't',
     'languages': ['en'],
-    'sources': {},
+    'sources': <String, dynamic>{},
     'mushaf': {
       'layout': 'test',
       'pages': 2,
@@ -30,8 +30,8 @@ ContentBundle tinyBook() {
       {'id': 'surah-1', 'number': 1, 'name': 'One', 'nameAr': 'و', 'ayat': [ayah(1, 1, 1, 'ا ب ت', '1.2.3'), ayah(1, 2, 2, 'ث ج ح خ', '1.2.1 1.3.3')]},
       {'id': 'surah-2', 'number': 2, 'name': 'Two', 'nameAr': 'ث', 'ayat': [ayah(2, 1, 3, 'د ذ', '2.3.2')]},
     ],
-    'hadith': [],
-    'duas': [],
+    'hadith': <dynamic>[],
+    'duas': <dynamic>[],
   };
   return ContentBundle.fromJson(j);
 }
@@ -89,10 +89,10 @@ void main() {
     final b = ContentBundle.fromJson({
       'bundleVersion': 't',
       'languages': ['en'],
-      'sources': {},
-      'surahs': [],
-      'hadith': [],
-      'duas': [],
+      'sources': <String, dynamic>{},
+      'surahs': <dynamic>[],
+      'hadith': <dynamic>[],
+      'duas': <dynamic>[],
       'shelves': [
         {
           'id': 'manners',
@@ -137,7 +137,7 @@ void main() {
 
   test('surah facts are read, and unknown values are dropped', () {
     Surah parse(Map<String, Object?> extra) => Surah.fromJson({
-          'id': 'surah-36', 'number': 36, 'name': 'Yaseen', 'nameAr': 'يس', 'ayat': [],
+          'id': 'surah-36', 'number': 36, 'name': 'Yaseen', 'nameAr': 'يس', 'ayat': <dynamic>[],
           ...extra,
         });
     final s = parse({'revelation': 'meccan', 'nameMeaning': {'en': 'Yaseen', 'so': 7}, 'juz': 22});

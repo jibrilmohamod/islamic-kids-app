@@ -6,8 +6,10 @@ import '../theme.dart';
 import '../widgets.dart';
 import 'now_playing.dart';
 
-Future<T?> go<T>(BuildContext context, Widget page) =>
-    Navigator.of(context).push<T>(MaterialPageRoute(builder: (_) => page));
+/// Opens [page] on top of the current one. No screen returns a result, so
+/// the route is typed `void` (strict-inference, audit A5).
+Future<void> go(BuildContext context, Widget page) =>
+    Navigator.of(context).push<void>(MaterialPageRoute<void>(builder: (_) => page));
 
 /// Page frame (canvas row G): a striped hero band with the title, then the
 /// body on dotted paper.

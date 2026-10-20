@@ -19,12 +19,12 @@ String bundle(String version, {int schema = 1, String? audioUrl}) => jsonEncode(
           'name': 'Test',
           'nameAr': 'T',
           'ayat': [
-            {'key': '1:1', 'aya': 1, 'arabic': 'A', 'meaning': {}},
+            {'key': '1:1', 'aya': 1, 'arabic': 'A', 'meaning': <String, dynamic>{}},
           ],
         },
       ],
-      'hadith': [],
-      'duas': [],
+      'hadith': <dynamic>[],
+      'duas': <dynamic>[],
     });
 
 String manifest(String version, String body, {int schema = 1, int? size, String? hash}) => jsonEncode({

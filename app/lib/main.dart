@@ -49,7 +49,7 @@ class KidsApp extends StatelessWidget {
               // Its own hero scope: two navigators may not share the app's
               // HeroController (Flutter asserts, found by flows_test).
               child: HeroControllerScope.none(
-                child: Navigator(onGenerateRoute: (_) => MaterialPageRoute(builder: (_) => const BreakScreen())),
+                child: Navigator(onGenerateRoute: (_) => MaterialPageRoute<void>(builder: (_) => const BreakScreen())),
               ),
             ),
         ],

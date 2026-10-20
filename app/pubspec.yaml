@@ -20,9 +20,11 @@ dependencies:
   path_provider: ^2.1.0
   shared_preferences: ^2.5.0
 
+# very_good_analysis 11.0.0: Very Good Ventures, Sep 2026 (lint rules only).
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  very_good_analysis: ^11.0.0
 
 flutter:
   uses-material-design: true

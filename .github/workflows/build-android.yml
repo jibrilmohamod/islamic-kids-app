@@ -210,7 +210,10 @@ jobs:
           aapt2=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -n 1)
           perms=$("$aapt2" dump permissions build/app/outputs/flutter-apk/app-release.apk | sed -n "s/.*name='\([^']*\)'.*/\1/p" | sort -u)
           echo "::notice title=APK permissions::$(echo "$perms" | tr '\n' ' ')"
-          allowed='^(android\.permission\.(INTERNET|WAKE_LOCK|FOREGROUND_SERVICE|FOREGROUND_SERVICE_MEDIA_PLAYBACK|POST_NOTIFICATIONS)|com\.jibrilmohamod\.islamic_kids_app\.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION)$'
+          # ACCESS_NETWORK_STATE comes from a plugin (most likely just_audio's
+          # player): a normal, install-time permission to see if there is a
+          # connection. Reviewed 2026-10-20.
+          allowed='^(android\.permission\.(INTERNET|ACCESS_NETWORK_STATE|WAKE_LOCK|FOREGROUND_SERVICE|FOREGROUND_SERVICE_MEDIA_PLAYBACK|POST_NOTIFICATIONS)|com\.jibrilmohamod\.islamic_kids_app\.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION)$'
           extra=$(echo "$perms" | grep -vE "$allowed" || true)
           if [ -n "$extra" ]; then
             echo "::warning title=Unreviewed permission::$(echo "$extra" | tr '\n' ' ')"

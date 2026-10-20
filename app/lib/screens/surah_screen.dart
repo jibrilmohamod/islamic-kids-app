@@ -309,11 +309,12 @@ class _Facts extends StatelessWidget {
   Widget build(BuildContext context) {
     final lang = AppScope.of(context).lang;
     final meaning = surah.nameMeaning[lang] ?? surah.nameMeaning['en'];
+    final juz = surah.juz;
     final facts = [
       if (surah.revelation != null) (tr(surah.revelation!, lang), surah.revelation == 'meccan' ? Pop.lemon : Pop.cyan),
       if (meaning != null) (tr('meaningOfName', lang, {'m': meaning}), Colors.white),
-      if (surah.juz != null) (tr('juzN', lang, {'n': surah.juz}), Pop.pink),
-      if (page != null) (tr('pageN', lang, {'n': page}), Colors.white),
+      if (juz != null) (tr('juzN', lang, {'n': juz}), Pop.pink),
+      if (page != null) (tr('pageN', lang, {'n': page!}), Colors.white),
     ];
     if (facts.isEmpty) return const SizedBox.shrink();
     return Wrap(

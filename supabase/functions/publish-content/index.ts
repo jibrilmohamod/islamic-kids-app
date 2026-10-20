@@ -9,7 +9,7 @@
 //   v1/bundles/<sha256>.json   immutable, cached for a year
 //   v1/manifest.json           points at the current bundle, cached 60 s
 import { createRemoteJWKSet, jwtVerify } from "npm:jose@5.9.6";
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient } from "npm:@supabase/supabase-js@2.117.2";
 
 const ISSUER = "https://token.actions.githubusercontent.com";
 const AUDIENCE = "islamic-kids-app-publish";

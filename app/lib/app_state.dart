@@ -149,25 +149,18 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
     final current = bundle;
     if (current != null) {
-      _migrateLegacy(current);
+      migrateLegacyGames(current);
       final info = current.audio;
       if (info != null) {
         final files = AudioService(info: info, baseDir: support);
-        audio = files;
-        final rec = recitation = Recitation(
-          files: files,
-          player: JustAudioRecitationPlayer(),
-          beforeFirstStart: media == null ? null : _askNotifications,
+        attachRecitation(
+          files,
+          Recitation(
+            files: files,
+            player: JustAudioRecitationPlayer(),
+            beforeFirstStart: media == null ? null : _askNotifications,
+          ),
         );
-        rec.addListener(() {
-          final s = rec.surah;
-          if (s != null) recordHistory(HistoryKind.listen, s.number, rec.index);
-        });
-        final m = media;
-        if (m != null) {
-          m.ayahLabel = (n, total) => tr('ayahOf', lang, {'n': n, 'total': total});
-          m.attach(recitation!);
-        }
       }
       unawaited(store.checkForUpdate(current.version));
     }
@@ -225,7 +218,25 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   }
 
   /// v0.1 saved finished games as "order-surah-N"; those count as all rounds.
-  void _migrateLegacy(ContentBundle b) {
+  /// Wires recitation into the app: listening history, and the Android
+  /// notification when there is one. Tests call it with a fake player.
+  void attachRecitation(AudioService files, Recitation rec) {
+    audio = files;
+    recitation = rec;
+    rec.addListener(() {
+      final s = rec.surah;
+      if (s != null) recordHistory(HistoryKind.listen, s.number, rec.index);
+    });
+    final m = media;
+    if (m != null) {
+      m.ayahLabel = (n, total) => tr('ayahOf', lang, {'n': n, 'total': total});
+      m.attach(rec);
+    }
+  }
+
+  /// Turns v0.1's finished games ("order-surah-N", carried over by the
+  /// store) into every round of that surah, once.
+  void migrateLegacyGames(ContentBundle b) {
     final legacy = _store?.state.legacyCompleted ?? const <String>[];
     if (legacy.isEmpty) return;
     for (final id in legacy) {

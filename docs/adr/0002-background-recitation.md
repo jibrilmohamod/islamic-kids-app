@@ -42,5 +42,10 @@ Jibril asked for recitation to keep playing when the child leaves the app. With 
   - `MainActivity` extends `AudioServiceActivity`.
   - Google Play asks apps that declare a media-playback foreground service to say what it is for. Here it is Quran recitation the child started.
 - **Screen time.** The parent's daily limit counts time with the app open. The ticker already stops when the app is backgrounded, so listening with the screen off does not count. When the limit is reached in the app, the break screen covers it, and recitation keeps playing. **Open for Jibril:** should the break screen also stop recitation?
+- **Notification permission (added 2026-10-20).**
+  - Android's docs say media-session notifications are exempt from Android 13's notification permission ([developer.android.com](https://developer.android.com/develop/ui/views/notifications/notification-permission)). On Jibril's Galaxy A06, though, the controls did not appear in the pull-down shade.
+  - So the app now declares `POST_NOTIFICATIONS` and asks once, the first time a child starts recitation.
+  - The parent screen shows whether the controls are on, why not if they are off, and a button to the app's settings.
+  - If the media service fails to start, its error is shown there too instead of being swallowed.
 - **Not covered by CI.** CI cannot prove the notification, lock-screen controls or real audio focus. Those need checking on the A06: play, leave the app, lock the phone, use the notification buttons, take a call.
 - **Notification icon.** The notification uses the launcher icon. A one-colour notification icon belongs in the design pass (#35).

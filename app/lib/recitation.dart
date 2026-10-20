@@ -44,7 +44,12 @@ class Recitation extends ChangeNotifier {
   /// How many ayat to have saved and queued ahead of the one playing.
   static const ahead = 3;
 
-  Recitation({required this.files, required this.player}) {
+  /// Runs once, before the first recitation starts (asks for the
+  /// notification permission on the phone).
+  final Future<void> Function()? beforeFirstStart;
+  bool _askedFirst = false;
+
+  Recitation({required this.files, required this.player, this.beforeFirstStart}) {
     _subs = [
       player.indexStream.listen(_onIndex),
       player.playingStream.listen((p) {
@@ -92,6 +97,10 @@ class Recitation extends ChangeNotifier {
   /// ayah; otherwise it stops after this one. Throws if the first ayah
   /// cannot be fetched.
   Future<void> start(Surah s, int from, {bool toEnd = true}) async {
+    if (!_askedFirst) {
+      _askedFirst = true;
+      await beforeFirstStart?.call();
+    }
     final session = ++_session;
     _room?.complete(); // release the previous run's prefetch loop
     _room = null;

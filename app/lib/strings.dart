@@ -149,6 +149,12 @@ const Map<String, Map<String, String>> _strings = {
   'hadithSubtitle': {'en': 'Words of our Prophet ﷺ, shelf by shelf', 'so': 'Erayada Nabigeenna ﷺ, khaanad khaanad'},
   'shortHadithTitle': {'en': 'Short hadith', 'so': 'Xadiisyo gaagaaban'},
   'shortHadithSub': {'en': '{n} to learn by heart, line by line', 'so': '{n} lagu xifdiyo, sadar sadar'},
+  'controlsTitle': {'en': 'Recitation controls', 'so': 'Xakamaynta tilaawada'},
+  'controlsOn': {'en': 'On: pull down from the top of the screen to pause or stop.', 'so': 'Shidan: hoos u jiid si aad u hakiso ama u joojiso.'},
+  'controlsNoPermission': {'en': 'Off: notifications are not allowed for this app.', 'so': 'Dansan: ogeysiisyada looma oggola app-kan.'},
+  'controlsNotAsked': {'en': 'Not set up yet: play a surah once to be asked.', 'so': 'Weli lama dejin: hal mar suurad shid.'},
+  'controlsBroken': {'en': 'Off: the phone did not start them ({reason}).', 'so': 'Dansan: taleefanku ma bilaabin ({reason}).'},
+  'allowNotifications': {'en': 'Allow notifications', 'so': 'Oggolow ogeysiisyada'},
   'ayahOf': {'en': 'Ayah {n} of {total}', 'so': 'Aayadda {n} ee {total}'},
   'nowPlaying': {'en': 'Playing ayah {n}', 'so': 'Waxaa socda aayadda {n}'},
   'noDownloads': {

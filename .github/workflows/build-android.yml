@@ -173,6 +173,21 @@ jobs:
         working-directory: app
         run: flutter build apk --release
 
+      # Plugins can add permissions at build time. List what the finished APK
+      # asks for, and flag anything not on the reviewed list (audit P1).
+      - name: Check the APK's permissions
+        working-directory: app
+        continue-on-error: true
+        run: |
+          aapt2=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -n 1)
+          perms=$("$aapt2" dump permissions build/app/outputs/flutter-apk/app-release.apk | sed -n "s/.*name='\([^']*\)'.*/\1/p" | sort -u)
+          echo "::notice title=APK permissions::$(echo "$perms" | tr '\n' ' ')"
+          allowed='^(android\.permission\.(INTERNET|WAKE_LOCK|FOREGROUND_SERVICE|FOREGROUND_SERVICE_MEDIA_PLAYBACK|POST_NOTIFICATIONS)|com\.jibrilmohamod\.islamic_kids_app\.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION)$'
+          extra=$(echo "$perms" | grep -vE "$allowed" || true)
+          if [ -n "$extra" ]; then
+            echo "::warning title=Unreviewed permission::$(echo "$extra" | tr '\n' ' ')"
+          fi
+
       - name: Build app bundle for Google Play
         if: steps.signing.outputs.signed == 'true'
         working-directory: app

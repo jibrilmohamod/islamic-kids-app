@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:audio_service/audio_service.dart' as bg;
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:just_audio/just_audio.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'recitation.dart';
 
@@ -103,11 +104,12 @@ class RecitationHandler extends bg.BaseAudioHandler {
   Future<void> skipToPrevious() async => _r?.previous();
 }
 
-/// Starts the Android media service. Call once, before runApp. Returns
-/// null if the platform has no media service (tests, desktop).
-Future<RecitationHandler?> startMediaService() async {
+/// Starts the Android media service. Call once, before runApp. Returns the
+/// handler, or null and the reason when the platform has no media service
+/// (tests, desktop) or it failed to start. The reason is shown to parents.
+Future<(RecitationHandler?, String?)> startMediaService() async {
   try {
-    return await bg.AudioService.init(
+    final handler = await bg.AudioService.init(
       builder: RecitationHandler.new,
       config: const bg.AudioServiceConfig(
         androidNotificationChannelId: 'com.jibrilmohamod.islamic_kids_app.recitation',
@@ -117,8 +119,30 @@ Future<RecitationHandler?> startMediaService() async {
         androidStopForegroundOnPause: false,
       ),
     );
+    return (handler, null);
   } catch (e) {
     debugPrint('Media service unavailable, recitation stops with the app: $e');
-    return null;
+    return (null, '$e');
   }
 }
+
+/// Asks once for Android 13+'s notification permission, so the recitation
+/// controls show in the pull-down shade. Android exempts media-session
+/// notifications, but phones differ in how they apply that, so we ask.
+/// Returns whether notifications are allowed.
+/// With [ask] false it only reads the current setting.
+Future<bool> askNotificationPermission({bool ask = true}) async {
+  try {
+    final status = await Permission.notification.status;
+    if (status.isGranted) return true;
+    if (!ask || status.isPermanentlyDenied || status.isRestricted) return false;
+    return (await Permission.notification.request()).isGranted;
+  } catch (e) {
+    debugPrint('Notification permission check failed: $e');
+    return false;
+  }
+}
+
+/// Opens the app's system settings, where a parent can allow notifications
+/// after saying no to the dialog.
+Future<bool> openNotificationSettings() => openAppSettings();

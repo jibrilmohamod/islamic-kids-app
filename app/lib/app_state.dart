@@ -47,6 +47,26 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   /// Android media notification, set by main() before load().
   RecitationHandler? media;
+
+  /// Why the media notification could not start, for the parent screen.
+  String? mediaError;
+
+  /// Whether the phone lets the app show notifications; null until asked.
+  bool? notificationsAllowed;
+
+  Future<void> _askNotifications() async {
+    notificationsAllowed = await askNotificationPermission();
+    notifyListeners();
+  }
+
+  /// Re-reads the permission (a parent may have changed it in settings).
+  Future<void> refreshNotifications() async {
+    if (notificationsAllowed == null || media == null) return;
+    final now = await askNotificationPermission(ask: false);
+    if (now == notificationsAllowed) return;
+    notificationsAllowed = now;
+    notifyListeners();
+  }
   Activity activity = Activity();
   LocalStore? _store;
   Timer? _ticker;
@@ -131,7 +151,11 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
       if (info != null) {
         final files = AudioService(info: info, baseDir: support);
         audio = files;
-        final rec = recitation = Recitation(files: files, player: JustAudioRecitationPlayer());
+        final rec = recitation = Recitation(
+          files: files,
+          player: JustAudioRecitationPlayer(),
+          beforeFirstStart: media == null ? null : _askNotifications,
+        );
         rec.addListener(() {
           final s = rec.surah;
           if (s != null) recordHistory(HistoryKind.listen, s.number, rec.index);
@@ -165,6 +189,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
       _startTicker();
+      unawaited(refreshNotifications());
       notifyListeners();
     } else {
       _ticker?.cancel();

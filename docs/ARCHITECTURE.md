@@ -113,6 +113,12 @@ changes, so every text change is a reviewable commit.
 - Numbering: Bukhari by the Fath al-Bari numbers, Muslim by Muhammad Fu'ad
   Abd al-Baqi's, the same as sunnah.com's main reference (spot-checked).
 
+### Surah facts (#28)
+- **Fields:** each surah carries `revelation` ('meccan' or 'medinan'), `nameMeaning` (English) and `juz`.
+- **Source:** all three come from AlQuran.cloud: `/v1/surah` for the first two, and `/v1/meta` juz starts for `juz`. AlQuran.cloud is the same source the pipeline already uses for the surah list.
+- **Display:** the surah screen shows them as stickers, with the first mushaf page from the book.
+- **Not yet:** revelation order and virtues wait for a citable source (#29).
+
 ### Recitation audio
 - **Ownership.** One `Recitation` object in `AppState` owns playback. Screens start it and show its state, but they don't stop it when they close.
 - **Playback.** Ayat play as one gapless just_audio playlist, fetched and saved up to 3 ayat ahead.

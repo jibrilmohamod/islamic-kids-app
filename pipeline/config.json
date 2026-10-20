@@ -11,6 +11,7 @@
   },
   "surahs": "all",
   "surahMetaUrl": "https://api.alquran.cloud/v1/surah",
+  "quranMetaUrl": "https://api.alquran.cloud/v1/meta",
   "audio": {
     "edition": "ar.alafasy",
     "bitrates": [

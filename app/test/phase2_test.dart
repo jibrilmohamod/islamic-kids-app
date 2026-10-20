@@ -134,4 +134,19 @@ void main() {
     // Pages after the opening two use 15 lines.
     expect(book.page(3).lines.length, 15);
   });
+
+  test('surah facts are read, and unknown values are dropped', () {
+    Surah parse(Map<String, Object?> extra) => Surah.fromJson({
+          'id': 'surah-36', 'number': 36, 'name': 'Yaseen', 'nameAr': 'يس', 'ayat': [],
+          ...extra,
+        });
+    final s = parse({'revelation': 'meccan', 'nameMeaning': {'en': 'Yaseen', 'so': 7}, 'juz': 22});
+    expect(s.revelation, 'meccan');
+    expect(s.nameMeaning, {'en': 'Yaseen'});
+    expect(s.juz, 22);
+    final odd = parse({'revelation': 'elsewhere', 'juz': '22'});
+    expect(odd.revelation, isNull);
+    expect(odd.juz, isNull);
+    expect(parse({}).nameMeaning, isEmpty);
+  });
 }

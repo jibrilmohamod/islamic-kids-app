@@ -8,7 +8,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   QURANENC, HADEETHENC, extractList, findTranslationMeta, buildSurah,
-  hasAllLanguages, buildHadith, buildQuranDua, validateBundle, surahConfigsFromMeta,
+  hasAllLanguages, buildHadith, buildQuranDua, validateBundle, surahConfigsFromMeta, juzOfSurahs,
   attachMushaf, normalizeArabic, trigrams, hadithQuote, namedCollections, bestMatches,
   decideRef, needsAdultReview,
 } from './lib.mjs';
@@ -75,6 +75,10 @@ export async function build(config, get = fetchJson, log = console.log, head = h
   const surahCfgs = config.surahs === 'all'
     ? surahConfigsFromMeta(await get(config.surahMetaUrl))
     : config.surahs;
+  if (config.quranMetaUrl) {
+    const juz = juzOfSurahs(await get(config.quranMetaUrl));
+    for (const s of surahCfgs) s.juz = juz[s.number];
+  }
   const surahs = [];
   for (const s of surahCfgs) {
     const rowsByLang = {};

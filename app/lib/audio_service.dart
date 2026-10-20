@@ -92,6 +92,10 @@ class AudioService {
 
 }
 
+/// Largest recitation file accepted (audit S5). The longest ayah at 64 kbps
+/// is about 1.5 MB.
+const maxAyahBytes = 5 * 1024 * 1024;
+
 /// Downloads to a temp file and renames it, so a cut connection never
 /// leaves a broken mp3 that looks saved.
 Future<void> downloadFile(Uri url, File target) async {
@@ -101,8 +105,19 @@ Future<void> downloadFile(Uri url, File target) async {
     final req = await client.getUrl(url);
     final res = await req.close().timeout(const Duration(seconds: 30));
     if (res.statusCode != 200) throw HttpException('HTTP ${res.statusCode}', uri: url);
+    if (res.contentLength > maxAyahBytes) throw HttpException('too large', uri: url);
     final sink = tmp.openWrite();
-    await res.pipe(sink).timeout(const Duration(minutes: 2));
+    var written = 0;
+    try {
+      await for (final chunk in res.timeout(const Duration(minutes: 2))) {
+        written += chunk.length;
+        // An ayah at 64 kbps is well under 5 MB; anything bigger is wrong.
+        if (written > maxAyahBytes) throw HttpException('too large', uri: url);
+        sink.add(chunk);
+      }
+    } finally {
+      await sink.close();
+    }
     await tmp.rename(target.path);
   } finally {
     client.close();

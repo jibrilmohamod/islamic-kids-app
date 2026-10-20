@@ -55,7 +55,7 @@ class ParentScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 6),
-          Text(tr('usedToday', lang, {'n': state.activity.minutesToday(DateTime.now())}),
+          Text(tr('usedToday', lang, {'n': state.activity.minutesToday(state.now())}),
               style: const TextStyle(fontSize: 14, color: Pop.muted)),
           const SizedBox(height: 24),
           if (state.audio != null) ...[

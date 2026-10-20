@@ -56,7 +56,7 @@ class DuasScreen extends StatelessWidget {
     final state = AppScope.of(context);
     final lang = state.lang;
     final duas = state.bundle!.duas;
-    final nowId = currentStopId(DateTime.now());
+    final nowId = currentStopId(state.now());
     List<Dua> of(String moment) => duas.where((d) => d.moment == moment).toList();
     final stops = dayStops.where((s) => of(s.moment).isNotEmpty).toList();
     final anytime = of(anytimeStop.moment);

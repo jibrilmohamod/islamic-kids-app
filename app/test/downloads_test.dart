@@ -106,14 +106,14 @@ void main() {
       of: find.ancestor(of: find.text(ikhlas.name), matching: find.byType(Row)).first,
       matching: find.byTooltip('Remove saved audio'),
     );
-    await tester.tap(removeIkhlas);
-    await tester.pumpAndSettle();
+    // Opened on the real clock: the delete that follows the dialog is file work.
+    await real(tester, () => tester.tap(removeIkhlas));
     expect(find.text('Remove the saved audio for ${ikhlas.name}?'), findsOneWidget);
     await real(tester, () => tester.tap(find.text('Cancel')));
     expect(find.text(ikhlas.name), findsOneWidget);
 
-    await tester.tap(removeIkhlas);
-    await tester.pumpAndSettle();
+    // Opened on the real clock: the delete that follows the dialog is file work.
+    await real(tester, () => tester.tap(removeIkhlas));
     await real(tester, () => tester.tap(find.widgetWithText(TextButton, 'Remove saved audio')));
     expect(find.text(ikhlas.name), findsNothing);
     final left = (await tester.runAsync(audio.savedFiles))!;

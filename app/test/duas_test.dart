@@ -96,6 +96,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Morning, 2 of ${morning.length}'), findsOneWidget);
     expect(find.byType(MemoriseView), findsNothing);
+    await tester.scrollUntilVisible(find.text('Previous'), 300);
     expect(find.text('Previous'), findsOneWidget);
 
     // The heart keeps this dua on My shelf.

@@ -8,11 +8,13 @@ environment:
 
 # path_provider and shared_preferences: flutter.dev. just_audio 0.10.6 and
 # audio_service 0.18.19: ryanheise.com, both released June 2026 (ADR 0002).
+# crypto 3.0.7: dart.dev, for the content bundle's SHA-256 check.
 # Check maintenance and licence before adding anything else.
 dependencies:
   flutter:
     sdk: flutter
   audio_service: ^0.18.19
+  crypto: ^3.0.7
   flutter_svg: ^2.3.0
   just_audio: ^0.10.6
   path_provider: ^2.1.0

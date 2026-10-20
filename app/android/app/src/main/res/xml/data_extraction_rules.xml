@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12 and newer. Same as backup_rules.xml: progress, bookmarks and
+     settings only; recitation audio and the content cache stay out, so the
+     backup stays under Android's size limit (audit P2). -->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="file" path="store/"/>
+        <include domain="sharedpref" path="."/>
+    </cloud-backup>
+    <device-transfer>
+        <include domain="file" path="store/"/>
+        <include domain="sharedpref" path="."/>
+    </device-transfer>
+</data-extraction-rules>

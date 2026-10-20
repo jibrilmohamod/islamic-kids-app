@@ -126,7 +126,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
         minutesByDay: {...saved.minutesByDay},
         extraByDay: {...saved.extraByDay},
         dailyLimit: saved.dailyLimit,
-      )..prune(DateTime.now());
+      )..prune(now());
       lastPage = saved.lastPage;
       homeIntroDay = saved.homeIntroDay;
     } catch (e) {
@@ -139,7 +139,10 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
       cacheDir: () async => Directory('${(await support()).path}/content'),
     );
     try {
-      bundle = await store.loadBest();
+      final loaded = await store.loadBest();
+      bundle = loaded.bundle;
+      _bookFor = loaded.bundle;
+      _book = loaded.book;
     } catch (e) {
       error = e.toString();
     }

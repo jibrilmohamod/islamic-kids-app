@@ -301,7 +301,7 @@ class _DonePanel extends StatelessWidget {
             label: tr('nextRound', lang),
             icon: Icons.arrow_forward_rounded,
             onPressed: () => Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => OrderGameScreen(surah: surah, round: nextRound!)),
+              MaterialPageRoute<void>(builder: (_) => OrderGameScreen(surah: surah, round: nextRound!)),
             ),
           ),
           const SizedBox(height: 14),

@@ -42,13 +42,18 @@ void main() {
   setUp(() => dir = Directory.systemTemp.createTempSync('downloads_test'));
   tearDown(() => dir.deleteSync(recursive: true));
 
-  /// Lets real file work finish, then the frames that follow it. Uses plain
-  /// pumps: the loading spinner never settles.
-  Future<void> settle(WidgetTester tester) async {
-    for (var i = 0; i < 4; i++) {
-      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 50)));
-      await tester.pump(const Duration(milliseconds: 300));
-    }
+  /// Runs [action] on the real clock, so the page's file work (started by
+  /// it) can finish, then draws the result. The fake test clock would leave
+  /// that work waiting forever, and the loading spinner never settles.
+  Future<void> real(WidgetTester tester, Future<void> Function() action) async {
+    await tester.runAsync(() async {
+      await action();
+      for (var i = 0; i < 10; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 30));
+        await tester.pump();
+      }
+    });
+    await tester.pump();
   }
 
   testWidgets('nothing saved says so', (tester) async {
@@ -56,8 +61,7 @@ void main() {
     final (state, s) = await testState(tester, dir);
     store = s;
     state.audio = AudioService(info: state.bundle!.audio!, baseDir: () async => dir);
-    await tester.pumpWidget(testApp(state, const DownloadsScreen()));
-    await settle(tester);
+    await real(tester, () => tester.pumpWidget(testApp(state, const DownloadsScreen())));
     expect(find.byIcon(Icons.download_for_offline_outlined), findsOneWidget);
     await tester.runAsync(store.flush);
   });
@@ -85,15 +89,13 @@ void main() {
       await (await audio.fileFor(falaq.ayat.first)).writeAsBytes(List.filled(100, 1));
     });
 
-    await tester.pumpWidget(testApp(state, const DownloadsScreen()));
-    await settle(tester);
+    await real(tester, () => tester.pumpWidget(testApp(state, const DownloadsScreen())));
     expect(find.text(ikhlas.name), findsOneWidget);
     expect(find.text('1 of ${falaq.ayat.length} ayat saved'), findsOneWidget);
     expect(find.text('2 surahs, 0.0 MB on this phone'), findsOneWidget);
 
     // Save the rest downloads only the missing ayat.
-    await tester.tap(find.byTooltip('Save the rest'));
-    await settle(tester);
+    await real(tester, () => tester.tap(find.byTooltip('Save the rest')));
     expect(fetched, hasLength(falaq.ayat.length - 1));
     expect(find.text('1 of ${falaq.ayat.length} ayat saved'), findsNothing);
     expect(find.byTooltip('Save the rest'), findsNothing);
@@ -107,14 +109,12 @@ void main() {
     await tester.tap(removeIkhlas);
     await tester.pumpAndSettle();
     expect(find.text('Remove the saved audio for ${ikhlas.name}?'), findsOneWidget);
-    await tester.tap(find.text('Cancel'));
-    await settle(tester);
+    await real(tester, () => tester.tap(find.text('Cancel')));
     expect(find.text(ikhlas.name), findsOneWidget);
 
     await tester.tap(removeIkhlas);
     await tester.pumpAndSettle();
-    await tester.tap(find.widgetWithText(TextButton, 'Remove saved audio'));
-    await settle(tester);
+    await real(tester, () => tester.tap(find.widgetWithText(TextButton, 'Remove saved audio')));
     expect(find.text(ikhlas.name), findsNothing);
     final left = (await tester.runAsync(audio.savedFiles))!;
     expect(ikhlas.ayat.any((a) => left.containsKey(a.n)), isFalse);
@@ -134,8 +134,7 @@ void main() {
         await (await audio.fileFor(x.ayat.first)).writeAsBytes([1]);
       }
     });
-    await tester.pumpWidget(testApp(state, const DownloadsScreen(), textScale: 2));
-    await settle(tester);
+    await real(tester, () => tester.pumpWidget(testApp(state, const DownloadsScreen(), textScale: 2)));
     expect(tester.takeException(), isNull);
     await tester.runAsync(store.flush);
   });

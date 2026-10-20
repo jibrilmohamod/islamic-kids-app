@@ -91,7 +91,7 @@ void main() {
     );
 
     // Next goes to the second dua and resets memorise mode.
-    await tester.ensureVisible(find.text('Next'));
+    await tester.scrollUntilVisible(find.text('Next'), 300);
     await tester.tap(find.text('Next'));
     await tester.pumpAndSettle();
     expect(find.text('Morning, 2 of ${morning.length}'), findsOneWidget);

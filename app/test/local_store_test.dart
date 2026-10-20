@@ -46,11 +46,14 @@ void main() {
   });
 
   test('writes are batched and land after the debounce', () async {
-    final store = await LocalStore.open(dir);
+    // A short batching window keeps the test quick; the rule is the same.
+    final store = await LocalStore.open(dir, autoFlush: const Duration(milliseconds: 20));
     store.update((s) => s.lastPage = 5);
     store.update((s) => s.lastPage = 6);
     expect(main().existsSync(), isFalse);
-    await Future<void>.delayed(LocalStore.debounce + const Duration(milliseconds: 200));
+    for (var i = 0; i < 100 && !main().existsSync(); i++) {
+      await Future<void>.delayed(const Duration(milliseconds: 10));
+    }
     final j = jsonDecode(main().readAsStringSync()) as Map<String, dynamic>;
     expect(j['formatVersion'], LocalStore.formatVersion);
     expect((j['data'] as Map)['lastPage'], 6);

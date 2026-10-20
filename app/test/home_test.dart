@@ -12,7 +12,7 @@ import 'package:islamic_kids_app/screens/home_screen.dart';
 import 'package:islamic_kids_app/theme.dart';
 
 AppState stateAt(DateTime now) {
-  final raw = File('assets/content/bundle.json').readAsStringSync();
+  final raw = File('test/fixtures/bundle.json').readAsStringSync();
   return AppState()
     ..bundle = ContentBundle.fromJson(jsonDecode(raw) as Map<String, dynamic>)
     ..now = () => now;

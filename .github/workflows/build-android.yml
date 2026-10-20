@@ -171,7 +171,29 @@ jobs:
 
       - name: Build APK
         working-directory: app
-        run: flutter build apk --release
+        run: |
+          set -o pipefail
+          if ! flutter build apk --release 2>&1 | tee build.log; then
+            # Logs cannot be read from outside GitHub: put Gradle's reason in an annotation.
+            msg=$(grep -A12 -E "What went wrong|error:|Error:|FAILURE" build.log | head -40 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' | awk '{printf "%s%%0A", $0}')
+            echo "::error title=APK build failed::${msg}"
+            exit 1
+          fi
+
+      # Plugins can add permissions at build time. List what the finished APK
+      # asks for, and flag anything not on the reviewed list (audit P1).
+      - name: Check the APK's permissions
+        working-directory: app
+        continue-on-error: true
+        run: |
+          aapt2=$(ls "$ANDROID_HOME"/build-tools/*/aapt2 | sort -V | tail -n 1)
+          perms=$("$aapt2" dump permissions build/app/outputs/flutter-apk/app-release.apk | sed -n "s/.*name='\([^']*\)'.*/\1/p" | sort -u)
+          echo "::notice title=APK permissions::$(echo "$perms" | tr '\n' ' ')"
+          allowed='^(android\.permission\.(INTERNET|WAKE_LOCK|FOREGROUND_SERVICE|FOREGROUND_SERVICE_MEDIA_PLAYBACK|POST_NOTIFICATIONS)|com\.jibrilmohamod\.islamic_kids_app\.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION)$'
+          extra=$(echo "$perms" | grep -vE "$allowed" || true)
+          if [ -n "$extra" ]; then
+            echo "::warning title=Unreviewed permission::$(echo "$extra" | tr '\n' ' ')"
+          fi
 
       - name: Build app bundle for Google Play
         if: steps.signing.outputs.signed == 'true'

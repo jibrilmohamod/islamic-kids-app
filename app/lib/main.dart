@@ -20,9 +20,10 @@ Future<void> main() async {
     yield const LicenseEntryWithLineBreaks(['quran-qcf4 (mushaf page layout)'], _qcf4License);
   });
   // Before load(): the media service must exist when recitation is created.
-  final media = await startMediaService();
+  final (media, mediaError) = await startMediaService();
   final state = AppState()
     ..media = media
+    ..mediaError = mediaError
     ..load();
   runApp(AppScope(state: state, child: const KidsApp()));
 }

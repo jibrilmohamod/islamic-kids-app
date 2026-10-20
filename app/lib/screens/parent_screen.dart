@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../recitation_player.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
@@ -57,6 +58,10 @@ class ParentScreen extends StatelessWidget {
           Text(tr('usedToday', lang, {'n': state.activity.minutesToday(DateTime.now())}),
               style: const TextStyle(fontSize: 14, color: Pop.muted)),
           const SizedBox(height: 24),
+          if (state.audio != null) ...[
+            const _ControlsStatus(),
+            const SizedBox(height: 18),
+          ],
           Text(tr('sources', lang), style: const TextStyle(fontFamily: Pop.display, fontSize: 16)),
           const SizedBox(height: 10),
           if (bundle != null)
@@ -91,6 +96,47 @@ class ParentScreen extends StatelessWidget {
             color: Colors.white,
             onPressed: () => showLicensePage(context: context, applicationName: tr('appName', lang)),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Whether recitation shows in the pull-down shade and on the lock screen,
+/// and a way to turn it on when notifications are off.
+class _ControlsStatus extends StatelessWidget {
+  const _ControlsStatus();
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    final lang = state.lang;
+    final error = state.mediaError;
+    final allowed = state.notificationsAllowed;
+    final (text, ok) = switch ((error, allowed)) {
+      (final String e, _) => (tr('controlsBroken', lang, {'reason': e}), false),
+      (_, true) => (tr('controlsOn', lang), true),
+      (_, false) => (tr('controlsNoPermission', lang), false),
+      _ => (tr('controlsNotAsked', lang), true),
+    };
+    return GlazeCard(
+      glaze: ok ? Pop.cyan : Pop.lemon,
+      shadow: 4,
+      border: 3,
+      tab: tr('controlsTitle', lang),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(text, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.35)),
+          if (allowed == false && error == null) ...[
+            const SizedBox(height: 10),
+            ComicButton(
+              label: tr('allowNotifications', lang),
+              color: Colors.white,
+              // The setting is re-read when the app comes back to the front.
+              onPressed: openNotificationSettings,
+            ),
+          ],
         ],
       ),
     );

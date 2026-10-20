@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../activity.dart';
+import '../arch.dart';
 import '../app_state.dart';
 import '../models.dart';
 import '../pop_icons.dart';
@@ -11,13 +12,13 @@ import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
 import 'common.dart';
-import 'downloads_screen.dart';
 import 'dua_screen.dart';
 import 'duas_screen.dart';
 import 'hadith_screen.dart';
 import 'missing_word_screen.dart';
 import 'mosaic_screen.dart';
 import 'mushaf_screen.dart';
+import 'my_shelf_screen.dart';
 import 'now_playing.dart';
 import 'order_game_screen.dart';
 import 'parent_gate.dart';
@@ -205,7 +206,7 @@ class _Header extends StatelessWidget {
               width: 52,
               height: 52,
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Pop.cyan,
                 border: Border.fromBorderSide(BorderSide(color: Pop.ink, width: 3)),
               ),
               alignment: Alignment.center,
@@ -261,8 +262,7 @@ class _Pop extends StatelessWidget {
 class _Pressable extends StatefulWidget {
   final Widget child;
   final VoidCallback onTap;
-  final double shadow;
-  const _Pressable({required this.child, required this.onTap, this.shadow = 4});
+  const _Pressable({required this.child, required this.onTap});
 
   @override
   State<_Pressable> createState() => _PressableState();
@@ -273,7 +273,7 @@ class _PressableState extends State<_Pressable> {
 
   @override
   Widget build(BuildContext context) {
-    final s = widget.shadow;
+    const s = 4.0;
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTapDown: (_) => setState(() => _down = true),
@@ -332,17 +332,6 @@ class _Hero extends StatelessWidget {
       );
     });
   }
-}
-
-/// Arch-topped shape: a rectangle whose top is a half circle.
-Path archPath(Rect r) {
-  final rad = r.width / 2;
-  return Path()
-    ..moveTo(r.left, r.bottom)
-    ..lineTo(r.left, r.top + rad)
-    ..arcToPoint(Offset(r.right, r.top + rad), radius: Radius.circular(rad))
-    ..lineTo(r.right, r.bottom)
-    ..close();
 }
 
 class SkyArchPainter extends CustomPainter {
@@ -459,48 +448,40 @@ class _ContinueCard extends StatelessWidget {
     final next = state.progress.nextUp(surahs);
     final rounds = next == null ? 0 : roundsFor(next.ayat.length).length;
     final done = next == null ? 0 : state.progress.roundsDone(next);
-    return Semantics(
-      button: next != null,
-      label: next == null ? tr('allGlazed', lang) : '${tr('keepGoing', lang)}: ${next.name}',
-      child: _Pressable(
-        shadow: 5,
-        onTap: () {
-          if (next != null) go(context, SurahScreen(surah: next));
-        },
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            border: Border.fromBorderSide(BorderSide(color: Pop.ink, width: 4)),
-          ),
-          padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
-          child: next == null
-              ? Text(tr('allGlazed', lang), style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800))
-              : Row(
-                  children: [
-                    StarTile(size: 40, glaze: Glaze.full, color: Pop.pink, label: '${next.number}', semanticsLabel: ''),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(tr('keepGoing', lang),
-                              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Pop.muted, height: 1.1)),
-                          Text(next.name, style: const TextStyle(fontFamily: Pop.display, fontSize: 17, height: 1.15)),
-                          Text(tr('roundOf', lang, {'n': math.min(done + 1, rounds), 'total': rounds}),
-                              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, height: 1.1)),
-                        ],
-                      ),
+    final label = next == null ? tr('allGlazed', lang) : '${tr('keepGoing', lang)}: ${next.name}';
+    return GlazeCard(
+      glaze: Pop.cyan,
+      tab: next == null ? null : tr('keepGoing', lang),
+      shadow: 6,
+      padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+      semanticsLabel: label,
+      onTap: next == null ? null : () => go(context, SurahScreen(surah: next)),
+      child: next == null
+          ? Text(tr('allGlazed', lang), style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800))
+          : ExcludeSemantics(
+              child: Row(
+                children: [
+                  StarTile(size: 42, glaze: Glaze.full, color: Pop.pink, label: '${next.number}', semanticsLabel: ''),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(next.name, style: const TextStyle(fontFamily: Pop.display, fontSize: 18, height: 1.15)),
+                        Text(tr('roundOf', lang, {'n': math.min(done + 1, rounds), 'total': rounds}),
+                            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800, height: 1.15)),
+                      ],
                     ),
-                    Container(
-                      width: 34,
-                      height: 34,
-                      decoration: BoxDecoration(color: Pop.cyan, shape: BoxShape.circle, border: Border.all(color: Pop.ink, width: 2)),
-                      child: const Icon(Icons.play_arrow_rounded, color: Pop.ink, size: 22),
-                    ),
-                  ],
-                ),
-        ),
-      ),
+                  ),
+                  Container(
+                    width: 38,
+                    height: 38,
+                    decoration: BoxDecoration(color: Pop.lemon, shape: BoxShape.circle, border: Border.all(color: Pop.ink, width: 2)),
+                    child: const Icon(Icons.play_arrow_rounded, color: Pop.ink, size: 24),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }
@@ -543,40 +524,29 @@ class _DuaCard extends StatelessWidget {
       'evening' => tr('duaThisEvening', lang),
       _ => tr('duaForNow', lang),
     };
-    return Semantics(
-      button: true,
-      label: label,
-      child: _Pressable(
-        onTap: () {
-          final list = all.where((x) => x.moment == d.moment).toList();
-          go(context, DuaScreen(duas: list, index: list.indexOf(d), stop: stopFor(d, now)));
-        },
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            border: Border.fromBorderSide(BorderSide(color: Pop.ink, width: 3)),
+    return GlazeCard(
+      glaze: Colors.white,
+      tab: label,
+      tabColor: Pop.lemon,
+      tilt: -1,
+      padding: const EdgeInsets.fromLTRB(10, 8, 12, 10),
+      semanticsLabel: label,
+      onTap: () {
+        final list = all.where((x) => x.moment == d.moment).toList();
+        go(context, DuaScreen(duas: list, index: list.indexOf(d), stop: stopFor(d, now)));
+      },
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _Sway(ambient: ambient, child: const PopIconView(PopIcon.duas, size: 38, shadow: false)),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(homeDuaTitle(d, state.bundle!, lang),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3)),
           ),
-          padding: const EdgeInsets.fromLTRB(10, 8, 12, 10),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _Sway(ambient: ambient, child: const PopIconView(PopIcon.duas, size: 36, shadow: false)),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(label, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Pop.muted)),
-                    Text(homeDuaTitle(d, state.bundle!, lang),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.3)),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        ],
       ),
     );
   }
@@ -605,7 +575,18 @@ class _WeekRow extends StatelessWidget {
     final dots = state.activity.weekDots(now);
     final labels = tr('weekdaysShort', lang).split(',');
     final today = weekOf(now).indexWhere((d) => dayKey(d) == dayKey(now));
-    // Wraps onto two lines with large text instead of overflowing.
+    // A violet strip (canvas row G). Wraps onto two lines with large text
+    // instead of overflowing.
+    return GlazeCard(
+      glaze: Pop.violet,
+      border: 3,
+      shadow: 4,
+      padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
+      child: _weekWrap(state, lang, dots, labels, today),
+    );
+  }
+
+  Widget _weekWrap(AppState state, String lang, List<bool> dots, List<String> labels, int today) {
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 8,
@@ -652,8 +633,9 @@ class _WeekRow extends StatelessWidget {
 class _NicheSpec {
   final PopIcon icon;
   final String labelKey;
+  final Color glaze;
   final void Function(BuildContext) open;
-  const _NicheSpec(this.icon, this.labelKey, this.open);
+  const _NicheSpec(this.icon, this.labelKey, this.glaze, this.open);
 }
 
 class _Niches extends StatelessWidget {
@@ -667,13 +649,13 @@ class _Niches extends StatelessWidget {
     final book = state.book;
     final specs = [
       if (book != null)
-        _NicheSpec(PopIcon.quran, 'quranBook',
+        _NicheSpec(PopIcon.quran, 'quranBook', Pop.lemon,
             (c) => go(c, MushafScreen(initialPage: state.lastPage.clamp(1, book.pageCount)))),
-      _NicheSpec(PopIcon.surahs, 'surahs', (c) => go(c, const MosaicScreen())),
-      _NicheSpec(PopIcon.duas, 'duas', (c) => go(c, const DuasScreen())),
-      _NicheSpec(PopIcon.hadith, 'hadith', (c) => go(c, const HadithListScreen())),
-      _NicheSpec(PopIcon.games, 'gamesTitle', (c) => openGames(c)),
-      if (state.audio != null) _NicheSpec(PopIcon.downloads, 'downloads', (c) => go(c, const DownloadsScreen())),
+      _NicheSpec(PopIcon.surahs, 'surahs', Pop.violet, (c) => go(c, const MosaicScreen())),
+      _NicheSpec(PopIcon.duas, 'duas', Pop.cyan, (c) => go(c, const DuasScreen())),
+      _NicheSpec(PopIcon.hadith, 'hadith', Pop.pink, (c) => go(c, const HadithListScreen())),
+      _NicheSpec(PopIcon.games, 'gamesTitle', Pop.cyan, (c) => openGames(c)),
+      _NicheSpec(PopIcon.shelf, 'myShelf', Pop.lemon, (c) => go(c, const MyShelfScreen())),
     ];
     return LayoutBuilder(builder: (context, c) {
       const gap = 10.0;
@@ -755,7 +737,7 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
           height: h + 4,
           child: Stack(
             children: [
-              Positioned(left: 4, top: 4, child: CustomPaint(size: Size(w, h), painter: const _ArchPainter(fill: Pop.ink))),
+              Positioned(left: 4, top: 4, child: CustomPaint(size: Size(w, h), painter: const ArchPainter(fill: Pop.ink))),
               AnimatedContainer(
                 duration: const Duration(milliseconds: 80),
                 transform: Matrix4.translationValues(_down ? 4 : 0, _down ? 4 : 0, 0),
@@ -763,7 +745,7 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
                 height: h,
                 child: Stack(
                   children: [
-                    CustomPaint(size: Size(w, h), painter: _ArchPainter(fill: Colors.white, divider: h - widget.band)),
+                    CustomPaint(size: Size(w, h), painter: ArchPainter(fill: widget.spec.glaze, divider: h - widget.band)),
                     Positioned(left: 0, right: 0, top: w * 0.3, child: Center(child: ExcludeSemantics(child: icon))),
                     Positioned(
                       left: 4,
@@ -788,29 +770,6 @@ class _NicheState extends State<_Niche> with SingleTickerProviderStateMixin {
       ),
     );
   }
-}
-
-class _ArchPainter extends CustomPainter {
-  final Color fill;
-  final double? divider;
-  const _ArchPainter({required this.fill, this.divider});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = archPath(Offset.zero & size);
-    canvas.drawPath(path, Paint()..color = fill);
-    if (fill == Pop.ink) return;
-    final stroke = Paint()
-      ..color = Pop.ink
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3;
-    canvas.drawPath(archPath(const Offset(1.5, 1.5) & Size(size.width - 3, size.height - 3)), stroke);
-    final d = divider;
-    if (d != null) canvas.drawLine(Offset(1.5, d), Offset(size.width - 1.5, d), stroke);
-  }
-
-  @override
-  bool shouldRepaint(_ArchPainter old) => old.fill != fill || old.divider != divider;
 }
 
 /// The two games, for the surah that is next up.

@@ -537,3 +537,203 @@ class Chip2 extends StatelessWidget {
     );
   }
 }
+
+/// A small label stuck on a card's top edge (canvas row G): ink border,
+/// white or glaze fill, bold text that wraps rather than shrinks.
+class StickerTab extends StatelessWidget {
+  final String text;
+  final Color color;
+  const StickerTab(this.text, {super.key, this.color = Colors.white});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 1),
+      decoration: BoxDecoration(color: color, border: Border.all(color: Pop.ink, width: 3)),
+      child: Text(text, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800, height: 1.2, color: Pop.onGlaze(color))),
+    );
+  }
+}
+
+/// The Mosaic Pop card: a glaze with halftone dots, a heavy ink border and
+/// hard shadow, an optional sticker [tab] on its top edge and a slight
+/// [tilt]. Text inside defaults to the colour that reads on the glaze.
+/// Tappable cards drop into their shadow while pressed.
+class GlazeCard extends StatefulWidget {
+  final Widget child;
+  final Color glaze;
+  final String? tab;
+  final Color tabColor;
+  final double tilt;
+  final double border;
+  final double shadow;
+  final EdgeInsetsGeometry padding;
+  final VoidCallback? onTap;
+  final String? semanticsLabel;
+  const GlazeCard({
+    super.key,
+    required this.child,
+    required this.glaze,
+    this.tab,
+    this.tabColor = Colors.white,
+    this.tilt = 0,
+    this.border = 4,
+    this.shadow = 6,
+    this.padding = const EdgeInsets.fromLTRB(14, 12, 14, 12),
+    this.onTap,
+    this.semanticsLabel,
+  });
+
+  @override
+  State<GlazeCard> createState() => _GlazeCardState();
+}
+
+class _GlazeCardState extends State<GlazeCard> {
+  bool _down = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final w = widget;
+    final still = MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+    final t = w.tab;
+    final pad = t == null ? w.padding : w.padding.add(const EdgeInsets.only(top: 8));
+    final s = _down ? 0.0 : w.shadow;
+    Widget card = AnimatedContainer(
+      duration: still ? Duration.zero : const Duration(milliseconds: 80),
+      transform: Matrix4.translationValues(w.shadow - s, w.shadow - s, 0),
+      decoration: BoxDecoration(
+        color: w.glaze,
+        border: Border.all(color: Pop.ink, width: w.border),
+        boxShadow: s > 0 ? [BoxShadow(color: Pop.ink, offset: Offset(s, s))] : null,
+      ),
+      child: CustomPaint(
+        painter: w.glaze == Colors.white ? null : HalftonePainter(Pop.dotsOn(w.glaze)),
+        child: Padding(
+          padding: pad,
+          child: DefaultTextStyle.merge(style: TextStyle(color: Pop.onGlaze(w.glaze)), child: w.child),
+        ),
+      ),
+    );
+    if (t != null) {
+      card = Padding(
+        padding: const EdgeInsets.only(top: 14),
+        child: Stack(
+          // Passthrough: a card given a width (in a Row's Expanded) fills it.
+          fit: StackFit.passthrough,
+          clipBehavior: Clip.none,
+          children: [
+            card,
+            PositionedDirectional(start: 10, top: -14, end: 10, child: Align(alignment: AlignmentDirectional.centerStart, child: StickerTab(t, color: w.tabColor))),
+          ],
+        ),
+      );
+    }
+    if (w.onTap != null) {
+      card = Semantics(
+        button: true,
+        label: w.semanticsLabel,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTapDown: (_) => setState(() => _down = true),
+          onTapCancel: () => setState(() => _down = false),
+          onTapUp: (_) => setState(() => _down = false),
+          onTap: w.onTap,
+          child: card,
+        ),
+      );
+    }
+    if (w.tilt != 0 && !still) card = Transform.rotate(angle: w.tilt * math.pi / 180, child: card);
+    return card;
+  }
+}
+
+/// The page header from canvas row G: two striped glaze bands with dots, a
+/// back button, a white display title with an ink shadow and an optional
+/// subtitle sticker. Titles wrap; nothing is shrunk to fit.
+class HeroBand extends StatelessWidget {
+  final String title;
+  final String? subtitle;
+  final Color top;
+  final Color bottom;
+  final Widget? trailing;
+  final VoidCallback? onBack;
+  final String backLabel;
+  const HeroBand({
+    super.key,
+    required this.title,
+    this.subtitle,
+    this.top = Pop.violet,
+    this.bottom = Pop.pink,
+    this.trailing,
+    this.onBack,
+    required this.backLabel,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final sub = subtitle;
+    return DecoratedBox(
+      decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Pop.ink, width: 4))),
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Column(
+              children: [
+                Expanded(flex: 3, child: _Band(color: top)),
+                Container(height: 4, color: Pop.ink),
+                Expanded(flex: 2, child: _Band(color: bottom)),
+              ],
+            ),
+          ),
+          SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 14),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      InkIconButton(icon: Icons.arrow_back_rounded, tooltip: backLabel, onPressed: onBack),
+                      const Spacer(),
+                      if (trailing != null) trailing!,
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  Semantics(
+                    header: true,
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                        fontFamily: Pop.display,
+                        fontSize: 30,
+                        height: 1.05,
+                        color: Colors.white,
+                        shadows: [Shadow(color: Pop.ink, offset: Offset(3, 3)), Shadow(color: Pop.cyan, offset: Offset(-2, 0))],
+                      ),
+                    ),
+                  ),
+                  if (sub != null) ...[
+                    const SizedBox(height: 8),
+                    StickerTab(sub),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _Band extends StatelessWidget {
+  final Color color;
+  const _Band({required this.color});
+
+  @override
+  Widget build(BuildContext context) => ColoredBox(
+        color: color,
+        child: CustomPaint(painter: HalftonePainter(Pop.dotsOn(color)), child: const SizedBox.expand()),
+      );
+}

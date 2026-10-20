@@ -107,9 +107,12 @@ jobs:
 
       - name: Test
         working-directory: app
+        timeout-minutes: 15
         run: |
           set -o pipefail
-          if ! flutter test --file-reporter json:test-results.json; then
+          # A hung test fails in 90 s with its name, instead of stalling the
+          # job (pumpAndSettle waits up to 10 minutes by default).
+          if ! flutter test --timeout 90s --file-reporter json:test-results.json; then
             node ../tool/test-failures.mjs test-results.json
             exit 1
           fi
@@ -122,7 +125,7 @@ jobs:
         working-directory: app
         run: |
           set -o pipefail
-          if ! flutter test --update-goldens test_screens/ 2>&1 | tee previews.log; then
+          if ! flutter test --timeout 90s --update-goldens test_screens/ 2>&1 | tee previews.log; then
             # Logs cannot be read from outside GitHub: name the failing screen here.
             msg=$(grep -E '\[E\]|EXCEPTION CAUGHT|overflowed|Expected:|Actual:|^  ' previews.log | head -25 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' | awk '{printf "%s%%0A", $0}')
             echo "::warning title=A screen preview failed::${msg}"

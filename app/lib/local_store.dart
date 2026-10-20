@@ -179,7 +179,12 @@ class LocalStore {
   Future<void>? _writing;
   bool _dirty = false;
 
-  LocalStore._(this.dir, this.state, {this.migrated = false});
+  /// How long to batch changes before writing; null means never write by
+  /// timer, only on [flush]. Widget tests use null: a timer firing inside
+  /// their fake clock would start disk work that can never finish there.
+  final Duration? autoFlush;
+
+  LocalStore._(this.dir, this.state, {this.migrated = false, this.autoFlush = debounce});
 
   File get _main => File('${dir.path}/$fileName');
   File get _backup => File('${dir.path}/$fileName.bak');
@@ -187,16 +192,20 @@ class LocalStore {
 
   /// Opens the store in [dir]. With no store file yet, [legacy] supplies
   /// the old SharedPreferences values, which are written out at once.
-  static Future<LocalStore> open(Directory dir, {Future<LegacyPrefs?> Function()? legacy}) async {
+  static Future<LocalStore> open(
+    Directory dir, {
+    Future<LegacyPrefs?> Function()? legacy,
+    Duration? autoFlush = debounce,
+  }) async {
     await dir.create(recursive: true);
     final probe = LocalStore._(dir, SavedState());
     for (final f in [probe._main, probe._backup]) {
       final s = await _read(f);
-      if (s != null) return LocalStore._(dir, s);
+      if (s != null) return LocalStore._(dir, s, autoFlush: autoFlush);
     }
     final old = await legacy?.call();
-    if (old == null) return LocalStore._(dir, SavedState());
-    final store = LocalStore._(dir, fromLegacy(old), migrated: true);
+    if (old == null) return LocalStore._(dir, SavedState(), autoFlush: autoFlush);
+    final store = LocalStore._(dir, fromLegacy(old), migrated: true, autoFlush: autoFlush);
     store._dirty = true;
     await store.flush();
     return store;
@@ -247,7 +256,8 @@ class LocalStore {
     change(state);
     _dirty = true;
     _timer?.cancel();
-    _timer = Timer(debounce, () => unawaited(flush()));
+    final wait = autoFlush;
+    if (wait != null) _timer = Timer(wait, () => unawaited(flush()));
   }
 
   /// Writes now if anything changed. Safe to call often.

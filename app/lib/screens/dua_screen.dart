@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../app_state.dart';
+import '../arch.dart';
 import '../models.dart';
+import '../pop_icons.dart';
 import '../strings.dart';
 import '../theme.dart';
 import '../widgets.dart';
@@ -119,6 +121,14 @@ class _DuaScreenState extends State<DuaScreen> {
                               onPressed: () => Navigator.of(context).maybePop(),
                             ),
                             const Spacer(),
+                            ToggleIconButton(
+                              on: state.isFavourite('dua:${d.id}'),
+                              onIcon: PopIcon.heartOn,
+                              offIcon: PopIcon.heartOff,
+                              tooltip: tr(state.isFavourite('dua:${d.id}') ? 'removeFavourite' : 'addFavourite', lang),
+                              onPressed: () => state.toggleFavourite('dua:${d.id}'),
+                            ),
+                            const SizedBox(width: 8),
                             InkIconButton(
                               icon: memorise ? Icons.visibility_rounded : Icons.visibility_off_rounded,
                               tooltip: tr('memorise', lang),

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:audio_service/audio_service.dart' as bg;
 import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:just_audio/just_audio.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:flutter/services.dart' show MethodChannel;
 
 import 'recitation.dart';
 
@@ -126,23 +126,29 @@ Future<(RecitationHandler?, String?)> startMediaService() async {
   }
 }
 
-/// Asks once for Android 13+'s notification permission, so the recitation
+/// Android side: MainActivity.kt, channel "app/notifications".
+const _notifications = MethodChannel('app/notifications');
+
+/// Asks for Android 13+'s notification permission, so the recitation
 /// controls show in the pull-down shade. Android exempts media-session
 /// notifications, but phones differ in how they apply that, so we ask.
-/// Returns whether notifications are allowed.
-/// With [ask] false it only reads the current setting.
+/// With [ask] false it only reads the current setting. Returns whether
+/// notifications are allowed; false where there is no Android side (tests).
 Future<bool> askNotificationPermission({bool ask = true}) async {
   try {
-    final status = await Permission.notification.status;
-    if (status.isGranted) return true;
-    if (!ask || status.isPermanentlyDenied || status.isRestricted) return false;
-    return (await Permission.notification.request()).isGranted;
+    return await _notifications.invokeMethod<bool>(ask ? 'request' : 'status') ?? false;
   } catch (e) {
     debugPrint('Notification permission check failed: $e');
     return false;
   }
 }
 
-/// Opens the app's system settings, where a parent can allow notifications
+/// Opens the app's notification settings, where a parent can allow them
 /// after saying no to the dialog.
-Future<bool> openNotificationSettings() => openAppSettings();
+Future<void> openNotificationSettings() async {
+  try {
+    await _notifications.invokeMethod<bool>('openSettings');
+  } catch (e) {
+    debugPrint('Could not open notification settings: $e');
+  }
+}

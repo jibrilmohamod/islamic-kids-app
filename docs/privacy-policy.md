@@ -19,6 +19,8 @@ These are saved only on the device and never sent to us:
 - Which days the app was used this week
 - How many minutes the app was used each day, for the parent's time limit
 - Settings chosen in the parent area
+- Bookmarked ayat and favourite duas, hadith and surahs
+- The last surahs read or listened to, so the app can offer to carry on
 - Recitation audio the user chose to save for offline listening
 
 Deleting the app deletes all of it.

@@ -171,7 +171,14 @@ jobs:
 
       - name: Build APK
         working-directory: app
-        run: flutter build apk --release
+        run: |
+          set -o pipefail
+          if ! flutter build apk --release 2>&1 | tee build.log; then
+            # Logs cannot be read from outside GitHub: put Gradle's reason in an annotation.
+            msg=$(grep -A12 -E "What went wrong|error:|Error:|FAILURE" build.log | head -40 | sed -e 's/%/%25/g' -e 's/\r/%0D/g' | awk '{printf "%s%%0A", $0}')
+            echo "::error title=APK build failed::${msg}"
+            exit 1
+          fi
 
       # Plugins can add permissions at build time. List what the finished APK
       # asks for, and flag anything not on the reviewed list (audit P1).

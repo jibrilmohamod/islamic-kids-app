@@ -1,4 +1,15 @@
-# Standard analyzer only. Add flutter_lints later if wanted.
-analyzer:
-  language:
-    strict-casts: false
+# very_good_analysis, pinned to one ruleset file so a package upgrade cannot
+# silently change the rules (audit A5). It turns on strict-casts,
+# strict-inference and strict-raw-types.
+#
+# CI fails on errors and warnings. Lint rules report as infos; CI counts them
+# per rule so they can be paid down in small PRs.
+include: package:very_good_analysis/analysis_options.11.0.0.yaml
+
+formatter:
+  page_width: 120
+
+linter:
+  rules:
+    # The code is formatted at 120 columns (above).
+    lines_longer_than_80_chars: false

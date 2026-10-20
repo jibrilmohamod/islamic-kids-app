@@ -1,0 +1,1106 @@
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/downloads_screen.dart|174|40|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/duas_screen.dart|82|38|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/duas_screen.dart|99|28|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/duas_screen.dart|211|26|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/hadith_screen.dart|110|36|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/hadith_screen.dart|125|32|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/hadith_screen.dart|175|26|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/hadith_screen.dart|234|28|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|139|60|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|458|42|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|536|9|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|653|20|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|654|63|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|655|57|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|656|61|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|658|62|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|799|17|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/home_screen.dart|809|17|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/mosaic_screen.dart|36|26|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|83|36|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|122|30|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|129|30|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|138|28|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|173|7|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|175|7|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|182|7|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/my_shelf_screen.dart|184|7|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/now_playing.dart|37|28|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/order_game_screen.dart|84|26|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_INSTANCE_CREATION|lib/screens/order_game_screen.dart|304|15|17|The type argument(s) of the constructor 'MaterialPageRoute' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/surah_screen.dart|109|7|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/surah_screen.dart|111|7|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/surah_screen.dart|180|42|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_FUNCTION_INVOCATION|lib/screens/surah_screen.dart|253|40|2|The type argument(s) of the function 'go' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/content_store_test.dart|22|64|2|The type argument(s) of 'Map' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/content_store_test.dart|26|17|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/content_store_test.dart|27|15|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|19|16|2|The type argument(s) of 'Map' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|33|15|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|34|13|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|92|18|2|The type argument(s) of 'Map' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|93|17|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|94|17|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|95|15|2|The type argument(s) of 'List' can't be inferred.
+WARNING|STATIC_WARNING|INFERENCE_FAILURE_ON_COLLECTION_LITERAL|test/phase2_test.dart|140|85|2|The type argument(s) of 'List' can't be inferred.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|18|7|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|19|21|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|20|26|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|21|26|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|22|7|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/activity.dart|24|3|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|24|3|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|36|7|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|38|14|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|40|8|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|42|7|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|44|8|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|46|8|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|57|27|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|62|23|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|67|13|1|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|68|13|1|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/activity.dart|69|9|18|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|69|9|18|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/activity.dart|71|11|25|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|71|30|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/activity.dart|73|11|6|Missing documentation for a public member.
+INFO|LINT|DIRECTIVES_ORDERING|lib/app_state.dart|5|1|41|Sort directive sections alphabetically.
+INFO|HINT|UNNECESSARY_IMPORT|lib/app_state.dart|5|8|33|The import of 'package:flutter/foundation.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/widgets.dart'.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|10|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|11|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|12|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|13|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|14|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|15|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|16|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|17|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|18|8|24|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/app_state.dart|19|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|39|10|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|40|18|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|41|11|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|42|12|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|43|17|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|70|12|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|82|8|15|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|87|8|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|113|16|4|Missing documentation for a public member.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/app_state.dart|132|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/app_state.dart|146|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|198|12|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|200|8|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|206|8|13|Missing documentation for a public member.
+INFO|LINT|CASCADE_INVOCATIONS|lib/app_state.dart|233|7|14|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/app_state.dart|252|7|23|Unnecessary duplication of receiver.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|256|8|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|263|8|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|289|8|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|291|20|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|293|8|14|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|298|8|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|300|8|15|Missing documentation for a public member.
+INFO|LINT|AVOID_SETTERS_WITHOUT_GETTERS|lib/app_state.dart|315|7|5|Setter has no corresponding getter.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|318|7|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|319|9|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/app_state.dart|319|48|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/app_state.dart|319|70|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/app_state.dart|322|19|2|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/arch.dart|6|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/arch.dart|7|8|12|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|25|15|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|26|17|7|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/arch.dart|27|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|27|9|11|Missing documentation for a public member.
+INFO|LINT|CASCADE_INVOCATIONS|lib/arch.dart|36|5|22|Unnecessary duplication of receiver.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|61|17|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|62|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|63|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|67|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|68|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|72|22|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/arch.dart|73|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|73|9|9|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|75|19|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|76|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|79|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|80|19|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|81|19|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|82|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|DISCARDED_FUTURES|lib/arch.dart|122|26|14|'Future'-returning calls in a non-'async' function.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/arch.dart|142|22|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/arch.dart|142|23|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/arch.dart|154|109|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/arch.dart|159|116|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|177|13|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|178|16|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/arch.dart|182|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|182|9|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|182|44|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|182|65|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|241|14|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|242|17|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|243|17|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|244|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|245|22|9|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/arch.dart|246|9|16|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/arch.dart|246|9|16|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|248|19|2|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|249|19|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|250|19|7|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|251|19|7|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/arch.dart|252|19|9|Required named parameters should be before optional named parameters.
+INFO|LINT|DISCARDED_FUTURES|lib/arch.dart|268|28|11|'Future'-returning calls in a non-'async' function.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/audio_service.dart|3|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|COMMENT_REFERENCES|lib/audio_service.dart|7|44|10|The referenced name isn't visible in scope.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|9|19|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|10|38|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|11|53|8|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/audio_service.dart|13|3|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|13|3|12|Missing documentation for a public member.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/audio_service.dart|18|16|10|Use of an async 'dart:io' method.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|22|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|24|16|7|Missing documentation for a public member.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/audio_service.dart|24|62|27|Use of an async 'dart:io' method.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|26|15|10|Missing documentation for a public member.
+INFO|LINT|DISCARDED_FUTURES|lib/audio_service.dart|59|17|6|'Future'-returning calls in a non-'async' function.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/audio_service.dart|65|16|10|Use of an async 'dart:io' method.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/audio_service.dart|86|16|11|Missing documentation for a public member.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/audio_service.dart|89|17|10|Use of an async 'dart:io' method.
+INFO|LINT|SPECIFY_NONOBVIOUS_PROPERTY_TYPES|lib/audio_service.dart|97|1|36|A type annotation is needed because it isn't obvious.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/audio_service.dart|124|15|12|Use of an async 'dart:io' method.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/content_store.dart|9|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/content_store.dart|10|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|19|7|12|Missing documentation for a public member.
+INFO|LINT|SPECIFY_NONOBVIOUS_PROPERTY_TYPES|lib/content_store.dart|22|1|39|A type annotation is needed because it isn't obvious.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|31|23|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|32|21|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/content_store.dart|33|9|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|33|9|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|36|7|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|37|13|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|38|16|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|39|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|40|13|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|41|16|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/content_store.dart|43|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|43|9|8|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/content_store.dart|51|11|17|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|51|20|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|60|9|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|66|35|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|67|38|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|68|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/content_store.dart|70|3|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|70|3|12|Missing documentation for a public member.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/content_store.dart|84|17|13|Use of an async 'dart:io' method.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/content_store.dart|85|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/content_store.dart|89|5|6|Returning a 'Future' without 'await'.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/content_store.dart|117|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/content_store.dart|161|5|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/content_store.dart|167|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|8|20|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|8|26|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|13|21|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|14|13|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|18|13|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/local_store.dart|20|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|20|9|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|22|24|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|33|23|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|46|11|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|47|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|48|15|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|49|20|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|50|20|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|51|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|52|7|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|53|11|12|Missing documentation for a public member.
+INFO|LINT|UNINTENDED_HTML_IN_DOC_COMMENT|lib/local_store.dart|58|26|4|Angle brackets will be interpreted as HTML.
+INFO|LINT|UNINTENDED_HTML_IN_DOC_COMMENT|lib/local_store.dart|58|41|4|Angle brackets will be interpreted as HTML.
+INFO|LINT|UNINTENDED_HTML_IN_DOC_COMMENT|lib/local_store.dart|58|57|3|Angle brackets will be interpreted as HTML.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/local_store.dart|68|3|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|68|3|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/local_store.dart|92|11|19|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|CAST_NULLABLE_TO_NON_NULLABLE|lib/local_store.dart|98|35|19|Don't cast a nullable value to a non-nullable type.
+INFO|LINT|CAST_NULLABLE_TO_NON_NULLABLE|lib/local_store.dart|105|51|27|Don't cast a nullable value to a non-nullable type.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|113|24|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|132|17|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|133|22|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|134|22|15|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|135|22|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|136|22|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|137|22|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|138|14|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|139|14|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|140|17|12|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/local_store.dart|142|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|142|9|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|166|16|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|167|16|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|168|16|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|169|16|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|170|16|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|172|19|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|173|20|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/local_store.dart|187|3|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|CASCADE_INVOCATIONS|lib/local_store.dart|209|5|20|Unnecessary duplication of receiver.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/local_store.dart|216|18|10|Use of an async 'dart:io' method.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/local_store.dart|224|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|230|21|10|Missing documentation for a public member.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/local_store.dart|277|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|AVOID_SLOW_ASYNC_IO|lib/local_store.dart|288|15|14|Use of an async 'dart:io' method.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|294|8|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/local_store.dart|309|8|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/main.dart|5|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/main.dart|6|8|24|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/main.dart|7|8|26|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/main.dart|8|8|26|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/main.dart|9|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/main.dart|10|8|12|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|UNAWAITED_FUTURES|lib/main.dart|27|7|4|Missing an 'await' for the 'Future' computed by this expression.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/main.dart|31|7|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/main.dart|32|9|7|Missing documentation for a public member.
+INFO|LINT|UNINTENDED_HTML_IN_DOC_COMMENT|lib/models.dart|6|33|17|Angle brackets will be interpreted as HTML.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|10|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|11|16|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|12|16|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|13|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|14|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|15|16|3|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|17|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|17|9|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|25|11|19|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|25|22|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|33|14|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|39|7|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|40|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|41|16|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|42|16|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|44|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|44|9|7|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|46|11|16|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|46|19|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|63|7|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|64|16|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|65|13|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|69|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|70|30|7|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|76|9|4|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|76|9|4|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/models.dart|80|19|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/models.dart|81|19|7|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|85|12|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|90|11|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|90|16|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|100|9|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|115|7|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|116|16|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|117|13|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|118|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|119|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|120|20|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|131|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|131|9|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|142|11|14|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|142|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|157|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|158|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|159|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|160|16|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|161|16|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|162|16|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|167|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|167|9|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|176|11|19|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|176|22|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|188|16|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|189|13|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|194|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|194|9|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|196|14|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|197|14|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|199|21|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|207|7|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|208|16|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|209|16|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|210|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|211|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|212|33|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|213|25|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|215|9|6|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|215|9|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|224|11|15|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|224|18|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|248|8|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|250|14|1|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|256|16|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|257|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|258|17|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|259|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|260|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|261|30|7|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|263|9|3|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|263|9|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|272|12|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|274|12|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|276|11|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|276|15|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|293|16|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|294|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|295|13|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|296|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|297|16|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|298|16|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|300|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|300|9|9|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|309|11|18|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|309|21|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|318|7|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|324|16|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|325|29|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|326|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|326|9|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|328|10|8|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|330|11|20|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|330|23|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|336|7|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|337|16|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|338|27|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|339|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|339|9|11|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|341|11|20|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|341|23|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|350|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|351|13|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|352|23|12|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|357|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|357|9|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|359|7|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|361|22|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|385|7|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|386|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|387|22|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|388|22|17|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|389|33|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|390|20|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|391|21|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|392|22|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|393|19|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|394|27|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|395|21|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|397|9|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|397|9|13|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/models.dart|401|19|7|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/models.dart|403|19|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/models.dart|404|19|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/models.dart|405|19|4|Required named parameters should be before optional named parameters.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/models.dart|413|11|22|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|413|25|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/models.dart|433|15|6|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/mushaf.dart|5|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|14|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/mushaf.dart|15|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|15|9|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|21|13|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/mushaf.dart|22|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|22|9|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|28|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|29|14|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|30|13|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|31|13|2|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/mushaf.dart|32|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|32|9|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|34|12|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|35|14|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|38|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|39|24|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/mushaf.dart|40|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|40|9|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|42|12|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|43|12|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|46|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|47|13|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|48|26|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/mushaf.dart|49|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|49|9|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|54|18|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|63|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|64|26|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/mushaf.dart|68|3|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|70|11|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|71|14|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/mushaf.dart|75|7|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|23|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|31|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|37|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|45|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|52|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|63|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|72|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|78|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|85|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|99|14|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|115|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|128|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|142|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|156|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|171|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|183|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|196|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|7|205|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|55|17|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|56|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|57|14|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|58|17|14|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/pop_icons.dart|59|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/pop_icons.dart|59|9|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/progress.dart|1|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/progress.dart|2|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/progress.dart|30|3|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|30|3|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|41|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|46|8|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|51|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|56|8|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|58|7|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/progress.dart|70|9|7|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/recitation.dart|6|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/recitation.dart|7|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|18|20|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|26|16|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|27|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|28|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|29|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|30|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|41|22|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|42|26|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/recitation.dart|52|3|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|52|3|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|72|8|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|86|12|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|94|8|9|Missing documentation for a public member.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/recitation.dart|143|9|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|197|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|199|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|201|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation.dart|210|16|8|Missing documentation for a public member.
+INFO|LINT|DISCARDED_FUTURES|lib/recitation.dart|219|9|6|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DISCARDED_FUTURES|lib/recitation.dart|222|12|7|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DIRECTIVES_ORDERING|lib/recitation_player.dart|6|1|58|Sort directive sections alphabetically.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/recitation_player.dart|8|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/recitation_player.dart|56|8|6|Missing documentation for a public member.
+INFO|LINT|AVOID_REDUNDANT_ARGUMENT_VALUES|lib/recitation_player.dart|66|59|28|The value of the argument is redundant because it matches the default value.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/recitation_player.dart|74|6|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/recitation_player.dart|85|6|1|Missing a required trailing comma.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/recitation_player.dart|89|29|2|Returning a 'Future' without 'await'.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/recitation_player.dart|92|30|2|Returning a 'Future' without 'await'.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/recitation_player.dart|101|35|2|Returning a 'Future' without 'await'.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/recitation_player.dart|104|39|2|Returning a 'Future' without 'await'.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/recitation_player.dart|123|5|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/recitation_player.dart|140|5|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/recitation_player.dart|151|5|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/common.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/common.dart|4|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/common.dart|5|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/common.dart|6|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/common.dart|7|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|9|12|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|15|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|16|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|17|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|18|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|19|15|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|20|15|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|24|15|10|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/common.dart|25|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/common.dart|25|9|7|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/common.dart|27|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/common.dart|28|19|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|4|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|5|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|6|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|7|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|8|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|9|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/downloads_screen.dart|10|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|14|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|15|13|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|16|13|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/downloads_screen.dart|17|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|17|9|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|19|12|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|40|8|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/downloads_screen.dart|48|9|15|Missing documentation for a public member.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/downloads_screen.dart|69|48|8|'Future'-returning calls in a non-'async' function.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/screens/downloads_screen.dart|100|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/screens/downloads_screen.dart|107|30|2|Returning a 'Future' without 'await'.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/screens/downloads_screen.dart|116|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/downloads_screen.dart|200|108|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/downloads_screen.dart|239|9|6|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|4|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|5|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|6|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|7|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|8|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|9|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|10|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|11|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/dua_screen.dart|12|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|14|7|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|15|19|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|16|13|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|17|17|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/dua_screen.dart|18|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|18|9|9|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/dua_screen.dart|18|45|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/dua_screen.dart|18|65|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/dua_screen.dart|18|86|4|Required named parameters should be before optional named parameters.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/dua_screen.dart|57|59|4|'Future'-returning calls in a non-'async' function.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/screens/dua_screen.dart|80|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/dua_screen.dart|149|113|1|Missing a required trailing comma.
+INFO|LINT|PREFER_IF_ELEMENTS_TO_CONDITIONAL_EXPRESSIONS|lib/screens/dua_screen.dart|180|29|57|Use an 'if' element to conditionally add elements.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/dua_screen.dart|189|36|14|'Future'-returning calls in a non-'async' function.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/dua_screen.dart|248|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/dua_screen.dart|281|102|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|299|16|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/dua_screen.dart|300|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/dua_screen.dart|300|9|12|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/dua_screen.dart|300|48|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|4|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|5|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|6|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|7|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|8|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/duas_screen.dart|9|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|13|16|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|14|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|15|16|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|16|18|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|17|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|18|14|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/duas_screen.dart|19|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|19|9|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|32|7|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|49|8|13|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|51|7|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|52|9|10|Missing documentation for a public member.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/duas_screen.dart|106|86|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/duas_screen.dart|125|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/duas_screen.dart|167|94|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/duas_screen.dart|169|98|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/duas_screen.dart|178|127|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|191|17|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|192|19|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/duas_screen.dart|193|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|193|9|12|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/duas_screen.dart|193|48|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/duas_screen.dart|193|68|4|Required named parameters should be before optional named parameters.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/duas_screen.dart|226|102|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/duas_screen.dart|237|8|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|4|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|5|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|6|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|7|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|8|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|9|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|10|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/hadith_screen.dart|11|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|43|8|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|59|9|16|Missing documentation for a public member.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/hadith_screen.dart|132|103|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/hadith_screen.dart|142|8|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|149|21|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/hadith_screen.dart|150|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|150|9|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/hadith_screen.dart|150|47|5|Required named parameters should be before optional named parameters.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/hadith_screen.dart|182|102|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/hadith_screen.dart|200|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|200|9|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/hadith_screen.dart|200|47|7|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|202|16|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|277|7|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|278|16|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/hadith_screen.dart|279|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|279|9|12|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/hadith_screen.dart|279|48|6|Required named parameters should be before optional named parameters.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/hadith_screen.dart|351|106|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/hadith_screen.dart|360|114|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|401|16|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/hadith_screen.dart|402|9|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/hadith_screen.dart|402|9|13|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/hadith_screen.dart|402|49|6|Required named parameters should be before optional named parameters.
+INFO|LINT|PREFER_CONST_CONSTRUCTORS|lib/screens/hadith_screen.dart|432|43|25|Use 'const' with the constructor to improve performance.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|5|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|6|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|DIRECTIVES_ORDERING|lib/screens/home_screen.dart|7|1|27|Sort directive sections alphabetically.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|7|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|8|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|9|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|10|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|11|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|12|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|13|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|14|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|15|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|16|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|17|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|18|8|26|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|19|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|20|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|21|8|22|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|22|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|23|8|24|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|24|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|25|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/home_screen.dart|26|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|40|12|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|40|21|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|40|32|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|42|5|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|57|9|10|Missing documentation for a public member.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/home_screen.dart|92|24|12|'Future'-returning calls in a non-'async' function.
+INFO|LINT|UNAWAITED_FUTURES|lib/screens/home_screen.dart|139|60|2|Missing an 'await' for the 'Future' computed by this expression.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|140|10|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|175|8|11|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|184|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|226|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|246|9|4|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|265|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PREFER_CONST_CONSTRUCTORS|lib/screens/home_screen.dart|286|11|91|Use 'const' with the constructor to improve performance.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|307|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|333|6|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|337|7|14|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|338|13|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|339|27|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|340|27|7|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|341|3|14|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/home_screen.dart|341|3|14|Missing documentation for a public member.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/home_screen.dart|356|5|109|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/home_screen.dart|376|7|191|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/home_screen.dart|389|9|154|Unnecessary duplication of receiver.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|392|28|1|Missing a required trailing comma.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/home_screen.dart|400|7|37|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/home_screen.dart|427|5|179|Unnecessary duplication of receiver.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|433|24|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|442|9|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|AVOID_REDUNDANT_ARGUMENT_VALUES|lib/screens/home_screen.dart|455|15|1|The value of the argument is redundant because it matches the default value.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|472|108|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|493|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|512|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/home_screen.dart|536|9|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|547|95|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|569|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PREFER_INT_LITERALS|lib/screens/home_screen.dart|608|54|3|Unnecessary use of a 'double' literal.
+INFO|LINT|PREFER_INT_LITERALS|lib/screens/home_screen.dart|608|115|3|Unnecessary use of a 'double' literal.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|624|78|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|638|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|644|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|653|93|1|Missing a required trailing comma.
+INFO|LINT|UNNECESSARY_LAMBDAS|lib/screens/home_screen.dart|657|57|19|Closure should be a tearoff.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|679|46|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|685|6|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/home_screen.dart|695|9|6|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/home_screen.dart|760|105|1|Missing a required trailing comma.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/home_screen.dart|799|17|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/home_screen.dart|809|17|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|6|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|7|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|8|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|9|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|10|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|11|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/missing_word_screen.dart|12|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|17|7|19|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|18|14|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|19|22|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|20|13|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|21|22|7|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/missing_word_screen.dart|22|9|19|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|22|9|19|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|24|14|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|31|35|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|32|7|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|33|7|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/missing_word_screen.dart|35|3|15|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|35|3|15|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/missing_word_screen.dart|37|11|21|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|37|27|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|64|12|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|65|27|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|79|7|17|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|80|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/missing_word_screen.dart|81|9|17|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/missing_word_screen.dart|81|9|17|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/missing_word_screen.dart|81|53|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PREFER_IF_ELEMENTS_TO_CONDITIONAL_EXPRESSIONS|lib/screens/missing_word_screen.dart|163|21|528|Use an 'if' element to conditionally add elements.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/missing_word_screen.dart|173|117|1|Missing a required trailing comma.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mosaic_screen.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mosaic_screen.dart|4|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mosaic_screen.dart|5|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mosaic_screen.dart|6|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mosaic_screen.dart|7|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mosaic_screen.dart|8|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mosaic_screen.dart|12|9|12|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|7|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|8|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|9|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|10|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|11|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|12|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|13|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|14|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/mushaf_screen.dart|15|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|19|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|20|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|21|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|27|13|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|28|17|9|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/mushaf_screen.dart|29|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|29|9|12|Missing documentation for a public member.
+INFO|LINT|UNNECESSARY_UNAWAITED|lib/screens/mushaf_screen.dart|82|9|9|Unnecessary use of 'unawaited'.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/screens/mushaf_screen.dart|104|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/screens/mushaf_screen.dart|111|30|2|Returning a 'Future' without 'await'.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/mushaf_screen.dart|115|24|5|'Future'-returning calls in a non-'async' function.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/mushaf_screen.dart|195|103|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|260|20|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|261|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|262|17|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|263|39|9|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/mushaf_screen.dart|264|9|14|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|264|9|14|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/mushaf_screen.dart|264|50|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/mushaf_screen.dart|264|70|7|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/mushaf_screen.dart|264|109|9|Required named parameters should be before optional named parameters.
+INFO|LINT|PREFER_INT_LITERALS|lib/screens/mushaf_screen.dart|327|83|3|Unnecessary use of a 'double' literal.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/mushaf_screen.dart|359|8|1|Missing a required trailing comma.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/mushaf_screen.dart|362|9|178|Unnecessary duplication of receiver.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/mushaf_screen.dart|365|10|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/mushaf_screen.dart|377|97|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/mushaf_screen.dart|377|98|1|Missing a required trailing comma.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/mushaf_screen.dart|378|5|12|Unnecessary duplication of receiver.
+INFO|LINT|AVOID_REDUNDANT_ARGUMENT_VALUES|lib/screens/mushaf_screen.dart|417|18|16|The value of the argument is redundant because it matches the default value.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/mushaf_screen.dart|440|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PREFER_INT_LITERALS|lib/screens/mushaf_screen.dart|464|100|3|Unnecessary use of a 'double' literal.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/mushaf_screen.dart|464|120|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|479|13|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|480|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|481|14|3|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/mushaf_screen.dart|482|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/mushaf_screen.dart|482|9|10|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/mushaf_screen.dart|482|46|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/mushaf_screen.dart|482|68|4|Required named parameters should be before optional named parameters.
+INFO|LINT|PREFER_INT_LITERALS|lib/screens/mushaf_screen.dart|501|25|3|Unnecessary use of a 'double' literal.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/mushaf_screen.dart|514|9|14|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|AVOID_POSITIONAL_BOOLEAN_PARAMETERS|lib/screens/mushaf_screen.dart|514|24|8|'bool' parameters should be named parameters.
+INFO|LINT|CASCADE_INVOCATIONS|lib/screens/mushaf_screen.dart|520|5|185|Unnecessary duplication of receiver.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/mushaf_screen.dart|540|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|4|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|5|8|21|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|6|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|7|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|8|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|9|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|10|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|11|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|12|8|23|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|13|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|14|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|15|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|16|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|17|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/my_shelf_screen.dart|18|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/my_shelf_screen.dart|24|9|13|Missing documentation for a public member.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/my_shelf_screen.dart|87|14|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/my_shelf_screen.dart|113|14|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/my_shelf_screen.dart|123|16|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/my_shelf_screen.dart|130|16|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/my_shelf_screen.dart|147|14|1|Missing a required trailing comma.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/my_shelf_screen.dart|173|7|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/my_shelf_screen.dart|175|7|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/my_shelf_screen.dart|182|7|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/my_shelf_screen.dart|184|7|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/my_shelf_screen.dart|191|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/my_shelf_screen.dart|211|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/my_shelf_screen.dart|250|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/my_shelf_screen.dart|281|9|6|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/my_shelf_screen.dart|291|124|1|Missing a required trailing comma.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|4|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|5|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|6|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|7|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|8|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/now_playing.dart|9|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/now_playing.dart|15|9|13|Missing documentation for a public member.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/now_playing.dart|47|112|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/now_playing.dart|67|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|6|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|7|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|8|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|9|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|10|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|11|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/order_game_screen.dart|12|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|16|20|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|17|20|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|18|7|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/order_game_screen.dart|20|3|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|20|3|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|42|12|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|43|8|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|61|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/order_game_screen.dart|62|9|17|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|62|9|17|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/order_game_screen.dart|62|53|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|104|7|15|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|105|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|106|13|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/order_game_screen.dart|107|9|15|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/order_game_screen.dart|107|9|15|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/order_game_screen.dart|107|51|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/order_game_screen.dart|107|72|5|Required named parameters should be before optional named parameters.
+INFO|LINT|SPECIFY_NONOBVIOUS_PROPERTY_TYPES|lib/screens/order_game_screen.dart|114|3|55|A type annotation is needed because it isn't obvious.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/order_game_screen.dart|195|88|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/order_game_screen.dart|219|96|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/order_game_screen.dart|239|94|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/order_game_screen.dart|280|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_gate.dart|4|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_gate.dart|5|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_gate.dart|6|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_gate.dart|7|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_gate.dart|8|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/parent_gate.dart|22|9|17|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_gate.dart|62|82|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/parent_gate.dart|94|9|11|Missing documentation for a public member.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_gate.dart|116|121|1|Missing a required trailing comma.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_screen.dart|3|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_screen.dart|4|8|27|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_screen.dart|5|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_screen.dart|6|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_screen.dart|7|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/parent_screen.dart|8|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/parent_screen.dart|12|9|12|Missing documentation for a public member.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_screen.dart|48|74|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_screen.dart|59|69|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_screen.dart|78|79|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_screen.dart|83|90|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_screen.dart|85|79|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/parent_screen.dart|89|77|1|Missing a required trailing comma.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|5|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|6|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|7|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|8|8|19|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|9|8|18|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|10|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|11|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|12|8|15|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|13|8|17|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|14|8|13|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|15|8|26|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|16|8|20|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/screens/surah_screen.dart|17|8|24|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/surah_screen.dart|19|7|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/surah_screen.dart|20|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/surah_screen.dart|21|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/screens/surah_screen.dart|21|9|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/screens/surah_screen.dart|21|47|5|Required named parameters should be before optional named parameters.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/surah_screen.dart|41|7|13|'Future'-returning calls in a non-'async' function.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/screens/surah_screen.dart|76|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|lib/screens/surah_screen.dart|83|30|2|Returning a 'Future' without 'await'.
+INFO|LINT|AVOID_CATCHES_WITHOUT_ON_CLAUSES|lib/screens/surah_screen.dart|96|7|5|Catch clause should use 'on' to specify the type of exception being caught.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/surah_screen.dart|109|7|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|DISCARDED_FUTURES|lib/screens/surah_screen.dart|111|7|2|'Future'-returning calls in a non-'async' function.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/surah_screen.dart|159|78|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/surah_screen.dart|172|92|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/surah_screen.dart|223|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/screens/surah_screen.dart|288|113|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/surah_screen.dart|306|9|6|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/screens/surah_screen.dart|333|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|AVOID_ESCAPING_INNER_QUOTES|lib/strings.dart|126|58|42|Unnecessary escape of '''.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/strings.dart|182|8|2|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|5|16|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|6|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|7|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|8|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|9|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|10|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|11|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|12|16|9|Missing documentation for a public member.
+INFO|LINT|SPECIFY_NONOBVIOUS_PROPERTY_TYPES|lib/theme.dart|15|10|42|A type annotation is needed because it isn't obvious.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|16|16|8|Missing documentation for a public member.
+INFO|LINT|SPECIFY_NONOBVIOUS_PROPERTY_TYPES|lib/theme.dart|20|10|46|A type annotation is needed because it isn't obvious.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|21|16|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|35|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|36|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|37|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/theme.dart|40|11|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/widgets.dart|5|8|16|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/widgets.dart|6|8|14|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|ALWAYS_USE_PACKAGE_IMPORTS|lib/widgets.dart|7|8|12|Use 'package:' imports for files in the 'lib' directory.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|11|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|12|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|13|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|14|14|11|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|15|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|15|9|12|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|36|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|37|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|38|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|39|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|40|16|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|41|28|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|42|23|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|43|14|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|44|15|8|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|46|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|46|9|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|48|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|88|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|89|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|90|16|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|91|9|15|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|91|9|15|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|109|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|110|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|111|15|3|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|112|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|112|9|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|112|47|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|125|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|126|19|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|127|23|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|128|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|129|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|129|9|11|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|129|47|5|Required named parameters should be before optional named parameters.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/widgets.dart|147|96|1|Missing a required trailing comma.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|158|18|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|159|16|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|160|23|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|161|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|162|9|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|162|9|13|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|162|49|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|162|69|7|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|190|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|191|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|192|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|192|9|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|206|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|207|16|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|208|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|208|9|10|Missing documentation for a public member.
+INFO|LINT|PREFER_INT_LITERALS|lib/widgets.dart|217|73|3|Unnecessary use of a 'double' literal.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|225|16|9|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|226|17|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|227|9|11|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|227|9|11|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|242|7|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|243|16|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|244|9|7|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|244|9|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|258|6|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|258|14|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|258|21|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|258|27|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|258|36|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|279|7|15|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|280|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|281|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|282|16|6|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|283|3|15|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|283|3|15|Missing documentation for a public member.
+INFO|LINT|CASCADE_INVOCATIONS|lib/widgets.dart|299|9|82|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/widgets.dart|303|9|45|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/widgets.dart|307|9|27|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|lib/widgets.dart|310|9|27|Unnecessary duplication of receiver.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|331|7|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|332|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|333|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|334|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|335|17|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|336|16|14|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|337|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|337|9|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|339|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|340|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|341|19|4|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|342|19|14|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|371|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|372|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|373|16|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|374|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|374|9|5|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|374|41|4|Required named parameters should be before optional named parameters.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|lib/widgets.dart|392|16|1|Missing a required trailing comma.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|409|3|13|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|CASCADE_INVOCATIONS|lib/widgets.dart|427|5|181|Unnecessary duplication of receiver.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|443|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|444|16|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|445|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|445|9|10|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|445|46|6|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|445|68|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|485|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|486|16|4|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|487|9|12|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|487|9|12|Missing documentation for a public member.
+INFO|LINT|UNNECESSARY_RAW_STRINGS|lib/widgets.dart|492|23|10|Unnecessary use of a raw string.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|526|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|527|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|528|15|9|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|529|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|529|9|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|544|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|545|15|5|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|546|9|10|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|546|9|10|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|563|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|564|15|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|565|17|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|566|15|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|567|16|4|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|568|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|569|16|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|570|28|7|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|571|23|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|572|17|14|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|573|9|9|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|573|9|9|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|575|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|576|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|657|16|5|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|658|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|659|15|3|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|660|15|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|661|17|8|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|662|23|6|Missing documentation for a public member.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|663|16|9|Missing documentation for a public member.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|664|9|8|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|PUBLIC_MEMBER_API_DOCS|lib/widgets.dart|664|9|8|Missing documentation for a public member.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|666|19|5|Required named parameters should be before optional named parameters.
+INFO|LINT|ALWAYS_PUT_REQUIRED_NAMED_PARAMETERS_FIRST|lib/widgets.dart|672|19|9|Required named parameters should be before optional named parameters.
+INFO|LINT|SORT_CONSTRUCTORS_FIRST|lib/widgets.dart|735|9|5|Constructor declarations should be before non-constructor declarations.
+INFO|LINT|SORT_PUB_DEPENDENCIES|pubspec.yaml|16|3|13|Dependencies not sorted alphabetically.
+INFO|LINT|CASCADE_INVOCATIONS|test/flows_test.dart|44|9|77|Unnecessary duplication of receiver.
+INFO|LINT|DOCUMENT_IGNORES|test/flows_test.dart|51|5|52|Missing documentation explaining why the diagnostic is ignored.
+INFO|LINT|UNNECESSARY_IGNORE|test/flows_test.dart|51|16|41|The diagnostic 'invalid_use_of_visible_for_testing_member' isn't produced at this location so it doesn't need to be ignored.
+INFO|LINT|CASCADE_INVOCATIONS|test/flows_test.dart|52|5|20|Unnecessary duplication of receiver.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|test/flows_test.dart|141|35|2|Returning a 'Future' without 'await'.
+INFO|LINT|ASYNC_RETURN_WITH_NO_AWAIT|test/flows_test.dart|161|99|2|Returning a 'Future' without 'await'.
+INFO|LINT|CASCADE_INVOCATIONS|test/flows_test.dart|167|5|79|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|test/local_store_test.dart|29|7|94|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|test/local_store_test.dart|33|5|152|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|test/local_store_test.dart|52|5|36|Unnecessary duplication of receiver.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|test/local_store_test.dart|93|7|1|Missing a required trailing comma.
+INFO|LINT|CASCADE_INVOCATIONS|test/local_store_test.dart|140|5|177|Unnecessary duplication of receiver.
+INFO|LINT|CASCADE_INVOCATIONS|test/phase1_test.dart|39|5|17|Unnecessary duplication of receiver.
+INFO|LINT|AVOID_REDUNDANT_ARGUMENT_VALUES|test/phase1_test.dart|45|33|1|The value of the argument is redundant because it matches the default value.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|test/phase2_test.dart|81|14|1|Missing a required trailing comma.
+INFO|LINT|REQUIRE_TRAILING_COMMAS|test/recitation_test.dart|109|122|1|Missing a required trailing comma.

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:islamic_kids_app/content_store.dart';
 import 'package:islamic_kids_app/models.dart';
 import 'package:islamic_kids_app/mushaf.dart';
 import 'package:islamic_kids_app/screens/downloads_screen.dart';
@@ -107,8 +108,11 @@ void main() {
   // The committed bundle is rebuilt by CI before the tests run, so this
   // checks the real 604-page book whenever the bundle carries the layout.
   test('the real bundle makes a 604-page book with every word placed', () {
-    final file = File('assets/content/bundle.json');
-    final b = ContentBundle.fromJson(jsonDecode(file.readAsStringSync()) as Map<String, dynamic>);
+    final raw = File('assets/content/bundle.json').readAsStringSync();
+    // The contract every shipped bundle must meet, including the audio host
+    // allow-list (widget tests use the small fixture in test/fixtures).
+    expect(parseBundle(raw), isNotNull, reason: 'the shipped bundle must pass parseBundle');
+    final b = ContentBundle.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     if (b.mushaf == null) {
       markTestSkipped('bundle has no mushaf layout yet');
       return;

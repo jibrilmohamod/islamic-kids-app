@@ -24,7 +24,7 @@ void main() {
   Future<void> flush(WidgetTester tester) => tester.runAsync(store.flush);
 
   Future<AppState> stateWithStore(WidgetTester tester) async {
-    final raw = File('assets/content/bundle.json').readAsStringSync();
+    final raw = File('test/fixtures/bundle.json').readAsStringSync();
     final state = AppState()
       ..bundle = ContentBundle.fromJson(jsonDecode(raw) as Map<String, dynamic>)
       ..now = () => DateTime(2026, 10, 20, 9);

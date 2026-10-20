@@ -158,9 +158,11 @@ void main() {
     final files = AudioService(info: b.audio!, baseDir: () async => dir, download: (url, f) async => f.writeAsBytes([1]));
     final player = FakePlayer();
     final rec = Recitation(files: files, player: player);
-    final handler = RecitationHandler()
-      ..ayahLabel = (n, total) => 'Ayah $n of $total'
-      ..attach(rec);
+    // Separate statements: in a cascade, `..attach` after an arrow function
+    // would bind to the function's string result.
+    final handler = RecitationHandler();
+    handler.ayahLabel = (n, total) => 'Ayah $n of $total';
+    handler.attach(rec);
     expect(handler.mediaItem.value, isNull, reason: 'nothing playing yet');
 
     final yaseen = b.surahs.firstWhere((s) => s.number == 36);

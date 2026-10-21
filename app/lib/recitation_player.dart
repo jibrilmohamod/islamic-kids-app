@@ -159,3 +159,13 @@ Future<void> openNotificationSettings() async {
     debugPrint('Could not open notification settings: $e');
   }
 }
+
+/// The app's own Android log lines (MainActivity, "logcat"), for the
+/// parents' problem report. Empty where there is no Android side.
+Future<String> androidLog() async {
+  try {
+    return await _notifications.invokeMethod<String>('logcat') ?? '';
+  } catch (e) {
+    return '';
+  }
+}

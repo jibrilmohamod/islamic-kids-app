@@ -184,7 +184,11 @@ class _ProblemReportState extends State<_ProblemReport> {
             label: tr('copy', lang),
             color: Colors.white,
             onPressed: () async {
-              await Clipboard.setData(ClipboardData(text: Diagnostics.lines.join('\n')));
+              // The app's lines, then Android's own log for this app.
+              final android = await androidLog();
+              await Clipboard.setData(ClipboardData(
+                text: [...Diagnostics.lines, if (android.isNotEmpty) '--- android log ---\n$android'].join('\n'),
+              ));
               if (!context.mounted) return;
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('copied', lang))));
               setState(() {});

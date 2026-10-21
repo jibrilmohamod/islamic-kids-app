@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'app_state.dart';
+import 'diagnostics.dart';
 import 'recitation_player.dart';
 import 'screens/home_screen.dart';
 import 'screens/parent_gate.dart';
@@ -10,6 +11,7 @@ import 'strings.dart';
 import 'theme.dart';
 
 Future<void> main() async {
+  Diagnostics.install();
   WidgetsFlutterBinding.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
     final text = await rootBundle.loadString('assets/fonts/OFL-licenses.txt');
@@ -21,6 +23,7 @@ Future<void> main() async {
   });
   // Before load(): the media service must exist when recitation is created.
   final (media, mediaError) = await startMediaService();
+  debugPrint('media service: ${media != null ? 'started' : 'failed: $mediaError'}');
   final state = AppState()
     ..media = media
     ..mediaError = mediaError

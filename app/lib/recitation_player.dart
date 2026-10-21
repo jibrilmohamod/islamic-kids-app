@@ -59,9 +59,16 @@ class RecitationHandler extends bg.BaseAudioHandler {
     _publish();
   }
 
+  String? _lastLogged;
+
   void _publish() {
     final r = _r;
     final s = r?.surah;
+    final summary = s == null || r == null ? 'idle' : '${r.key} playing=${r.playing} waiting=${r.waiting}';
+    if (summary != _lastLogged) {
+      _lastLogged = summary;
+      debugPrint('media session: $summary');
+    }
     if (r == null || s == null) {
       playbackState.add(bg.PlaybackState(processingState: bg.AudioProcessingState.idle));
       mediaItem.add(null);
@@ -150,5 +157,15 @@ Future<void> openNotificationSettings() async {
     await _notifications.invokeMethod<bool>('openSettings');
   } catch (e) {
     debugPrint('Could not open notification settings: $e');
+  }
+}
+
+/// The app's own Android log lines (MainActivity, "logcat"), for the
+/// parents' problem report. Empty where there is no Android side.
+Future<String> androidLog() async {
+  try {
+    return await _notifications.invokeMethod<String>('logcat') ?? '';
+  } catch (e) {
+    return '';
   }
 }

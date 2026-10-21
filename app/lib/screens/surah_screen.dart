@@ -366,6 +366,15 @@ class _AyahCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     ToggleIconButton(
+                      on: state.isFavourite(ayahFavouriteId(ayah.key)),
+                      onIcon: PopIcon.heartOn,
+                      offIcon: PopIcon.heartOff,
+                      tooltip: tr(state.isFavourite(ayahFavouriteId(ayah.key)) ? 'removeFavouriteAyah' : 'addFavouriteAyah', lang,
+                          {'key': ayah.key}),
+                      onPressed: () => state.toggleFavourite(ayahFavouriteId(ayah.key)),
+                    ),
+                    const SizedBox(width: 2),
+                    ToggleIconButton(
                       on: state.isBookmarked(ayah.key),
                       onIcon: PopIcon.bookmarkOn,
                       offIcon: PopIcon.bookmarkOff,

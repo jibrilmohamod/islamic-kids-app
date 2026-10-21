@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart' show debugPrint;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -265,6 +266,7 @@ class ToggleIconButton extends StatelessWidget {
         child: InkResponse(
           radius: 26,
           onTap: () {
+            debugPrint('tap: $tooltip');
             HapticFeedback.lightImpact();
             onPressed();
           },

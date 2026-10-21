@@ -9,7 +9,9 @@ import 'package:islamic_kids_app/arch.dart';
 import 'package:islamic_kids_app/local_store.dart';
 import 'package:islamic_kids_app/models.dart';
 import 'package:islamic_kids_app/screens/hadith_screen.dart';
+import 'package:islamic_kids_app/screens/mushaf_screen.dart';
 import 'package:islamic_kids_app/screens/my_shelf_screen.dart';
+import 'package:islamic_kids_app/screens/surah_screen.dart';
 import 'package:islamic_kids_app/theme.dart';
 import 'package:islamic_kids_app/widgets.dart';
 
@@ -102,6 +104,40 @@ void main() {
     await flush(tester);
   });
 
+  testWidgets('a heart on an ayah keeps it on the shelf, apart from bookmarks', (tester) async {
+    phone(tester);
+    final state = await stateWithStore(tester);
+    final yaseen = state.bundle!.surahs.firstWhere((s) => s.number == 36);
+    await tester.pumpWidget(app(state, SurahScreen(surah: yaseen)));
+    await tester.pumpAndSettle();
+
+    final heart = find.byTooltip('Add 36:3 to my favourites');
+    await tester.scrollUntilVisible(heart, 200);
+    await tester.tap(heart);
+    await tester.pumpAndSettle();
+    expect(state.isFavourite(ayahFavouriteId('36:3')), isTrue);
+    expect(state.isBookmarked('36:3'), isFalse, reason: 'a favourite is not a bookmark');
+    expect(find.byTooltip('Remove 36:3 from my favourites'), findsOneWidget);
+
+    // Two favourites, added out of order, are listed in Quran order.
+    state.toggleFavourite(ayahFavouriteId('36:1'));
+    await tester.pumpWidget(app(state, const MyShelfScreen()));
+    await tester.pumpAndSettle();
+    final first = find.text('Ayah · ${yaseen.name} 36:1');
+    final third = find.text('Ayah · ${yaseen.name} 36:3');
+    expect(first, findsOneWidget);
+    expect(third, findsOneWidget);
+    expect(tester.getTopLeft(first).dy, lessThan(tester.getTopLeft(third).dy));
+    expect(find.text(yaseen.ayat[2].meaningFor('en')!.text), findsOneWidget);
+
+    // Tapping one opens the book on that ayah.
+    await tester.tap(third);
+    await tester.pumpAndSettle();
+    expect(find.byType(MushafScreen), findsOneWidget);
+    expect(find.byTooltip('Remove 36:3 from my favourites'), findsOneWidget, reason: 'the ayah is selected in the book');
+    await flush(tester);
+  });
+
   testWidgets('hadith shelves are niches that open their topics', (tester) async {
     phone(tester);
     final state = await stateWithStore(tester);
@@ -125,6 +161,8 @@ void main() {
         ..toggleBookmark('36:1')
         ..toggleBookmark('2:255')
         ..toggleFavourite(favouriteId(h))
+        ..toggleFavourite(ayahFavouriteId('2:255'))
+        ..toggleFavourite(ayahFavouriteId('36:3'))
         ..recordHistory(HistoryKind.listen, 36, 4)
         ..recordHistory(HistoryKind.read, 18, 0);
       for (final page in <Widget>[

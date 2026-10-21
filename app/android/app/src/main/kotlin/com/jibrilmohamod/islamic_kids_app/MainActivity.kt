@@ -26,6 +26,7 @@ class MainActivity : AudioServiceActivity() {
             when (call.method) {
                 "status" -> result.success(allowed())
                 "request" -> request(result)
+                "logcat" -> result.success(ownLog())
                 "openSettings" -> {
                     val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
                         .putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
@@ -35,6 +36,16 @@ class MainActivity : AudioServiceActivity() {
                 else -> result.notImplemented()
             }
         }
+    }
+
+    // This app's own Android log (an app may read its own lines without any
+    // permission), for the parents' problem report: native faults such as
+    // a media service that did not start never reach Dart.
+    private fun ownLog(): String = try {
+        val p = Runtime.getRuntime().exec(arrayOf("logcat", "-d", "-t", "400", "--pid=${android.os.Process.myPid()}"))
+        p.inputStream.bufferedReader().readText().takeLast(60_000)
+    } catch (e: Exception) {
+        "logcat unavailable: $e"
     }
 
     private fun allowed(): Boolean {

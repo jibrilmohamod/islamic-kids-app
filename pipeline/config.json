@@ -21,7 +21,40 @@
     "base": "https://cdn.islamic.network/quran/audio",
     "reciter": "Mishary Rashid Alafasy",
     "publisher": "Islamic Network (alquran.cloud)",
-    "terms": "https://alquran.cloud/terms-and-conditions"
+    "terms": "https://alquran.cloud/terms-and-conditions",
+    "reciterAr": "مشاري راشد العفاسي",
+    "others": [
+      {
+        "edition": "ar.husary",
+        "reciter": "Mahmoud Khalil Al-Husary",
+        "reciterAr": "محمود خليل الحصري"
+      },
+      {
+        "edition": "ar.abdulsamad",
+        "reciter": "Abdul Basit Abdul Samad",
+        "reciterAr": "عبد الباسط عبد الصمد"
+      },
+      {
+        "edition": "ar.mahermuaiqly",
+        "reciter": "Maher Al-Muaiqly",
+        "reciterAr": "ماهر المعيقلي"
+      },
+      {
+        "edition": "ar.abdurrahmaansudais",
+        "reciter": "Abdul Rahman Al-Sudais",
+        "reciterAr": "عبد الرحمن السديس"
+      },
+      {
+        "edition": "ar.saoodshuraym",
+        "reciter": "Saud Al-Shuraim",
+        "reciterAr": "سعود الشريم"
+      },
+      {
+        "edition": "ar.muhammadayyoub",
+        "reciter": "Muhammad Ayyub",
+        "reciterAr": "محمد أيوب"
+      }
+    ]
   },
   "duaCategories": [
     {

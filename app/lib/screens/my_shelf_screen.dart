@@ -39,7 +39,14 @@ class MyShelfScreen extends StatelessWidget {
     ];
     final favDuas = [for (final d in bundle.duas) if (state.isFavourite('dua:${d.id}')) d];
     final favHadith = [for (final h in bundle.hadith) if (state.isFavourite(favouriteId(h))) h];
-    final empty = read == null && listen == null && marks.isEmpty && favDuas.isEmpty && favHadith.isEmpty;
+    // Favourite ayat in Quran order.
+    final favAyat = [
+      for (final id in state.favourites)
+        if (id.startsWith('ayah:'))
+          if (_ayahFor(surahs, id.substring(5)) case final found?) found,
+    ]..sort((x, y) => x.$1.number != y.$1.number ? x.$1.number - y.$1.number : x.$2.aya - y.$2.aya);
+    final empty =
+        read == null && listen == null && marks.isEmpty && favDuas.isEmpty && favHadith.isEmpty && favAyat.isEmpty;
 
     var n = 0;
     Widget enter(Widget child) => Entrance(index: n++, child: child);
@@ -112,8 +119,15 @@ class MyShelfScreen extends StatelessWidget {
               ],
             )),
           ],
-          if (favDuas.isNotEmpty || favHadith.isNotEmpty) ...[
+          if (favAyat.isNotEmpty || favDuas.isNotEmpty || favHadith.isNotEmpty) ...[
             _Heading(tr('favourites', lang)),
+            for (final (s, a) in favAyat)
+              enter(_Favourite(
+                glaze: Pop.cyan,
+                kind: '${tr('ayahKind', lang)} · ${s.name} ${a.key}',
+                title: a.meaningFor(lang)?.text ?? a.arabic,
+                onTap: () => _openAyah(context, state, s, a),
+              )),
             for (final (i, h) in favHadith.indexed)
               enter(_Favourite(
                 glaze: i.isEven ? Pop.pink : Pop.lemon,

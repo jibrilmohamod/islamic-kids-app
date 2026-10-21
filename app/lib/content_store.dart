@@ -155,8 +155,11 @@ ContentBundle? parseBundle(String raw) {
     if (j['schemaVersion'] != supportedSchemaVersion) return null;
     final b = ContentBundle.fromJson(j);
     if (b.version.isEmpty || b.surahs.isEmpty) return null;
+    // Every reciter's files must come from an allowed host.
     final audio = b.audio;
-    if (audio != null && !allowedAudioPrefixes.any(audio.urlTemplate.startsWith)) return null;
+    for (final r in [if (audio != null) audio, ...b.reciters]) {
+      if (!allowedAudioPrefixes.any(r.urlTemplate.startsWith)) return null;
+    }
     return b;
   } catch (e) {
     debugPrint('Bundle unreadable: $e');

@@ -345,6 +345,17 @@ export function validateBundle(bundle, langs) {
   if (bundle.schemaVersion !== 1) errors.push('schemaVersion must be 1');
   if (!bundle.surahs?.length) errors.push('no surahs');
   const seenN = new Set();
+  if (bundle.reciters) {
+    const editions = new Set();
+    for (const r of bundle.reciters) {
+      if (editions.has(r.edition)) errors.push(`reciter ${r.edition} listed twice`);
+      editions.add(r.edition);
+      // The app checks the host against its own allow-list as well.
+      if (!/^https:\/\/[^/]+\/.+\/\{n\}\.mp3$/.test(r.urlTemplate ?? '')) errors.push(`reciter ${r.edition}: unexpected url ${r.urlTemplate}`);
+      if (isBlank(r.reciter)) errors.push(`reciter ${r.edition}: no name`);
+    }
+    if (bundle.audio && bundle.reciters[0]?.edition !== bundle.audio.edition) errors.push('the first reciter must be the default audio');
+  }
   for (const s of bundle.surahs ?? []) {
     if (!s.ayat?.length) errors.push(`${s.id}: no ayat`);
     if (s.ayahCount && s.ayat?.length !== s.ayahCount) errors.push(`${s.id}: ${s.ayat?.length} ayat, expected ${s.ayahCount}`);

@@ -110,8 +110,50 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   /// Injectable clock for tests.
   DateTime Function() now = DateTime.now;
 
+  /// Makes the audio player for a recitation; replaced in tests.
+  RecitationPlayer Function() newPlayer = JustAudioRecitationPlayer.new;
+
+  /// Where audio and content files live; replaced in tests.
+  Future<Directory> Function() supportDir = getApplicationSupportDirectory;
+
+  /// The reciter in use: the parent's choice when the bundle still offers
+  /// it, otherwise the bundle's default.
+  AudioInfo? get reciter {
+    final b = bundle;
+    if (b == null || b.reciters.isEmpty) return b?.audio;
+    final chosen = _store?.state.reciter;
+    return b.reciters.where((r) => r.edition == chosen).firstOrNull ?? b.reciters.first;
+  }
+
+  /// Switches the reciter for the whole app. Recitation stops; saved
+  /// surahs stay on the phone per reciter.
+  Future<void> setReciter(String edition) async {
+    final b = bundle;
+    final info = b?.reciters.where((r) => r.edition == edition).firstOrNull;
+    if (info == null || info.edition == reciter?.edition) return;
+    _store?.update((s) => s.reciter = edition);
+    debugPrint('reciter -> $edition');
+    final old = recitation;
+    await old?.stop();
+    _startRecitation(info);
+    old?.dispose();
+    notifyListeners();
+  }
+
+  void _startRecitation(AudioInfo info) {
+    final files = AudioService(info: info, baseDir: supportDir);
+    attachRecitation(
+      files,
+      Recitation(
+        files: files,
+        player: newPlayer(),
+        beforeFirstStart: media == null ? null : _askNotifications,
+      ),
+    );
+  }
+
   Future<void> load() async {
-    Future<Directory> support() => getApplicationSupportDirectory();
+    Future<Directory> support() => supportDir();
     try {
       final store = await LocalStore.open(
         Directory('${(await support()).path}/store'),
@@ -119,6 +161,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
       );
       _store = store;
       final saved = store.state;
+      debugPrint('store: opened (${saved.bookmarks.length} bookmarks, ${saved.favourites.length} favourites, limit ${saved.dailyLimit})');
       if (saved.lang != null && (saved.lang == 'en' || somaliEnabled)) lang = saved.lang!;
       progress = Progress(saved.rounds);
       activity = Activity(
@@ -150,18 +193,8 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
     final current = bundle;
     if (current != null) {
       migrateLegacyGames(current);
-      final info = current.audio;
-      if (info != null) {
-        final files = AudioService(info: info, baseDir: support);
-        attachRecitation(
-          files,
-          Recitation(
-            files: files,
-            player: JustAudioRecitationPlayer(),
-            beforeFirstStart: media == null ? null : _askNotifications,
-          ),
-        );
-      }
+      final info = reciter;
+      if (info != null) _startRecitation(info);
       unawaited(store.checkForUpdate(current.version));
     }
     WidgetsBinding.instance.addObserver(this);
@@ -291,14 +324,19 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   List<String> get bookmarks => List.unmodifiable(_store?.state.bookmarks ?? const <String>[]);
 
   void toggleBookmark(String ayahKey) {
-    _store?.toggleBookmark(ayahKey);
+    final on = _store?.toggleBookmark(ayahKey);
+    debugPrint('bookmark $ayahKey -> ${on ?? 'not saved: no store'}');
     notifyListeners();
   }
 
   bool isFavourite(String id) => _store?.isFavourite(id) ?? false;
 
+  /// Every favourite id (`dua:`, `hadith:`, `ayah:` ...), in no set order.
+  Set<String> get favourites => Set.unmodifiable(_store?.state.favourites ?? const <String>{});
+
   void toggleFavourite(String id) {
-    _store?.toggleFavourite(id);
+    final on = _store?.toggleFavourite(id);
+    debugPrint('favourite $id -> ${on ?? 'not saved: no store'}');
     notifyListeners();
   }
 
@@ -322,3 +360,8 @@ class AppScope extends InheritedNotifier<AppState> {
   static AppState of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<AppScope>()!.notifier!;
 }
+
+/// The favourite id of an ayah, e.g. `ayah:36:3`. Kept apart from bookmarks:
+/// a bookmark marks a place to come back to, a favourite an ayah the child
+/// loves.
+String ayahFavouriteId(String ayahKey) => 'ayah:$ayahKey';

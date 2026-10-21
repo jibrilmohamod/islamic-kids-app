@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app_state.dart';
+import '../audio_service.dart';
 import '../models.dart';
 import '../recitation.dart';
 import '../strings.dart';
@@ -56,6 +57,7 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
   final Map<int, (int, int)> _saving = {};
   late AppState _state;
   Recitation? _rec;
+  AudioService? _audio;
 
   @override
   void didChangeDependencies() {
@@ -66,7 +68,11 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
       _rec?.removeListener(_onRecitation);
       _rec = rec?..addListener(_onRecitation);
     }
-    if (_list == null && _state.audio != null) _refresh();
+    // A new reciter means other saved files: list them again.
+    if (_state.audio != null && (_list == null || !identical(_state.audio, _audio))) {
+      _audio = _state.audio;
+      _refresh();
+    }
   }
 
   @override

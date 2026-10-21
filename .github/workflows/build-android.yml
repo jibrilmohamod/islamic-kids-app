@@ -60,6 +60,7 @@ jobs:
           if node pipeline/build-bundle.mjs 2>&1 | tee pipeline.log; then
             echo "::notice title=Content bundle::$(tail -n 1 pipeline.log)"
             echo "::notice title=References and mushaf::$(grep -E '^(references|mushaf):' pipeline.log | tr '\n' ';')"
+            echo "::notice title=Reciters::$(grep -E 'audio: |reciter ' pipeline.log | tr '\n' ';')"
           else
             # Job logs cannot be read from outside GitHub, so put the end of
             # the log in an annotation (one annotation, newlines encoded).

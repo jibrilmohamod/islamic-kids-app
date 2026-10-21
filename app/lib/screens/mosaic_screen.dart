@@ -17,15 +17,18 @@ class MosaicScreen extends StatelessWidget {
     final lang = state.lang;
     final surahs = state.bundle!.surahs;
     final next = state.progress.nextUp(surahs);
+    // Tile, gap, and two lines of the name at the reader's text size, so
+    // names never overflow the cell at large text.
+    final cellHeight = 72 + 4 + 2 * MediaQuery.textScalerOf(context).scale(13) * 1.15 + 4;
 
     return PopPage(
       title: tr('surahs', lang),
       subtitle: tr('glazedCount', lang, {'n': state.progress.glazedCount(surahs), 'total': surahs.length}),
       body: GridView.builder(
         padding: const EdgeInsets.fromLTRB(12, 8, 12, 32),
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 100,
-          mainAxisExtent: 124,
+          mainAxisExtent: cellHeight,
           crossAxisSpacing: 6,
           mainAxisSpacing: 8,
         ),

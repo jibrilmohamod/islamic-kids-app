@@ -225,8 +225,8 @@ class _OrderGameScreenState extends State<OrderGameScreen> {
                     ),
                   if (!game.done)
                     Container(
-                      height: 56,
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      constraints: const BoxConstraints(minHeight: 56),
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
                         color: const Color(0xA6FFFFFF),
                         border: Border.all(color: Pop.ink, width: 3),
@@ -238,7 +238,10 @@ class _OrderGameScreenState extends State<OrderGameScreen> {
                             child: Text('${r.start + game.next + 1}',
                                 style: const TextStyle(fontFamily: Pop.display, fontSize: 17)),
                           ),
-                          Text(tr('whichNext', lang), style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                          Expanded(
+                            child: Text(tr('whichNext', lang),
+                                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, height: 1.15)),
+                          ),
                         ],
                       ),
                     ),

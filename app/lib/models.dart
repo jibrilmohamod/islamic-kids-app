@@ -403,7 +403,7 @@ class ContentBundle {
   final List<HadithShelf> shelves;
   final MushafInfo? mushaf;
 
-  const ContentBundle({
+  ContentBundle({
     required this.version,
     required this.languages,
     this.optionalLanguages = const [],

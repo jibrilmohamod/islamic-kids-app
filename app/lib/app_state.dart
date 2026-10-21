@@ -297,6 +297,9 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
 
   bool isFavourite(String id) => _store?.isFavourite(id) ?? false;
 
+  /// Every favourite id (`dua:`, `hadith:`, `ayah:` ...), in no set order.
+  Set<String> get favourites => Set.unmodifiable(_store?.state.favourites ?? const <String>{});
+
   void toggleFavourite(String id) {
     _store?.toggleFavourite(id);
     notifyListeners();
@@ -322,3 +325,8 @@ class AppScope extends InheritedNotifier<AppState> {
   static AppState of(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<AppScope>()!.notifier!;
 }
+
+/// The favourite id of an ayah, e.g. `ayah:36:3`. Kept apart from bookmarks:
+/// a bookmark marks a place to come back to, a favourite an ayah the child
+/// loves.
+String ayahFavouriteId(String ayahKey) => 'ayah:$ayahKey';

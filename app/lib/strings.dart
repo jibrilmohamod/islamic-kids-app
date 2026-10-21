@@ -152,6 +152,13 @@ const Map<String, Map<String, String>> _strings = {
   'hadithSubtitle': {'en': 'Words of our Prophet ﷺ, shelf by shelf', 'so': 'Erayada Nabigeenna ﷺ, khaanad khaanad'},
   'shortHadithTitle': {'en': 'Short hadith', 'so': 'Xadiisyo gaagaaban'},
   'shortHadithSub': {'en': '{n} to learn by heart, line by line', 'so': '{n} lagu xifdiyo, sadar sadar'},
+  'problemReport': {'en': 'Problem report', 'so': 'Warbixinta dhibaatada'},
+  'problemReportHint': {
+    'en': 'What the app did recently, kept only on this phone. If something does not work, copy it and send it to the developer.',
+    'so': 'Waxa app-ku sameeyay dhawaan, kaliya taleefankan. Haddii wax shaqayn waayaan, koobiyee oo u dir horumariyaha.',
+  },
+  'copy': {'en': 'Copy', 'so': 'Koobiyee'},
+  'copied': {'en': 'Copied', 'so': 'Waa la koobiyeeyay'},
   'controlsTitle': {'en': 'Recitation controls', 'so': 'Xakamaynta tilaawada'},
   'controlsOn': {'en': 'On: pull down from the top of the screen to pause or stop.', 'so': 'Shidan: hoos u jiid si aad u hakiso ama u joojiso.'},
   'controlsNoPermission': {'en': 'Off: notifications are not allowed for this app.', 'so': 'Dansan: ogeysiisyada looma oggola app-kan.'},

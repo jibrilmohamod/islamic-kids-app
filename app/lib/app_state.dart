@@ -119,6 +119,7 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
       );
       _store = store;
       final saved = store.state;
+      debugPrint('store: opened (${saved.bookmarks.length} bookmarks, ${saved.favourites.length} favourites, limit ${saved.dailyLimit})');
       if (saved.lang != null && (saved.lang == 'en' || somaliEnabled)) lang = saved.lang!;
       progress = Progress(saved.rounds);
       activity = Activity(
@@ -291,7 +292,8 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   List<String> get bookmarks => List.unmodifiable(_store?.state.bookmarks ?? const <String>[]);
 
   void toggleBookmark(String ayahKey) {
-    _store?.toggleBookmark(ayahKey);
+    final on = _store?.toggleBookmark(ayahKey);
+    debugPrint('bookmark $ayahKey -> ${on ?? 'not saved: no store'}');
     notifyListeners();
   }
 
@@ -301,7 +303,8 @@ class AppState extends ChangeNotifier with WidgetsBindingObserver {
   Set<String> get favourites => Set.unmodifiable(_store?.state.favourites ?? const <String>{});
 
   void toggleFavourite(String id) {
-    _store?.toggleFavourite(id);
+    final on = _store?.toggleFavourite(id);
+    debugPrint('favourite $id -> ${on ?? 'not saved: no store'}');
     notifyListeners();
   }
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../app_state.dart';
+import '../diagnostics.dart';
 import '../recitation_player.dart';
 import '../strings.dart';
 import '../theme.dart';
@@ -91,6 +93,8 @@ class ParentScreen extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 18),
+          const _ProblemReport(),
+          const SizedBox(height: 18),
           ComicButton(
             label: tr('fontLicenses', lang),
             color: Colors.white,
@@ -137,6 +141,55 @@ class _ControlsStatus extends StatelessWidget {
               onPressed: openNotificationSettings,
             ),
           ],
+        ],
+      ),
+    );
+  }
+}
+
+/// The recent log (Diagnostics), newest first, with a Copy button.
+class _ProblemReport extends StatefulWidget {
+  const _ProblemReport();
+
+  @override
+  State<_ProblemReport> createState() => _ProblemReportState();
+}
+
+class _ProblemReportState extends State<_ProblemReport> {
+  @override
+  Widget build(BuildContext context) {
+    final lang = AppScope.of(context).lang;
+    final lines = Diagnostics.lines.reversed.take(60).toList();
+    return GlazeCard(
+      glaze: Colors.white,
+      shadow: 4,
+      border: 3,
+      tab: tr('problemReport', lang),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(tr('problemReportHint', lang), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, height: 1.35)),
+          const SizedBox(height: 8),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 220),
+            child: SingleChildScrollView(
+              child: SelectableText(
+                lines.join('\n'),
+                style: const TextStyle(fontFamily: 'monospace', fontSize: 11, height: 1.3),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          ComicButton(
+            label: tr('copy', lang),
+            color: Colors.white,
+            onPressed: () async {
+              await Clipboard.setData(ClipboardData(text: Diagnostics.lines.join('\n')));
+              if (!context.mounted) return;
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(tr('copied', lang))));
+              setState(() {});
+            },
+          ),
         ],
       ),
     );

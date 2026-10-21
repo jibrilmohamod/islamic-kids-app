@@ -59,9 +59,16 @@ class RecitationHandler extends bg.BaseAudioHandler {
     _publish();
   }
 
+  String? _lastLogged;
+
   void _publish() {
     final r = _r;
     final s = r?.surah;
+    final summary = s == null || r == null ? 'idle' : '${r.key} playing=${r.playing} waiting=${r.waiting}';
+    if (summary != _lastLogged) {
+      _lastLogged = summary;
+      debugPrint('media session: $summary');
+    }
     if (r == null || s == null) {
       playbackState.add(bg.PlaybackState(processingState: bg.AudioProcessingState.idle));
       mediaItem.add(null);

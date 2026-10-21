@@ -60,6 +60,10 @@ class ParentScreen extends StatelessWidget {
           Text(tr('usedToday', lang, {'n': state.activity.minutesToday(state.now())}),
               style: const TextStyle(fontSize: 14, color: Pop.muted)),
           const SizedBox(height: 24),
+          if ((bundle?.reciters.length ?? 0) > 1) ...[
+            const _ReciterPicker(),
+            const SizedBox(height: 24),
+          ],
           if (state.audio != null) ...[
             const _ControlsStatus(),
             const SizedBox(height: 18),
@@ -194,4 +198,83 @@ class _ProblemReportState extends State<_ProblemReport> {
       ),
     );
   }
+}
+
+/// One reciter for the whole app (canvas row G, Parents). A radio list on a
+/// cyan card; the chosen one is lemon with a tick.
+class _ReciterPicker extends StatelessWidget {
+  const _ReciterPicker();
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    final lang = state.lang;
+    final current = state.reciter?.edition;
+    return GlazeCard(
+      glaze: Pop.cyan,
+      shadow: 5,
+      tab: tr('reciterTitle', lang),
+      child: Semantics(
+        label: tr('reciterTitle', lang),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            for (final r in state.bundle!.reciters)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: _ReciterRow(
+                  name: r.reciter,
+                  nameAr: r.reciterAr,
+                  selected: r.edition == current,
+                  onTap: () => state.setReciter(r.edition),
+                ),
+              ),
+            const SizedBox(height: 2),
+            Text(tr('reciterHint', lang), style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ReciterRow extends StatelessWidget {
+  final String name;
+  final String? nameAr;
+  final bool selected;
+  final VoidCallback onTap;
+  const _ReciterRow({required this.name, required this.nameAr, required this.selected, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+        inMutuallyExclusiveGroup: true,
+        checked: selected,
+        button: true,
+        label: name,
+        excludeSemantics: true,
+        child: InkPanel(
+          color: selected ? Pop.lemon : Colors.white,
+          border: 3,
+          shadow: selected ? 4 : 2,
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          onTap: onTap,
+          child: Row(
+            children: [
+              Icon(selected ? Icons.check_circle_rounded : Icons.circle_outlined, color: Pop.ink, size: 24),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(name, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, height: 1.15)),
+              ),
+              if (nameAr != null) ...[
+                const SizedBox(width: 8),
+                Flexible(
+                  child: Text(nameAr!,
+                      textDirection: TextDirection.rtl,
+                      style: const TextStyle(fontFamily: Pop.quran, fontSize: 17, height: 1.3)),
+                ),
+              ],
+            ],
+          ),
+        ),
+      );
 }

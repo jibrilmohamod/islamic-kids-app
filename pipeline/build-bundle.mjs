@@ -195,24 +195,42 @@ export async function build(config, get = fetchJson, log = console.log, head = h
 
   // Audio: per-ayah files on the AlQuran.cloud CDN, named by global ayah
   // number. Use the smallest published bitrate that answers.
+  // Each reciter is checked at the first and the last ayah, so a reciter
+  // with gaps on the CDN is not offered.
   let audio = null;
+  const reciters = [];
   if (config.audio) {
     const a = config.audio;
-    for (const bitrate of a.bitrates) {
-      if (await head(`${a.base}/${bitrate}/${a.edition}/1.mp3`)) {
-        audio = {
-          urlTemplate: `${a.base}/${bitrate}/${a.edition}/{n}.mp3`,
-          edition: a.edition,
-          bitrate,
-          reciter: a.reciter,
-          publisher: a.publisher,
-          terms: a.terms,
-        };
-        break;
+    const probe = async (r) => {
+      for (const bitrate of r.bitrates ?? a.bitrates) {
+        const at = (n) => `${a.base}/${bitrate}/${r.edition}/${n}.mp3`;
+        if (await head(at(1)) && await head(at(6236))) {
+          return {
+            urlTemplate: `${a.base}/${bitrate}/${r.edition}/{n}.mp3`,
+            edition: r.edition,
+            bitrate,
+            reciter: r.reciter,
+            ...(r.reciterAr ? { reciterAr: r.reciterAr } : {}),
+            publisher: a.publisher,
+            terms: a.terms,
+          };
+        }
+      }
+      return null;
+    };
+    audio = await probe(a);
+    if (!audio) throw new Error('No audio bitrate answered on the CDN');
+    reciters.push(audio);
+    log(`audio: ${audio.edition} at ${audio.bitrate} kbps (default)`);
+    for (const r of a.others ?? []) {
+      const info = await probe(r);
+      if (info) {
+        reciters.push(info);
+        log(`audio: ${info.edition} at ${info.bitrate} kbps`);
+      } else {
+        warnings.push(`reciter ${r.edition}: no bitrate has both the first and last ayah; left out`);
       }
     }
-    if (!audio) throw new Error('No audio bitrate answered on the CDN');
-    log(`audio: ${audio.edition} at ${audio.bitrate} kbps`);
   }
 
   // Bukhari and Muslim numbers for every hadith and hadith dua.
@@ -278,6 +296,7 @@ export async function build(config, get = fetchJson, log = console.log, head = h
     optionalLanguages: optional,
     sources,
     audio,
+    reciters,
     mushaf,
     surahs,
     shelves,

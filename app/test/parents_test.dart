@@ -15,6 +15,7 @@ import 'package:islamic_kids_app/screens/parent_gate.dart';
 import 'package:islamic_kids_app/screens/parent_screen.dart';
 
 import 'harness.dart';
+import 'recitation_test.dart' show FakePlayer;
 
 /// Reads the two numbers from the gate's question and returns their product.
 int gateAnswer(WidgetTester tester) {
@@ -123,6 +124,35 @@ void main() {
     for (final src in state.bundle!.sources.values) {
       expect(find.text(src.title), findsOneWidget);
     }
+    await tester.runAsync(store.flush);
+  });
+
+  testWidgets('a parent picks the reciter for the whole app', (tester) async {
+    usePhone(tester);
+    final (state, s) = await testState(tester, dir);
+    store = s;
+    state
+      ..newPlayer = FakePlayer.new
+      ..supportDir = () async => dir;
+    expect(state.reciter!.edition, 'ar.alafasy', reason: 'the default');
+    await tester.pumpWidget(testApp(state, const ParentScreen()));
+    await tester.pumpAndSettle();
+    final husary = find.text('Mahmoud Khalil Al-Husary');
+    await tester.scrollUntilVisible(husary, 200);
+    expect(find.text('محمود خليل الحصري'), findsOneWidget);
+
+    await tester.runAsync(() async {
+      await tester.tap(husary);
+      await Future<void>.delayed(const Duration(milliseconds: 50));
+    });
+    await tester.pumpAndSettle();
+    expect(state.reciter!.edition, 'ar.husary');
+    expect(state.audio!.info.edition, 'ar.husary', reason: 'new files come from the new reciter');
+    expect(store.state.reciter, 'ar.husary');
+
+    // A reciter the bundle no longer offers falls back to the default.
+    store.update((x) => x.reciter = 'ar.gone');
+    expect(state.reciter!.edition, 'ar.alafasy');
     await tester.runAsync(store.flush);
   });
 

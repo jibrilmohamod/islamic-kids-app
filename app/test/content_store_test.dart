@@ -6,11 +6,16 @@ import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:islamic_kids_app/content_store.dart';
 
-String bundle(String version, {int schema = 1, String? audioUrl}) => jsonEncode({
+String bundle(String version, {int schema = 1, String? audioUrl, List<String> reciterUrls = const []}) => jsonEncode({
       'schemaVersion': schema,
       'bundleVersion': version,
       if (audioUrl != null)
         'audio': {'urlTemplate': audioUrl, 'edition': 'e', 'bitrate': 64, 'reciter': 'R', 'publisher': 'P', 'terms': 'T'},
+      if (reciterUrls.isNotEmpty)
+        'reciters': [
+          for (final (i, u) in reciterUrls.indexed)
+            {'urlTemplate': u, 'edition': 'e$i', 'bitrate': 64, 'reciter': 'R$i', 'publisher': 'P', 'terms': 'T'},
+        ],
       'languages': ['en'],
       'surahs': [
         {
@@ -109,5 +114,15 @@ void main() {
     expect(parseBundle(bundle('1', audioUrl: 'https://cdn.islamic.network/quran/audio/64/ar.alafasy/{n}.mp3')), isNotNull);
     expect(parseBundle(bundle('1', audioUrl: 'http://cdn.islamic.network/quran/audio/64/x/{n}.mp3')), isNull);
     expect(parseBundle(bundle('1', audioUrl: 'https://evil.example/{n}.mp3')), isNull);
+  });
+
+  test('every reciter must come from an allowed audio host', () {
+    const ok = 'https://cdn.islamic.network/quran/audio/64/ar.alafasy/{n}.mp3';
+    const ok2 = 'https://cdn.islamic.network/quran/audio/64/ar.husary/{n}.mp3';
+    final good = parseBundle(bundle('1', audioUrl: ok, reciterUrls: [ok, ok2]));
+    expect(good!.reciters.map((r) => r.edition), ['e0', 'e1']);
+    expect(parseBundle(bundle('1', audioUrl: ok, reciterUrls: [ok, 'https://evil.example/{n}.mp3'])), isNull);
+    // A bundle from before the choice existed offers its one reciter.
+    expect(parseBundle(bundle('1', audioUrl: ok))!.reciters.single.edition, 'e');
   });
 }

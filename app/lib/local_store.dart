@@ -52,6 +52,9 @@ class SavedState {
   int lastPage;
   String? homeIntroDay;
 
+  /// The parent's chosen reciter (an audio edition); null means the default.
+  String? reciter;
+
   /// Bookmarked ayat as "surah:ayah", newest first.
   List<String> bookmarks;
 
@@ -74,6 +77,7 @@ class SavedState {
     this.dailyLimit = 0,
     this.lastPage = 1,
     this.homeIntroDay,
+    this.reciter,
     List<String>? bookmarks,
     Set<String>? favourites,
     List<HistoryEntry>? history,
@@ -103,6 +107,7 @@ class SavedState {
       dailyLimit: intOr(j['dailyLimit'], 0).clamp(0, 24 * 60),
       lastPage: intOr(j['lastPage'], 1).clamp(1, 604),
       homeIntroDay: j['homeIntroDay'] is String ? j['homeIntroDay'] as String : null,
+      reciter: j['reciter'] is String ? j['reciter'] as String : null,
       bookmarks: strings(j['bookmarks']),
       favourites: strings(j['favourites']).toSet(),
       history: h is List ? h.map(HistoryEntry.fromJson).whereType<HistoryEntry>().toList() : [],
@@ -119,6 +124,7 @@ class SavedState {
         'dailyLimit': dailyLimit,
         'lastPage': lastPage,
         'homeIntroDay': homeIntroDay,
+        if (reciter != null) 'reciter': reciter,
         'bookmarks': bookmarks,
         'favourites': favourites.toList()..sort(),
         'history': [for (final e in history) e.toJson()],

@@ -294,6 +294,9 @@ class AudioInfo {
   final String edition;
   final int bitrate;
   final String reciter;
+
+  /// The reciter's name in Arabic, when the bundle has it.
+  final String? reciterAr;
   final String publisher;
   final String terms;
 
@@ -302,6 +305,7 @@ class AudioInfo {
     required this.edition,
     required this.bitrate,
     required this.reciter,
+    this.reciterAr,
     required this.publisher,
     required this.terms,
   });
@@ -311,6 +315,7 @@ class AudioInfo {
         edition: _s(j['edition']),
         bitrate: (j['bitrate'] as num?)?.toInt() ?? 0,
         reciter: _s(j['reciter']),
+        reciterAr: j['reciterAr'] is String ? j['reciterAr'] as String : null,
         publisher: _s(j['publisher']),
         terms: _s(j['terms']),
       );
@@ -388,6 +393,10 @@ class ContentBundle {
   final List<String> optionalLanguages;
   final Map<String, SourceInfo> sources;
   final AudioInfo? audio;
+
+  /// Reciters a parent can choose from; the first is the default ([audio]).
+  /// Bundles from before the choice existed list only [audio].
+  final List<AudioInfo> reciters;
   final List<Surah> surahs;
   final List<Hadith> hadith;
   final List<Dua> duas;
@@ -400,12 +409,13 @@ class ContentBundle {
     this.optionalLanguages = const [],
     required this.sources,
     this.audio,
+    List<AudioInfo>? reciters,
     required this.surahs,
     required this.hadith,
     required this.duas,
     this.shelves = const [],
     this.mushaf,
-  });
+  }) : reciters = reciters ?? (audio == null ? const [] : [audio]);
 
   /// The book view needs the layout and every ayah placed in it.
   bool get hasMushaf => mushaf != null && surahs.length == 114 && surahs.every((s) => s.ayat.every((a) => a.mushaf.isNotEmpty));
@@ -422,6 +432,9 @@ class ContentBundle {
       optionalLanguages: optional,
       sources: _map(j['sources']).map((k, v) => MapEntry(k, SourceInfo.fromJson(k, _map(v)))),
       audio: j['audio'] is Map ? AudioInfo.fromJson(_map(j['audio'])) : null,
+      reciters: j['reciters'] is List && (j['reciters'] as List).isNotEmpty
+          ? list('reciters').map(AudioInfo.fromJson).toList()
+          : null,
       surahs: list('surahs').map(Surah.fromJson).toList(),
       hadith: list('hadith').map((h) => Hadith.fromJson(h, langs)).toList(),
       duas: list('duas').map((d) => Dua.fromJson(d, langs)).toList(),

@@ -204,9 +204,40 @@ test('audio picks the first bitrate that answers and every ayah gets its number'
   assert.deepEqual(errors, []);
   assert.equal(bundle.audio.bitrate, 128);
   assert.equal(bundle.audio.urlTemplate, 'https://cdn.example/quran/audio/128/ar.alafasy/{n}.mp3');
-  assert.equal(tried.length, 2);
+  // 64 fails at ayah 1; 128 answers for ayah 1 and the last ayah.
+  assert.deepEqual(tried.map((u) => u.replace('https://cdn.example/quran/audio/', '')), ['64/ar.alafasy/1.mp3', '128/ar.alafasy/1.mp3', '128/ar.alafasy/6236.mp3']);
+  assert.deepEqual(bundle.reciters, [bundle.audio]);
   assert.deepEqual(bundle.surahs[0].ayat.map((a) => a.n), [1, 2]);
   assert.equal(bundle.surahs[0].ayahCount, 2);
+});
+
+test('other reciters are offered only when the CDN has their first and last ayah', async () => {
+  const config = {
+    languages: ['en'],
+    quranTranslations: { en: 'english_saheeh' },
+    surahs: [{ number: 1, name: 'Al-Fatiha', nameAr: 'x', ayahCount: 2 }],
+    audio: {
+      edition: 'ar.alafasy', bitrates: [64, 128], base: 'https://cdn.example/quran/audio', reciter: 'R', publisher: 'P', terms: 'T',
+      others: [
+        { edition: 'ar.husary', reciter: 'H', reciterAr: 'ح' },
+        { edition: 'ar.gappy', reciter: 'G' },
+        { edition: 'ar.ayyub', reciter: 'A', bitrates: [128] },
+      ],
+    },
+    duaCategories: [], quranDuas: [],
+  };
+  const fake = async (url) => {
+    if (url.includes('/translations/list/en')) return { translations: [{ key: 'english_saheeh', version: '1', title: 'EN' }] };
+    if (url.includes('translation/sura/english_saheeh/1')) return { result: [1, 2].map((a) => ({ id: String(a), sura: '1', aya: String(a), arabic_text: `A${a}`, translation: `E${a}`, footnotes: '' })) };
+    throw new Error(`unexpected url ${url}`);
+  };
+  const head = async (url) => !(url.includes('ar.gappy') && url.endsWith('/6236.mp3')) && !url.includes('/64/ar.ayyub/');
+  const { bundle, errors, warnings } = await build(config, fake, () => {}, head);
+  assert.deepEqual(errors, []);
+  assert.deepEqual(bundle.reciters.map((r) => [r.edition, r.bitrate]), [['ar.alafasy', 64], ['ar.husary', 64], ['ar.ayyub', 128]]);
+  assert.equal(bundle.reciters[1].reciterAr, 'ح');
+  assert.equal(bundle.reciters[1].publisher, 'P');
+  assert.ok(warnings.some((w) => w.includes('ar.gappy')));
 });
 
 test('the full build adds topic titles, references and held-back hadith', async () => {

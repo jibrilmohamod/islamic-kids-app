@@ -152,6 +152,11 @@ const Map<String, Map<String, String>> _strings = {
   'hadithSubtitle': {'en': 'Words of our Prophet ﷺ, shelf by shelf', 'so': 'Erayada Nabigeenna ﷺ, khaanad khaanad'},
   'shortHadithTitle': {'en': 'Short hadith', 'so': 'Xadiisyo gaagaaban'},
   'shortHadithSub': {'en': '{n} to learn by heart, line by line', 'so': '{n} lagu xifdiyo, sadar sadar'},
+  'reciterTitle': {'en': 'Reciter', 'so': 'Akhriyaha'},
+  'reciterHint': {
+    'en': 'For the whole app. Saved surahs are kept for each reciter.',
+    'so': 'App-ka oo dhan. Suuradaha la kaydiyay waxaa loo hayaa akhriye kasta.',
+  },
   'problemReport': {'en': 'Problem report', 'so': 'Warbixinta dhibaatada'},
   'problemReportHint': {
     'en': 'What the app did recently, kept only on this phone. If something does not work, copy it and send it to the developer.',
